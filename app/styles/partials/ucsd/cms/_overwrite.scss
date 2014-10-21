@@ -87,9 +87,6 @@ FLEXSLIDER
 	.flex-direction-nav li a {
 		background: #000;
 		background: rgba(0, 0, 0, 0.3);
-		_background: 0;
-		*background: 0;
-		background: 0\0;
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000, endColorstr=#4c000000);
 		-webkit-border-radius: 12px;
 		-moz-border-radius: 12px;
@@ -171,9 +168,6 @@ FLEXSLIDER
 .flexslider.alt .flex-caption {
 	background: #0B638B;
 	background: rgba(11, 99, 139, 0.8);
-	_background: 0;
-	*background: 0;
-	background: 0\0;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA1986b4,endColorstr=#AA1986b4);
 	zoom: 1;
 }

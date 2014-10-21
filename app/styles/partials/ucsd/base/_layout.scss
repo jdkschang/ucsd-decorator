@@ -19,11 +19,9 @@ body #tdr_login_content,body #tdr_title_content,body #tdr_nav_content,body #tdr_
   margin: 0 auto;
   max-width: $desktop;
   width: 98%;
-  width: expression(document.body.clientWidth > 960 ? "960px" : "auto");
 
   @media screen and (min-width: $full) {
     max-width: $full;
-    width: expression(document.body.clientWidth > 1200 ? "1200px" : "auto");
   }
 }
 
@@ -215,7 +213,6 @@ body.wide main, body.wide #tdr_login, body.wide #tdr_title, body.wide #tdr_searc
 @media only screen {
   body #tdr_login_content,body #tdr_title_content,body #tdr_nav_content,body #tdr_search_content,body #tdr_crumbs_content,body #tdr_content_content,body #tdr_footer_content,body.fluid #tdr_login_content,body.fluid #tdr_title_content,body.fluid #tdr_nav_content,body.fluid #tdr_search_content,body.fluid #tdr_crumbs_content,body.fluid #tdr_content_content,body.fluid #tdr_footer_content
   {
-    /* 		min-width: 0; */
     width: 98%;
   }
 }
@@ -227,7 +224,6 @@ body.wide main, body.wide #tdr_login, body.wide #tdr_title, body.wide #tdr_searc
 
   body #tdr_login_content,body #tdr_title_content,body #tdr_nav_content,body #tdr_search_content,body #tdr_crumbs_content,body #tdr_content_content,body #tdr_footer_content,body.fluid #tdr_login_content,body.fluid #tdr_title_content,body.fluid #tdr_nav_content,body.fluid #tdr_search_content,body.fluid #tdr_crumbs_content,body.fluid #tdr_content_content,body.fluid #tdr_footer_content
   {
-    /* 		min-width: 0; */
     width: 94%;
   }
 

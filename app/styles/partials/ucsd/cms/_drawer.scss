@@ -84,8 +84,3 @@
 .drawer-toggle a.expand {
 	background-position: 0 -201px;
 }
-
-/* ie7 hack */
-*:first-child+html .drawer-toggle a {
-	display: inline-block;
-}

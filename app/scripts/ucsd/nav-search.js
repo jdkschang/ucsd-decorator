@@ -89,9 +89,9 @@ $(document).ready(function() {
 
     FastClick.attach(document.body);
 
-    // Detecting IE
+    // Detecting IE 7
     var oldIE = false;
-    if ($('html').is('.ie7, .ie8')) {
+    if(navigator.appVersion.indexOf("MSIE 7.")!=-1) {
         oldIE = true;
     }
 

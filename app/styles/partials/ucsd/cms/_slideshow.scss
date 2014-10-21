@@ -74,9 +74,3 @@
 .paused {
 	background: url(img/sprite_icon_widget.png) 0 -233px no-repeat;
 }
-
-/* ie7 hack */
-*:first-child+html .playing,
-*:first-child+html .paused {
-	display: inline-block;
-}

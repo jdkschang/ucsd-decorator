@@ -7,7 +7,7 @@
 /********************* HOMEPAGE-WIDE */
 @import url(http://fonts.googleapis.com/css?family=Roboto:300);
 .flex-caption {
-  margin-bottom: 96px !important; }
+  margin-bottom: 40px !important; }
 
 .flexslider {
   margin: 0 -40px;
@@ -201,7 +201,7 @@ h2.side {
 
 @media screen and (max-width: 1200px) {
   .main-container {
-    margin: -37px 0 0;
+    margin: 0;
     padding-top: 20px; }
 
   .main-content {
