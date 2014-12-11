@@ -17,6 +17,16 @@
 html, body
 {
 }
+  .l-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1.5em 0;
+    overflow: hidden;
+  }
+
+  .l-header {
+    background: #2b92b9;
+  }
 
 main
 {
@@ -26,10 +36,86 @@ main
  * HEADER
  * **************/
 
-header {
-
+header
+{
 }
 
+#header {
+  width: 100%;
+}
+
+  #title {
+    position: relative;
+    height: 78px;
+
+    font-family: "Trebuchet MS", sans-serif;
+
+    #title-logo {
+      float: right;
+
+      overflow: hidden;
+      text-indent: -999em;
+      background: transparent url(../img/sprite_base.png) no-repeat;
+      background-position: 0 -3px;
+      width: 229px;
+      height: 45px;
+    }
+
+    #title-header {
+      float: left;
+
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+
+  #tdr_title {
+    background-color: #2b92b9;
+    width: 100%;
+  }
+    #tdr_title_content {
+      height: 78px;
+
+      margin: 0 auto;
+    }
+
+      #tdr_title_page_title {
+        font-family: "Trebuchet MS",sans-serif;
+        position: absolute;
+        left: 53px;
+        top: 55px;
+        text-transform: uppercase;
+        font-size: 140%;
+        white-space: nowrap;
+
+        top: 30px;
+        left: 0;
+        font-size: 24px;
+      }
+
+        #tdr_title_page_title, #tdr_title_page_title a {
+          color: #fff;
+          text-decoration: none;
+          letter-spacing: 1px;
+        }
+
+    #tdr_title_ucsd_title {
+      position: absolute;
+      display: block;
+      overflow: hidden;
+      text-indent: -999em;
+      background: transparent url(img/sprite_base.png) no-repeat;
+      left: 0;
+      top: 10px;
+      background-position: -239px -14px;
+      height: 32px;
+      width: 166px;
+    }
 /* ***********************************************
  * FOOTER
  * **************/

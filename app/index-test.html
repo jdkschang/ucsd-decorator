@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
 
-    <link rel="stylesheet" href="styles/layout.css"/>
+    <link rel="stylesheet" href="styles/partials/layout.css"/>
 
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="../dist/styles/ie-support.css"/>
@@ -26,34 +26,41 @@
     <script src="../dist/scripts/modernizr.js"></script>
 </head>
 <body>
-<header>
+<header id="header">
     <a class="sr-only" href="#tdr_content">Skip to main content</a>
     <div id="uc-emergency"></div>
     <div id="tdr_login"><!-- Start page controls -->
         <span class="tdr_login_content"></span> <!-- End page controls -->
     </div>
 
-    <div id="tdr_title">
-        <div id="tdr_title_content">
-            <a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a>
-
-            <button type="button" class="navbar-toggle needsclick" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <div id="tdr_title_page_title">
-
-                <a href="index.html">
-                    Decorator 4.0
-                </a>
-            </div>
-
+    <section id="title" class="l-header">
+        <div class="l-container">
+            <a href="index.html" id="title-header">Decorator 4.1</a>
+            <a href="http://www.ucsd.edu" id="title-logo">UC San Diego</a>
         </div>
-    </div>
+    </section>
+
+    <!--<div id="tdr_title">-->
+        <!--<div id="tdr_title_content">-->
+            <!--<a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a>-->
+
+            <!--<button type="button" class="navbar-toggle needsclick" data-toggle="collapse"-->
+                    <!--data-target="#bs-example-navbar-collapse-1">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+
+            <!--<div id="tdr_title_page_title">-->
+
+                <!--<a href="index.html">-->
+                    <!--Decorator 4.1-->
+                <!--</a>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
 
     <nav id="tdr_nav" class="navbar" role="navigation">
         <div id="tdr_nav_content">
