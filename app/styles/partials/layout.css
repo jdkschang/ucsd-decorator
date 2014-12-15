@@ -29,6 +29,17 @@
   margin-bottom: 0;
   min-height: 34px; }
 
+.layout-main {
+  width: 100%; }
+
+h1 {
+  color: #d56a03;
+  font-weight: 400;
+  letter-spacing: .5px; }
+
+/* ***********************************************
+ * HEADER
+ * **************/
 #header {
   width: 100%; }
 
@@ -56,6 +67,19 @@
 /* ***********************************************
 * MAIN
 * **************/
+.breadcrumbs__list {
+  background-color: #fff;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 1em 0 0; }
+  .breadcrumbs__list > li {
+    color: #666;
+    display: inline;
+    font-size: 80%; }
+
+.main__content {
+  line-height: 1.4; }
+
 /* ***********************************************
  * FOOTER
  * **************/
