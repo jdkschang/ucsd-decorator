@@ -26,14 +26,14 @@
     <script src="../dist/scripts/modernizr.js"></script>
 </head>
 <body>
-<header id="header">
-    <a class="sr-only" href="#tdr_content">Skip to main content</a>
+<header class="layout-header">
+    <a class="sr-only" href="#main__content">Skip to main content</a>
     <div id="uc-emergency"></div>
     <div id="tdr_login"><!-- Start page controls -->
         <span class="tdr_login_content"></span> <!-- End page controls -->
     </div>
 
-    <section id="title" class="layout-header">
+    <section id="title" class="layout-title">
         <div class="layout-container">
             <a href="index.html" id="title__header">Decorator 4.1</a>
             <a href="http://www.ucsd.edu" id="title__logo">UC San Diego</a>
@@ -106,7 +106,7 @@
 </header>
 
 <main role="main" class="layout-main">
-    <div class="layout-container">
+    <div id="main__content" class="layout-container">
         <ol class="breadcrumb breadcrumbs__list">
             <li><a href="index.html">HOME</a></li>
             <li><a href="templates.html">Templates</a></li>
@@ -128,24 +128,26 @@
 <!-- Footer
 ================================================== -->
 <footer class="layout-footer">
-    <div class="layout-container">
-        <div id="tdr_address">
-            <span id="tdr_address_place">UC San Diego</span>
-            <span id="tdr_address_street">9500 Gilman Dr.</span>
-            <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span>
-            <span id="tdr_address_phone">(858) 534-2230</span>
-        </div>
-        <div id="tdr_copyright">Copyright ©<span id="tdr_copyright_year">2014</span> Regents of the University
-            of California. All rights reserved.
-        </div>
-        <ul class="footer__links">
-            <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
-            <li id="tdr_footer_feedback">
+    <section class="layout-">
+        <div class="layout-container">
+            <div id="tdr_address">
+                <span id="tdr_address_place">UC San Diego</span>
+                <span id="tdr_address_street">9500 Gilman Dr.</span>
+                <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span>
+                <span id="tdr_address_phone">(858) 534-2230</span>
+            </div>
+            <div id="tdr_copyright">Copyright ©<span id="tdr_copyright_year">2014</span> Regents of the University
+                of California. All rights reserved.
+            </div>
+            <ul class="footer__links">
+                <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+                <li id="tdr_footer_feedback">
 
-                <a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
-            </li>
-        </ul>
-    </div>
+                    <a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 </footer>
 
 

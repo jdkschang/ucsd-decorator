@@ -18,6 +18,9 @@
   overflow: hidden; }
 
 .layout-header {
+  width: 100%; }
+
+.layout-title {
   background: #2b92b9;
   padding: 1.5em 0; }
 

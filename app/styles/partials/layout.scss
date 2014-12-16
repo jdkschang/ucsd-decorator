@@ -24,9 +24,12 @@ html, body
   }
 
   .layout-header {
-    background: #2b92b9;
-    padding: 1.5em 0;
+    width: 100%;
   }
+    .layout-title {
+      background: #2b92b9;
+      padding: 1.5em 0;
+    }
 
   .layout-navbar {
     min-height: 34px;
