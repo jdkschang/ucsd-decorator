@@ -27,8 +27,12 @@ html, body
     width: 100%;
   }
     .layout-title {
+      font-family: "Trebuchet MS", sans-serif;
+
+      height: 78px;
       background: #2b92b9;
       padding: 1.5em 0;
+
     }
 
   .layout-navbar {
@@ -79,39 +83,84 @@ html, body
 header
 {
 }
+  #title__header {
+    float: left;
 
-#header {
-  width: 100%;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #title__logo {
+    float: right;
+
+    width: 229px;
+    height: 45px;
+
+    overflow: hidden;
+    text-indent: -999em;
+    background: transparent url(../img/sprite_base.png) no-repeat;
+    background-position: 0 -3px;
+  }
+
+
+/* ***********************************************
+* NAV
+* **************/
+
+nav
+{
 }
 
-  #title {
-    position: relative;
-    height: 78px;
+.layout-navbar .navbar__list {
+  list-style: none;
 
-    font-family: "Trebuchet MS", sans-serif;
+  padding: 0;
+  margin: 0;
+}
 
-    #title__logo {
-      float: right;
+.navbar__list > li {
+  float: left;
 
-      overflow: hidden;
-      text-indent: -999em;
-      background: transparent url(../img/sprite_base.png) no-repeat;
-      background-position: 0 -3px;
-      width: 229px;
-      height: 45px;
-    }
+  > a {
+    display: block;
+    color: #004b6e;
 
-    #title__header {
-      float: left;
-
-      color: #fff;
-      font-size: 24px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+    background-color: #FDFDFD;
+    border-bottom: solid 3px rgba(255,255,255,.4);
+    border-right: solid 1px #C8CFD3;
+    border-left: solid 1px rgba(255,255,255,.6);
+    padding: 9px 15px 8px;
+    text-decoration: none;
   }
+}
+
+.search {
+  float: right;
+  max-width:380px;
+}
+.search__toggle {
+  max-height: 35px;
+
+  background: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  border: 1px solid transparent;
+  border-width: 0 1px;
+
+  outline: 0;
+  padding: 8px;
+}
+.search__content {
+  display: none;
+}
+
+.navbar__list > li:first-child {
+  border-left: solid 1px #C8CFD3;
+}
 
 /* ***********************************************
 * MAIN
@@ -139,8 +188,6 @@ main
     line-height: 1.5;
     padding-top: 1em;
   }
-
-
 
 
 /* ***********************************************
@@ -171,57 +218,3 @@ footer
   }
 
 
-/* ***********************************************
- * NAV
- * **************/
-
-nav
-{
-}
-
-  .layout-navbar .navbar__list {
-    list-style: none;
-
-    padding: 0;
-    margin: 0;
-  }
-
-  .navbar__list > li {
-    float: left;
-
-    > a {
-      display: block;
-      color: #004b6e;
-
-      background-color: #FDFDFD;
-      border-bottom: solid 3px rgba(255,255,255,.4);
-      border-right: solid 1px #C8CFD3;
-      border-left: solid 1px rgba(255,255,255,.6);
-      padding: 9px 15px 8px;
-      text-decoration: none;
-    }
-  }
-
-  .search {
-    float: right;
-    max-width:380px;
-  }
-    .search__toggle {
-      max-height: 35px;
-
-      background: 0;
-      border-radius: 0;
-      -webkit-border-radius: 0;
-      border: 1px solid transparent;
-      border-width: 0 1px;
-
-      outline: 0;
-      padding: 8px;
-    }
-    .search__content {
-      display: none;
-    }
-
-  .navbar__list > li:first-child {
-    border-left: solid 1px #C8CFD3;
-  }

@@ -21,6 +21,8 @@
   width: 100%; }
 
 .layout-title {
+  font-family: "Trebuchet MS", sans-serif;
+  height: 78px;
   background: #2b92b9;
   padding: 1.5em 0; }
 
@@ -57,65 +59,27 @@ h1 {
 /* ***********************************************
  * HEADER
  * **************/
-#header {
-  width: 100%; }
+#title__header {
+  float: left;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap; }
 
-#title {
-  position: relative;
-  height: 78px;
-  font-family: "Trebuchet MS", sans-serif; }
-  #title #title__logo {
-    float: right;
-    overflow: hidden;
-    text-indent: -999em;
-    background: transparent url(../img/sprite_base.png) no-repeat;
-    background-position: 0 -3px;
-    width: 229px;
-    height: 45px; }
-  #title #title__header {
-    float: left;
-    color: #fff;
-    font-size: 24px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap; }
+#title__logo {
+  float: right;
+  width: 229px;
+  height: 45px;
+  overflow: hidden;
+  text-indent: -999em;
+  background: transparent url(../img/sprite_base.png) no-repeat;
+  background-position: 0 -3px; }
 
 /* ***********************************************
-* MAIN
+* NAV
 * **************/
-.breadcrumbs__list {
-  background-color: #fff;
-  list-style: none;
-  margin-bottom: 0;
-  padding: 0; }
-  .breadcrumbs__list > li {
-    color: #666;
-    display: inline;
-    font-size: 80%; }
-
-.main__content {
-  line-height: 1.5;
-  padding-top: 1em; }
-
-/* ***********************************************
- * FOOTER
- * **************/
-.footer__links {
-  list-style: none;
-  margin: .5em 0 0;
-  padding: 0; }
-  .footer__links > li {
-    display: inline;
-    margin-left: 0;
-    margin-right: .5em;
-    padding-right: .75em; }
-  .footer__links > li:first-child {
-    border-right: 1px solid #ccc; }
-
-/* ***********************************************
- * NAV
- * **************/
 .layout-navbar .navbar__list {
   list-style: none;
   padding: 0;
@@ -152,5 +116,37 @@ h1 {
 
 .navbar__list > li:first-child {
   border-left: solid 1px #C8CFD3; }
+
+/* ***********************************************
+* MAIN
+* **************/
+.breadcrumbs__list {
+  background-color: #fff;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0; }
+  .breadcrumbs__list > li {
+    color: #666;
+    display: inline;
+    font-size: 80%; }
+
+.main__content {
+  line-height: 1.5;
+  padding-top: 1em; }
+
+/* ***********************************************
+ * FOOTER
+ * **************/
+.footer__links {
+  list-style: none;
+  margin: .5em 0 0;
+  padding: 0; }
+  .footer__links > li {
+    display: inline;
+    margin-left: 0;
+    margin-right: .5em;
+    padding-right: .75em; }
+  .footer__links > li:first-child {
+    border-right: 1px solid #ccc; }
 
 /*# sourceMappingURL=layout.css.map */
