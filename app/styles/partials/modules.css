@@ -26,6 +26,11 @@
   background: #F2F5F7;
   border: solid 1px #C8CFD3;
   padding: 1em; }
+  .main-content-nav > h2 {
+    color: #738AA3;
+    font-size: 140%;
+    text-shadow: 0 1px 1px #FFF;
+    margin: 0 0 .7em; }
 
 /* ***********************************************
  * BUTTONS
