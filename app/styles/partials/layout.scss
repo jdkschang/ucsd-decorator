@@ -83,7 +83,7 @@ html, body
 header
 {
 }
-  #title__header {
+  #title-header {
     float: left;
 
     color: #fff;
@@ -94,7 +94,7 @@ header
     white-space: nowrap;
   }
 
-  #title__logo {
+  #title-logo {
     float: right;
 
     width: 229px;
@@ -115,14 +115,14 @@ nav
 {
 }
 
-.layout-navbar .navbar__list {
+.layout-navbar .navbar-list {
   list-style: none;
 
   padding: 0;
   margin: 0;
 }
 
-.navbar__list > li {
+.navbar-list > li {
   float: left;
 
   > a {
@@ -142,7 +142,7 @@ nav
   float: right;
   max-width:380px;
 }
-.search__toggle {
+.search-toggle {
   max-height: 35px;
 
   background: 0;
@@ -154,11 +154,11 @@ nav
   outline: 0;
   padding: 8px;
 }
-.search__content {
+.search-content {
   display: none;
 }
 
-.navbar__list > li:first-child {
+.navbar-list > li:first-child {
   border-left: solid 1px #C8CFD3;
 }
 
@@ -170,7 +170,7 @@ main
 {
 }
 
-  .breadcrumbs__list {
+  .breadcrumbs-list {
     background-color: #fff;
 
     list-style: none;
@@ -184,7 +184,7 @@ main
     }
   }
 
-  .main__content {
+  .main-content {
     line-height: 1.5;
     padding-top: 1em;
   }
@@ -198,7 +198,7 @@ footer
 {
 }
 
-  .footer__links {
+  .footer-links {
     list-style: none;
 
     margin: .5em 0 0;
