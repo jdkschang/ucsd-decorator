@@ -46,6 +46,24 @@
 /* ***********************************************
  * TITLE
  * ***************/
+.title-header {
+  float: left;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap; }
+
+.\title-logo {
+  float: right;
+  width: 229px;
+  height: 45px;
+  overflow: hidden;
+  text-indent: -999em;
+  background: transparent url(../img/sprite_base.png) no-repeat;
+  background-position: 0 -3px; }
+
 /* ***********************************************
  * MAIN CONTENT SIDE NAV
  * ***************/

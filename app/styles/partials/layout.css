@@ -12,6 +12,9 @@
 /* ***********************************************
  * BASE
  * ***************/
+html, body {
+  background: #fff; }
+
 .layout-container {
   max-width: 1200px;
   margin: auto;
@@ -35,12 +38,10 @@
   margin-bottom: 0; }
 
 .layout-main {
-  background-color: #fff;
   padding: 1em 0;
   width: 100%; }
 
 .layout-footer {
-  background-color: #fff;
   width: 100%;
   color: #999;
   font-size: 90%;
@@ -62,24 +63,6 @@ a {
 /* ***********************************************
  * HEADER
  * **************/
-#title-header {
-  float: left;
-  color: #fff;
-  font-size: 24px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap; }
-
-#title-logo {
-  float: right;
-  width: 229px;
-  height: 45px;
-  overflow: hidden;
-  text-indent: -999em;
-  background: transparent url(../img/sprite_base.png) no-repeat;
-  background-position: 0 -3px; }
-
 /* ***********************************************
 * NAV
 * **************/
@@ -87,6 +70,9 @@ a {
   list-style: none;
   padding: 0;
   margin: 0; }
+
+.navbar .caret {
+  margin-left: 7px; }
 
 .layout-navbar .navbar-list > li {
   float: left; }
