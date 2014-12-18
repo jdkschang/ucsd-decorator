@@ -104,36 +104,9 @@ a {
   .layout-navbar .navbar-list > li :first-child {
     border-left: solid 1px #C8CFD3; }
 
-.search {
-  float: right;
-  max-width: 380px; }
-
-.search-toggle {
-  max-height: 35px;
-  background: 0;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  border: 1px solid transparent;
-  border-width: 0 1px;
-  outline: 0;
-  padding: 8px; }
-
-.search-content {
-  display: none; }
-
 /* ***********************************************
 * MAIN
 * **************/
-.breadcrumbs-list {
-  background-color: #fff;
-  list-style: none;
-  margin-bottom: 0;
-  padding: 0; }
-  .breadcrumbs-list > li {
-    color: #666;
-    display: inline;
-    font-size: 80%; }
-
 .main-content {
   line-height: 1.5;
   padding-top: 1em; }
