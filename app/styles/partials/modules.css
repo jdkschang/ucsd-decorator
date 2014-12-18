@@ -31,6 +31,23 @@
     font-size: 140%;
     text-shadow: 0 1px 1px #FFF;
     margin: 0 0 .7em; }
+  .main-content-nav > ul {
+    /* for borders to line up properly */
+    margin: 0 -1em -1em; }
+  .main-content-nav > ul li {
+    border-top: solid 1px #D8D7D7;
+    list-style: none;
+    padding: 1em 0 1em 1em; }
+    .main-content-nav > ul li a:hover, .main-content-nav > ul li a:link, .main-content-nav > ul li a:active {
+      text-decoration: none; }
+    .main-content-nav > ul li.active {
+      background-color: #fff;
+      color: #D56A03; }
+    .main-content-nav > ul li ul {
+      margin: .4em 0 -.4em 1em;
+      padding: 0; }
+    .main-content-nav > ul li li {
+      font-size: 85%; }
 
 /* ***********************************************
  * BUTTONS

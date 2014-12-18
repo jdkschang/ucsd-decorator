@@ -56,6 +56,9 @@ h1 {
   letter-spacing: .5px;
   margin: 0 0 .25em; }
 
+a {
+  color: #016691; }
+
 /* ***********************************************
  * HEADER
  * **************/
@@ -80,14 +83,14 @@ h1 {
 /* ***********************************************
 * NAV
 * **************/
-.layout-navbar .navbar-list {
+.navbar-list {
   list-style: none;
   padding: 0;
   margin: 0; }
 
-.navbar-list > li {
+.layout-navbar .navbar-list > li {
   float: left; }
-  .navbar-list > li > a {
+  .layout-navbar .navbar-list > li > a {
     display: block;
     color: #004b6e;
     background-color: #FDFDFD;
@@ -96,8 +99,10 @@ h1 {
     border-left: solid 1px rgba(255, 255, 255, 0.6);
     padding: 9px 15px 8px;
     text-decoration: none; }
-  .navbar-list > li.active > a {
+  .layout-navbar .navbar-list > li.active > a {
     border-bottom: #D56A03 solid 3px; }
+  .layout-navbar .navbar-list > li :first-child {
+    border-left: solid 1px #C8CFD3; }
 
 .search {
   float: right;
@@ -115,9 +120,6 @@ h1 {
 
 .search-content {
   display: none; }
-
-.navbar-list > li:first-child {
-  border-left: solid 1px #C8CFD3; }
 
 /* ***********************************************
 * MAIN

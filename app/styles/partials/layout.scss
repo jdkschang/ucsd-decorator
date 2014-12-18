@@ -74,6 +74,9 @@ html, body
     margin: 0 0 .25em;
   }
 
+  a {
+    color: #016691;
+  }
 
 /* ***********************************************
  * HEADER
@@ -114,14 +117,14 @@ nav
 {
 }
 
-.layout-navbar .navbar-list {
+.navbar-list {
   list-style: none;
 
   padding: 0;
   margin: 0;
 }
 
-.navbar-list > li {
+.layout-navbar .navbar-list > li {
   float: left;
 
   > a {
@@ -138,6 +141,10 @@ nav
 
   &.active > a {
     border-bottom: #D56A03 solid 3px;
+  }
+
+  :first-child {
+    border-left: solid 1px #C8CFD3;
   }
 }
 
@@ -161,9 +168,6 @@ nav
   display: none;
 }
 
-.navbar-list > li:first-child {
-  border-left: solid 1px #C8CFD3;
-}
 
 /* ***********************************************
 * MAIN
