@@ -15,6 +15,7 @@
 html, body {
   background: #fff; }
 
+/* container will have media queries for sizing*/
 .layout-container {
   max-width: 1200px;
   margin: auto;
@@ -22,6 +23,9 @@ html, body {
 
 .layout-header {
   width: 100%; }
+
+.layout-login {
+  background: #0B4A67; }
 
 .layout-title {
   font-family: "Trebuchet MS", sans-serif;

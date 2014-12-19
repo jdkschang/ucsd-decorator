@@ -55,7 +55,7 @@
   text-transform: uppercase;
   white-space: nowrap; }
 
-.\title-logo {
+.title-logo {
   float: right;
   width: 229px;
   height: 45px;
@@ -70,7 +70,8 @@
 .main-content-nav {
   background: #F2F5F7;
   border: solid 1px #C8CFD3;
-  padding: 1em; }
+  padding: 1em;
+  margin-bottom: 1em; }
   .main-content-nav > h2 {
     color: #738AA3;
     font-size: 140%;
