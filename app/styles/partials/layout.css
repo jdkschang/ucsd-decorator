@@ -55,11 +55,15 @@ html, body {
   .layout-footer > .layout-container {
     background: transparent url(../img/sprite_base.png) right -74px no-repeat; }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 .25em; }
+
 h1 {
   color: #d56a03;
-  font-weight: 400;
-  letter-spacing: .5px;
-  margin: 0 0 .25em; }
+  letter-spacing: .5px; }
 
 hr {
   background-color: #ccc;
@@ -108,6 +112,17 @@ a {
 
 .main-section-content {
   padding-left: 1.5em; }
+
+.main-section-supplement {
+  background-color: #F2F5F7;
+  border: solid 1px #C8CFD3;
+  padding: 1em;
+  margin-bottom: 1em; }
+
+.main-section-supplement h3 {
+  font-size: 115%;
+  color: #738AA3;
+  text-shadow: 0 1px 1px #FFF; }
 
 /* ***********************************************
  * FOOTER
