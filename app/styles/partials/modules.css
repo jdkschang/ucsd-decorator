@@ -16,7 +16,7 @@
 .breadcrumbs-list {
   background-color: #fff;
   margin-bottom: 0;
-  padding: 0; }
+  padding: 0 0 1em; }
   .breadcrumbs-list > li {
     color: #666;
     display: inline;

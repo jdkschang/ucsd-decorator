@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+    <title>Transfer Funds</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="robots" content="index,follow,noarchive">
+    <meta name="ORGANIZATION" content="University of California, San Diego">
+    <meta name="SITE" content="Transfer of Funds">
+    <meta name="PAGETITLE" content="Transfer Funds">
+    <meta name="DESCRIPTION" content="Transfer funds via this online form">
+
+
+    <!-- build:css(.tmp) ../dist/styles/bootstrap.css -->
+    <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="styles/partials/layout.css"/>
+    <link rel="stylesheet" href="styles/partials/modules.css"/>
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="../dist/styles/ie-support.css"/>
+    <![endif]-->
+
+    <!-- Begin site-specific CSS files -->
+
+    <!-- build:js({app,.tmp}) ../dist/scripts/modernizr.js -->
+    <script src="../dist/scripts/modernizr.js"></script>
+    <!-- endbuild -->
+
+    <style>form {
+        max-width: 400px;
+    }</style>
+    <!-- For demo purpose; include this in your site specific CSS file -->
+</head>
+<body>
+
+<header class="layout-header">
+    <!-- legacy code but cannot remove .. yet -->
+    <a class="sr-only" href="#">Skip to main content</a>
+    <div id="uc-emergency"></div>
+    <section class="layout-login"><!-- Start page controls -->
+        <span class="login-content"></span> <!-- End page controls -->
+    </section>
+    <!-- legacy code comment end -->
+
+    <!-- title section -->
+    <section class="layout-title">
+        <div class="layout-container">
+            <a href="index.html" class="title-header">Transfer Funds</a>
+            <a href="http://www.ucsd.edu" class="title-logo">UC San Diego</a>
+        </div>
+    </section>
+
+    <nav class="navbar layout-navbar" role="navigation">
+        <div class="layout-container">
+            <ul class="navbar-list">
+                <li>
+                    <a href="index.html">Blink</a>
+                </li>
+                <li class="active">
+                    <a href="#">FinancialLink</a>
+                    <!--<ul>-->
+                        <!--<li><a href="#">Reports</a></li>-->
+                        <!--<li><a href="#">Transactions</a></li>-->
+                        <!--<li><a href="#">Tools</a></li>-->
+                        <!--<li><a href="#">Queries</a></li>-->
+                        <!--<li><a href="#">Approvals</a></li>-->
+                        <!--<li><a href="#">Link Family</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li class=""><a href="#">Payment Options</a></li>
+                <li class=""><a href="#">Feedback</a></li>
+            </ul>
+
+            <div class="search">
+                <button class="btn btn-default search-toggle">
+                    <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
+                </button>
+
+                <div class="search-content">
+                    <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
+                        <select class="search-scope" name="search-scope">
+                            <option selected="selected" value="cwo">This Site</option>
+                            <option value="default_collection">All UCSD Sites</option>
+                            <option value="faculty-staff">Faculty/Staff</option>
+                        </select>
+
+                        <div class="input-group">
+                            <input placeholder="Search..." type="search" class="form-control search-term" id="q" name="search-term">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<main class="layout-main" role="main">
+    <div class="layout-container">
+        <ol class="breadcrumb breadcrumbs-list">
+            <li><a href="index.html">FinancialLink</a></li>
+            <li><a href="templates.html">Transfer Of Funds</a></li>
+            <li class="active">Detail</li>
+        </ol>
+
+        <h1>Transfer Funds</h1>
+
+        <form role="form">
+            <fieldset>
+                <legend>Header</legend>
+
+                <div class="cols_wrapper">
+
+                    <div class="col_1_of_2 col">
+                        <div class="form-group">
+                            <label for="documentNumber" class="col-sm-6 control-label">Document Number</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="documentNumber" value="NEXT" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transactionDate" class="col-sm-6 control-label">Transaction Date</label>
+                            <div class="col-sm-6">
+                                <input type="date" class="form-control" id="transactionDate" placeholder="09/10/2014">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="documentTotal" class="col-sm-6 control-label">Document Total</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="documentTotal" placeholder="0.00">
+                            </div>
+                        </div>
+                        <div class="form-group" id="responsive-emailName">
+                            <label for="emailName" class="col-sm-6 control-label">Send Copy To</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="emailName" placeholder="John Doe">
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of 1st column-->
+
+                    <section class="col-lg-6">
+                        <div class="form-group">
+                            <label for="briefDescription" class="col-sm-6 control-label">Description</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="briefDescription" placeholder="brief information" maxlength="35">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentTemplate" class="col-sm-6 control-label">Current Template</label>
+                            <div class="col-sm-6">
+                                <select id="currentTemplate" class="form-control" name="currentTemplate">
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="postingType" class="col-sm-6 control-label">Posting Type</label>
+                            <div class="col-sm-6">
+                                <select id="postingType" class="form-control" name="postingType">
+                                    <option value="Immediate">Immediate</option>
+                                    <option value="Deferred">Deferred</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="responsive-emailTo">
+                            <label for="emailTo" class="col-sm-6 control-label">Email To</label>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" id="emailTo" placeholder="send@copyto.com">
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of 2nd column-->
+                </div>
+                <!--end of cols wrapper-->
+                <div class="form-group">
+                    <label for="documentNumber">Document Number</label>
+                    <input type="text" class="form-control" id="documentNumber" value="  NEXT" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="briefDescription">Description</label>
+                    <input type="text" class="form-control" id="briefDescription" placeholder="  brief information">
+                </div>
+                <div class="form-group">
+                    <label for="transactionDate">Transaction Date</label>
+                    <input type="date" class="form-control" id="transactionDate" placeholder="09/10/2014">
+                </div>
+                <div class="form-group">
+                    <label for="documentTotal">Document Total</label>
+                    <input type="number" class="form-control" id="documentTotal" placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label for="postingType">Posting Type</label>
+                    <select id="postingType"class="form-control" name="postingType">
+                        <option value="Immediate">Immediate</option>
+                        <option value="Deferred">Deferred</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="currentTemplate">Current Template</label>
+                    <select id="currentTemplate"class="form-control" name="postingType">
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="emailTo">Email To</label>
+                    <input type="email" class="form-control" id="emailTo" placeholder="send@copyto.com">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Text</legend>
+                <div class="form-group">
+                    <label for="documentText">Document Text</label>
+                    <textarea class="form-control" id="documentText"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Details</legend>
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" class="form-control" id="exampleInputFile">
+
+                    <!--<p class="help-block">Example block-level help text here.</p>-->
+                </div>
+                <!--<div class="checkbox">-->
+                <!--<label>-->
+                <!--<input type="checkbox"> Check me out-->
+                <!--</label>-->
+                <!--</div>-->
+                <br/>
+
+                <!-- table layout -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Sequence</th>
+                            <th>Transfer Type</th>
+                            <th>Index</th>
+                            <th>Fund</th>
+                            <th>Organization</th>
+                            <th>Program</th>
+                            <th>Account</th>
+                            <th>Amount</th>
+                            <th>Debit/Credit</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><input type="text" placeholder="sequence"></td>
+                            <td><input type="text" placeholder="B014"></td>
+                            <td><input type="text" placeholder="index"></td>
+                            <td><input type="text" placeholder="fund"></td>
+                            <td><input type="text" placeholder="organization"></td>
+                            <td><input type="text" placeholder="program"></td>
+                            <td><input type="text" placeholder="account"></td>
+                            <td><input type="text" placeholder="amount"></td>
+                            <td><input type="text" placeholder="(+/-) indicator"></td>
+                        </tr>
+                        <tr> <!-- current description -->
+                            <td colspan="8" class="tbl-description"><input type="text" placeholder="current description of funds"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <button type="button" class="btn" data-toggle="collapse" data-target="#collapseme">
+                                    Expand Permanent
+                                </button>
+                            </td>
+                            <td colspan="7" class="tbl-perminfo">
+                                <div class="collapse out" id="collapseme">
+                                    Permanent Information
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="form-group collapse out" id="collapseme">
+                                    <label for="sysAdminCode" class="sr-only">Systemwide Administrative Unit Code</label>
+                                    <select id="sysAdminCode"class="form-control" name="sysAdminCode">
+                                        <option value="Local Campus">0 - Local Campus</option>
+                                        <option value="Systemwide Programs">5 - Systemwide Programs</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td colspan="2"></td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </table>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</main>
+
+<footer class="layout-footer">
+    <section class="layout-container">
+        <article>
+    <span>
+        UC San Diego 9500 Gilman Dr. La Jolla, CA 92093 (858) 534-2230
+    </span>
+        </article>
+        <article>
+    <span>
+        Copyright ©2014 Regents of the University of California. All rights reserved.
+    </span>
+        </article>
+        <ul class="footer-links">
+            <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+            <li><a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a></li>
+        </ul>
+    </section>
+</footer>
+
+<div id="tdr_slide_wrapper">
+</div>
+
+<nav id="tdr_side_nav" class="navbar nav-offcanvas" role="navigation">
+    <div class="tdr_search clearfix">
+    </div>
+</nav>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            initFooter("http://act.ucsd.edu/cwp/feedback/tool/cwo");
+            initCopyright();
+        });
+    })(jQuery);
+</script>
+
+<script type="text/javascript">
+    // <![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(["_setAccount", "UA-XXXXXXX-X"]);
+    _gaq.push(["_trackPageview"]);
+
+    (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    // ]]>
+</script>
+
+<script src="../dist/scripts/vendor.js"></script>
+<script src="../dist/scripts/base-min.js"></script>
+
+<!-- Google Search -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+google.load('search', '1');
+google.setOnLoadCallback(function () {
+    google.search.CustomSearchControl.attachAutoCompletion(
+            '004685874581245502426:palsaetk1kk',
+            document.getElementById('q'),
+            'cse-site-search');
+});
+// ]]></script>
+<script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+
+</body>
+</html>
