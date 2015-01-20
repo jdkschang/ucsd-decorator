@@ -1,0 +1,136 @@
+/* DETAIL SECTION */
+/*css arrow right & down*/
+.arrow-downright
+{
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+
+    /*default*/
+    border-top: 6px solid rgb(51,51,51);
+
+    /*positioning*/
+    position: relative;
+    left: 3px;
+    top: -127px;
+}
+
+form .control-label {
+    /*instead of form-horizontal*/
+    text-align: right;
+    /*fixes label-input alignment issue*/
+    margin-top: 7px;
+}
+
+section .permanent-description-detail.hidden + .arrow-downright {
+    top: -16px;
+    border: 6px solid transparent;
+
+    /*expanded down arrow*/
+    border-left: 6px solid rgb(51,51,51);
+}
+
+/*separate section to be added/copied/deleted */
+section.detail-section-wrapper
+{
+    position: relative;
+    /*margin-top: 80px;*/
+    /*more height concise styling for smaller monitors*/
+    margin-top:42px;
+}
+
+section .transactionLinks-right
+{
+    position:relative;
+    top:-16px; /* align with file input section */
+}
+section .transactionLinks-right a {
+    color: rgb(43,146,185);
+
+    background: none;
+    display: inline-block;
+    font-weight: 100;
+
+    padding: 0 10px;
+}
+
+section table.table
+{
+    margin-bottom: 0;
+}
+table.table td input {
+    width: 115px;
+}
+table.table td.tbl-description input {
+    width:100%;
+}
+.permanent-description-wrapper
+{
+    width: 88.5%;
+    /*padding unnecessary due to changes in back to top */
+    /*margin-bottom: 20px;*/
+}
+section .permanent-description-link
+{
+    text-decoration: none;
+    color: rgb(51,51,51);
+    font-weight: 700;
+
+    /*positioning for arrow*/
+    margin-left: 20px;
+}
+
+section .permanent-description-detail
+{
+}
+/*align width of input boxes and center, fixes overflow on the sides*/
+section .permanent-description-detail .row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+#amountTotal-wrapper
+{
+    margin: 20px 0 10px;
+}
+
+/*final button*/
+#complete-approve {
+    /*background-color: #428bca;*/
+    /*border-color: #357ebd;*/
+    background-color: rgb(238,119,3);
+    color: #fff;
+
+    border: none;
+}
+
+
+/*minimize needless padding in bootstrap columns */
+.col-sm-3
+{
+    padding: 2px 3px;
+}
+
+.scrollToTop {
+    float:right;
+    text-decoration: none;
+    cursor: pointer;
+
+    background: url('images/green_circle-arrow_up.png') no-repeat;
+    opacity: 0.5;
+
+    height: 40px;
+    width: 40px;
+
+    position: fixed;
+    top: 90%;
+    right: 0.5%;
+
+    z-index: 3; /* higher than input box zindex*/
+}
+.scrollToTop:hover {
+    /*background: url('images/hover-arrow_up.png') no-repeat;*/
+    opacity: 0.9;
+}
