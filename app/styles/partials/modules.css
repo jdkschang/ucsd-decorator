@@ -13,12 +13,88 @@
 /* ***********************************************
  * BREADCRUMBS
  * ***************/
+.breadcrumbs-list {
+  background-color: #fff;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0; }
+  .breadcrumbs-list > li {
+    color: #666;
+    display: inline;
+    font-size: 80%; }
+
 /* ***********************************************
  * SEARCH
  * ***************/
+.search {
+  float: right;
+  max-width: 380px; }
+
+.search-toggle {
+  max-height: 35px;
+  background: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  border: 1px solid transparent;
+  border-width: 0 1px;
+  outline: 0;
+  padding: 8px; }
+
+.search-content {
+  display: none; }
+
 /* ***********************************************
  * TITLE
  * ***************/
+.title-header {
+  float: left;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap; }
+
+.title-logo {
+  float: right;
+  width: 229px;
+  height: 45px;
+  overflow: hidden;
+  text-indent: -999em;
+  background: transparent url(../img/sprite_base.png) no-repeat;
+  background-position: 0 -3px; }
+
+/* ***********************************************
+ * MAIN CONTENT SIDE NAV
+ * ***************/
+.main-content-nav {
+  background: #F2F5F7;
+  border: solid 1px #C8CFD3;
+  padding: 1em;
+  margin-bottom: 1em; }
+  .main-content-nav > h2 {
+    color: #738AA3;
+    font-size: 140%;
+    text-shadow: 0 1px 1px #FFF;
+    margin: 0 0 .7em; }
+  .main-content-nav > ul {
+    /* for borders to line up properly */
+    margin: 0 -1em -1em; }
+  .main-content-nav > ul li {
+    border-top: solid 1px #D8D7D7;
+    list-style: none;
+    padding: 1em 0 1em 1em; }
+    .main-content-nav > ul li a:hover, .main-content-nav > ul li a:link, .main-content-nav > ul li a:active {
+      text-decoration: none; }
+    .main-content-nav > ul li.active {
+      background-color: #fff;
+      color: #D56A03; }
+    .main-content-nav > ul li ul {
+      margin: .4em 0 -.4em 1em;
+      padding: 0; }
+    .main-content-nav > ul li li {
+      font-size: 85%; }
+
 /* ***********************************************
  * BUTTONS
  * ***************/
