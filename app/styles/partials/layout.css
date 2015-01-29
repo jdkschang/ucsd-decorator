@@ -22,6 +22,8 @@ html, body {
   overflow: hidden; }
 
 .layout-header {
+  /* to incorporate new navbar button*/
+  background-color: #2b92b9;
   width: 100%; }
 
 .layout-login {
@@ -30,6 +32,7 @@ html, body {
 .layout-title {
   font-family: "Trebuchet MS", sans-serif;
   height: 78px;
+  width: 100%;
   background: #2b92b9;
   padding: 1.5em 0; }
 
