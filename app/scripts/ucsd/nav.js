@@ -1,9 +1,9 @@
 (function(document) {
     var toggleDocumentationMenu = function() {
-        var navBtn = document.querySelector('.nav-btn');
-        var navList = document.querySelector('.navbar-list');
-        var navIsOpenedClass = 'nav-is-opened';
-        var navListIsOpened = false;
+        var navBtn              = document.querySelector('.nav-btn');
+        var navList             = document.querySelector('.navbar-list');
+        var navIsOpenedClass    = 'nav-is-opened';
+        var navListIsOpened     = false;
 
         navBtn.addEventListener('click', function (event) {
             event.preventDefault();
@@ -39,11 +39,6 @@
         }
     }
 
-    var isTouch = function() {
-        return ('ontouchstart' in window) ||
-            window.DocumentTouch && document instanceof DocumentTouch;
-    };
-
     var addClass = function (element, className) {
         if (!element) { return; }
         element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
@@ -52,15 +47,6 @@
     var removeClass = function(element, className) {
         if (!element) { return; }
         element.className = element.className.replace(className, '');
-    }
-
-    var html = document.querySelector('html');
-    removeClass(html, 'no-js');
-    addClass(html, 'js');
-
-    if (isTouch()) {
-        removeClass(html, 'no-touch');
-        addClass(html, 'is-touch');
     }
 
     toggleDocumentationMenu();
