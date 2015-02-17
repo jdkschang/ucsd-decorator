@@ -1,17 +1,4 @@
-body, html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0; }
-
-body {
-  font-family: Roboto,sans-serif;
-  font-weight: 300;
-  background-color: #fff;
-  box-sizing: border-box;
-  overflow: hidden; }
-
-.app-bar {
+.layout-header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -24,35 +11,11 @@ body {
   left: 0;
   z-index: 2; }
 
-.app-bar.open {
+.layout-header.open {
   -webkit-transform: translate(250px, 0);
   transform: translate(250px, 0); }
 
-.app-bar .logo {
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  font-size: 20px;
-  line-height: 60px;
-  margin: 0 16px;
-  color: #fefefe;
-  float: none;
-  max-width: none; }
-
-.app-bar .logo a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 400; }
-
-.app-bar-actions {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row; }
-
-.app-bar button, .bottom-bar button {
+button.nav-btn {
   width: 44px;
   height: 44px;
   color: #fff;
@@ -67,37 +30,28 @@ body {
   transition: border 300ms ease-in,background 300ms ease-in;
   -webkit-tap-highlight-color: transparent; }
 
-.app-bar button img {
-  width: 28px;
-  height: 28px; }
-
-.app-bar button.menu {
+button.menu {
   position: relative; }
 
-.app-bar button.menu img {
-  position: absolute;
-  top: 7px;
-  left: 7px; }
-
-.app-bar button.menu .menu-icon {
+button.menu .menu-icon {
   opacity: 1; }
 
-.app-bar button.menu .close-icon, .app-bar.open button.menu .menu-icon {
+button.menu .close-icon, layout-header.open button.menu .menu-icon {
   opacity: 0; }
 
-.app-bar.open button.menu .close-icon {
+.open button.menu .close-icon {
   opacity: 1; }
 
-.app-bar button:hover, .bottom-bar button:hover {
+button:hover {
   border-color: transparent;
   background-color: rgba(254, 254, 254, 0.4); }
 
-.app-bar button:focus, .bottom-bar button:focus {
+button:focus {
   border-color: transparent;
   outline: 0;
   background-color: rgba(254, 254, 254, 0.4); }
 
-.app-bar button:active, .bottom-bar button:active {
+button:active {
   border-color: transparent;
   background-color: rgba(254, 254, 254, 0.6); }
 
@@ -108,7 +62,7 @@ body {
   .breadcrumb {
     opacity: 1; }
 
-  .app-bar {
+  .layout-header {
     display: block;
     position: initial;
     /*
@@ -122,21 +76,11 @@ body {
     -webkit-transition: none;
     transition: none; }
 
-  .app-bar.open {
+  .layout-header.open {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0); }
 
-  .app-bar .logo {
-    float: left;
-    margin: 0;
-    font-size: 100px;
-    line-height: 130px; }
-
-  .app-bar-actions {
-    float: right;
-    margin: 35px 0; }
-
-  .app-bar:after {
+  .layout-header:after {
     content: ' ';
     display: block;
     height: 0;
@@ -145,13 +89,13 @@ body {
 
   button.menu {
     display: none; } }
-.navdrawer-container .nav-is-opened {
+.navdrawer-container .navbar-is-opened {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
   -webkit-transition: -webkit-transform .3s ease-out;
   transition: transform .3s ease-out; }
 
-.nav-is-opened {
+.navbar-is-opened {
   display: block; }
 
 .navdrawer-container {
@@ -182,7 +126,7 @@ body {
 .navdrawer-bg.open {
   opacity: .5; }
 
-.app-bar, .navdrawer-container {
+.layout-header, .navdrawer-container {
   -webkit-transition: -webkit-transform .3s ease-out;
   transition: transform .3s ease-out; }
 
@@ -205,17 +149,16 @@ body {
 .navdrawer-container ul li a:active {
   background-color: rgba(255, 255, 255, 0.4); }
 
-@media all and (min-width: 768px) {
-  .navdrawer-container {
-    position: initial;
-    width: 100%;
-    height: auto;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    -webkit-transition: none;
-    transition: none;
-    pointer-events: auto; }
+.navdrawer-container.navbar-is-opened {
+  position: fixed;
+  height: auto;
+  -webkit-transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  pointer-events: auto; }
 
+@media all and (min-width: 508px) {
   .navdrawer-container ul {
     -ms-flex-direction: row;
     -webkit-flex-direction: row;

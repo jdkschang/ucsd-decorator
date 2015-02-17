@@ -1,8 +1,8 @@
 (function(document) {
     var toggleDocumentationMenu = function() {
         var navBtn              = document.querySelector('.nav-btn');
-        var navList             = document.querySelector('.navbar-list');
-        var navIsOpenedClass    = 'nav-is-opened';
+        var navList             = document.querySelector('.navdrawer-container');
+        var navIsOpenedClass    = 'navbar-is-opened';
         var navListIsOpened     = false;
 
         navBtn.addEventListener('click', function (event) {
