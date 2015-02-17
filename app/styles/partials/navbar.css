@@ -82,7 +82,7 @@ body {
 .app-bar button.menu .menu-icon {
   opacity: 1; }
 
-.app-bar button.menu .close-icon, .app-bar.open button.menu .menu-icon, .breadcrumb {
+.app-bar button.menu .close-icon, .app-bar.open button.menu .menu-icon {
   opacity: 0; }
 
 .app-bar.open button.menu .close-icon {
