@@ -99,7 +99,7 @@ body {
   opacity: 1;
 }
 
-.app-bar button.menu .close-icon,.app-bar.open button.menu .menu-icon,.breadcrumb {
+.app-bar button.menu .close-icon,.app-bar.open button.menu .menu-icon{
   opacity: 0;
 }
 
@@ -123,7 +123,7 @@ body {
   background-color: rgba(254,254,254,.6);
 }
 
-@media all and (min-width:1200px) {
+@media all and (min-width:768px) {
   body {
     /* padding: 16px; */
   }
@@ -259,7 +259,7 @@ body {
   background-color: rgba(255,255,255,.4);
 }
 
-@media all and (min-width:1200px) {
+@media all and (min-width:768px) {
   .navdrawer-container {
     position: initial;
     width: 100%;
