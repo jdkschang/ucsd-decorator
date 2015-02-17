@@ -11,12 +11,11 @@
     <meta name="PAGETITLE" content="INSERT TITLE HERE">
     <meta name="DESCRIPTION" content="INSERT DESCRIPTION HERE">
 
-    <!-- build:css(.tmp) ../dist/styles/bootstrap.css -->
+    <!-- build:css(.tmp) styles/bootstrap.css -->
     <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
     <!-- endbuild -->
 
     <link rel="stylesheet" href="styles/partials/layout.css"/>
-    <link rel="stylesheet" href="styles/partials/modules.css"/>
 
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="../dist/styles/ie-support.css"/>
@@ -25,34 +24,54 @@
     <!-- Begin site-specific CSS files -->
     <!-- End site-specific CSS files -->
 
-    <!-- build:js({app,.tmp}) ../dist/scripts/modernizr.js -->
+    <!-- build:js({app,.tmp}) scripts/modernizr.js -->
     <script src="../dist/scripts/modernizr.js"></script>
     <!-- endbuild -->
 </head>
 <body>
 <header class="layout-header">
-    <!-- legacy code but cannot remove .. yet -->
     <a class="sr-only" href="#">Skip to main content</a>
     <div id="uc-emergency"></div>
-    <section class="layout-login"><!-- Start page controls -->
-        <span class="login-content"></span> <!-- End page controls -->
-    </section>
-    <!-- legacy code comment end -->
+    <div id="tdr_login"><!-- Start page controls -->
+        <span class="tdr_login_content"></span> <!-- End page controls -->
+    </div>
 
     <section class="layout-title">
         <div class="layout-container">
-            <a href="index.html" class="title-header">Decorator 4.1</a>
-            <a href="http://www.ucsd.edu" class="title-logo">UC San Diego</a>
+            <a href="index.html" id="title-header">Decorator 4.1</a>
+            <a href="http://www.ucsd.edu" id="title-logo">UC San Diego</a>
         </div>
     </section>
+
+    <!--<div id="tdr_title">-->
+    <!--<div id="tdr_title_content">-->
+    <!--<a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a>-->
+
+    <!--<button type="button" class="navbar-toggle needsclick" data-toggle="collapse"-->
+    <!--data-target="#bs-example-navbar-collapse-1">-->
+    <!--<span class="sr-only">Toggle navigation</span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--</button>-->
+
+    <!--<div id="tdr_title_page_title">-->
+
+    <!--<a href="index.html">-->
+    <!--Decorator 4.1-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--</div>-->
+    <!--</div>-->
 
     <nav class="navbar layout-navbar" role="navigation">
         <div class="layout-container">
             <ul class="navbar-list">
-                <li>
+                <li class="active">
                     <a href="index.html">Home</a>
                 </li>
-                <li class="active">
+                <li class="">
                     <a href="#">Templates</a>
                     <!--<ul>-->
                     <!--<li><a href="blank-slate.html">Blank Slate</a></li>-->
@@ -61,7 +80,7 @@
                     <!--<li><a href="form-a.html">Basic Form</a></li>-->
                     <!--</ul>-->
                 </li>
-                <li><a href="docs/index.html">Kitchen Sink</a></li>
+                <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
             </ul>
 
             <div class="search">
@@ -86,69 +105,31 @@
 
         </div>
     </nav>
+
 </header>
 
 <main class="layout-main" role="main">
-    <div class="layout-container">
+    <div id="" class="layout-container">
         <ol class="breadcrumb breadcrumbs-list">
             <li><a href="index.html">HOME</a></li>
             <li><a href="templates.html">Templates</a></li>
-            <li class="active">Three Columns</li>
+            <li class="active">Index</li>
         </ol>
 
-        <section class="col-lg-3 main-section">
-            <article class="main-content-nav">
-                <h2>Navigation</h2>
+        <section class="main-content">
+            <h1>Decorator 4.1 [Work in Progress]</h1>
 
-                <ul class="navbar-list">
-                    <li><a href="#">Nav Link 1</a></li>
-                    <li><a href="#">Nav Link 2</a></li>
-                    <li><a href="#">Nav Link 3</a></li>
-                    <!--<li class="collapsed"><a href="#">Nav Link 4</a>-->
-                    <!--<ul>-->
-                    <!--<li><a href="#">Sub 1</a></li>-->
-                    <!--<li><a href="#">Sub 2</a></li>-->
-                    <!--<li><a href="#">Sub 3</a></li>-->
-                    <!--<li><a href="#">Sub 4</a></li>-->
-                    <!--<li><a href="#">Sub 5</a></li>-->
-                    <!--<li><a href="#">Sub 6</a></li>-->
-                    <!--<li><a href="#">Sub 7</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
-                    <li class="active">
-                        All Styles
-                        <ul>
-                            <li><a href="#">Sub 1</a></li>
-                            <li><a href="#">Sub 2</a></li>
-                            <li><a href="#">Sub 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Nav Link</a>
-                    </li>
-                </ul>
-            </article>
-        </section>
-        <section class="col-lg-7 main-section">
-            <article class="main-section-content">
-                <h1>Three Column [Work in Progress]</h1>
-
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
-            </article>
-        </section>
-        <section class="col-lg-2 main-section">
-            <article class="main-section-supplement">
-                <h3>Hello</h3>
-
-                <p>This is a third column</p>
-            </article>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+            </p>
         </section>
     </div>
 </main>
 
+<!-- Footer
+================================================== -->
 <footer class="layout-footer">
     <section class="layout-container">
         <article>
@@ -168,6 +149,7 @@
     </section>
 </footer>
 
+
 <div id="tdr_slide_wrapper">
 </div>
 
@@ -175,6 +157,7 @@
     <div class="tdr_search clearfix">
     </div>
 </nav>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
@@ -205,38 +188,10 @@
     // ]]>
 </script>
 
-<!-- build:js scripts/vendor.js -->
-<script src="vendor/respond/dest/respond.src.js"></script>
-<script src="vendor/flexslider/jquery.flexslider.js"></script>
-<script src="vendor/superfish/dist/js/superfish.js"></script>
-<script src="vendor/superfish/dist/js/hoverIntent.js"></script>
-<script src="vendor/fastclick/lib/fastclick.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
+<script src="scripts/vendor.js"></script>
 
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
-<script src="scripts/ucsd/nav-search.js"></script>
-<script src="scripts/ucsd/copyright.js"></script>
-<script src="scripts/ucsd/footer.js"></script>
-<script src="scripts/ucsd/logout.js"></script>
-<script src="scripts/ucsd/flexslider-init.js"></script>
-<script src="scripts/ucsd/drawer.js"></script>
-<!-- endbuild -->
+<script src="scripts/base-min.js"></script>
 
-
-<!-- Site-specific javascript files -->
-<script src="docs/site-specific.js"></script>
 
 <!-- Google Search -->
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>

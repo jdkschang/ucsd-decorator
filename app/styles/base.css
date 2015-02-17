@@ -1319,9 +1319,8 @@ ol ol ol {
  */
 pre, code {
   color: #060;
-  display: block;
   font-family: Consolas, Monaco, monospace;
-  white-space: pre-line; }
+  white-space: pre; }
 
 pre {
   background-color: #eee;
@@ -1737,6 +1736,13 @@ legend {
 
 input[type=radio], input[type=checkbox] {
   margin-right: .25em; }
+
+/*---------------------------------------------------------------------
+ * input group addon
+ */
+/* white background to make it look less like an 'actionable' button */
+.input-group-addon {
+  background: #fff; }
 
 /* --------------------------------------------------------------------
  * form fields and font style

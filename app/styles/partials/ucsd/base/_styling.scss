@@ -468,6 +468,17 @@ input[type=radio],input[type=checkbox] {
 	margin-right: .25em;
 }
 
+
+/*---------------------------------------------------------------------
+ * input group addon
+ */
+
+/* white background to make it look less like an 'actionable' button */
+.input-group-addon {
+  background: #fff;
+}
+
+
 /* --------------------------------------------------------------------
  * form fields and font style
  */

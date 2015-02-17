@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-US">
 <head>
-    <title>INSERT TITLE HERE</title>
+    <title>Decorator 4.1</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -11,166 +11,132 @@
     <meta name="PAGETITLE" content="INSERT TITLE HERE">
     <meta name="DESCRIPTION" content="INSERT DESCRIPTION HERE">
 
-
-    <!-- build:css(.tmp) styles/bootstrap.css -->
-    <link rel="stylesheet" href="styles/bootstrap.css">
+    <!-- build:css(.tmp) ../dist/styles/bootstrap.css -->
+    <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
     <!-- endbuild -->
 
-    <!-- build:css(.tmp) styles/base-min.css -->
-    <link rel="stylesheet" href="styles/base.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/partials/layout.css"/>
+    <link rel="stylesheet" href="styles/partials/modules.css"/>
 
-    <!-- build:css(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="styles/ie-support.css">
+    <link rel="stylesheet" href="../dist/styles/ie-support.css"/>
     <![endif]-->
-    <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
-    <!-- End site-specific CSS files -->
 
-    <!-- build:js({app,.tmp}) scripts/modernizr.js -->
-    <script src="vendor/modernizr/modernizr.js"></script>
+    <!-- build:js({app,.tmp}) ../dist/scripts/modernizr.js -->
+    <script src="../dist/scripts/modernizr.js"></script>
     <!-- endbuild -->
 </head>
 <body>
-<div id="tdr_wrapper">
-    <div id="tdr_slide_wrapper">
-        <header>
-            <a class="sr-only" href="#tdr_content">Skip to main content</a>
+<header class="layout-header">
+    <!-- legacy code but cannot remove .. yet -->
+    <a class="sr-only" href="#">Skip to main content</a>
+    <div id="uc-emergency"></div>
+    <section class="layout-login"><!-- Start page controls -->
+        <span class="login-content"></span> <!-- End page controls -->
+    </section>
+    <!-- legacy code comment end -->
 
-            <div id="uc-emergency"></div>
+    <!-- title section -->
+    <section class="layout-title">
+        <div class="layout-container">
+            <a href="index.html" class="title-header">Decorator 4.1</a>
+            <a href="http://www.ucsd.edu" class="title-logo">UC San Diego</a>
+        </div>
+    </section>
 
-            <div id="tdr_login"><!-- Start page controls -->
-                <span class="tdr_login_content"></span> <!-- End page controls -->
-            </div>
+    <nav class="navbar layout-navbar" role="navigation">
+        <div class="layout-container">
+            <ul class="navbar-list">
+                <li class="active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Templates</a>
+                    <!--<ul>-->
+                    <!--<li><a href="blank-slate.html">Blank Slate</a></li>-->
+                    <!--<li><a href="two-column.html">Two Columns</a></li>-->
+                    <!--<li><a href="three-column.html">Three Columns</a></li>-->
+                    <!--<li><a href="form-a.html">Basic Form</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="docs/index.html">Kitchen Sink</a></li>
+            </ul>
 
-            <div id="tdr_title">
-                <div id="tdr_title_content">
-                    <a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a>
+            <div class="search">
+                <button class="btn btn-default search-toggle">
+                    <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
+                </button>
 
-                    <button type="button" class="navbar-toggle needsclick" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div id="tdr_title_page_title">
+                <div class="search-content">
+                    <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
+                        <select class="search-scope" name="search-scope">
+                            <option selected="selected" value="cwo">This Site</option>
+                            <option value="default_collection">All UCSD Sites</option>
+                            <option value="faculty-staff">Faculty/Staff</option>
+                        </select>
 
-                        <a href="index.html">
-                            Decorator 4.0
-                        </a>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-            <nav id="tdr_nav" class="navbar" role="navigation">
-                <div id="tdr_nav_content">
-
-                    <ul class="tdr_nav_list">
-                        <li class="active">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Templates<span class="caret"></span></a>
-                            <ul>
-                                <li><a href="blank-slate.html">Blank Slate</a></li>
-                                <li><a href="two-column.html">Two Columns</a></li>
-                                <li><a href="two-column-b.html">Two Columns B</a></li>
-                                <li><a href="three-column.html">Three Columns</a></li>
-                                <li><a href="form-a.html">Basic Form</a></li>
-                            </ul>
-                        </li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                        <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
-                    </ul>
-
-                    <div class="tdr_search">
-                        <button class="btn btn-default" id="tdr_search_toggle">
-                            <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
-                        </button>
-
-                        <div id="tdr_search_content">
-                            <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
-                                <select class="search-scope" name="search-scope">
-                                    <option selected="selected" value="cwo">This Site</option>
-                                    <option value="default_collection">All UCSD Sites</option>
-                                    <option value="faculty-staff">Faculty/Staff</option>
-                                </select>
-
-                                <div class="input-group">
-                                    <input placeholder="Search..." type="search" class="form-control search-term" id="q" name="search-term">
-                                </div>
-                            </form>
+                        <div class="input-group">
+                            <input placeholder="Search..." type="search" class="form-control search-term" id="q" name="search-term">
                         </div>
-                    </div>
-
-                </div>
-            </nav>
-
-
-            <div id="tdr_crumbs">
-                <div id="tdr_crumbs_content">
-                    <ol id="tdr_crumbs_list" class="breadcrumb">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="templates.html">Templates</a></li>
-                        <li class="active">Index</li>
-                    </ol>
+                    </form>
                 </div>
             </div>
-        </header>
 
-        <main role="main" id="tdr_content">
-            <div id="tdr_content_content">
-                <h1>Decorator 4.0 [Work in Progress]</h1>
-
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat.
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer
-        ================================================== -->
-        <footer id="tdr_footer">
-            <div id="tdr_footer_content">
-
-                <div id="tdr_address">
-                    <span id="tdr_address_place">UC San Diego</span>
-                    <span id="tdr_address_street">9500 Gilman Dr.</span>
-                    <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span>
-                    <span id="tdr_address_phone">(858) 534-2230</span>
-                </div>
-                <div id="tdr_copyright">Copyright ©<span id="tdr_copyright_year">2014</span> Regents of the University
-                    of California. All rights reserved.
-                </div>
-                <ul id="tdr_footer_links">
-                    <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
-                    <li id="tdr_footer_feedback">
-
-                        <a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-    </div>
-
-    <nav id="tdr_side_nav" class="navbar nav-offcanvas" role="navigation">
-        <div class="tdr_search clearfix">
         </div>
     </nav>
+</header>
 
+<main class="layout-main" role="main">
+    <div class="layout-container">
+        <ol class="breadcrumb breadcrumbs-list">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li class="active">Index</li>
+        </ol>
+
+        <h1>Decorator 4.1 [Work in Progress]</h1>
+
+        <section class="main-section">
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+        </section>
+    </div>
+</main>
+
+<footer class="layout-footer">
+    <section class="layout-container">
+        <article>
+            <span>
+                UC San Diego 9500 Gilman Dr. La Jolla, CA 92093 (858) 534-2230
+            </span>
+        </article>
+        <article>
+            <span>
+                Copyright ©2014 Regents of the University of California. All rights reserved.
+            </span>
+        </article>
+        <ul class="footer-links">
+            <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+            <li><a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a></li>
+        </ul>
+    </section>
+</footer>
+
+
+<div id="tdr_slide_wrapper">
 </div>
+
+<nav id="tdr_side_nav" class="navbar nav-offcanvas" role="navigation">
+    <div class="tdr_search clearfix">
+    </div>
+</nav>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
@@ -201,32 +167,8 @@
     // ]]>
 </script>
 
-<!-- build:js scripts/vendor.js -->
-<script src="vendor/flexslider/jquery.flexslider.js"></script>
-<script src="vendor/superfish/dist/js/superfish.js"></script>
-<script src="vendor/fastclick/lib/fastclick.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
-
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
-<script src="scripts/ucsd/nav-search.js"></script>
-<script src="scripts/ucsd/copyright.js"></script>
-<script src="scripts/ucsd/footer.js"></script>
-<script src="scripts/ucsd/logout.js"></script>
-<script src="scripts/ucsd/flexslider-init.js"></script>
-<script src="scripts/ucsd/drawer.js"></script>
-<!-- endbuild -->
-
+<script src="../dist/scripts/vendor.js"></script>
+<script src="../dist/scripts/base-min.js"></script>
 
 <!-- Google Search -->
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
