@@ -11,25 +11,26 @@
     <meta name="PAGETITLE" content="INSERT TITLE HERE">
     <meta name="DESCRIPTION" content="INSERT DESCRIPTION HERE">
 
-    <!-- build:css(.tmp) ../dist/styles/bootstrap.css -->
-    <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
+    <!-- build:css(.tmp) styles/bootstrap.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css"/>
     <!-- endbuild -->
 
     <link rel="stylesheet" href="styles/partials/layout.css"/>
     <link rel="stylesheet" href="styles/partials/modules.css"/>
     <link rel="stylesheet" href="styles/partials/navbar.css"/>
 
+    <!-- build:js(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="../dist/styles/ie-support.css"/>
+    <link rel="stylesheet" href="styles/ie-support.css"/>
     <![endif]-->
 
     <!-- Begin site-specific CSS files -->
 
-    <!-- build:js({app,.tmp}) ../dist/scripts/modernizr.js -->
-    <script src="../dist/scripts/modernizr.js"></script>
+    <!-- build:js({app,.tmp}) scripts/modernizr.js -->
+    <script src="vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 </head>
-<body>
+<body class="layout-body">
 <header class="layout-header">
     <!-- legacy code but cannot remove .. yet -->
     <a class="sr-only" href="#">Skip to main content</a>
@@ -95,9 +96,6 @@
         </div>
     </div>
 </nav>
-
-<!-- provides dark shading on main content when nav is opened -->
-<div class="navdrawer-bg promote-layer"></div>
 
 <main class="layout-main" role="main">
     <div class="layout-container">

@@ -30,6 +30,17 @@ html, body
     /* to incorporate new navbar button*/
     background-color: #2b92b9;
     width: 100%;
+//
+//    for navbar integration purposes, don't use yet
+//    display: -ms-flexbox;
+//    display: -webkit-flex;
+//    display: flex;
+//
+//    -ms-flex-direction: row;
+//    -webkit-flex-direction: row;
+//    flex-direction: row;
+//
+//    position: relative;
   }
     .layout-login {
       background: #0B4A67;
