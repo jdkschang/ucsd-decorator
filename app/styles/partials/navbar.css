@@ -11,9 +11,12 @@
   left: 0;
   z-index: 2; }
 
-.layout-header.open {
-  -webkit-transform: translate(250px, 0);
-  transform: translate(250px, 0); }
+.layout-header.open,
+.layout-main.open,
+.layout-footer.open {
+  -webkit-transform: translate(250px,0);
+  transform: translate(250px,0);
+}
 
 button.nav-btn {
   width: 44px;
@@ -89,6 +92,7 @@ button:active {
 
   button.menu {
     display: none; } }
+
 .navdrawer-container .navbar-is-opened {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -112,7 +116,7 @@ button:active {
 .navdrawer-container ul {
   list-style-type: none; }
 
-.layout-header, .navdrawer-container {
+.layout-header, .layout-main, .layout-footer, .navdrawer-container {
   -webkit-transition: -webkit-transform .3s ease-out;
   transition: transform .3s ease-out; }
 
