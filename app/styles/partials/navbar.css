@@ -18,7 +18,7 @@
   transform: translate(250px,0);
 }
 
-button.nav-btn {
+button.btn-nav {
   width: 44px;
   height: 44px;
   color: #fff;
@@ -36,13 +36,13 @@ button.nav-btn {
 button.menu {
   position: relative; }
 
-button.menu .menu-icon {
+button.menu .glyphicon-menu-hamburger {
   opacity: 1; }
 
-button.menu .close-icon, layout-header.open button.menu .menu-icon {
+button.menu .glyphicon-menu-left, layout-header.open button.menu .glyphicon-menu-hamburger {
   opacity: 0; }
 
-.open button.menu .close-icon {
+.open button.menu .glyphicon-menu-left {
   opacity: 1; }
 
 button:hover {

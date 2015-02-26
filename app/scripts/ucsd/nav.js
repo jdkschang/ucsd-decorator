@@ -1,6 +1,6 @@
 (function(document) {
     var toggleMainNav = function() {
-        var navBtn              = document.querySelector('.nav-btn');
+        var navBtn              = document.querySelector('.btn-nav');
         var navList             = document.querySelector('.navdrawer-container');
         var layoutHeader        = document.querySelector('.layout-header');         // for menu button transition
         var layoutMain          = document.querySelector('.layout-main');
