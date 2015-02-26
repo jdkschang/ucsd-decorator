@@ -14,11 +14,10 @@
 .layout-header.open,
 .layout-main.open,
 .layout-footer.open {
-  -webkit-transform: translate(250px,0);
-  transform: translate(250px,0);
-}
+  -webkit-transform: translate(250px, 0);
+  transform: translate(250px, 0); }
 
-button.btn-nav {
+.layout-header button.btn-nav {
   width: 44px;
   height: 44px;
   color: #fff;
@@ -39,11 +38,12 @@ button.menu {
 button.menu .glyphicon-menu-hamburger {
   opacity: 1; }
 
-button.menu .glyphicon-menu-left, layout-header.open button.menu .glyphicon-menu-hamburger {
-  opacity: 0; }
+button.menu .glyphicon-menu-left,
+.layout-header.open button.menu .glyphicon-menu-hamburger {
+  display: none; }
 
-.open button.menu .glyphicon-menu-left {
-  opacity: 1; }
+.layout-header.open button.menu .glyphicon-menu-left {
+  display: inline; }
 
 button:hover {
   border-color: transparent;
@@ -92,7 +92,6 @@ button:active {
 
   button.menu {
     display: none; } }
-
 .navdrawer-container .navbar-is-opened {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -102,24 +101,26 @@ button:active {
 .navbar-is-opened {
   display: block; }
 
-.navdrawer-container {
-  position: fixed;
-  width: 250px;
-  -webkit-transform: translate(-250px, 0);
-  transform: translate(-250px, 0);
-  z-index: 2; }
+@media only screen and (min-device-width: 768px) {
+  .navdrawer-container {
+    position: fixed;
+    width: 250px;
+    -webkit-transform: translate(-250px, 0);
+    transform: translate(-250px, 0);
+    z-index: 2; }
 
-.navdrawer-container.open {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0); }
-
+  .navdrawer-container.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); } }
 .navdrawer-container ul {
   list-style-type: none; }
 
-.layout-header, .layout-main, .layout-footer, .navdrawer-container {
+.navdrawer-container,
+.layout-header,
+.layout-main,
+.layout-footer {
   -webkit-transition: -webkit-transform .3s ease-out;
   transition: transform .3s ease-out; }
-
 
 .navdrawer-container ul li a {
   display: block;
@@ -139,7 +140,7 @@ button:active {
 .navdrawer-container.navbar-is-opened {
   position: fixed;
   height: auto;
-  -webkit-transition: transform 0.6s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
   transition: transform 0.6s ease-in-out;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -156,7 +157,6 @@ button:active {
 
   .navdrawer-bg, .navdrawer-bg.open {
     pointer-events: none;
-    opacity: 0; }
-}
+    opacity: 0; } }
 
 /*# sourceMappingURL=navbar.css.map */
