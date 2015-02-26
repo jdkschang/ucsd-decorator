@@ -22,12 +22,12 @@ button.nav-btn {
   width: 44px;
   height: 44px;
   color: #fff;
-  font-size: 20px;
+  font-size: 24px;
   background-image: none;
   background-color: #287897;
   border-radius: 4px;
   border: 1px solid #266E8A;
-  padding: 10px;
+  padding: 8px;
   margin: 15px;
   -webkit-transition: border 300ms ease-in,background 300ms ease-in;
   transition: border 300ms ease-in,background 300ms ease-in;
