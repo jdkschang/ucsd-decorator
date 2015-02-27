@@ -158,8 +158,8 @@ button:active {
 .layout-header,
 .layout-main,
 .layout-footer {
-  -webkit-transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
 }
 
 .navdrawer-container ul li a {
@@ -183,10 +183,11 @@ button:active {
 
 .navdrawer-container.navbar-is-opened {
   position: fixed;
-//  width: 100%;
-  height: auto;
+
+  top: 0;
+  height: 100%;
   -webkit-transition: transform 0.3s ease-in-out;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 
   -webkit-transform: translate(0,0);
   transform: translate(0,0);
