@@ -90,6 +90,12 @@ button:active {
     overflow: hidden;
     clear: both; }
 
+  .layout-navbar .navbar-list > li {
+    float: none; }
+
+  .navdrawer-container.navbar-is-opened .layout-container {
+    width: 100%; }
+
   button.menu {
     display: none; } }
 .navbar-is-opened {
