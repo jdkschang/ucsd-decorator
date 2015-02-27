@@ -64,6 +64,14 @@ button:active {
 .navdrawer-container.navbar-is-opened .layout-container {
   width: 100%; }
 
+.navdrawer-container.navbar-is-opened .navbar-list > li.active {
+  background: #fff; }
+
+.navdrawer-container.navbar-is-opened .navbar-list > li > a {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px 10px 20px; }
+
 @media all and (min-width: 768px) {
   body {
     /* padding: 16px; */ }
