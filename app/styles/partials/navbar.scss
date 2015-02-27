@@ -74,6 +74,28 @@ button:active {
   background-color: rgba(254,254,254,.6);
 }
 
+.layout-navbar.navbar-is-opened .navbar-list > li {
+  float: none;
+}
+
+.navdrawer-container.navbar-is-opened .layout-container {
+  width:100%;
+}
+
+.navdrawer-container.navbar-is-opened .navbar-list > li {
+}
+
+.navdrawer-container.navbar-is-opened .navbar-list > li.active {
+  background: #fff;
+}
+
+.navdrawer-container.navbar-is-opened .navbar-list > li > a {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px 10px 20px;
+}
+
+
 @media all and (min-width:768px) {
   .breadcrumb {
     opacity: 1;
@@ -195,8 +217,5 @@ button:active {
     border: none;
   }
 
-  .navdrawer-bg,.navdrawer-bg.open {
-    pointer-events: none;
-    opacity: 0;
-  }
+
 }
