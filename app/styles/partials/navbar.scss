@@ -75,6 +75,14 @@ button:active {
   background-color: rgba(254,254,254,.6);
 }
 
+.layout-navbar.navbar-is-opened .navbar-list > li {
+  float: none;
+}
+
+.navdrawer-container.navbar-is-opened .layout-container {
+  width:100%;
+}
+
 @media all and (min-width:768px) {
   body {
     /* padding: 16px; */
@@ -112,14 +120,6 @@ button:active {
     height: 0;
     overflow: hidden;
     clear: both;
-  }
-
-  .layout-navbar .navbar-list > li {
-    float: none;
-  }
-
-  .navdrawer-container.navbar-is-opened .layout-container {
-    width:100%;
   }
 
   button.menu {
@@ -212,8 +212,5 @@ button:active {
     border: none;
   }
 
-  .navdrawer-bg,.navdrawer-bg.open {
-    pointer-events: none;
-    opacity: 0;
-  }
+
 }
