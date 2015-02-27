@@ -1,177 +1,112 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-//  background-image: url('unsplash-img-1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #fff;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.app-bar {
+.layout-header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   width: 100%;
-  height: 60px;
+
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
   flex-direction: row;
-  position: fixed;
+  position: relative;
+  // position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 2; // why?
 }
 
-.app-bar.open {
-  -webkit-transform: translate(250px, 0);
-  transform: translate(250px, 0);
+.layout-header.open,
+.layout-main.open,
+.layout-footer.open {
+  -webkit-transform: translate(250px,0);
+  transform: translate(250px,0);
 }
 
-.app-bar .logo {
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  font-size: 20px;
-  line-height: 60px;
-  margin: 0 16px;
-  color: #fefefe;
-  float: none;
-  max-width: none;
-}
-
-.app-bar .logo a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: normal;
-}
-
-.app-bar-actions {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-}
-
-.app-bar button, .bottom-bar button {
+.layout-header button.btn-nav {
   width: 44px;
   height: 44px;
+
+  color: #fff;
+  font-size: 24px;
+
   background-image: none;
-  background-color: transparent;
-  border-style: solid;
-  border-radius: 100%;
-  border-color: rgb(254, 254, 254);
+  background-color: #287897;
+  border-radius: 4px;
+  border: 1px solid #266E8A;
+
   padding: 8px;
-  margin: 8px;
-  -webkit-transition: border 300ms ease-in, background 300ms ease-in;
-  transition: border 300ms ease-in, background 300ms ease-in;
+  margin: 15px;
+
+  -webkit-transition: border 300ms ease-in,background 300ms ease-in;
+  transition: border 300ms ease-in,background 300ms ease-in;
   -webkit-tap-highlight-color: transparent;
 }
 
-.app-bar button img {
-  width: 28px;
-  height: 28px;
-}
-
-.app-bar button.menu {
+button.menu {
   position: relative;
 }
 
-.app-bar button.menu img {
-  position: absolute;
-  top: 7px;
-  left: 7px;
+button.menu .glyphicon-menu-hamburger {
+  opacity: 1;
 }
 
-.app-bar button.menu .menu-icon {
-  opacity: 1.0;
+button.menu .glyphicon-menu-left,
+.layout-header.open button.menu .glyphicon-menu-hamburger{
+  display: none;
 }
 
-.app-bar button.menu .close-icon {
-  opacity: 0.0;
+.layout-header.open button.menu .glyphicon-menu-left {
+  display: inline;
 }
 
-.app-bar.open button.menu .menu-icon {
-  opacity: 0.0;
-}
-
-.breadcrumb {
-  opacity: 0.0;
-}
-
-.app-bar.open button.menu .close-icon {
-  opacity: 1.0;
-}
-
-.app-bar button:hover, .bottom-bar button:hover {
+button:hover {
   border-color: transparent;
-  background-color: rgba(254, 254, 254, 0.4);
+  background-color: rgba(254,254,254,.4);
 }
 
-.app-bar button:focus, .bottom-bar button:focus {
+button:focus {
   border-color: transparent;
   outline: 0;
-  background-color: rgba(254, 254, 254, 0.4);
+  background-color: rgba(254,254,254,.4);
 }
 
-.app-bar button:active, .bottom-bar button:active {
+button:active {
   border-color: transparent;
-  background-color: rgba(254, 254, 254, 0.6);
+  background-color: rgba(254,254,254,.6);
 }
 
-@media all and (min-width: 1200px) {
-
+@media all and (min-width:768px) {
   body {
-    padding: 16px;
+    /* padding: 16px; */
   }
 
   .breadcrumb {
-    opacity: 1.0;
+    opacity: 1;
   }
 
-  .app-bar {
+  .layout-header {
     display: block;
     position: initial;
+    /*
     height: 130px;
     padding: 0 16px;
-    margin-bottom: 16px;
+    */
+//    margin-bottom: 16px;
     box-sizing: border-box;
     background-color: transparent;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+
     -webkit-transition: none;
     transition: none;
   }
 
-  .app-bar.open {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+  .layout-header.open {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
   }
 
-  .app-bar .logo {
-    float: left;
-    margin: 0;
-    font-size: 100px;
-    line-height: 130px;
-  }
-
-  .app-bar-actions {
-    float: right;
-    margin: 35px 0;
-  }
-
-  .app-bar:after {
+  .layout-header:after {
     content: ' ';
     display: block;
     height: 0;
@@ -184,92 +119,87 @@ body {
   }
 }
 
-.navdrawer-container {
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  background-color: #0095b7;
-  color: #fefefe;
-  -webkit-transform: translate(-250px, 0);
-  transform: translate(-250px, 0);
-  z-index: 2;
+.navdrawer-container .navbar-is-opened {
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
 }
 
-.navdrawer-container.open {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+.navbar-is-opened {
+  display: block;
 }
 
+@media only screen and (min-device-width: 768px) {
+
+  .navdrawer-container {
+    position: fixed;
+    width: 250px;
+
+    //  height: 100%;
+    //  background-color: #0095b7;
+    //  color: #fefefe;
+    -webkit-transform: translate(-250px, 0);
+    transform: translate(-250px, 0);
+    z-index: 2;
+  }
+
+  .navdrawer-container.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
 .navdrawer-container ul {
   list-style-type: none;
 }
 
-.navdrawer-bg {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: black;
-  /** Unfortunately this is the best way
-  to get no paints in Chrome **/
-  opacity: 0.0000001;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.navdrawer-bg.open {
-  opacity: 0.5;
-}
-
-.app-bar, .navdrawer-container {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-}
-
-.navdrawer-bg {
-  -webkit-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out;
+.navdrawer-container,
+.layout-header,
+.layout-main,
+.layout-footer {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
 }
 
 .navdrawer-container ul li a {
   display: block;
-  height: 60px;
-  padding: 0 20px;
-  line-height: 60px;
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 .navdrawer-container ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255,255,255,.2);
 }
 
 .navdrawer-container ul li a:focus {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255,255,255,.3);
   outline: 0;
 }
 
 .navdrawer-container ul li a:active {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255,255,255,.4);
 }
 
-@media all and (min-width: 1200px) {
-  .navdrawer-container {
-    position: initial;
-    width: 100%;
-    height: auto;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    -webkit-transition: none;
-    transition: none;
-    pointer-events: auto;
-  }
+.navdrawer-container.navbar-is-opened {
+  position: fixed;
+//  width: 100%;
+  height: auto;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+
+  pointer-events: auto;
+}
+
+@media all and (min-width:508px) {
   .navdrawer-container ul {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+//    display: -ms-flexbox;
+//    display: -webkit-flex;
+//    display: flex;
+
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
     flex-direction: row;
@@ -279,20 +209,8 @@ body {
     border: none;
   }
 
-  .navdrawer-bg, .navdrawer-bg.open {
-    opacity: 0;
+  .navdrawer-bg,.navdrawer-bg.open {
     pointer-events: none;
+    opacity: 0;
   }
-}
-
-.promote-layer {
-  /*
-  This may promote the layer to a composited
-  layer.
-
-  Replace with will-change when available
-  #perfmatters
-  */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }

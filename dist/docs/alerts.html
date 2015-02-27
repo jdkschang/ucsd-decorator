@@ -1,0 +1,411 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>INSERT TITLE HERE</title>
+    <meta name="DESCRIPTION" content="A collection of CSS styles available for CMS users.">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="ORGANIZATION" content="University of California, San Diego">
+    <meta name="robots" content="index,follow,noarchive">
+    <meta name="SITE" content="CWO">
+    <meta name="PAGETITLE" content="CMS Kitchen Sink">
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/base-min.css">
+    <!-- Site-specific CSS files -->
+    <link rel="stylesheet" href="site-specific.css">
+    <script src="../scripts/modernizr.js"></script>
+</head>
+<body>
+
+<div id="tdr_wrapper">
+<div id="tdr_slide_wrapper">
+
+<a class="sr-only" href="#tdr_content">Skip to main content</a>
+
+<div id="uc-emergency"></div>
+
+<div id="tdr_login"><!-- Start page controls -->
+    <span class="tdr_login_content"></span> <!-- End page controls -->
+</div>
+
+<div id="tdr_title">
+    <div id="tdr_title_content">
+        <a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div id="tdr_title_page_title">
+
+            <a href="/">
+                Campus Web Office
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<nav id="tdr_nav" class="navbar" role="navigation">
+    <div id="tdr_nav_content">
+
+        <ul class="tdr_nav_list">
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li class="">
+                <a href="../templates.html">Templates<span class="caret"></span></a>
+                <ul>
+                    <li><a href="../blank-slate.html">Blank Slate</a></li>
+                    <li><a href="../two-column.html">Two Column</a></li>
+                    <li><a href="../two-column-b.html">Two Column B</a></li>
+                    <li><a href="../three-column.html">Three Column</a></li>
+                    <li><a href="../form-a.html">Basic Form</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="index.html">Kitchen Sink</a></li>
+        </ul>
+
+        <div class="tdr_search">
+            <button class="btn btn-default" id="tdr_search_toggle">
+                <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
+            </button>
+
+            <div id="tdr_search_content">
+                <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get">
+                    <select class="search-scope" name="search-scope">
+                        <option selected="selected" value="cwo">This Site</option>
+                        <option value="default_collection">All UCSD Sites</option>
+                        <option value="faculty-staff">Faculty/Staff</option>
+                    </select>
+
+                    <div class="input-group">
+                        <input placeholder="Search..." type="search" class="form-control" class="search-term" id="q"
+                               name="search-term">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<div id="tdr_crumbs">
+    <div id="tdr_crumbs_content">
+        <ol id="tdr_crumbs_list" class="breadcrumb">
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="index.html">Kitchen Sink</a></li>
+            <li class="active">Alerts</li>
+        </ol>
+    </div>
+</div>
+
+<div id="tdr_content">
+<div id="tdr_content_content">
+
+<div id="tdr_2_col_content">
+
+    <div class="main-content" role="main">
+
+        <div class="alert alert-danger"><p>Work in progress. Do not use in production.</p></div>
+
+        <!-- Alerts
+        ================================================== -->
+        <div class="bs-docs-section">
+            <h1 id="alerts" class="page-header">Alerts</h1>
+
+            <p class="lead">Provide contextual feedback messages for typical user actions with the handful of available
+                and flexible alert messages.</p>
+
+            <h2 id="alerts-examples">Examples</h2>
+
+            <p>Wrap any text and an optional dismiss button in <code>.alert</code> and one of the four contextual
+                classes (e.g., <code>.alert-success</code>) for basic alert messages.</p>
+
+            <div class="alert alert-info">
+                <h4>No default class</h4>
+
+                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert doesn't make
+                    too much sense, so you're required to specify a type via contextual class. Choose from success,
+                    info, warning, or danger.</p>
+            </div>
+
+            <div class="bs-example">
+                <div class="alert alert-success">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+                <div class="alert alert-info">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </div>
+                <div class="alert alert-danger">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </div>
+            </div>
+            <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span
+                    class="na">class=</span><span class="s">&quot;alert alert-success&quot;</span><span
+                    class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-info&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-danger&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+            </code></pre>
+            </div>
+
+
+            <h2 id="alerts-dismissable">Dismissable alerts</h2>
+
+            <p>Build on any alert by adding an optional <code>.alert-dismissable</code> and close button.</p>
+
+            <div class="bs-example">
+                <div class="alert alert-warning alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </div>
+            </div>
+            <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span
+                    class="na">class=</span><span
+                    class="s">&quot;alert alert-warning alert-dismissable&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">type=</span><span
+                        class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;close&quot;</span>
+                <span class="na">data-dismiss=</span><span class="s">&quot;alert&quot;</span> <span class="na">aria-hidden=</span><span
+                        class="s">&quot;true&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span
+                        class="nt">&lt;/button&gt;</span>
+                <span class="nt">&lt;strong&gt;</span>Warning!<span class="nt">&lt;/strong&gt;</span> Better check
+                yourself, you&#39;re not looking too good.
+                <span class="nt">&lt;/div&gt;</span>
+            </code></pre>
+            </div>
+
+            <div class="alert alert-warning">
+                <h4>Ensure proper behavior across all devices</h4>
+
+                <p>Be sure to use the <code>&lt;button&gt;</code> element with the <code>data-dismiss="alert"</code>
+                    data attribute.</p>
+            </div>
+
+            <h2 id="alerts-links">Links in alerts</h2>
+
+            <p>Use the <code>.alert-link</code> utility class to quickly provide matching colored links within any
+                alert.</p>
+
+            <div class="bs-example">
+                <div class="alert alert-success">
+                    <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important
+                    alert message</a>.
+                </div>
+                <div class="alert alert-info">
+                    <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but
+                    it's not super important.
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking
+                    too good</a>.
+                </div>
+                <div class="alert alert-danger">
+                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try
+                    submitting again.
+                </div>
+            </div>
+            <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span
+                    class="na">class=</span><span class="s">&quot;alert alert-success&quot;</span><span
+                    class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
+                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-info&quot;</span><span
+                        class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
+                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning&quot;</span><span
+                        class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
+                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-danger&quot;</span><span
+                        class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
+                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
+                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            </code></pre>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div id="tdr_2_col_nav">
+<span id="site-logo">
+            <logo/>
+        </span>
+
+<div class="styled">
+
+    <h2>
+        Kitchen Sink
+    </h2>
+
+    <ul id="page_nav">
+
+                    <li class="active">
+                        Alerts
+                        <ul class="nav">
+                            <li><a href="#alerts-examples">Examples</a></li>
+                            <li><a href="#alerts-dismissable">Dismissable alerts</a></li>
+                            <li><a href="#alerts-links">Links in alerts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="badges.html">Badges</a></li>
+                    <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+                    <li>
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="button_dropdowns.html">Button Dropdowns</a>
+                    </li>
+                    <li>
+                        <a href="code.html">Code</a>
+                    </li>
+                    <li>
+                        <a href="dropdowns.html">Dropdowns</a>
+                    </li>
+                    <li>
+                        <a href="equal_column_layout.html">Equal Column Layout</a>
+                    </li>
+                    <li>
+                        <a href="forms.html">Forms</a>
+                    </li>
+                    <li>
+                        <a href="helper_classes.html">Helper classes</a>
+                    </li>
+                    <li>
+                        <a href="icons.html">Icons</a>
+                    </li>
+                    <li>
+                        <a href="images.html">Images</a>
+                    </li>
+                    <li>
+                        <a href="input_groups.html">Input Groups</a>
+                    </li>
+                    <li>
+                        <a href="javascript_components.html">JavaScript Components</a>
+                    </li>
+                    <li>
+                        <a href="pagination.html">Pagination</a>
+                    </li>
+                    <li>
+                        <a href="panels.html">Panels</a>
+                    </li>
+                    <li>
+                        <a href="progress_bars.html">Progress Bars</a>
+                    </li>
+                    <li>
+                        <a href="tables.html">Tables</a>
+                    </li>
+                    <li>
+                        <a href="typography.html">Typography</a>
+                    </li>
+
+
+    </ul>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<!-- Footer
+    ================================================== -->
+<div id="tdr_footer">
+    <div id="tdr_footer_content">
+
+        <div id="tdr_address">
+            <span id="tdr_address_place">UC San Diego</span>
+            <span id="tdr_address_street">9500 Gilman Dr.</span>
+            <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span>
+            <span id="tdr_address_phone">(858) 534-2230</span>
+        </div>
+        <div id="tdr_copyright">Copyright ©<span id="tdr_copyright_year">2014</span> Regents of the University of
+            California. All rights reserved.
+        </div>
+        <ul id="tdr_footer_links">
+            <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+            <li id="tdr_footer_feedback">
+
+                <a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+</div>
+
+<nav id="tdr_side_nav" class="navbar nav-offcanvas" role="navigation">
+    <div class="tdr_search clearfix">
+    </div>
+</nav>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            initFooter("http://act.ucsd.edu/cwp/feedback/tool/cwo");
+            initCopyright();
+        });
+    })(jQuery);
+</script>
+
+<script type="text/javascript">
+    // <![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(["_setAccount", "UA-3409104-9"]);
+    _gaq.push(["_trackPageview"]);
+
+    (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    // ]]>
+</script>
+
+<script src="../scripts/vendor.js"></script>
+<script src="../scripts/base-min.js"></script>
+
+<!-- Google Search -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+google.load('search', '1');
+google.setOnLoadCallback(function () {
+    google.search.CustomSearchControl.attachAutoCompletion(
+            '004685874581245502426:palsaetk1kk',
+            document.getElementById('q'),
+            'cse-site-search');
+});
+// ]]></script>
+<script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+</body>
+</html>

@@ -153,8 +153,9 @@ ol ol ol {
  */
 pre,code {
 	color: #060;
+    display: block;
 	font-family: Consolas, Monaco, monospace;
-	white-space: pre;
+	white-space: pre-line;
 }
 
 pre {

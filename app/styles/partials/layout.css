@@ -18,10 +18,13 @@ html, body {
 /* container will have media queries for sizing*/
 .layout-container {
   max-width: 1200px;
+  width: 94%;
   margin: auto;
   overflow: hidden; }
 
 .layout-header {
+  /* to incorporate new navbar button*/
+  background-color: #2b92b9;
   width: 100%; }
 
 .layout-login {
@@ -30,6 +33,7 @@ html, body {
 .layout-title {
   font-family: "Trebuchet MS", sans-serif;
   height: 78px;
+  width: 100%;
   background: #2b92b9;
   padding: 1.5em 0; }
 
@@ -108,7 +112,7 @@ a {
 * **************/
 .main-section {
   line-height: 1.5;
-  padding: 1em 0 0 0; }
+  padding: 0; }
 
 .main-section-content {
   padding-left: 1.5em; }

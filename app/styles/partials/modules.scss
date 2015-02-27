@@ -18,9 +18,8 @@
 .breadcrumbs-list {
   background-color: #fff;
 
-  list-style: none;
   margin-bottom: 0;
-  padding: 0;
+  padding: 0 0 1em;
 
   > li {
     color: #666;
@@ -28,6 +27,11 @@
     font-size: 80%;
   }
 }
+
+/* ***********************************************
+ * NAVBAR
+ * ***************/
+
 
 
 /* ***********************************************
@@ -114,7 +118,7 @@
 
     &.active {
       background-color: #fff;
-      color: #D56A03;
+      color: #d56a03;
     }
 
     ul {
@@ -144,6 +148,12 @@ button {
 
 input {
 
+}
+
+.form-control {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0.5em;
 }
 
 select {
