@@ -75,10 +75,6 @@ button:active {
 }
 
 @media all and (min-width:768px) {
-  body {
-    /* padding: 16px; */
-  }
-
   .breadcrumb {
     opacity: 1;
   }
@@ -86,11 +82,7 @@ button:active {
   .layout-header {
     display: block;
     position: initial;
-    /*
-    height: 130px;
-    padding: 0 16px;
-    */
-//    margin-bottom: 16px;
+
     box-sizing: border-box;
     background-color: transparent;
     -webkit-transform: translate(0,0);
