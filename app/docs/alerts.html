@@ -10,11 +10,30 @@
     <meta name="robots" content="index,follow,noarchive">
     <meta name="SITE" content="CWO">
     <meta name="PAGETITLE" content="CMS Kitchen Sink">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <link rel="stylesheet" href="../styles/base-min.css">
-    <!-- Site-specific CSS files -->
-    <link rel="stylesheet" href="site-specific.css">
-    <script src="../scripts/modernizr.js"></script>
+    <link href="//www.ucsd.edu/common/cwp/4.0.0/styles/bootstrap.css" rel="stylesheet"/>
+    <link href="//www.ucsd.edu/common/cwp/4.0.0/styles/base-min.css" rel="stylesheet"/>
+
+
+    <!-- Begin site-specific CSS files -->
+    <link href="/_resources/site-specific.css" media="all" rel="stylesheet"/>
+    <!-- End site-specific CSS files -->
+
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/4.0.0/styles/ie-support.css"/>
+    <![endif]-->
+
+    <!-- Other JS files -->
+    <script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/modernizr.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/html5shiv.js"></script>
+    <script src="/_resources/cross-domain/respond.js"></script>
+    <link href="//www.ucsd.edu/common/cwp/4.0.0/cross-domain/respond-proxy.html" id="respond-proxy"
+          rel="respond-proxy"/>
+    <link href="/_resources/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect"/>
+    <script src="/_resources/cross-domain/respond.proxy.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -58,7 +77,7 @@
                 <a href="../index.html">Home</a>
             </li>
             <li class="">
-                <a href="../templates.html">Templates<span class="caret"></span></a>
+                <a href="../templates.html">Templates</a>
                 <ul>
                     <li><a href="../blank-slate.html">Blank Slate</a></li>
                     <li><a href="../two-column.html">Two Column</a></li>
@@ -111,8 +130,6 @@
 
     <div class="main-content" role="main">
 
-        <div class="alert alert-danger"><p>Work in progress. Do not use in production.</p></div>
-
         <!-- Alerts
         ================================================== -->
         <div class="bs-docs-section">
@@ -131,7 +148,7 @@
 
                 <p>Alerts don't have default classes, only base and modifier classes. A default gray alert doesn't make
                     too much sense, so you're required to specify a type via contextual class. Choose from success,
-                    info, warning, or danger.</p>
+                    info, or warning.</p>
             </div>
 
             <div class="bs-example">
@@ -144,20 +161,13 @@
                 <div class="alert alert-warning">
                     <strong>Warning!</strong> Better check yourself, you're not looking too good.
                 </div>
-                <div class="alert alert-danger">
-                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                </div>
             </div>
-            <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span
-                    class="na">class=</span><span class="s">&quot;alert alert-success&quot;</span><span
-                    class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-info&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-danger&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-            </code></pre>
+            <div class="highlight">
+                <pre><code class="html">
+                    <span class="nt">&lt;div</span><span class="na">class=</span><span class="s">&quot;alert alert-success&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+                </code></pre>
             </div>
 
 
@@ -171,18 +181,13 @@
                     <strong>Warning!</strong> Better check yourself, you're not looking too good.
                 </div>
             </div>
-            <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span
-                    class="na">class=</span><span
-                    class="s">&quot;alert alert-warning alert-dismissable&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;button</span> <span class="na">type=</span><span
-                        class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;close&quot;</span>
-                <span class="na">data-dismiss=</span><span class="s">&quot;alert&quot;</span> <span class="na">aria-hidden=</span><span
-                        class="s">&quot;true&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span
-                        class="nt">&lt;/button&gt;</span>
-                <span class="nt">&lt;strong&gt;</span>Warning!<span class="nt">&lt;/strong&gt;</span> Better check
-                yourself, you&#39;re not looking too good.
-                <span class="nt">&lt;/div&gt;</span>
-            </code></pre>
+            <div class="highlight">
+                <pre><code class="html">
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning alert-dismissable&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;close&quot;</span>
+                <span class="na">data-dismiss=</span><span class="s">&quot;alert&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/button&gt;</span>
+                <span class="nt">&lt;strong&gt;</span>Warning!<span class="nt">&lt;/strong&gt;</span> Better check yourself, you&#39;re not looking too good. <span class="nt">&lt;/div&gt;</span>
+                </code></pre>
             </div>
 
             <div class="alert alert-warning">
@@ -210,41 +215,20 @@
                     <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking
                     too good</a>.
                 </div>
-                <div class="alert alert-danger">
-                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try
-                    submitting again.
-                </div>
             </div>
-            <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span
-                    class="na">class=</span><span class="s">&quot;alert alert-success&quot;</span><span
-                    class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
-                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-info&quot;</span><span
-                        class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
-                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning&quot;</span><span
-                        class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
-                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-danger&quot;</span><span
-                        class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span
-                        class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span
-                        class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            </code></pre>
+            <div class="highlight">
+                <pre><code class="html">
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-success&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-info&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                </code></pre>
             </div>
         </div>
-
-
     </div>
 </div>
 
@@ -253,76 +237,76 @@
             <logo/>
         </span>
 
-<div class="styled">
+    <div class="styled">
 
-    <h2>
-        Kitchen Sink
-    </h2>
+        <h2>
+            Kitchen Sink
+        </h2>
 
-    <ul id="page_nav">
+        <ul id="page_nav">
 
-                    <li class="active">
-                        Alerts
-                        <ul class="nav">
-                            <li><a href="#alerts-examples">Examples</a></li>
-                            <li><a href="#alerts-dismissable">Dismissable alerts</a></li>
-                            <li><a href="#alerts-links">Links in alerts</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="badges.html">Badges</a></li>
-                    <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
-                    <li>
-                        <a href="buttons.html">Buttons</a>
-                    </li>
-                    <li>
-                        <a href="button_dropdowns.html">Button Dropdowns</a>
-                    </li>
-                    <li>
-                        <a href="code.html">Code</a>
-                    </li>
-                    <li>
-                        <a href="dropdowns.html">Dropdowns</a>
-                    </li>
-                    <li>
-                        <a href="equal_column_layout.html">Equal Column Layout</a>
-                    </li>
-                    <li>
-                        <a href="forms.html">Forms</a>
-                    </li>
-                    <li>
-                        <a href="helper_classes.html">Helper classes</a>
-                    </li>
-                    <li>
-                        <a href="icons.html">Icons</a>
-                    </li>
-                    <li>
-                        <a href="images.html">Images</a>
-                    </li>
-                    <li>
-                        <a href="input_groups.html">Input Groups</a>
-                    </li>
-                    <li>
-                        <a href="javascript_components.html">JavaScript Components</a>
-                    </li>
-                    <li>
-                        <a href="pagination.html">Pagination</a>
-                    </li>
-                    <li>
-                        <a href="panels.html">Panels</a>
-                    </li>
-                    <li>
-                        <a href="progress_bars.html">Progress Bars</a>
-                    </li>
-                    <li>
-                        <a href="tables.html">Tables</a>
-                    </li>
-                    <li>
-                        <a href="typography.html">Typography</a>
-                    </li>
+            <li class="active">
+                Alerts
+                <ul class="nav">
+                    <li><a href="#alerts-examples">Examples</a></li>
+                    <li><a href="#alerts-dismissable">Dismissable alerts</a></li>
+                    <li><a href="#alerts-links">Links in alerts</a></li>
+                </ul>
+            </li>
+            <li><a href="badges.html">Badges</a></li>
+            <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+            <li>
+                <a href="buttons.html">Buttons</a>
+            </li>
+            <li>
+                <a href="button_dropdowns.html">Button Dropdowns</a>
+            </li>
+            <li>
+                <a href="code.html">Code</a>
+            </li>
+            <li>
+                <a href="dropdowns.html">Dropdowns</a>
+            </li>
+            <li>
+                <a href="equal_column_layout.html">Equal Column Layout</a>
+            </li>
+            <li>
+                <a href="forms.html">Forms</a>
+            </li>
+            <li>
+                <a href="helper_classes.html">Helper classes</a>
+            </li>
+            <li>
+                <a href="icons.html">Icons</a>
+            </li>
+            <li>
+                <a href="images.html">Images</a>
+            </li>
+            <li>
+                <a href="input_groups.html">Input Groups</a>
+            </li>
+            <li>
+                <a href="javascript_components.html">JavaScript Components</a>
+            </li>
+            <li>
+                <a href="pagination.html">Pagination</a>
+            </li>
+            <li>
+                <a href="panels.html">Panels</a>
+            </li>
+            <li>
+                <a href="progress_bars.html">Progress Bars</a>
+            </li>
+            <li>
+                <a href="tables.html">Tables</a>
+            </li>
+            <li>
+                <a href="typography.html">Typography</a>
+            </li>
 
 
-    </ul>
-</div>
+        </ul>
+    </div>
 
 
 </div>
@@ -347,7 +331,7 @@
             <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
             <li id="tdr_footer_feedback">
 
-                <a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
+                <a href="https://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
             </li>
         </ul>
 
@@ -364,13 +348,14 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
+<script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 
 <script type="text/javascript">
     (function ($) {
         $(document).ready(function () {
             initFooter("http://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
+            initLogout('http://www.ucsd.edu');
         });
     })(jQuery);
 </script>
@@ -392,11 +377,11 @@
     // ]]>
 </script>
 
-<script src="../scripts/vendor.js"></script>
-<script src="../scripts/base-min.js"></script>
+<script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/vendor.js"></script>
+<script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/base-min.js"></script>
 
 <!-- Google Search -->
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
@@ -406,6 +391,6 @@ google.setOnLoadCallback(function () {
             'cse-site-search');
 });
 // ]]></script>
-<script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+<script src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 </body>
 </html>

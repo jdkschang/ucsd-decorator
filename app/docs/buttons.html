@@ -10,11 +10,29 @@
     <meta name="robots" content="index,follow,noarchive">
     <meta name="SITE" content="CWO">
     <meta name="PAGETITLE" content="CMS Kitchen Sink">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <link rel="stylesheet" href="../styles/base-min.css">
-    <!-- Site-specific CSS files -->
-    <link rel="stylesheet" href="site-specific.css">
-    <script src="../scripts/modernizr.js"></script>
+    <link href="//www.ucsd.edu/common/cwp/4.0.0/styles/bootstrap.css" rel="stylesheet"/>
+    <link href="//www.ucsd.edu/common/cwp/4.0.0/styles/base-min.css" rel="stylesheet"/>
+
+
+    <!-- Begin site-specific CSS files -->
+    <link href="/_resources/site-specific.css" media="all" rel="stylesheet" />
+    <!-- End site-specific CSS files -->
+
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/4.0.0/styles/ie-support.css" />
+    <![endif]-->
+
+    <!-- Other JS files -->
+    <script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/modernizr.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/html5shiv.js"></script>
+    <script src="/_resources/cross-domain/respond.js"></script>
+    <link href="//www.ucsd.edu/common/cwp/4.0.0/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="/_resources/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <script src="/_resources/cross-domain/respond.proxy.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -58,7 +76,7 @@
                 <a href="../index.html">Home</a>
             </li>
             <li class="">
-                <a href="../templates.html">Templates<span class="caret"></span></a>
+                <a href="../templates.html">Templates</a>
                 <ul>
                     <li><a href="../blank-slate.html">Blank Slate</a></li>
                     <li><a href="../two-column.html">Two Column</a></li>
@@ -113,7 +131,7 @@
 
 
 
-<div class="alert alert-danger"><p>Work in progress. Do not use in production.</p></div>
+
 
     <!-- Buttons
     ================================================== -->
@@ -125,11 +143,6 @@
         <div class="bs-example">
             <button type="button" class="btn btn-default">Default</button>
             <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-link">Link</button>
         </div>
         <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Standard button --&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
@@ -137,20 +150,7 @@
             <span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
 
-            <span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
 
-            <span class="c">&lt;!-- Contextual button for informational alert messages --&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-info&quot;</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
-
-            <span class="c">&lt;!-- Indicates caution should be taken with this action --&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-warning&quot;</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
-
-            <span class="c">&lt;!-- Indicates a dangerous or potentially negative action --&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
-
-            <span class="c">&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span>
         </code></pre></div>
 
         <h2 id="buttons-sizes">Sizes</h2>
@@ -380,7 +380,7 @@
             <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
             <li id="tdr_footer_feedback">
 
-                <a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
+                <a href="https://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a>
             </li>
         </ul>
 
@@ -402,8 +402,9 @@
 <script type="text/javascript">
     (function ($) {
         $(document).ready(function () {
-            initFooter("http://act.ucsd.edu/cwp/feedback/tool/cwo");
+            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
+            initLogout('http://www.ucsd.edu');
         });
     })(jQuery);
 </script>
@@ -425,10 +426,11 @@
     // ]]>
 </script>
 
-<script src="../scripts/vendor.js"></script>
-<script src="../scripts/base-min.js"></script>
+<script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/vendor.js"></script>
+<script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/base-min.js"></script>
+
 <!-- Google Search -->
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
@@ -438,7 +440,7 @@ google.setOnLoadCallback(function () {
             'cse-site-search');
 });
 // ]]></script>
-<script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+<script src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 
 </body>
 </html>

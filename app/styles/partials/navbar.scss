@@ -17,8 +17,8 @@
 .layout-header.open,
 .layout-main.open,
 .layout-footer.open {
-  -webkit-transform: translate(250px,0);
-  transform: translate(250px,0);
+  -webkit-transform: translate(42%,0);
+  transform: translate(42%,0);
 }
 
 .layout-header button.btn-nav {
@@ -87,6 +87,7 @@ button:active {
     background-color: transparent;
     -webkit-transform: translate(0,0);
     transform: translate(0,0);
+
     -webkit-transition: none;
     transition: none;
   }
@@ -109,14 +110,6 @@ button:active {
   }
 }
 
-.navdrawer-container .navbar-is-opened {
-  -webkit-transform: translate(0,0);
-  transform: translate(0,0);
-
-  -webkit-transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-}
-
 .navbar-is-opened {
   display: block;
 }
@@ -125,14 +118,10 @@ button:active {
 
   .navdrawer-container {
     position: fixed;
-    width: 250px;
+    width: 42%;
 
-    //  height: 100%;
-    //  background-color: #0095b7;
-    //  color: #fefefe;
-    -webkit-transform: translate(-250px, 0);
-    transform: translate(-250px, 0);
-    z-index: 2;
+    z-index: 0;
+    opacity: 0;
   }
 
   .navdrawer-container.open {
@@ -144,19 +133,15 @@ button:active {
   list-style-type: none;
 }
 
-.navdrawer-container,
 .layout-header,
 .layout-main,
 .layout-footer {
-  -webkit-transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
 }
 
 .navdrawer-container ul li a {
   display: block;
-//  height: 60px;
-//  padding: 0 20px;
-//  line-height: 60px;
   text-decoration: none;
   color: #fff;
 }
@@ -176,24 +161,31 @@ button:active {
 
 .navdrawer-container.navbar-is-opened {
   position: fixed;
-//  width: 100%;
-  height: auto;
-  -webkit-transition: transform 0.3s ease-in-out;
-  transition: transform 0.6s ease-in-out;
+
+  top: 0;
+  height: 100%;
+
+  opacity: 1;
+
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 
   -webkit-transform: translate(0,0);
   transform: translate(0,0);
 
+  transition-delay: 0.15s;
+
   pointer-events: auto;
+
+  z-index: 2;
 }
 
 @media all and (min-width:508px) {
-
-
   .navdrawer-container ul {
 //    display: -ms-flexbox;
 //    display: -webkit-flex;
 //    display: flex;
+
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
     flex-direction: row;

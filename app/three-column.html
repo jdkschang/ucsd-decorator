@@ -11,6 +11,7 @@
     <meta name="PAGETITLE" content="INSERT TITLE HERE">
     <meta name="DESCRIPTION" content="INSERT DESCRIPTION HERE">
 
+
     <!-- build:css(.tmp) ../dist/styles/bootstrap.css -->
     <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
     <!-- endbuild -->
@@ -79,10 +80,12 @@
 
                         <div class="input-group">
                             <input placeholder="Search..." type="search" class="form-control search-term" id="q" name="search-term">
+
                         </div>
                     </form>
                 </div>
             </div>
+
 
         </div>
     </nav>
@@ -122,6 +125,7 @@
                             <li><a href="#">Sub 2</a></li>
                             <li><a href="#">Sub 3</a></li>
                         </ul>
+
                     </li>
                     <li>
                         <a href="#">Nav Link</a>
@@ -177,13 +181,14 @@
 </nav>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
+<script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 
 <script type="text/javascript">
     (function ($) {
         $(document).ready(function () {
-            initFooter("http://act.ucsd.edu/cwp/feedback/tool/cwo");
+            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
+            initLogout('http://www.ucsd.edu');
         });
     })(jQuery);
 </script>
@@ -205,41 +210,16 @@
     // ]]>
 </script>
 
-<!-- build:js scripts/vendor.js -->
-<script src="vendor/respond/dest/respond.src.js"></script>
-<script src="vendor/flexslider/jquery.flexslider.js"></script>
-<script src="vendor/superfish/dist/js/superfish.js"></script>
-<script src="vendor/superfish/dist/js/hoverIntent.js"></script>
-<script src="vendor/fastclick/lib/fastclick.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
+<script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/vendor.js"></script>
+<script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/base-min.js"></script>
 
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
-<script src="scripts/ucsd/nav-search.js"></script>
-<script src="scripts/ucsd/copyright.js"></script>
-<script src="scripts/ucsd/footer.js"></script>
-<script src="scripts/ucsd/logout.js"></script>
-<script src="scripts/ucsd/flexslider-init.js"></script>
-<script src="scripts/ucsd/drawer.js"></script>
-<!-- endbuild -->
 
 
 <!-- Site-specific javascript files -->
 <script src="docs/site-specific.js"></script>
 
 <!-- Google Search -->
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="//www.google.com/jsapi"></script>
 <script type="text/javascript">// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
@@ -249,7 +229,7 @@ google.setOnLoadCallback(function () {
             'cse-site-search');
 });
 // ]]></script>
-<script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+<script src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 
 </body>
 </html>
