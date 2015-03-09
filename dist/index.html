@@ -11,59 +11,40 @@
     <meta name="PAGETITLE" content="INSERT TITLE HERE">
     <meta name="DESCRIPTION" content="INSERT DESCRIPTION HERE">
 
-    <!-- build:css(.tmp) styles/bootstrap.css -->
-    <link rel="stylesheet" href="../dist/styles/bootstrap.css"/>
-    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/bootstrap.css"/>
 
-    <link rel="stylesheet" href="styles/partials/layout.css"/>
 
+
+    <link rel="stylesheet" href="styles/layout.css"/>
+
+    <link rel="stylesheet" href="styles/modules.css"/>
+
+    <!-- build:js(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="../dist/styles/ie-support.css"/>
+    <link rel="stylesheet" href="styles/ie-support.css"/>
     <![endif]-->
 
     <!-- Begin site-specific CSS files -->
-    <!-- End site-specific CSS files -->
 
-    <!-- build:js({app,.tmp}) scripts/modernizr.js -->
-    <script src="../dist/scripts/modernizr.js"></script>
-    <!-- endbuild -->
+    <script src="scripts/modernizr.js"></script>
 </head>
 <body>
 <header class="layout-header">
+    <!-- legacy code but cannot remove .. yet -->
     <a class="sr-only" href="#">Skip to main content</a>
     <div id="uc-emergency"></div>
-    <div id="tdr_login"><!-- Start page controls -->
-        <span class="tdr_login_content"></span> <!-- End page controls -->
-    </div>
+    <section class="layout-login"><!-- Start page controls -->
+        <span class="login-content"></span> <!-- End page controls -->
+    </section>
+    <!-- legacy code comment end -->
 
+    <!-- title section -->
     <section class="layout-title">
         <div class="layout-container">
-            <a href="index.html" id="title-header">Decorator 4.1</a>
-            <a href="http://www.ucsd.edu" id="title-logo">UC San Diego</a>
+            <a href="index.html" class="title-header">Decorator 4.1</a>
+            <a href="http://www.ucsd.edu" class="title-logo">UC San Diego</a>
         </div>
     </section>
-
-    <!--<div id="tdr_title">-->
-    <!--<div id="tdr_title_content">-->
-    <!--<a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a>-->
-
-    <!--<button type="button" class="navbar-toggle needsclick" data-toggle="collapse"-->
-    <!--data-target="#bs-example-navbar-collapse-1">-->
-    <!--<span class="sr-only">Toggle navigation</span>-->
-    <!--<span class="icon-bar"></span>-->
-    <!--<span class="icon-bar"></span>-->
-    <!--<span class="icon-bar"></span>-->
-    <!--</button>-->
-
-    <!--<div id="tdr_title_page_title">-->
-
-    <!--<a href="index.html">-->
-    <!--Decorator 4.1-->
-    <!--</a>-->
-    <!--</div>-->
-
-    <!--</div>-->
-    <!--</div>-->
 
     <nav class="navbar layout-navbar" role="navigation">
         <div class="layout-container">
@@ -71,7 +52,7 @@
                 <li class="active">
                     <a href="index.html">Home</a>
                 </li>
-                <li class="">
+                <li>
                     <a href="#">Templates</a>
                     <!--<ul>-->
                     <!--<li><a href="blank-slate.html">Blank Slate</a></li>-->
@@ -80,7 +61,7 @@
                     <!--<li><a href="form-a.html">Basic Form</a></li>-->
                     <!--</ul>-->
                 </li>
-                <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
+                <li><a href="docs/index.html">Kitchen Sink</a></li>
             </ul>
 
             <div class="search">
@@ -98,6 +79,7 @@
 
                         <div class="input-group">
                             <input placeholder="Search..." type="search" class="form-control search-term" id="q" name="search-term">
+
                         </div>
                     </form>
                 </div>
@@ -105,31 +87,30 @@
 
         </div>
     </nav>
-
 </header>
 
 <main class="layout-main" role="main">
-    <div id="" class="layout-container">
+    <div class="layout-container">
         <ol class="breadcrumb breadcrumbs-list">
             <li><a href="index.html">HOME</a></li>
             <li><a href="templates.html">Templates</a></li>
             <li class="active">Index</li>
         </ol>
 
-        <section class="main-content">
-            <h1>Decorator 4.1 [Work in Progress]</h1>
+        <h1>Decorator 4.1 [Work in Progress]</h1>
+
+        <section class="main-section">
 
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
             </p>
+
         </section>
     </div>
 </main>
 
-<!-- Footer
-================================================== -->
 <footer class="layout-footer">
     <section class="layout-container">
         <article>
@@ -158,15 +139,15 @@
     </div>
 </nav>
 
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
+<script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 
 <script type="text/javascript">
     (function ($) {
         $(document).ready(function () {
-            initFooter("http://act.ucsd.edu/cwp/feedback/tool/cwo");
+            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
+            initLogout('http://www.ucsd.edu');
         });
     })(jQuery);
 </script>
@@ -190,11 +171,11 @@
 
 <script src="scripts/vendor.js"></script>
 
+
 <script src="scripts/base-min.js"></script>
 
-
 <!-- Google Search -->
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="//www.google.com/jsapi"></script>
 <script type="text/javascript">// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
@@ -204,7 +185,7 @@ google.setOnLoadCallback(function () {
             'cse-site-search');
 });
 // ]]></script>
-<script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+<script src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 
 </body>
 </html>

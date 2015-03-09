@@ -35,7 +35,10 @@
 button.menu {
   position: relative; }
 
-button.menu .glyphicon-menu-hamburger {
+button.menu .icon-bar:nth-child(2),
+button.menu .icon-bar:nth-child(3),
+button.menu .icon-bar:nth-child(4) {
+  transition: all .2s ease;
   opacity: 1; }
 
 button.menu .glyphicon-menu-left,
