@@ -174,10 +174,12 @@ button:active {
 }
 
 @media only screen and (min-device-width: 768px) {
-  display: block;
-  width: 100%;
-  z-index: 1;
-  opacity: 1;
+  .navdrawer-container {
+    display: block;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 768px) {
