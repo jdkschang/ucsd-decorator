@@ -163,12 +163,13 @@ button:active {
     clear: both; }
 
   button.menu {
-    display: none; } }
-@media only screen and (min-device-width: 768px) {
-  display: block;
-  width: 100%;
-  z-index: 1;
-  opacity: 1; }
+    display: none; }
+
+  .navdrawer-container {
+    display: block;
+    width: 100%;
+    z-index: 1;
+    opacity: 1; } }
 @media only screen and (max-width: 768px) {
   .navdrawer-container {
     position: fixed;
