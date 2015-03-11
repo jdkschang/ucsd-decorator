@@ -103,6 +103,7 @@ button:active {
 
 .navdrawer-container.navbar-is-opened .search {
   width: 100%;
+  height: 100%;
 }
 
 .navdrawer-container.navbar-is-opened .search-content {
@@ -135,6 +136,18 @@ button:active {
 .navdrawer-container ul {
   list-style-type: none;
 }
+
+  /* sub list stylings */
+  .navdrawer-container .navbar-list ul.navbar-sublist {
+    display: none;
+  }
+    .navdrawer-container ul.navbar-sublist.subnav-hover {
+      display: block;
+    }
+
+  .navdrawer-container .navbar-sublist.subnav-is-opened {
+    display: block;
+  }
 
 .layout-header,
 .layout-main,

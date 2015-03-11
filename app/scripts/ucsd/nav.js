@@ -9,8 +9,8 @@
         var menuOpen            = 'open';
         var navListIsOpened     = false;
 
-        navBtn.addEventListener('click', function (event) {
-            event.preventDefault();
+        navBtn.addEventListener('click', function (e) {
+            e.preventDefault();
 
             if (!navListIsOpened) {
                 addClass(navList, navIsOpenedClass);
@@ -30,6 +30,44 @@
         });
     }
 
+    var toggleSubNav = function() {
+        var subNav = document.querySelector('.navbar-subnav');
+        var subList = document.querySelector('.navbar-sublist');
+        var subNavList = 'subnav-is-opened';
+        var subNavHover = 'subnav-hover';
+        var subNavIsOpened = false;
+
+        subNav.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            if(!subNavIsOpened) {
+                addClass(subList, subNavList);
+
+                subNavIsOpened = true;
+            } else {
+                removeClass(subList, subNavList);
+
+                subNavIsOpened = false;
+            }
+        })
+
+        subNav.addEventListener('mouseover', function(e) {
+            e.preventDefault();
+
+            addClass(subList, subNavHover);
+
+            subNavIsOpened = true;
+        })
+
+        subNav.addEventListener('mouseout', function(e) {
+            e.preventDefault();
+
+            removeClass(subList, subNavHover);
+
+            subNavIsOpened = false;
+        })
+    }
+
     var addClass = function (element, className) {
         if (!element) { return; }
         element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
@@ -41,4 +79,5 @@
     }
 
     toggleMainNav();
+    toggleSubNav();
 })(document);
