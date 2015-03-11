@@ -153,13 +153,11 @@ nav
   &.active > a {
     border-bottom: #D56A03 solid 3px;
   }
-
-  :first-child {
-    border-left: solid 1px #C8CFD3;
-  }
 }
 
-
+.layout-navbar .navbar-list > li:first-child {
+  border-left: solid 1px #C8CFD3;
+}
 /* ***********************************************
 * MAIN
 * **************/
