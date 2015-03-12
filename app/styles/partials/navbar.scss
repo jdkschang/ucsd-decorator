@@ -272,13 +272,16 @@ button:active {
     position: relative;
 
     border: 0;
+    border-bottom: 1px solid #ccc;
+
     -webkit-box-shadow: none;
     box-shadow: none;
   }
 
   .navdrawer-container .navbar-sublist a {
-    border-left: none;
-    border-right: none;
+    border: none;
+    margin: 0;
+    padding-left: 2.5em;
   }
 }
 

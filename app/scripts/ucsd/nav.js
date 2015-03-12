@@ -1,5 +1,5 @@
 (function(document) {
-    var navListIsOpened     = false;
+    var mobileView = false;
 
     var toggleMainNav = function() {
         var navBtn              = document.querySelector('.btn-nav');
@@ -9,7 +9,7 @@
         var layoutFooter        = document.querySelector('.layout-footer');
         var navIsOpenedClass    = 'navbar-is-opened';
         var menuOpen            = 'open';
-
+        var navListIsOpened     = false;
 
         navBtn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -33,14 +33,15 @@
     }
 
     var toggleSubNav = function() {
-        var subNav = document.querySelector('.navbar-subnav');
-        var subList = document.querySelector('.navbar-sublist');
-        var subNavList = 'subnav-is-opened';
-        var subNavHover = 'subnav-hover';
-        var subNavIsOpened = false;
+        var subNav          = document.querySelector('.navbar-subnav');
+        var subList         = document.querySelector('.navbar-sublist');
+        var subNavList      = 'subnav-is-opened';
+        var subNavHover     = 'subnav-hover';
+        var subNavIsOpened  = false;
 
         subNav.addEventListener('click', function(e) {
             e.preventDefault();
+            detectBrowserWidth();
 
             if(!subNavIsOpened) {
                 addClass(subList, subNavList);
@@ -51,17 +52,17 @@
 
                 subNavIsOpened = false;
             }
-        })
+        });
 
-        if(!navListIsOpened) {
-            console.log(navListIsOpened);
+        if(mobileView) {
+            alert('in mobile view');
             subNav.addEventListener('mouseover', function (e) {
                 e.preventDefault();
 
                 addClass(subNav, subNavHover);
 
                 subNavIsOpened = true;
-            })
+            });
 
             subNav.addEventListener('mouseout', function (e) {
                 e.preventDefault();
@@ -71,17 +72,24 @@
                 subNavIsOpened = false;
             })
         }
-    }
+    };
+
+    var detectBrowserWidth = function() {
+        var browserWidth = window.innerWidth;
+        var mobileDesktopBorder = 768;
+
+        return (browserWidth < mobileDesktopBorder);
+    };
 
     var addClass = function (element, className) {
         if (!element) { return; }
         element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
-    }
+    };
 
     var removeClass = function(element, className) {
         if (!element) { return; }
         element.className = element.className.replace(className, '');
-    }
+    };
 
     toggleMainNav();
     toggleSubNav();
