@@ -54,7 +54,7 @@
         subNav.addEventListener('mouseover', function(e) {
             e.preventDefault();
 
-            addClass(subList, subNavHover);
+            addClass(subNav, subNavHover);
 
             subNavIsOpened = true;
         })
@@ -62,7 +62,7 @@
         subNav.addEventListener('mouseout', function(e) {
             e.preventDefault();
 
-            removeClass(subList, subNavHover);
+            removeClass(subNav, subNavHover);
 
             subNavIsOpened = false;
         })

@@ -116,7 +116,7 @@ button:active {
   -webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.2);
   box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.2); }
 
-.navdrawer-container ul.navbar-sublist.subnav-hover {
+.navdrawer-container .subnav-hover ul.navbar-sublist {
   display: block; }
 
 .navdrawer-container .navbar-sublist.subnav-is-opened {
