@@ -1,4 +1,6 @@
 (function(document) {
+    var navListIsOpened     = false;
+
     var toggleMainNav = function() {
         var navBtn              = document.querySelector('.btn-nav');
         var navList             = document.querySelector('.navdrawer-container');
@@ -7,7 +9,7 @@
         var layoutFooter        = document.querySelector('.layout-footer');
         var navIsOpenedClass    = 'navbar-is-opened';
         var menuOpen            = 'open';
-        var navListIsOpened     = false;
+
 
         navBtn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -51,21 +53,24 @@
             }
         })
 
-        subNav.addEventListener('mouseover', function(e) {
-            e.preventDefault();
+        if(!navListIsOpened) {
+            console.log(navListIsOpened);
+            subNav.addEventListener('mouseover', function (e) {
+                e.preventDefault();
 
-            addClass(subNav, subNavHover);
+                addClass(subNav, subNavHover);
 
-            subNavIsOpened = true;
-        })
+                subNavIsOpened = true;
+            })
 
-        subNav.addEventListener('mouseout', function(e) {
-            e.preventDefault();
+            subNav.addEventListener('mouseout', function (e) {
+                e.preventDefault();
 
-            removeClass(subNav, subNavHover);
+                removeClass(subNav, subNavHover);
 
-            subNavIsOpened = false;
-        })
+                subNavIsOpened = false;
+            })
+        }
     }
 
     var addClass = function (element, className) {
