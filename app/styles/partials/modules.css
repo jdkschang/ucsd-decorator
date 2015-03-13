@@ -56,6 +56,9 @@
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap; }
+  @media only screen and (max-width: 768px) {
+    .title-header {
+      margin-top: 2em; } }
 
 .title-logo {
   float: right;

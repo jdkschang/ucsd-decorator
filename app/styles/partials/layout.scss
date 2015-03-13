@@ -96,6 +96,10 @@ html, body
 
     > .layout-container {
       background: transparent url(../img/sprite_base.png) right -74px no-repeat;
+
+      @media only screen and (max-width: 640px) {
+        background: none;
+      }
     }
   }
 

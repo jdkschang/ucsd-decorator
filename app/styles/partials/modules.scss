@@ -72,6 +72,10 @@
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 2em;
+  }
 }
 
 .title-logo {
@@ -89,7 +93,6 @@
     float: none;
     position: absolute;
     left: 3%; /* width is 94% but for one side is only half of 6% -> 3% */
-
   }
 }
 

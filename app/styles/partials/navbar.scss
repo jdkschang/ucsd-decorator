@@ -254,8 +254,9 @@ button:active {
 }
 
 @media only screen and (max-width: 768px) {
-
-
+  .layout-header .btn-nav {
+    margin-top: 1.7em;
+  }
   .navdrawer-container .navbar-subnav .navbar-sublist.subnav-is-opened {
     display: block;
     position: relative;
@@ -272,6 +273,7 @@ button:active {
     margin: 0;
     padding-left: 2.5em;
   }
+
 }
 
 @media only screen and (max-width: 960px) {
