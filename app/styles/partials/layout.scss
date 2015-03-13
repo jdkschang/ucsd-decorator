@@ -25,6 +25,10 @@ html, body
     width: 98%;
     margin: auto;
     overflow: hidden;
+
+    @media only screen and (max-width: 768px) {
+      width: 94%;
+    }
   }
 
   .layout-header {
@@ -60,6 +64,10 @@ html, body
       width: 100%;
       background: #2b92b9;
       padding: 1.5em 0;
+
+      @media only screen and (max-width: 768px) {
+        padding: 1em 0;
+      }
     }
 
   .layout-navbar {

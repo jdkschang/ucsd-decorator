@@ -21,6 +21,9 @@ html, body {
   width: 98%;
   margin: auto;
   overflow: hidden; }
+  @media only screen and (max-width: 768px) {
+    .layout-container {
+      width: 94%; } }
 
 .layout-header {
   /* to incorporate new navbar button*/
@@ -42,6 +45,9 @@ html, body {
   width: 100%;
   background: #2b92b9;
   padding: 1.5em 0; }
+  @media only screen and (max-width: 768px) {
+    .layout-title {
+      padding: 1em 0; } }
 
 .layout-navbar {
   min-height: 34px;
