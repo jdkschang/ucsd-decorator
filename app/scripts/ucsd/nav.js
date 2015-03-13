@@ -53,7 +53,6 @@
         });
 
         if(!isMobileView()) {
-            console.log('is not mobile view');
 
             subNav.addEventListener('mouseover', function (e) {
                 e.preventDefault();
