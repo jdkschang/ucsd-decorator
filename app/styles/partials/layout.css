@@ -18,7 +18,7 @@ html, body {
 /* container will have media queries for sizing*/
 .layout-container {
   max-width: 1200px;
-  width: 94%;
+  width: 98%;
   margin: auto;
   overflow: hidden; }
 

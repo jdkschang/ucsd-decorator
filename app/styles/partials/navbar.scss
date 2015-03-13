@@ -22,6 +22,7 @@
 }
 
 .layout-header button.btn-nav {
+  position: relative;
   float: left;
 
   width: 44px;
@@ -36,19 +37,17 @@
   border: 1px solid #266E8A;
 
   padding: 8px;
+  margin-right: 10px;
 
   -webkit-transition: border 300ms ease-in,background 300ms ease-in;
   transition: border 300ms ease-in,background 300ms ease-in;
   -webkit-tap-highlight-color: transparent;
 
-  @media only screen and (min-width: 960px) {
+  @media only screen and (max-width: 960px) {
     display: block;
   }
 }
 
-button.menu {
-  position: relative;
-}
 
 button.menu .icon-bar:nth-child(2),
 button.menu .icon-bar:nth-child(3),
@@ -232,10 +231,7 @@ button:active {
     transition: none;
   }
 
-  .layout-header.open {
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
-  }
+
 
   .layout-header:after {
     content: ' ';
@@ -245,7 +241,7 @@ button:active {
     clear: both;
   }
 
-  button.menu {
+  button.btn-nav {
     display: none;
   }
 
@@ -259,18 +255,6 @@ button:active {
 
 @media only screen and (max-width: 768px) {
 
-  .navdrawer-container {
-    position: fixed;
-    width: 42%;
-
-    z-index: 0;
-    opacity: 0;
-  }
-
-  .navdrawer-container.open {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
 
   .navdrawer-container .navbar-subnav .navbar-sublist.subnav-is-opened {
     display: block;
@@ -288,6 +272,32 @@ button:active {
     margin: 0;
     padding-left: 2.5em;
   }
+}
+
+@media only screen and (max-width: 960px) {
+  .navdrawer-container {
+    position: fixed;
+    width: 42%;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  /* this is the working code for button transitions */
+  .layout-header {
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  .layout-header.open {
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
+    -webkit-transform: translate(42%,0);
+    transform: translate(42%,0);
+  }
+
 }
 
 
