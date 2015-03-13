@@ -1,6 +1,4 @@
 (function(document) {
-    var mobileView = false;
-
     var toggleMainNav = function() {
         var navBtn              = document.querySelector('.btn-nav');
         var navList             = document.querySelector('.navdrawer-container');
@@ -30,7 +28,7 @@
                 navListIsOpened = false;
             }
         });
-    }
+    };
 
     var toggleSubNav = function() {
         var subNav          = document.querySelector('.navbar-subnav');
@@ -41,7 +39,7 @@
 
         subNav.addEventListener('click', function(e) {
             e.preventDefault();
-            detectBrowserWidth();
+            //isMobileView();
 
             if(!subNavIsOpened) {
                 addClass(subList, subNavList);
@@ -54,8 +52,9 @@
             }
         });
 
-        if(mobileView) {
-            alert('in mobile view');
+        if(!isMobileView()) {
+            console.log('is not mobile view');
+
             subNav.addEventListener('mouseover', function (e) {
                 e.preventDefault();
 
@@ -74,7 +73,7 @@
         }
     };
 
-    var detectBrowserWidth = function() {
+    var isMobileView = function() {
         var browserWidth = window.innerWidth;
         var mobileDesktopBorder = 768;
 
