@@ -398,7 +398,7 @@ button:active {
   list-style-type: none; }
 
 /* sub list stylings */
-.navdrawer-container .navbar-list ul.navbar-sublist {
+.navdrawer-container ul.navbar-sublist {
   display: none;
   position: absolute;
   padding: 0;
@@ -413,6 +413,10 @@ button:active {
 
 .navdrawer-container .navbar-sublist.subnav-is-opened {
   display: block; }
+
+.navdrawer-container .navbar-sublist.subnav-is-opened a {
+  border: 0;
+  padding-left: 3em; }
 
 .navdrawer-container .navbar-sublist a {
   display: block;
@@ -471,16 +475,27 @@ button:active {
     clear: both; }
 
   button.btn-nav {
-    display: none; }
+    display: none; } }
+@media only screen and (max-width: 768px) {
+  .layout-header .btn-nav {
+    margin-top: 1.7em; }
 
+  .navdrawer-container .navbar-sublist a {
+    border: none;
+    margin: 0;
+    padding-left: 2.5em; } }
+@media only screen and (min-width: 960px) {
   .navdrawer-container {
     display: block;
     width: 100%;
     z-index: 1;
     opacity: 1; } }
-@media only screen and (max-width: 768px) {
-  .layout-header .btn-nav {
-    margin-top: 1.7em; }
+@media only screen and (max-width: 960px) {
+  .navdrawer-container {
+    position: fixed;
+    width: 42%;
+    z-index: 0;
+    opacity: 0; }
 
   .navdrawer-container .navbar-subnav .navbar-sublist.subnav-is-opened {
     display: block;
@@ -489,17 +504,6 @@ button:active {
     border-bottom: 1px solid #ccc;
     -webkit-box-shadow: none;
     box-shadow: none; }
-
-  .navdrawer-container .navbar-sublist a {
-    border: none;
-    margin: 0;
-    padding-left: 2.5em; } }
-@media only screen and (max-width: 960px) {
-  .navdrawer-container {
-    position: fixed;
-    width: 42%;
-    z-index: 0;
-    opacity: 0; }
 
   /* this is the working code for button transitions */
   .layout-header {

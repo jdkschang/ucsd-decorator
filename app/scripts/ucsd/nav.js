@@ -12,6 +12,8 @@
         navBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
+            isMobileView();
+
             if (!navListIsOpened) {
                 addClass(navList, navIsOpenedClass);
 
@@ -38,8 +40,8 @@
         var subNavIsOpened  = false;
 
         subNav.addEventListener('click', function(e) {
-            e.preventDefault();
-            //isMobileView();
+            // allows clicking of child elements
+            e.stopPropagation();
 
             if(!subNavIsOpened) {
                 addClass(subList, subNavList);
@@ -74,7 +76,9 @@
 
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 768;
+        var mobileDesktopBorder = 960;
+
+        console.log('mobile view: ' + (browserWidth < mobileDesktopBorder));
 
         return (browserWidth < mobileDesktopBorder);
     };
