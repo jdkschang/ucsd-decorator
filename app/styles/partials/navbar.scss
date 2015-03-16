@@ -238,39 +238,6 @@ button:active {
 
   }
 
-@media all and (min-width: $desktop-small) {
-  .breadcrumb {
-    opacity: 1;
-  }
-
-  .layout-header {
-    display: block;
-    position: initial;
-
-    box-sizing: border-box;
-    background-color: transparent;
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
-
-    -webkit-transition: none;
-    transition: none;
-  }
-
-  .layout-header:after {
-    content: ' ';
-    display: block;
-    height: 0;
-    overflow: hidden;
-    clear: both;
-  }
-
-  button.btn-nav {
-    display: none;
-  }
-
-
-}
-
 @media only screen and (max-width: $desktop-small) {
   .layout-header .btn-nav {
     margin-top: 1.7em;
@@ -291,6 +258,10 @@ button:active {
     width: 100%;
     z-index: 1;
     opacity: 1;
+  }
+
+  button.btn-nav {
+    display: none;
   }
 }
 

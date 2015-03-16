@@ -57,7 +57,8 @@ html, body {
   padding: 1.5em 0; }
   @media only screen and (max-width: 768px) {
     .layout-title {
-      padding: 1em 0; } }
+      padding: 1em 0;
+      height: 105px; } }
 
 .layout-navbar {
   min-height: 34px;
@@ -465,29 +466,6 @@ button:active {
   .navdrawer-container.navbar-is-opened .search-content form > .input-group {
     width: 60%; } }
 
-@media all and (min-width: 768px) {
-  .breadcrumb {
-    opacity: 1; }
-
-  .layout-header {
-    display: block;
-    position: initial;
-    box-sizing: border-box;
-    background-color: transparent;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    -webkit-transition: none;
-    transition: none; }
-
-  .layout-header:after {
-    content: ' ';
-    display: block;
-    height: 0;
-    overflow: hidden;
-    clear: both; }
-
-  button.btn-nav {
-    display: none; } }
 @media only screen and (max-width: 768px) {
   .layout-header .btn-nav {
     margin-top: 1.7em; }
@@ -501,7 +479,10 @@ button:active {
     display: block;
     width: 100%;
     z-index: 1;
-    opacity: 1; } }
+    opacity: 1; }
+
+  button.btn-nav {
+    display: none; } }
 @media only screen and (max-width: 960px) {
   .navdrawer-container {
     position: fixed;
