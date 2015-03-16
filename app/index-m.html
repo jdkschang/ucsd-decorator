@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="styles/bootstrap.css"/>
     <!-- endbuild -->
 
-    <link rel="stylesheet" href="styles/partials/layout.css"/>
-    <link rel="stylesheet" href="styles/partials/modules.css"/>
-    <link rel="stylesheet" href="styles/partials/navbar.css"/>
+    <!-- build:css(.tmp) styles/layout.css -->
+    <link rel="stylesheet" href="styles/base-d45.css"/>
+    <!-- endbuild -->
 
     <!-- build:js(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="styles/ie-support.css"/>
     <![endif]-->
+    <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
     <!-- End site-specific CSS files -->
@@ -33,7 +34,6 @@
 </head>
 <body>
 <header class="layout-header">
-    <!-- legacy code but cannot remove .. yet -->
     <a class="sr-only" href="#">Skip to main content</a>
     <div id="uc-emergency"></div>
 
@@ -55,12 +55,10 @@
                 <span class="glyphicon glyphicon-menu-left"></span>
             </button>
 
-            <a href="index.html" class="title-header">Decorator 4.1</a>
+            <a href="index.html" class="title-header">Decorator 4.5</a>
             <a href="http://www.ucsd.edu" class="title-logo">UC San Diego</a>
         </div>
     </section>
-
-
 </header>
 
 <nav class="navdrawer-container layout-navbar" role="navigation">
@@ -114,7 +112,7 @@
             <li class="active">Index</li>
         </ol>
 
-        <h1>Decorator 4.1 [Work in Progress]</h1>
+        <h1>Decorator 4.5</h1>
 
         <section class="main-section">
             <p>
@@ -184,6 +182,14 @@
 <script src="scripts/base-min.js"></script>
 <!-- endbuild -->
 
+<!-- build:js({app,.tmp}) scripts/vendor.js -->
+<script src="scripts/vendor.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:js({app,.tmp}) scripts/base-min.js -->
+<script src="scripts/base-min.js"></script>
+<!-- endbuild -->
 
 <!-- Google Search -->
 <script src="//www.google.com/jsapi"></script>
