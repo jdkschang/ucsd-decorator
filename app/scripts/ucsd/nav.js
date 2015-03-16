@@ -59,7 +59,7 @@
             subNav.addEventListener('mouseover', function (e) {
                 e.preventDefault();
 
-                addClass(subNav, subNavHover);
+                if(!isMobileView()) addClass(subNav, subNavHover);
 
                 subNavIsOpened = true;
             });
@@ -67,7 +67,7 @@
             subNav.addEventListener('mouseout', function (e) {
                 e.preventDefault();
 
-                removeClass(subNav, subNavHover);
+                if(!isMobileView()) removeClass(subNav, subNavHover);
 
                 subNavIsOpened = false;
             })
@@ -77,8 +77,6 @@
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
         var mobileDesktopBorder = 960;
-
-        console.log('mobile view: ' + (browserWidth < mobileDesktopBorder));
 
         return (browserWidth < mobileDesktopBorder);
     };

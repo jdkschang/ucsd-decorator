@@ -99,7 +99,7 @@ html, body
     line-height: 1.5;
 
     > .layout-container {
-      background: transparent url(../img/sprite_base.png) right -74px no-repeat;
+      background: transparent url(img/sprite_base.png) right -74px no-repeat;
 
       @media only screen and (max-width: $tablet) {
         background: none;
