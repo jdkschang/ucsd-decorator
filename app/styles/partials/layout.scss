@@ -26,11 +26,11 @@ html, body
     margin: auto;
     overflow: hidden;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: $desktop-small) {
       width: 94%;
     }
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: $full) {
       max-width: 1200px;
     }
   }
@@ -50,11 +50,11 @@ html, body
 //    flex-direction: row;
 //
 //    position: relative;
-    @media only screen and (min-width: 320px) {
+    @media only screen and (min-width: $minimum) {
       height: 105px;
     }
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: $desktop-small) {
       height: 78px;
     }
   }
@@ -101,7 +101,7 @@ html, body
     > .layout-container {
       background: transparent url(../img/sprite_base.png) right -74px no-repeat;
 
-      @media only screen and (max-width: 640px) {
+      @media only screen and (max-width: $tablet) {
         background: none;
       }
     }
