@@ -513,13 +513,5 @@ button:active {
     transition: transform 0.3s ease-in-out;
     -webkit-transform: translate(42%, 0);
     transform: translate(42%, 0); } }
-@media all and (min-width: 508px) {
-  .navdrawer-container ul {
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row; }
-
-  .navdrawer-container ul li {
-    border: none; } }
 
 /*# sourceMappingURL=base-d45.css.map */
