@@ -19,6 +19,11 @@
 .layout-footer.open {
   -webkit-transform: translate(42%,0);
   transform: translate(42%,0);
+
+  @media only screen and (max-width: $tablet) {
+    -webkit-transform: translate(83%,0);
+    transform: translate(83%,0);
+  }
 }
 
 .layout-header button.btn-nav {
@@ -38,10 +43,6 @@
 
   padding: 8px;
   margin-right: 10px;
-
-  -webkit-transition: border 300ms ease-in,background 300ms ease-in;
-  transition: border 300ms ease-in,background 300ms ease-in;
-  -webkit-tap-highlight-color: transparent;
 
   @media only screen and (max-width: 960px) {
     display: block;
@@ -219,6 +220,24 @@ button:active {
   display: block;
 }
 
+
+  .navdrawer-container.navbar-is-opened {
+    @media only screen and (max-width: $tablet) {
+      width: 83%;
+
+      .search {
+        max-width: none;
+      }
+    }
+
+    @media screen and (min-width: $minimum) and (max-width: $tablet) {
+      .search-content form > .input-group {
+        width: 60%;
+      }
+    }
+
+  }
+
 @media all and (min-width: $desktop-small) {
   .breadcrumb {
     opacity: 1;
@@ -295,19 +314,19 @@ button:active {
     }
 
   /* this is the working code for button transitions */
-  .layout-header {
-    -webkit-transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
-  }
-
-  .layout-header.open {
-    -webkit-transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-
-    -webkit-transform: translate(42%,0);
-    transform: translate(42%,0);
-  }
+//  .layout-header {
+//    -webkit-transition: transform 0.3s ease-in-out;
+//    transition: transform 0.3s ease-in-out;
+//    -webkit-transform: translate(0,0);
+//    transform: translate(0,0);
+//  }
+//
+//  .layout-header.open {
+//    -webkit-transition: transform 0.3s ease-in-out;
+//    transition: transform 0.3s ease-in-out;
+//
+//    -webkit-transform: translate(42%,0);
+//    transform: translate(42%,0);
+//  }
 
 }
