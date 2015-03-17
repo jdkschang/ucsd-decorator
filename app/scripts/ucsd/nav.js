@@ -85,9 +85,11 @@
 
             if(!isSearchOpen) {
                 addClass(searchContent, searchOpen);
+                addClass(searchBtn, searchOpen);
                 isSearchOpen = true;
             } else {
                 removeClass(searchContent, searchOpen);
+                removeClass(searchBtn, searchOpen);
                 isSearchOpen = false;
             }
         });

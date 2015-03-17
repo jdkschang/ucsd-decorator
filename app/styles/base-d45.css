@@ -205,16 +205,47 @@ a {
 
 .search-toggle {
   max-height: 40px;
-  background: 0;
+  background-color: #F2F5F7;
   border-radius: 0;
   -webkit-border-radius: 0;
   border: 1px solid transparent;
   border-width: 0 1px;
   outline: 0;
   padding: 11px; }
+  .search-toggle:hover, .search-toggle.search-is-open {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    text-decoration: none; }
 
 .search-content {
+  position: absolute;
+  right: 0;
+  width: 385px;
+  padding: 10px;
+  background-color: #dfe2e4;
+  border: solid #ccc;
+  border-width: 0 1px 2px;
   display: none; }
+
+.search-content.search-is-open {
+  display: block; }
+
+.search-content .search-scope {
+  max-width: 99px;
+  font-size: 11px;
+  padding: 4px 2px 4px 0;
+  float: left;
+  height: 27px; }
+
+.search-content .input-group {
+  width: 250px;
+  float: right; }
+
+.search-content .form-control {
+  float: right;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  height: 26px; }
 
 /* ***********************************************
  * TITLE
