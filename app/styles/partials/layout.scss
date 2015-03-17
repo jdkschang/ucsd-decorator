@@ -69,7 +69,11 @@ html, body
       background: #2b92b9;
       padding: 1.5em 0;
 
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: $mobile-small) {
+        padding: 0.5em 0;
+      }
+
+      @media only screen and (max-width: $desktop-small) {
         padding: 1em 0;
         height: 105px;
       }

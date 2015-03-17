@@ -43,13 +43,18 @@
   padding: 9px 10px;
   margin-right: 10px;
 
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: $mobile-small) {
+    top: 5px;
+  }
+
+  @media only screen and (max-width: $desktop) {
     display: block;
   }
 }
 /* button iconbar styling */
 
-button.menu .icon-bar {
+
+button.btn-nav .icon-bar {
   display: block;
 
   width: 30px;
@@ -58,21 +63,25 @@ button.menu .icon-bar {
   background-color: #fff;
   border-radius: 1px;
   margin-top: 0.25em;
+
+  @media only screen and (max-width: $mobile-small) {
+    width: 22px;
+  }
 }
 
-button.menu .icon-bar:nth-child(2),
-button.menu .icon-bar:nth-child(3),
-button.menu .icon-bar:nth-child(4) {
+.btn-nav .icon-bar:nth-child(2),
+.btn-nav .icon-bar:nth-child(3),
+.btn-nav .icon-bar:nth-child(4) {
   transition: all .2s ease;
   transition-delay: .25s;
   opacity: 1;
 }
-  button.menu .icon-bar:nth-child(2) {
+  .btn-nav .icon-bar:nth-child(2) {
     margin: 0;
   }
   /* button transition code */
-  button.menu .icon-bar:nth-child(2),
-  button.menu .icon-bar:nth-child(4) {
+  .btn-nav .icon-bar:nth-child(2),
+  .btn-nav .icon-bar:nth-child(4) {
     -webkit-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
@@ -81,16 +90,16 @@ button.menu .icon-bar:nth-child(4) {
     -o-transition-delay: .25s;
     transition-delay: .25s;
   }
-    .layout-header.open button.menu .icon-bar:nth-child(2) {
+    .layout-header.open .btn-nav .icon-bar:nth-child(2) {
       -webkit-transform: translate3d(0,8px,0) rotateZ(45deg);
       -ms-transform: translate3d(0,8px,0) rotateZ(45deg);
       -o-transform: translate3d(0,8px,0) rotateZ(45deg);
       transform: translate3d(0,8px,0) rotateZ(45deg);
     }
-    .layout-header.open button.menu .icon-bar:nth-child(3) {
+    .layout-header.open .btn-nav .icon-bar:nth-child(3) {
       opacity: 0;
     }
-    .layout-header.open button.menu .icon-bar:nth-child(4) {
+    .layout-header.open .btn-nav .icon-bar:nth-child(4) {
       -webkit-transform: translate3d(0, -8px, 0) rotateZ(-45deg);
       -ms-transform: translate3d(0, -8px, 0) rotateZ(-45deg);
       -o-transform: translate3d(0, -8px, 0) rotateZ(-45deg);
@@ -98,14 +107,6 @@ button.menu .icon-bar:nth-child(4) {
     }
 /* end button transition code */
 
-button.menu .glyphicon-menu-left,
-.layout-header.open button.menu .glyphicon-menu-hamburger{
-  display: none;
-}
-
-.layout-header.open button.menu .glyphicon-menu-left {
-  display: inline;
-}
 
 button:hover {
   border-color: transparent;
@@ -201,6 +202,7 @@ button:active {
   }
     .navdrawer-container .subnav-hover ul.navbar-sublist {
       display: block;
+      z-index: 1;
     }
 
     .navdrawer-container .navbar-sublist.subnav-is-opened {
