@@ -30,7 +30,6 @@
   position: relative;
   float: left;
 
-  width: 44px;
   height: 44px;
 
   color: #fff;
@@ -41,21 +40,63 @@
   border-radius: 4px;
   border: 1px solid #266E8A;
 
-  padding: 8px;
+  padding: 9px 10px;
   margin-right: 10px;
 
   @media only screen and (max-width: 960px) {
     display: block;
   }
 }
+/* button iconbar styling */
 
+button.menu .icon-bar {
+  display: block;
+
+  width: 30px;
+  height: 2px;
+
+  background-color: #fff;
+  border-radius: 1px;
+  margin-top: 0.25em;
+}
 
 button.menu .icon-bar:nth-child(2),
 button.menu .icon-bar:nth-child(3),
 button.menu .icon-bar:nth-child(4) {
   transition: all .2s ease;
+  transition-delay: .25s;
   opacity: 1;
 }
+  button.menu .icon-bar:nth-child(2) {
+    margin: 0;
+  }
+  /* button transition code */
+  button.menu .icon-bar:nth-child(2),
+  button.menu .icon-bar:nth-child(4) {
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+
+    -webkit-transition-delay: .25s;
+    -o-transition-delay: .25s;
+    transition-delay: .25s;
+  }
+    .layout-header.open button.menu .icon-bar:nth-child(2) {
+      -webkit-transform: translate3d(0,8px,0) rotateZ(45deg);
+      -ms-transform: translate3d(0,8px,0) rotateZ(45deg);
+      -o-transform: translate3d(0,8px,0) rotateZ(45deg);
+      transform: translate3d(0,8px,0) rotateZ(45deg);
+    }
+    .layout-header.open button.menu .icon-bar:nth-child(3) {
+      opacity: 0;
+    }
+    .layout-header.open button.menu .icon-bar:nth-child(4) {
+      -webkit-transform: translate3d(0, -8px, 0) rotateZ(-45deg);
+      -ms-transform: translate3d(0, -8px, 0) rotateZ(-45deg);
+      -o-transform: translate3d(0, -8px, 0) rotateZ(-45deg);
+      transform: translate3d(0, -8px, 0) rotateZ(-45deg);
+    }
+/* end button transition code */
 
 button.menu .glyphicon-menu-left,
 .layout-header.open button.menu .glyphicon-menu-hamburger{
