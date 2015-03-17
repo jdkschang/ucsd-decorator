@@ -487,6 +487,12 @@ button:active {
   list-style-type: none; }
 
 /* sub list stylings */
+.navdrawer-container .navbar-subnav:hover > a {
+  border-bottom: solid 3px #9FB3BF; }
+
+.navbar-subnav .navbar-sublist li:hover > a {
+  background-color: #fbfbfb; }
+
 .navdrawer-container ul.navbar-sublist {
   display: none;
   position: absolute;
@@ -582,8 +588,6 @@ button:active {
     border: 0;
     border-bottom: 1px solid #ccc;
     -webkit-box-shadow: none;
-    box-shadow: none; }
-
-  /* this is the working code for button transitions */ }
+    box-shadow: none; } }
 
 /*# sourceMappingURL=base-d45.css.map */

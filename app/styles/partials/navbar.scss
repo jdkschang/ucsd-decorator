@@ -187,6 +187,13 @@ button:active {
 }
 
   /* sub list stylings */
+  .navdrawer-container .navbar-subnav:hover > a {
+    border-bottom: solid 3px #9FB3BF;
+  }
+    .navbar-subnav .navbar-sublist li:hover > a {
+      background-color: #fbfbfb;
+    }
+
   .navdrawer-container ul.navbar-sublist {
     display: none;
     position: absolute;
@@ -326,21 +333,4 @@ button:active {
       -webkit-box-shadow: none;
       box-shadow: none;
     }
-
-  /* this is the working code for button transitions */
-//  .layout-header {
-//    -webkit-transition: transform 0.3s ease-in-out;
-//    transition: transform 0.3s ease-in-out;
-//    -webkit-transform: translate(0,0);
-//    transform: translate(0,0);
-//  }
-//
-//  .layout-header.open {
-//    -webkit-transition: transform 0.3s ease-in-out;
-//    transition: transform 0.3s ease-in-out;
-//
-//    -webkit-transform: translate(42%,0);
-//    transform: translate(42%,0);
-//  }
-
 }
