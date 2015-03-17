@@ -42,6 +42,7 @@
   float: right;
 //  max-width:380px;
 }
+
 .search-toggle {
   max-height: 40px;
 
@@ -73,6 +74,11 @@
   border: solid #ccc;
   border-width: 0 1px 2px;
   display: none;
+
+  @media only screen and (max-width: $desktop) {
+    position: relative;
+    width: 100%;
+  }
 }
   .search-content.search-is-open {
     display: block;
@@ -113,6 +119,12 @@
   @media only screen and (max-width: $desktop-small) {
     margin-top: 2em;
   }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+
 }
 
 .title-logo {

@@ -226,6 +226,10 @@ a {
   border: solid #ccc;
   border-width: 0 1px 2px;
   display: none; }
+  @media only screen and (max-width: 960px) {
+    .search-content {
+      position: relative;
+      width: 100%; } }
 
 .search-content.search-is-open {
   display: block; }
@@ -261,6 +265,8 @@ a {
   @media only screen and (max-width: 768px) {
     .title-header {
       margin-top: 2em; } }
+  .title-header:hover, .title-header:focus {
+    color: #fff; }
 
 .title-logo {
   float: right;
