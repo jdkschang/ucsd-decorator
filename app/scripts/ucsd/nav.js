@@ -77,7 +77,7 @@
     var toggleSearch = function() {
         var searchBtn = document.querySelector('.search-toggle');
         var searchContent = document.querySelector('.search-content');
-        var searchOpen = 'search-open';
+        var searchOpen = 'search-is-open';
         var isSearchOpen = false;
 
         searchBtn.addEventListener('click', function(e) {
