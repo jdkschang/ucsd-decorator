@@ -201,18 +201,17 @@ a {
  * SEARCH
  * ***************/
 .search {
-  float: right;
-  max-width: 380px; }
+  float: right; }
 
 .search-toggle {
-  max-height: 35px;
+  max-height: 40px;
   background: 0;
   border-radius: 0;
   -webkit-border-radius: 0;
   border: 1px solid transparent;
   border-width: 0 1px;
   outline: 0;
-  padding: 8px; }
+  padding: 11px; }
 
 .search-content {
   display: none; }
