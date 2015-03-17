@@ -74,6 +74,25 @@
         }
     };
 
+    var toggleSearch = function() {
+        var searchBtn = document.querySelector('.search-toggle');
+        var searchContent = document.querySelector('.search-content');
+        var searchOpen = 'search-open';
+        var isSearchOpen = false;
+
+        searchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            if(!isSearchOpen) {
+                addClass(searchContent, searchOpen);
+                isSearchOpen = true;
+            } else {
+                removeClass(searchContent, searchOpen);
+                isSearchOpen = false;
+            }
+        });
+    };
+
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
         var mobileDesktopBorder = 960;
@@ -93,4 +112,5 @@
 
     toggleMainNav();
     toggleSubNav();
+    toggleSearch();
 })(document);
