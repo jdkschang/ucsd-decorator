@@ -185,6 +185,9 @@
       display: block;
       padding: 1em 0 1em 1em;
 
+      &:hover {
+        background-color: #fff;
+      }
       &:hover, &:link, &:active {
         text-decoration: none;
       }
@@ -195,6 +198,10 @@
       color: #d56a03;
 
       padding: 1em 0 1em 1em;
+
+      a:hover {
+        text-decoration: underline;
+      }
     }
 
     ul {

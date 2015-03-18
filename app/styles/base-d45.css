@@ -317,12 +317,16 @@ a {
     .main-content-nav > ul li a {
       display: block;
       padding: 1em 0 1em 1em; }
+      .main-content-nav > ul li a:hover {
+        background-color: #fff; }
       .main-content-nav > ul li a:hover, .main-content-nav > ul li a:link, .main-content-nav > ul li a:active {
         text-decoration: none; }
     .main-content-nav > ul li.active {
       background-color: #fff;
       color: #d56a03;
       padding: 1em 0 1em 1em; }
+      .main-content-nav > ul li.active a:hover {
+        text-decoration: underline; }
     .main-content-nav > ul li ul {
       margin: .4em 0 -.4em 1em;
       padding: 0; }
