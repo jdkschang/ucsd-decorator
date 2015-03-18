@@ -313,13 +313,16 @@ a {
     margin: 0 -1em -1em; }
   .main-content-nav > ul li {
     border-top: solid 1px #D8D7D7;
-    list-style: none;
-    padding: 1em 0 1em 1em; }
-    .main-content-nav > ul li a:hover, .main-content-nav > ul li a:link, .main-content-nav > ul li a:active {
-      text-decoration: none; }
+    list-style: none; }
+    .main-content-nav > ul li a {
+      display: block;
+      padding: 1em 0 1em 1em; }
+      .main-content-nav > ul li a:hover, .main-content-nav > ul li a:link, .main-content-nav > ul li a:active {
+        text-decoration: none; }
     .main-content-nav > ul li.active {
       background-color: #fff;
-      color: #d56a03; }
+      color: #d56a03;
+      padding: 1em 0 1em 1em; }
     .main-content-nav > ul li ul {
       margin: .4em 0 -.4em 1em;
       padding: 0; }
