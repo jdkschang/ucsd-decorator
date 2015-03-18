@@ -17,15 +17,27 @@ html, body {
 
 /* container will have media queries for sizing*/
 .layout-container {
-  max-width: 1200px;
-  width: 94%;
+  max-width: 960px;
+  width: 98%;
   margin: auto;
   overflow: hidden; }
+  @media only screen and (max-width: 768px) {
+    .layout-container {
+      width: 94%; } }
+  @media only screen and (min-width: 1200px) {
+    .layout-container {
+      max-width: 1200px; } }
 
 .layout-header {
   /* to incorporate new navbar button*/
   background-color: #2b92b9;
   width: 100%; }
+  @media only screen and (min-width: 320px) {
+    .layout-header {
+      height: 105px; } }
+  @media only screen and (min-width: 768px) {
+    .layout-header {
+      height: 78px; } }
 
 .layout-login {
   background: #0B4A67; }
@@ -36,6 +48,9 @@ html, body {
   width: 100%;
   background: #2b92b9;
   padding: 1.5em 0; }
+  @media only screen and (max-width: 768px) {
+    .layout-title {
+      padding: 1em 0; } }
 
 .layout-navbar {
   min-height: 34px;
@@ -58,6 +73,9 @@ html, body {
   line-height: 1.5; }
   .layout-footer > .layout-container {
     background: transparent url(../img/sprite_base.png) right -74px no-repeat; }
+    @media only screen and (max-width: 640px) {
+      .layout-footer > .layout-container {
+        background: none; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333;
@@ -104,8 +122,9 @@ a {
     text-decoration: none; }
   .layout-navbar .navbar-list > li.active > a {
     border-bottom: #D56A03 solid 3px; }
-  .layout-navbar .navbar-list > li :first-child {
-    border-left: solid 1px #C8CFD3; }
+
+.layout-navbar .navbar-list > li:first-child {
+  border-left: solid 1px #C8CFD3; }
 
 /* ***********************************************
 * MAIN

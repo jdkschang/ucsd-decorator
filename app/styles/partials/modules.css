@@ -56,6 +56,9 @@
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap; }
+  @media only screen and (max-width: 768px) {
+    .title-header {
+      margin-top: 2em; } }
 
 .title-logo {
   float: right;
@@ -65,6 +68,12 @@
   text-indent: -999em;
   background: transparent url(../img/sprite_base.png) no-repeat;
   background-position: 0 -3px; }
+  @media only screen and (max-width: 768px) {
+    .title-logo {
+      float: none;
+      position: absolute;
+      left: 3%;
+      /* width is 94% but for one side is only half of 6% -> 3% */ } }
 
 /* ***********************************************
  * MAIN CONTENT SIDE NAV
