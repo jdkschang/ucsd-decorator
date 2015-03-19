@@ -36,9 +36,7 @@
                 toggleMainNav();
             });
         } else {
-            navBtn.attachEvent("onclick", function(e) {
-                e.preventDefault();
-
+            navBtn.attachEvent("onclick", function() {
                 toggleMainNav();
             })
         }
@@ -68,10 +66,35 @@
                 e.stopPropagation();
                 toggleSubNav();
             });
-        } else {
+
+            subNav.addEventListener('mouseover', function (e) {
+                e.preventDefault();
+
+                if(!isMobileView()) addClass(subNav, subNavHover);
+
+                subNavIsOpened = true;
+            });
+
+            subNav.addEventListener('mouseout', function (e) {
+                e.preventDefault();
+
+                if(!isMobileView()) removeClass(subNav, subNavHover);
+
+                subNavIsOpened = false;
+            })
+        } else { // ie 7/8 fix
             subNav.attachEvent("onclick", function() {
                 toggleSubNav();
-            })
+            });
+
+            subNav.attachEvent("onmouseover", function() {
+                if(!isMobileView()) addClass(subNav, subNavHover);
+                subNavIsOpened = true;
+            });
+            subNav.attachEvent("onmouseout", function() {
+                if(!isMobileView()) removeClass(subNav, subNavHover);
+                subNavIsOpened = false;
+            });
         }
 
         //if(!isMobileView()) {
@@ -94,26 +117,35 @@
         //}
     };
 
-    //var toggleSearch = function() {
-    //    var searchBtn = document.querySelector('.search-toggle');
-    //    var searchContent = document.querySelector('.search-content');
-    //    var searchOpen = 'search-is-open';
-    //    var isSearchOpen = false;
-    //
-    //    searchBtn.addEventListener('click', function(e) {
-    //        e.preventDefault();
-    //
-    //        if(!isSearchOpen) {
-    //            addClass(searchContent, searchOpen);
-    //            addClass(searchBtn, searchOpen);
-    //            isSearchOpen = true;
-    //        } else {
-    //            removeClass(searchContent, searchOpen);
-    //            removeClass(searchBtn, searchOpen);
-    //            isSearchOpen = false;
-    //        }
-    //    });
-    //};
+    var mainSearch = function() {
+        var searchBtn = document.querySelector('.search-toggle');
+        var searchContent = document.querySelector('.search-content');
+        var searchOpen = 'search-is-open';
+        var isSearchOpen = false;
+
+        var toggleSearch = function() {
+            if(!isSearchOpen) {
+                addClass(searchContent, searchOpen);
+                addClass(searchBtn, searchOpen);
+                isSearchOpen = true;
+            } else {
+                removeClass(searchContent, searchOpen);
+                removeClass(searchBtn, searchOpen);
+                isSearchOpen = false;
+            }
+        };
+
+        if(searchBtn.addEventListener) {
+            searchBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleSearch();
+            });
+        } else {
+            searchBtn.attachEvent("onclick", function() {
+                toggleSearch();
+            })
+        }
+    };
 
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
@@ -134,5 +166,5 @@
 
     mainNav();
     mainSubNav();
-    //toggleSearch();
+    mainSearch();
 })(document);
