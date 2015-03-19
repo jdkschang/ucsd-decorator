@@ -1,5 +1,5 @@
 (function(document) {
-    var toggleMainNav = function() {
+    var mainNav = function() {
         var navBtn              = document.querySelector('.btn-nav');
         var navList             = document.querySelector('.navdrawer-container');
         var layoutHeader        = document.querySelector('.layout-header');         // for menu button transition
@@ -9,9 +9,7 @@
         var menuOpen            = 'open';
         var navListIsOpened     = false;
 
-        navBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-
+        var toggleMainNav = function() {
             isMobileView();
 
             if (!navListIsOpened) {
@@ -29,7 +27,28 @@
                 removeClass(layoutFooter, menuOpen);
                 navListIsOpened = false;
             }
-        });
+        };
+
+        if (_checkbox.addEventListener) {
+            _checkbox.addEventListener("click", setCheckedValues, false);
+        }
+        else {
+            _checkbox.attachEvent("onclick", setCheckedValues);
+        }
+
+        if(navBtn.addEventListener) { // ie8 conditional
+            navBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                toggleMainNav();
+            });
+        } else {
+            navBtn.attachEvent("onclick", function(e) {
+                e.preventDefault();
+
+                toggleMainNav();
+            })
+        }
     };
 
     var toggleSubNav = function() {
@@ -112,7 +131,7 @@
         element.className = element.className.replace(className, '');
     };
 
-    toggleMainNav();
+    mainNav();
     toggleSubNav();
     toggleSearch();
 })(document);
