@@ -29,13 +29,6 @@
             }
         };
 
-        if (_checkbox.addEventListener) {
-            _checkbox.addEventListener("click", setCheckedValues, false);
-        }
-        else {
-            _checkbox.attachEvent("onclick", setCheckedValues);
-        }
-
         if(navBtn.addEventListener) { // ie8 conditional
             navBtn.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -51,17 +44,14 @@
         }
     };
 
-    var toggleSubNav = function() {
+    var mainSubNav = function() {
         var subNav          = document.querySelector('.navbar-subnav');
         var subList         = document.querySelector('.navbar-sublist');
         var subNavList      = 'subnav-is-opened';
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
 
-        subNav.addEventListener('click', function(e) {
-            // allows clicking of child elements
-            e.stopPropagation();
-
+        var toggleSubNav = function() {
             if(!subNavIsOpened) {
                 addClass(subList, subNavList);
 
@@ -71,48 +61,59 @@
 
                 subNavIsOpened = false;
             }
-        });
+        };
 
-        if(!isMobileView()) {
-
-            subNav.addEventListener('mouseover', function (e) {
-                e.preventDefault();
-
-                if(!isMobileView()) addClass(subNav, subNavHover);
-
-                subNavIsOpened = true;
+        if(subNav.addEventListener) {
+            subNav.addEventListener('click', function (e) {
+                e.stopPropagation();
+                toggleSubNav();
             });
-
-            subNav.addEventListener('mouseout', function (e) {
-                e.preventDefault();
-
-                if(!isMobileView()) removeClass(subNav, subNavHover);
-
-                subNavIsOpened = false;
+        } else {
+            subNav.attachEvent("onclick", function() {
+                toggleSubNav();
             })
         }
+
+        //if(!isMobileView()) {
+        //
+        //    subNav.addEventListener('mouseover', function (e) {
+        //        e.preventDefault();
+        //
+        //        if(!isMobileView()) addClass(subNav, subNavHover);
+        //
+        //        subNavIsOpened = true;
+        //    });
+        //
+        //    subNav.addEventListener('mouseout', function (e) {
+        //        e.preventDefault();
+        //
+        //        if(!isMobileView()) removeClass(subNav, subNavHover);
+        //
+        //        subNavIsOpened = false;
+        //    })
+        //}
     };
 
-    var toggleSearch = function() {
-        var searchBtn = document.querySelector('.search-toggle');
-        var searchContent = document.querySelector('.search-content');
-        var searchOpen = 'search-is-open';
-        var isSearchOpen = false;
-
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            if(!isSearchOpen) {
-                addClass(searchContent, searchOpen);
-                addClass(searchBtn, searchOpen);
-                isSearchOpen = true;
-            } else {
-                removeClass(searchContent, searchOpen);
-                removeClass(searchBtn, searchOpen);
-                isSearchOpen = false;
-            }
-        });
-    };
+    //var toggleSearch = function() {
+    //    var searchBtn = document.querySelector('.search-toggle');
+    //    var searchContent = document.querySelector('.search-content');
+    //    var searchOpen = 'search-is-open';
+    //    var isSearchOpen = false;
+    //
+    //    searchBtn.addEventListener('click', function(e) {
+    //        e.preventDefault();
+    //
+    //        if(!isSearchOpen) {
+    //            addClass(searchContent, searchOpen);
+    //            addClass(searchBtn, searchOpen);
+    //            isSearchOpen = true;
+    //        } else {
+    //            removeClass(searchContent, searchOpen);
+    //            removeClass(searchBtn, searchOpen);
+    //            isSearchOpen = false;
+    //        }
+    //    });
+    //};
 
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
@@ -132,6 +133,6 @@
     };
 
     mainNav();
-    toggleSubNav();
-    toggleSearch();
+    mainSubNav();
+    //toggleSearch();
 })(document);
