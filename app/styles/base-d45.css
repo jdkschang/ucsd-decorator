@@ -51,6 +51,7 @@ html, body {
 
 .layout-title {
   font-family: "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
   height: 78px;
   width: 100%;
   background: #2b92b9;
