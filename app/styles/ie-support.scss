@@ -1,6 +1,10 @@
 /* start of decorator 4.5 support for  IE7 and IE8 specifics */
 /* '*+' ie7 specific selector */
 /* start of decorator 4.5 support for  IE7 and IE8 specifics */
+*+* {
+  behavior:
+}
+
 *+section.layout-title {
   box-sizing: border-box;
   padding: 1em 0;
