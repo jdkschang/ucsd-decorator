@@ -73,7 +73,6 @@
         }
         return getElementsByClassName(className, tag, elm);
     };
-    var polyfillQSA = function() {
         if (!document.querySelectorAll) {
             document.querySelectorAll = function (selectors) {
                 var style = document.createElement('style'), elements = [], element;
@@ -100,12 +99,11 @@
                 return (elements.length) ? elements[0] : null;
             };
         }
-    };
 
     var mainNav = function() {
-        alert('before QSA - removed .: navBtn');
+        alert('before navBtn : removed . maybe style display will work now');
         var navBtn              = document.querySelectorAll('btn-nav');
-        if(!navBtn.querySelector) alert('navBtn NULL');
+        if(!navBtn.querySelectorAll) navBtn.style.display = "block";
         var navList             = document.getElementsByClassName('navdrawer-container');
         var layoutHeader        = document.getElementsByClassName('layout-header');         // for menu button transition
         var layoutMain          = document.getElementsByClassName('layout-main');
@@ -162,15 +160,12 @@
         };
         // ie 7/8 fix
         if(!subNav.addEventListener) {
-            alert('subNav v2: added another getElementsByClassName');
             if(!subNav.attachEvent) alert('subNav NULL')
             subNav.attachEvent("onclick", function() {
-                alert('in subnav attachEvent onclick');
                 toggleSubNav();
             });
 
             subNav.attachEvent("onmouseover", function() {
-                alert('in subnavHover attachEvent onmouseover');
                 if(!isMobileView()) addClass(subNav, subNavHover);
                 subNavIsOpened = true;
             });
@@ -250,7 +245,7 @@
         element.className = element.className.replace(className, '');
     };
 
-    polyfillQSA();
+    //polyfillQSA();
     mainNav();
     mainSubNav();
     mainSearch();
