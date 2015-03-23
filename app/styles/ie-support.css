@@ -18,8 +18,12 @@
 .layout-header button.btn-nav {
   display: none !important; }
 
+.navdrawer-container .search {
+  float: right !important; }
+
 /* search max-height fix */
 button.search-toggle {
+  display: block !important;
   height: 40px; }
 
 /*# sourceMappingURL=ie-support.css.map */
