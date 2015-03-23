@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": ";;AAEA,wBAAuB;EACrB,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,IAAI;;;AAId,oBAAqB;EACnB,OAAO,EAAE,gBAAgB;EACzB,KAAK,EAAE,eAAe;;AAGxB,6BAA8B;EAC5B,OAAO,EAAE,eAAe",
+"sources": ["ie-support.scss"],
 "names": [],
 "file": "ie-support.css"
 }
