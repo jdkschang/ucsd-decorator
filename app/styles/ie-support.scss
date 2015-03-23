@@ -10,8 +10,21 @@
 .navdrawer-container {
   display: block !important;
   width: 100% !important;
+  position:relative !important;
 }
-
+/* Doesn't have padding for ie since no mobile nav */
+.navdrawer-container .navbar-sublist a {
+  padding: 9px 15px 8px !important;
+}
 .layout-header button.btn-nav {
   display: none !important;
+}
+
+.navdrawer-container .search {
+  float: right !important;
+}
+/* search max-height fix */
+button.search-toggle {
+  display: block !important;
+  height: 40px;
 }

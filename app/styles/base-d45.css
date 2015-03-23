@@ -378,7 +378,7 @@ a {
   font-size: 24px;
   background-image: none;
   background-color: #287897;
-  border-radius: px;
+  border-radius: 1px;
   border: 1px solid #266E8A;
   padding: 9px 10px;
   margin-right: 10px; }
@@ -465,7 +465,7 @@ button:active {
   padding: 10px 10px 10px 20px; }
 
 /* Search bar integration */
-.navdrawer-container.navbar-is-opened .search-toggle {
+.navdrawer-container.navbar-is-opened button.search-toggle {
   display: none; }
 
 .navdrawer-container.navbar-is-opened .search {
