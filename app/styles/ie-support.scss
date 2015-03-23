@@ -15,3 +15,8 @@
 .layout-header button.btn-nav {
   display: none !important;
 }
+
+/* search max-height fix */
+button.search-toggle {
+  height: 40px;
+}
