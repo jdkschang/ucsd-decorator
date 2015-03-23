@@ -29,11 +29,11 @@
     };
 
     var mainNav = function() {
-        var navBtn              = document.querySelector('.btn-nav');
-        var navList             = document.querySelector('.navdrawer-container');
-        var layoutHeader        = document.querySelector('.layout-header');         // for menu button transition
-        var layoutMain          = document.querySelector('.layout-main');
-        var layoutFooter        = document.querySelector('.layout-footer');
+        var navBtn              = $('.btn-nav')[0];
+        var navList             = $('.navdrawer-container');
+        var layoutHeader        = $('.layout-header');         // for menu button transition
+        var layoutMain          = $('.layout-main');
+        var layoutFooter        = $('.layout-footer');
         var navIsOpenedClass    = 'navbar-is-opened';
         var menuOpen            = 'open';
         var navListIsOpened     = false;
