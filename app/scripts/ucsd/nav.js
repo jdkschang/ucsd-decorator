@@ -1,31 +1,111 @@
 (function(document) {
-    if (!document.getElementsByClassName) {
-        document.getElementsByClassName = function(search) {
-            var d = document, elements, pattern, i, results = [];
-            if (d.querySelectorAll) { // IE8
-                return d.querySelectorAll("." + search);
-            }
-            if (d.evaluate) { // IE6, IE7
-                pattern = ".//*[contains(concat(' ', @class, ' '), ' " + search + " ')]";
-                elements = d.evaluate(pattern, d, null, 0, null);
-                while ((i = elements.iterateNext())) {
-                    results.push(i);
-                }
-            } else {
-                elements = d.getElementsByTagName("*");
-                pattern = new RegExp("(^|\\s)" + search + "(\\s|$)");
-                for (i = 0; i < elements.length; i++) {
-                    if ( pattern.test(elements[i].className) ) {
-                        results.push(elements[i]);
+    var getElementsByClassName = function (className, tag, elm){
+        if (document.getElementsByClassName) {
+            getElementsByClassName = function (className, tag, elm) {
+                elm = elm || document;
+                var elements = elm.getElementsByClassName(className),
+                    nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
+                    returnElements = [],
+                    current;
+                for(var i=0, il=elements.length; i<il; i+=1){
+                    current = elements[i];
+                    if(!nodeName || nodeName.test(current.nodeName)) {
+                        returnElements.push(current);
                     }
                 }
-            }
-            return results;
+                return returnElements;
+            };
         }
-    }
+        else if (document.evaluate) {
+            getElementsByClassName = function (className, tag, elm) {
+                tag = tag || "*";
+                elm = elm || document;
+                var classes = className.split(" "),
+                    classesToCheck = "",
+                    xhtmlNamespace = "http://www.w3.org/1999/xhtml",
+                    namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
+                    returnElements = [],
+                    elements,
+                    node;
+                for(var j=0, jl=classes.length; j<jl; j+=1){
+                    classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
+                }
+                try	{
+                    elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
+                }
+                catch (e) {
+                    elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
+                }
+                while ((node = elements.iterateNext())) {
+                    returnElements.push(node);
+                }
+                return returnElements;
+            };
+        }
+        else {
+            getElementsByClassName = function (className, tag, elm) {
+                tag = tag || "*";
+                elm = elm || document;
+                var classes = className.split(" "),
+                    classesToCheck = [],
+                    elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
+                    current,
+                    returnElements = [],
+                    match;
+                for(var k=0, kl=classes.length; k<kl; k+=1){
+                    classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
+                }
+                for(var l=0, ll=elements.length; l<ll; l+=1){
+                    current = elements[l];
+                    match = false;
+                    for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
+                        match = classesToCheck[m].test(current.className);
+                        if (!match) {
+                            break;
+                        }
+                    }
+                    if (match) {
+                        returnElements.push(current);
+                    }
+                }
+                return returnElements;
+            };
+        }
+        return getElementsByClassName(className, tag, elm);
+    };
+    var polyfillQSA = function() {
+        if (!document.querySelectorAll) {
+            document.querySelectorAll = function (selectors) {
+                var style = document.createElement('style'), elements = [], element;
+                document.documentElement.firstChild.appendChild(style);
+                document._qsa = [];
+
+                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+                window.scrollBy(0, 0);
+                style.parentNode.removeChild(style);
+
+                while (document._qsa.length) {
+                    element = document._qsa.shift();
+                    element.style.removeAttribute('x-qsa');
+                    elements.push(element);
+                }
+                document._qsa = null;
+                return elements;
+            };
+        }
+
+        if (!document.querySelector) {
+            document.querySelector = function (selectors) {
+                var elements = document.querySelectorAll(selectors);
+                return (elements.length) ? elements[0] : null;
+            };
+        }
+    };
 
     var mainNav = function() {
-        var navBtn              = document.getElementsByClassName('btn-nav');
+        alert('before QSA - removed .: navBtn');
+        var navBtn              = document.querySelectorAll('btn-nav');
+        if(!navBtn.querySelector) alert('navBtn NULL');
         var navList             = document.getElementsByClassName('navdrawer-container');
         var layoutHeader        = document.getElementsByClassName('layout-header');         // for menu button transition
         var layoutMain          = document.getElementsByClassName('layout-main');
@@ -82,7 +162,8 @@
         };
         // ie 7/8 fix
         if(!subNav.addEventListener) {
-            alert('subNav v1: removed . from className');
+            alert('subNav v2: added another getElementsByClassName');
+            if(!subNav.attachEvent) alert('subNav NULL')
             subNav.attachEvent("onclick", function() {
                 alert('in subnav attachEvent onclick');
                 toggleSubNav();
@@ -169,7 +250,7 @@
         element.className = element.className.replace(className, '');
     };
 
-    //polyfillQuery();
+    polyfillQSA();
     mainNav();
     mainSubNav();
     mainSearch();
