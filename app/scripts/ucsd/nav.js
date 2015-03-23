@@ -1,5 +1,34 @@
 (function(document) {
-    var toggleMainNav = function() {
+    var polyfillQuery = function() {
+        if (!document.querySelectorAll) {
+            document.querySelectorAll = function (selectors) {
+                var style = document.createElement('style'), elements = [], element;
+                document.documentElement.firstChild.appendChild(style);
+                document._qsa = [];
+
+                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+                window.scrollBy(0, 0);
+                style.parentNode.removeChild(style);
+
+                while (document._qsa.length) {
+                    element = document._qsa.shift();
+                    element.style.removeAttribute('x-qsa');
+                    elements.push(element);
+                }
+                document._qsa = null;
+                return elements;
+            };
+        }
+
+        if (!document.querySelector) {
+            document.querySelector = function (selectors) {
+                var elements = document.querySelectorAll(selectors);
+                return (elements.length) ? elements[0] : null;
+            };
+        }
+    };
+
+    var mainNav = function() {
         var navBtn              = document.querySelector('.btn-nav');
         var navList             = document.querySelector('.navdrawer-container');
         var layoutHeader        = document.querySelector('.layout-header');         // for menu button transition
@@ -9,9 +38,7 @@
         var menuOpen            = 'open';
         var navListIsOpened     = false;
 
-        navBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-
+        var toggleMainNav = function() {
             isMobileView();
 
             if (!navListIsOpened) {
@@ -29,20 +56,29 @@
                 removeClass(layoutFooter, menuOpen);
                 navListIsOpened = false;
             }
-        });
+        };
+
+        if(navBtn.addEventListener) { // ie8 conditional
+            navBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                toggleMainNav();
+            });
+        } else {
+            navBtn.attachEvent("onclick", function() {
+                toggleMainNav();
+            })
+        }
     };
 
-    var toggleSubNav = function() {
+    var mainSubNav = function() {
         var subNav          = document.querySelector('.navbar-subnav');
         var subList         = document.querySelector('.navbar-sublist');
         var subNavList      = 'subnav-is-opened';
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
 
-        subNav.addEventListener('click', function(e) {
-            // allows clicking of child elements
-            e.stopPropagation();
-
+        var toggleSubNav = function() {
             if(!subNavIsOpened) {
                 addClass(subList, subNavList);
 
@@ -52,9 +88,13 @@
 
                 subNavIsOpened = false;
             }
-        });
+        };
 
-        if(!isMobileView()) {
+        if(subNav.addEventListener) {
+            subNav.addEventListener('click', function (e) {
+                e.stopPropagation();
+                toggleSubNav();
+            });
 
             subNav.addEventListener('mouseover', function (e) {
                 e.preventDefault();
@@ -71,18 +111,30 @@
 
                 subNavIsOpened = false;
             })
+        } else { // ie 7/8 fix
+            subNav.attachEvent("onclick", function() {
+                toggleSubNav();
+            });
+
+            subNav.attachEvent("onmouseover", function() {
+                if(!isMobileView()) addClass(subNav, subNavHover);
+                subNavIsOpened = true;
+            });
+            subNav.attachEvent("onmouseout", function() {
+                if(!isMobileView()) removeClass(subNav, subNavHover);
+                subNavIsOpened = false;
+            });
         }
+
     };
 
-    var toggleSearch = function() {
+    var mainSearch = function() {
         var searchBtn = document.querySelector('.search-toggle');
         var searchContent = document.querySelector('.search-content');
         var searchOpen = 'search-is-open';
         var isSearchOpen = false;
 
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-
+        var toggleSearch = function() {
             if(!isSearchOpen) {
                 addClass(searchContent, searchOpen);
                 addClass(searchBtn, searchOpen);
@@ -92,7 +144,18 @@
                 removeClass(searchBtn, searchOpen);
                 isSearchOpen = false;
             }
-        });
+        };
+
+        if(searchBtn.addEventListener) {
+            searchBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleSearch();
+            });
+        } else {
+            searchBtn.attachEvent("onclick", function() {
+                toggleSearch();
+            })
+        }
     };
 
     var isMobileView = function() {
@@ -112,7 +175,8 @@
         element.className = element.className.replace(className, '');
     };
 
-    toggleMainNav();
-    toggleSubNav();
-    toggleSearch();
+    polyfillQuery();
+    mainNav();
+    mainSubNav();
+    mainSearch();
 })(document);

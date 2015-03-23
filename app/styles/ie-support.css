@@ -1,43 +1,16 @@
-/* IE7 and IE8 specifics */
-/********************
-FLEXSLIDER
-************************/
-.flex-caption {
-  background: transparent;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
-  zoom: 1; }
+/* start of decorator 4.5 support for  IE7 and IE8 specifics */
+/* '*+' ie7 specific selector */
+* + section.layout-title {
+  box-sizing: border-box;
+  padding: 1em 0;
+  height: 50px; }
 
-/* side nav ie 7 issues */
-#tdr_side_nav {
-  *display: none !important;
-  *visibility: hidden !important;
-  *width: 0px !important; }
+/* ie will not have mobile nav */
+.navdrawer-container {
+  display: block !important;
+  width: 100% !important; }
 
-.nav-offcanvas {
-  *display: none !important;
-  *visibility: hidden !important;
-  *width: 0px !important; }
-
-#tdr_nav .caret {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0px !important; }
-
-/* search bar icon fallback */
-#tdr_search_toggle {
-  *background: url("http://qa.ucsd.edu/common/cwp/4.0.0/styles/img/search_ie_icon.png") no-repeat 0px 6px !important;
-  *width: 22px !important; }
-
-/* Just because we're nice */
-/* This fixes IE 7/8 errors when the side nav incorrectly displays */
-/* Will just remove the button and keep the navbar present at all times */
-.nav-offcanvas {
+.layout-header button.btn-nav {
   display: none !important; }
-
-#tdr_title_page_title {
-  left: 0px !important; }
-
-#tdr_nav {
-  display: block !important; }
 
 /*# sourceMappingURL=ie-support.css.map */
