@@ -1,53 +1,39 @@
 (function(document) {
-    // Document.querySelectorAll method
-    // http://ajaxian.com/archives/creating-a-queryselector-for-ie-that-runs-at-native-speed
-    // Needed for: IE7-
-    if (!document.querySelectorAll) {
-        document.querySelectorAll = function(selectors) {
-            var style = document.createElement('style'), elements = [], element;
-            document.documentElement.firstChild.appendChild(style);
-            document._qsa = [];
+    var polyfillQuery = function() {
+        if (!document.querySelectorAll) {
+            document.querySelectorAll = function (selectors) {
+                var style = document.createElement('style'), elements = [], element;
+                document.documentElement.firstChild.appendChild(style);
+                document._qsa = [];
 
-            style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
-            window.scrollBy(0, 0);
-            style.parentNode.removeChild(style);
+                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+                window.scrollBy(0, 0);
+                style.parentNode.removeChild(style);
 
-            while (document._qsa.length) {
-                element = document._qsa.shift();
-                element.style.removeAttribute('x-qsa');
-                elements.push(element);
-            }
-            document._qsa = null;
-            return elements;
-        };
-    }
+                while (document._qsa.length) {
+                    element = document._qsa.shift();
+                    element.style.removeAttribute('x-qsa');
+                    elements.push(element);
+                }
+                document._qsa = null;
+                return elements;
+            };
+        }
 
-    // Document.querySelector method
-    // Needed for: IE7-
-    if (!document.querySelector) {
-        document.querySelector = function(selectors) {
-            var elements = document.querySelectorAll(selectors);
-            return (elements.length) ? elements[0] : null;
-        };
-    }
-
-    // Document.getElementsByClassName method
-    // Needed for: IE8-
-    if (!document.getElementsByClassName) {
-        document.getElementsByClassName = function(classNames) {
-            classNames = String(classNames).replace(/^|\s+/g, '.');
-            return document.querySelectorAll(classNames);
-        };
-    }
+        if (!document.querySelector) {
+            document.querySelector = function (selectors) {
+                var elements = document.querySelectorAll(selectors);
+                return (elements.length) ? elements[0] : null;
+            };
+        }
+    };
 
     var mainNav = function() {
-        alert('added separate support for qsa, and gebcn');
-        var navBtn              = document.querySelectorAll('btn-nav');
-        if(!navBtn.querySelectorAll) alertA('navBtn qsa NULL');
-        var navList             = document.getElementsByClassName('navdrawer-container');
-        var layoutHeader        = document.getElementsByClassName('layout-header');         // for menu button transition
-        var layoutMain          = document.getElementsByClassName('layout-main');
-        var layoutFooter        = document.getElementsByClassName('layout-footer');
+        var navBtn              = document.querySelector('.btn-nav');
+        var navList             = document.querySelector('.navdrawer-container');
+        var layoutHeader        = document.querySelector('.layout-header');         // for menu button transition
+        var layoutMain          = document.querySelector('.layout-main');
+        var layoutFooter        = document.querySelector('.layout-footer');
         var navIsOpenedClass    = 'navbar-is-opened';
         var menuOpen            = 'open';
         var navListIsOpened     = false;
@@ -75,14 +61,19 @@
         if(navBtn.addEventListener) { // ie8 conditional
             navBtn.addEventListener('click', function (e) {
                 e.preventDefault();
+
                 toggleMainNav();
             });
+        } else {
+            navBtn.attachEvent("onclick", function() {
+                toggleMainNav();
+            })
         }
     };
 
     var mainSubNav = function() {
-        var subNav          = document.getElementsByClassName('navbar-subnav');
-        var subList         = document.getElementsByClassName('navbar-sublist');
+        var subNav          = document.querySelector('.navbar-subnav');
+        var subList         = document.querySelector('.navbar-sublist');
         var subNavList      = 'subnav-is-opened';
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
@@ -98,22 +89,8 @@
                 subNavIsOpened = false;
             }
         };
-        // ie 7/8 fix
-        if(!subNav.addEventListener) {
-            if(!subNav.attachEvent) alert('subNav NULL')
-            subNav.attachEvent("onclick", function() {
-                toggleSubNav();
-            });
 
-            subNav.attachEvent("onmouseover", function() {
-                if(!isMobileView()) addClass(subNav, subNavHover);
-                subNavIsOpened = true;
-            });
-            subNav.attachEvent("onmouseout", function() {
-                if(!isMobileView()) removeClass(subNav, subNavHover);
-                subNavIsOpened = false;
-            });
-        } else {
+        if(subNav.addEventListener) {
             subNav.addEventListener('click', function (e) {
                 e.stopPropagation();
                 toggleSubNav();
@@ -133,14 +110,27 @@
                 if(!isMobileView()) removeClass(subNav, subNavHover);
 
                 subNavIsOpened = false;
+            })
+        } else { // ie 7/8 fix
+            subNav.attachEvent("onclick", function() {
+                toggleSubNav();
+            });
+
+            subNav.attachEvent("onmouseover", function() {
+                if(!isMobileView()) addClass(subNav, subNavHover);
+                subNavIsOpened = true;
+            });
+            subNav.attachEvent("onmouseout", function() {
+                if(!isMobileView()) removeClass(subNav, subNavHover);
+                subNavIsOpened = false;
             });
         }
 
     };
 
     var mainSearch = function() {
-        var searchBtn = document.getElementsByClassName('.search-toggle');
-        var searchContent = document.getElementsByClassName('.search-content');
+        var searchBtn = document.querySelector('.search-toggle');
+        var searchContent = document.querySelector('.search-content');
         var searchOpen = 'search-is-open';
         var isSearchOpen = false;
 
@@ -156,15 +146,15 @@
             }
         };
 
-        if(!searchBtn.addEventListener) {
-            searchBtn.attachEvent("onclick", function() {
-                toggleSearch();
-            })
-        } else {
+        if(searchBtn.addEventListener) {
             searchBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 toggleSearch();
             });
+        } else {
+            searchBtn.attachEvent("onclick", function() {
+                toggleSearch();
+            })
         }
     };
 
@@ -185,7 +175,7 @@
         element.className = element.className.replace(className, '');
     };
 
-    //polyfillQSA();
+    polyfillQuery();
     mainNav();
     mainSubNav();
     mainSearch();
