@@ -25,14 +25,11 @@
     }
 
     var mainNav = function() {
-        alert('pre navBtn: 3.4 removed few lines');
         var navBtn              = document.getElementsByClassName('btn-nav');
-        alert('navBtn processed');
         var navList             = document.getElementsByClassName('navdrawer-container');
-        alert('navList processed');
-        var layoutHeader        = document.getElementsByClassName('.layout-header');         // for menu button transition
-        var layoutMain          = document.getElementsByClassName('.layout-main');
-        var layoutFooter        = document.getElementsByClassName('.layout-footer');
+        var layoutHeader        = document.getElementsByClassName('layout-header');         // for menu button transition
+        var layoutMain          = document.getElementsByClassName('layout-main');
+        var layoutFooter        = document.getElementsByClassName('layout-footer');
         var navIsOpenedClass    = 'navbar-is-opened';
         var menuOpen            = 'open';
         var navListIsOpened     = false;
@@ -57,23 +54,17 @@
             }
         };
 
-        if(!navBtn.addEventListener) { // ie8 conditional
-            navBtn.attachEvent("onclick", function() {
-                toggleMainNav();
-            });
-
-        } else {
+        if(navBtn.addEventListener) { // ie8 conditional
             navBtn.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 toggleMainNav();
             });
         }
     };
 
     var mainSubNav = function() {
-        var subNav          = document.getElementsByClassName('.navbar-subnav');
-        var subList         = document.getElementsByClassName('.navbar-sublist');
+        var subNav          = document.getElementsByClassName('navbar-subnav');
+        var subList         = document.getElementsByClassName('navbar-sublist');
         var subNavList      = 'subnav-is-opened';
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
@@ -89,13 +80,16 @@
                 subNavIsOpened = false;
             }
         };
-
+        // ie 7/8 fix
         if(!subNav.addEventListener) {
+            alert('subNav v1: removed . from className');
             subNav.attachEvent("onclick", function() {
+                alert('in subnav attachEvent onclick');
                 toggleSubNav();
             });
 
             subNav.attachEvent("onmouseover", function() {
+                alert('in subnavHover attachEvent onmouseover');
                 if(!isMobileView()) addClass(subNav, subNavHover);
                 subNavIsOpened = true;
             });
@@ -103,7 +97,7 @@
                 if(!isMobileView()) removeClass(subNav, subNavHover);
                 subNavIsOpened = false;
             });
-        } else { // ie 7/8 fix
+        } else {
             subNav.addEventListener('click', function (e) {
                 e.stopPropagation();
                 toggleSubNav();
