@@ -58,16 +58,17 @@
             }
         };
 
-        if(navBtn.addEventListener) { // ie8 conditional
+        if(!navBtn.addEventListener) { // ie8 conditional
+            navBtn.attachEvent("onclick", function() {
+                toggleMainNav();
+            });
+
+        } else {
             navBtn.addEventListener('click', function (e) {
                 e.preventDefault();
 
                 toggleMainNav();
             });
-        } else {
-            navBtn.attachEvent("onclick", function() {
-                toggleMainNav();
-            })
         }
     };
 
@@ -90,7 +91,20 @@
             }
         };
 
-        if(subNav.addEventListener) {
+        if(!subNav.addEventListener) {
+            subNav.attachEvent("onclick", function() {
+                toggleSubNav();
+            });
+
+            subNav.attachEvent("onmouseover", function() {
+                if(!isMobileView()) addClass(subNav, subNavHover);
+                subNavIsOpened = true;
+            });
+            subNav.attachEvent("onmouseout", function() {
+                if(!isMobileView()) removeClass(subNav, subNavHover);
+                subNavIsOpened = false;
+            });
+        } else { // ie 7/8 fix
             subNav.addEventListener('click', function (e) {
                 e.stopPropagation();
                 toggleSubNav();
@@ -109,19 +123,6 @@
 
                 if(!isMobileView()) removeClass(subNav, subNavHover);
 
-                subNavIsOpened = false;
-            })
-        } else { // ie 7/8 fix
-            subNav.attachEvent("onclick", function() {
-                toggleSubNav();
-            });
-
-            subNav.attachEvent("onmouseover", function() {
-                if(!isMobileView()) addClass(subNav, subNavHover);
-                subNavIsOpened = true;
-            });
-            subNav.attachEvent("onmouseout", function() {
-                if(!isMobileView()) removeClass(subNav, subNavHover);
                 subNavIsOpened = false;
             });
         }
@@ -146,15 +147,15 @@
             }
         };
 
-        if(searchBtn.addEventListener) {
+        if(!searchBtn.addEventListener) {
+            searchBtn.attachEvent("onclick", function() {
+                toggleSearch();
+            })
+        } else {
             searchBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 toggleSearch();
             });
-        } else {
-            searchBtn.attachEvent("onclick", function() {
-                toggleSearch();
-            })
         }
     };
 
