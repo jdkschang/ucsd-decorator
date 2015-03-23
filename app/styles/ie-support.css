@@ -13,7 +13,8 @@
 
 /* Doesn't have padding for ie since no mobile nav */
 .navdrawer-container .navbar-sublist a {
-  padding: 9px 15px 8px !important; }
+  padding: 9px 15px 8px !important;
+  width: 150px !important; }
 
 .layout-header button.btn-nav {
   display: none !important; }
@@ -24,6 +25,9 @@
 /* search max-height fix */
 button.search-toggle {
   display: block !important;
-  height: 40px; }
+  height: 40px;
+  *width: 50px !important;
+  *padding: 0 !important;
+  *background: url(http://qa.ucsd.edu/common/cwp/4.0.0/styles/img/search_ie_icon.png) no-repeat 0 6px !important; }
 
 /*# sourceMappingURL=ie-support.css.map */

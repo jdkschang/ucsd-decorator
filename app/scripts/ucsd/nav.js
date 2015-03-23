@@ -1,39 +1,10 @@
 (function(document) {
-    var polyfillQuery = function() {
-        if (!document.querySelectorAll) {
-            document.querySelectorAll = function (selectors) {
-                var style = document.createElement('style'), elements = [], element;
-                document.documentElement.firstChild.appendChild(style);
-                document._qsa = [];
-
-                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
-                window.scrollBy(0, 0);
-                style.parentNode.removeChild(style);
-
-                while (document._qsa.length) {
-                    element = document._qsa.shift();
-                    element.style.removeAttribute('x-qsa');
-                    elements.push(element);
-                }
-                document._qsa = null;
-                return elements;
-            };
-        }
-
-        if (!document.querySelector) {
-            document.querySelector = function (selectors) {
-                var elements = document.querySelectorAll(selectors);
-                return (elements.length) ? elements[0] : null;
-            };
-        }
-    };
-
     var mainNav = function() {
         var navBtn              = $('.btn-nav')[0];
-        var navList             = $('.navdrawer-container');
-        var layoutHeader        = $('.layout-header');         // for menu button transition
-        var layoutMain          = $('.layout-main');
-        var layoutFooter        = $('.layout-footer');
+        var navList             = $('.navdrawer-container')[0];
+        var layoutHeader        = $('.layout-header')[0];         // for menu button transition
+        var layoutMain          = $('.layout-main')[0];
+        var layoutFooter        = $('.layout-footer')[0];
         var navIsOpenedClass    = 'navbar-is-opened';
         var menuOpen            = 'open';
         var navListIsOpened     = false;
@@ -72,8 +43,8 @@
     };
 
     var mainSubNav = function() {
-        var subNav          = document.querySelector('.navbar-subnav');
-        var subList         = document.querySelector('.navbar-sublist');
+        var subNav          = $('.navbar-subnav')[0];
+        var subList         = $('.navbar-sublist')[0];
         var subNavList      = 'subnav-is-opened';
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
@@ -129,10 +100,10 @@
     };
 
     var mainSearch = function() {
-        var searchBtn = document.querySelector('.search-toggle');
-        var searchContent = document.querySelector('.search-content');
-        var searchOpen = 'search-is-open';
-        var isSearchOpen = false;
+        var searchBtn       = $('.search-toggle')[0];
+        var searchContent   = $('.search-content')[0];
+        var searchOpen      = 'search-is-open';
+        var isSearchOpen    = false;
 
         var toggleSearch = function() {
             if(!isSearchOpen) {
@@ -175,7 +146,6 @@
         element.className = element.className.replace(className, '');
     };
 
-    polyfillQuery();
     mainNav();
     mainSubNav();
     mainSearch();
