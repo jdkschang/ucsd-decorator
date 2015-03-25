@@ -55,7 +55,7 @@ html, body
       height: 105px;
     }
 
-    @media only screen and (min-width: $desktop) {
+    @media only screen and (min-width: $desktop-small) {
       height: 78px;
     }
   }
