@@ -144,6 +144,12 @@ a {
 .main-section {
   line-height: 1.5;
   padding: 0; }
+  @media only screen and (max-width: 640px) {
+    .main-section {
+      width: 100%; } }
+
+.main-content {
+  float: right; }
 
 .main-section-content {
   padding-left: 1.5em; }
@@ -304,6 +310,9 @@ a {
   border: solid 1px #C8CFD3;
   padding: 1em;
   margin-bottom: 1em; }
+  @media only screen and (max-width: 640px) {
+    .main-content-nav {
+      margin-top: 2em; } }
   .main-content-nav > h2 {
     color: #738AA3;
     font-size: 140%;
