@@ -20,7 +20,8 @@
  * BASE
  * ***************/
 html, body {
-  background: #fff; }
+  background: #fff;
+  overflow-x: hidden; }
 
 /* container will have media queries for sizing*/
 .layout-container {
@@ -558,7 +559,7 @@ button:active {
 
 @media only screen and (max-width: 640px) {
   .navdrawer-container.navbar-is-opened {
-    width: 45%; }
+    width: 83%; }
     .navdrawer-container.navbar-is-opened .search {
       max-width: none; } }
 @media screen and (min-width: 320px) and (max-width: 640px) {
@@ -585,7 +586,7 @@ button:active {
 @media only screen and (max-width: 960px) {
   .navdrawer-container {
     position: fixed;
-    width: 30%;
+    width: 42%;
     z-index: 0;
     opacity: 0; }
 
