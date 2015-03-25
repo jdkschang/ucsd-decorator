@@ -42,7 +42,7 @@ html, body {
   @media only screen and (min-width: 320px) {
     .layout-header {
       height: 105px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 960px) {
     .layout-header {
       height: 78px; } }
 
@@ -61,8 +61,7 @@ html, body {
       padding: 0.5em 0; } }
   @media only screen and (max-width: 768px) {
     .layout-title {
-      padding: 1em 0;
-      height: 105px; } }
+      padding: 1em 0; } }
 
 .layout-navbar {
   min-height: 34px;

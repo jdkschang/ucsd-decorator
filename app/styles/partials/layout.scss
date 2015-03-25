@@ -54,7 +54,7 @@ html, body
       height: 105px;
     }
 
-    @media only screen and (min-width: $desktop-small) {
+    @media only screen and (min-width: $desktop) {
       height: 78px;
     }
   }
@@ -76,7 +76,6 @@ html, body
 
       @media only screen and (max-width: $desktop-small) {
         padding: 1em 0;
-        height: 105px;
       }
     }
 
