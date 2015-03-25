@@ -210,12 +210,27 @@ button:active {
     .navdrawer-container .subnav-hover ul.navbar-sublist {
       display: block;
       z-index: 1;
+
+      @media only screen and (max-width: $desktop) {
+        /* fix to mobile/tablet devices which do not have hover*/
+        display: block;
+        position: relative;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        a {
+          border: 0;
+          padding-left: 3em;
+        }
+      }
     }
 
     .navdrawer-container .navbar-sublist.subnav-is-opened {
       display: block;
     }
-      .navdrawer-container .navbar-sublist.subnav-is-opened a{
+      .navdrawer-container.navbar-is-opened .navbar-sublist.subnav-is-opened a{
         border: 0;
         padding-left: 3em;
       }

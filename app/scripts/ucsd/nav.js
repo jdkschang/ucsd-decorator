@@ -52,12 +52,10 @@
         var toggleSubNav = function() {
             if(!subNavIsOpened) {
                 addClass(subList, subNavList);
-
-                subNavIsOpened = true;
+                subNavIsOpened = !subNavIsOpened;
             } else {
                 removeClass(subList, subNavList);
-
-                subNavIsOpened = false;
+                subNavIsOpened = !subNavIsOpened;
             }
         };
 
@@ -70,30 +68,36 @@
             subNav.addEventListener('mouseover', function (e) {
                 e.preventDefault();
 
-                if(!isMobileView()) addClass(subNav, subNavHover);
-
-                subNavIsOpened = true;
+                if(!isMobileView()) {
+                    addClass(subNav, subNavHover);
+                    subNavIsOpened = !subNavIsOpened;
+                }
             });
 
             subNav.addEventListener('mouseout', function (e) {
                 e.preventDefault();
 
-                if(!isMobileView()) removeClass(subNav, subNavHover);
-
-                subNavIsOpened = false;
-            })
+                if(!isMobileView()) {
+                    removeClass(subNav, subNavHover);
+                    subNavIsOpened = !subNavIsOpened;
+                }
+            });
         } else { // ie 7/8 fix
             subNav.attachEvent("onclick", function() {
                 toggleSubNav();
             });
 
             subNav.attachEvent("onmouseover", function() {
-                if(!isMobileView()) addClass(subNav, subNavHover);
-                subNavIsOpened = true;
+                if(!isMobileView()) {
+                    addClass(subNav, subNavHover);
+                    subNavIsOpened = true;
+                }
             });
             subNav.attachEvent("onmouseout", function() {
-                if(!isMobileView()) removeClass(subNav, subNavHover);
-                subNavIsOpened = false;
+                if(!isMobileView()) {
+                    removeClass(subNav, subNavHover);
+                    subNavIsOpened = false;
+                }
             });
         }
 
@@ -133,7 +137,7 @@
         var browserWidth = window.innerWidth;
         var mobileDesktopBorder = 960;
 
-        return (browserWidth < mobileDesktopBorder);
+        return (browserWidth < (mobileDesktopBorder+1));
     };
 
     var addClass = function (element, className) {
