@@ -273,7 +273,7 @@ button:active {
 
   .navdrawer-container.navbar-is-opened {
     @media only screen and (max-width: $tablet) {
-      width: 83%;
+      width: 45%;
 
       .search {
         max-width: none;
@@ -318,7 +318,7 @@ button:active {
 @media only screen and (max-width: $desktop) {
   .navdrawer-container {
     position: fixed;
-    width: 42%;
+    width: 30%;
     z-index: 0;
     opacity: 0;
   }

@@ -558,7 +558,7 @@ button:active {
 
 @media only screen and (max-width: 640px) {
   .navdrawer-container.navbar-is-opened {
-    width: 83%; }
+    width: 45%; }
     .navdrawer-container.navbar-is-opened .search {
       max-width: none; } }
 @media screen and (min-width: 320px) and (max-width: 640px) {
@@ -585,7 +585,7 @@ button:active {
 @media only screen and (max-width: 960px) {
   .navdrawer-container {
     position: fixed;
-    width: 42%;
+    width: 30%;
     z-index: 0;
     opacity: 0; }
 
