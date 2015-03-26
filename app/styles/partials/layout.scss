@@ -61,7 +61,16 @@ html, body
   }
     .layout-login {
       background: #0B4A67;
+      width: 100%;
+      overflow-x: hidden;
     }
+    .login-content {
+      color: #fff;
+      font-size: 85%;
+      padding: .5em 0;
+      text-align: right;
+    }
+
     .layout-title {
       font-family: "Trebuchet MS", sans-serif;
       box-sizing: border-box;

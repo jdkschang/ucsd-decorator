@@ -41,7 +41,9 @@
     <a class="sr-only" href="#">Skip to main content</a>
     <div id="uc-emergency"></div>
     <section class="layout-login">
-        <span class="login-content"></span>
+        <div class="layout-container">
+            <span class="login-content"></span>
+        </div>
     </section>
 
     <section class="layout-title">
@@ -133,7 +135,7 @@
         </article>
         <ul class="footer-links">
             <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
-            <li><a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a></li>
+            <li class="footer-feedback"><a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a></li>
         </ul>
     </section>
 </footer>
@@ -149,6 +151,7 @@
         $(document).ready(function () {
             initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
+            initLogout();
         });
     })(jQuery);
 </script>
