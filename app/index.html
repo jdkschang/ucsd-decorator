@@ -42,7 +42,6 @@
     <div id="uc-emergency"></div>
     <section class="layout-login">
         <div class="layout-container">
-            <span class="login-content"></span>
         </div>
     </section>
 
@@ -152,7 +151,8 @@
 <script type="text/javascript">
     (function ($) {
         $(document).ready(function () {
-            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
+            var feedbackLink = "https://act.ucsd.edu/cwp/feedback/tool/cwo";
+            initFooter(feedbackLink);
             initCopyright();
             initLogout();
         });
