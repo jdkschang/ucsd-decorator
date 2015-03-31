@@ -40,7 +40,6 @@ html, body {
   /* to incorporate new navbar button*/
   display: block;
   width: 100%;
-  height: 100% !important;
   background-color: #2b92b9; }
   @media only screen and (min-width: 320px) {
     .layout-header {
@@ -75,7 +74,8 @@ html, body {
       padding: 0.5em 0; } }
   @media only screen and (max-width: 768px) {
     .layout-title {
-      padding: 1em 0; } }
+      padding: 1em 0;
+      height: 105px; } }
 
 .layout-navbar {
   min-height: 34px;
@@ -160,9 +160,6 @@ a {
   @media only screen and (max-width: 640px) {
     .main-section {
       width: 100%; } }
-
-.main-content {
-  float: right; }
 
 .main-section-content {
   padding-left: 1.5em; }
