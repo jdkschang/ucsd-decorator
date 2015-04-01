@@ -36,9 +36,16 @@
     <script src="vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
+    <!--[if lt IE 9]>
     <!-- build:js({app,.tmp}) scripts/respond.min.js -->
     <script src="vendor/respond/dest/respond.min.js"></script>
     <!-- endbuild -->
+    <link href="http://cdn.ucsd.edu/cms/decorator-4/scripts/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <!-- build:js({app,.tmp}) scripts/respond-proxy.js -->
+    <script src="scripts/ucsd/respond-proxy.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
 </head>
 </head>
 <body>
@@ -168,6 +175,9 @@
 <script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 <!-- build:js({app,.tmp}) scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
+<script src="scripts/ucsd/copyright.js"></script>
+<script src="scripts/ucsd/footer.js"></script>
+<script src="scripts/ucsd/logout.js"></script>
 <!-- endbuild -->
 
 <script type="text/javascript">
@@ -213,13 +223,7 @@
 <script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
-<!-- build:js({app,.tmp}) scripts/cms-min.js -->
-<script src="scripts/ucsd/copyright.js"></script>
-<script src="scripts/ucsd/footer.js"></script>
-<script src="scripts/ucsd/logout.js"></script>
-<script src="scripts/ucsd/flexslider-init.js"></script>
-<script src="scripts/ucsd/drawer.js"></script>
-<!-- endbuild -->
+
 
 
 <!-- Google Search -->
