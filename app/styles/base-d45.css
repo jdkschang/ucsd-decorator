@@ -36,6 +36,9 @@ html, body {
     .layout-container {
       max-width: 1200px; } }
 
+.layout-navbar .layout-container {
+  overflow: visible; }
+
 .layout-header {
   /* to incorporate new navbar button*/
   display: block;
@@ -78,7 +81,7 @@ html, body {
       height: 105px; } }
 
 .layout-navbar {
-  min-height: 34px;
+  min-height: 41px;
   width: 100%;
   background-color: #F2F5F7;
   border: 0;
@@ -221,7 +224,8 @@ a {
  * SEARCH
  * ***************/
 .search {
-  float: right; }
+  float: right;
+  position: relative; }
 
 .search-toggle {
   max-height: 40px;

@@ -36,6 +36,10 @@ html, body
     }
   }
 
+  .layout-navbar .layout-container {
+    overflow: visible;
+  }
+
   .layout-header {
     /* to incorporate new navbar button*/
     display: block;
@@ -90,7 +94,7 @@ html, body
     }
 
   .layout-navbar {
-    min-height: 34px;
+    min-height: 41px;
     width: 100%;
 
     background-color: #F2F5F7;
