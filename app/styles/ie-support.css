@@ -5,6 +5,9 @@
   padding: 1em 0;
   height: 50px; }
 
+.layout-login {
+  display: none; }
+
 /* ie will not have mobile nav */
 .navdrawer-container {
   display: block !important;
