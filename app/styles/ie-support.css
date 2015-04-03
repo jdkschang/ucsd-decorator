@@ -37,4 +37,8 @@ ol.breadcrumbs-list {
   ol.breadcrumbs-list li {
     *margin-right: 7px; }
 
+/* to deal with added padding*/
+.main-section {
+  *padding: 0; }
+
 /*# sourceMappingURL=ie-support.css.map */
