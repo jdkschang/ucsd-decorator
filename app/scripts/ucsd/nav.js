@@ -63,8 +63,13 @@
             subNav.addEventListener('click', function (e) {
                 if(isMobileView())
                     e.preventDefault();
+                
                 e.stopPropagation();
                 toggleSubNav();
+            });
+
+            subList.addEventListener('click', function (e) {
+                e.stopPropagation();
             });
 
             subNav.addEventListener('mouseover', function (e) {

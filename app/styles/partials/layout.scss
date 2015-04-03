@@ -208,7 +208,7 @@ main
 }
   .main-section {
     line-height: 1.5;
-    padding: 0;
+    padding: 0 1em 1em 0;
 
     @media only screen and (max-width: $tablet) {
       width:100%;
