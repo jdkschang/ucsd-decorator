@@ -63,7 +63,7 @@
             subNav.addEventListener('click', function (e) {
                 if(isMobileView())
                     e.preventDefault();
-                
+
                 e.stopPropagation();
                 toggleSubNav();
             });
