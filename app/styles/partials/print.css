@@ -12,6 +12,9 @@
   #uc-emergency, .layout-login, nav, .search {
     display: none; }
 
+  main {
+    width: 99.99% !important; }
+
   @page {
     margin: 0.5cm; } }
 
