@@ -620,6 +620,7 @@ button:active {
     -webkit-box-shadow: none;
     box-shadow: none; } }
 @media print {
+  /* removes ucsd logo and other background images (glyphicons) */
   html, main, footer *,
   .layout-title * {
     background-color: transparent !important;
