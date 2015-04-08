@@ -51,6 +51,9 @@ html, body {
     .layout-header {
       height: 78px; } }
 
+.layout-header.isLoggedIn {
+  height: 100%; }
+
 .layout-login {
   width: 100%;
   background: #0B4A67; }
