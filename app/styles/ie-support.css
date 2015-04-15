@@ -40,5 +40,7 @@ ol.breadcrumbs-list {
 /* to deal with added padding*/
 .main-section {
   *padding: 0; }
+  .main-section .main-section-content {
+    *padding: 0 1em; }
 
 /*# sourceMappingURL=ie-support.css.map */
