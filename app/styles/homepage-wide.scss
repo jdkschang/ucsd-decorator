@@ -2,6 +2,21 @@
 @import "partials/variables";
 @import url(http://fonts.googleapis.com/css?family=Roboto:300);
 
+.layout-container {
+  overflow: visible;
+
+  &.row {
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* offset breadcrumbs */
+.breadcrumbs-list {
+  -webkit-box-shadow: 0px 0px 0px 2px #fff;
+  box-shadow: 0px 0px 0px 2px #fff;
+}
+
 .main-section {
   position: relative;
   background: #fff;
