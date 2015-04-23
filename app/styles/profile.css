@@ -30,6 +30,9 @@
 
 .profile-picture img {
   width: 100%; }
+  @media only screen and (max-width: 640px) {
+    .profile-picture img {
+      width: 125px; } }
 
 .profile-tabs ul {
   margin: 0;
