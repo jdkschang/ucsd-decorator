@@ -74,3 +74,24 @@
     padding: 1em 0;
     border-top: 1px solid #016691;
   }
+
+  .profile-social-list {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+
+    padding-top: 1.5em;
+
+    li {
+      background-repeat: no-repeat;
+      height: 27px;
+      margin: 0 0 10px;
+
+      padding-left: 35px;
+    }
+    li.twitter {
+      background-image: url(img/sprite_social.png);
+      background-position: 0 -39px;
+      height: 33px;
+    }
+  }
