@@ -7,14 +7,14 @@
 
   &.row {
     -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
   }
 }
 
 /* offset breadcrumbs */
 .breadcrumbs-list {
-  -webkit-box-shadow: 0px 0px 0px 2px #fff;
-  box-shadow: 0px 0px 0px 2px #fff;
+  -webkit-box-shadow: 0 0 0 2px #fff;
+  box-shadow: 0 0 0 2px #fff;
 }
 
 .main-section {
