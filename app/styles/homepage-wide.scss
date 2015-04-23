@@ -1,5 +1,36 @@
 /********************* VARIABLES & MIXINS */
 @import "partials/variables";
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
+.main-section {
+  position: relative;
+  background: #fff;
+
+  overflow: hidden;
+  padding: 0 15px 20px;
+  margin: -18px 0 0;
+
+  z-index: 2;
+}
+
+.main-section-header {
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+
+  h2 {
+    color: #333;
+    font-family: Roboto,sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+}
+
+.main-section-content {
+  h2 {
+    padding-bottom: 5px;
+  }
+}
 
 .sidebar {
   background: #f0f0f0;
@@ -12,10 +43,40 @@
     margin-top: 5px;
     max-width: 125px;
     max-height: 125px;
+
+    float: right;
+    padding: 0 0 1em 1em;
+    width: auto;;
   }
 
   .side {
     font-size: 18px;
     font-weight: 400;
   }
+
+  h2 {
+    font-size: 18px;
+
+    a {
+      color: #0b638b;
+      text-decoration: none;
+
+      font: normal normal normal 16px/1.2 proxima-nova,Helvetica,Arial,sans-serif;
+    }
+  }
+
+  article {
+    border-top: 1px solid #0a7aad;
+    overflow: auto;
+    padding: 20px 0 0;
+    margin: 5px 0 10px;
+  }
 }
+
+.flexslider {
+  margin: 0 -40px;
+  width: 1280px;
+  overflow: hidden;
+  height: 400px;
+}
+
