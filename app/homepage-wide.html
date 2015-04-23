@@ -121,13 +121,19 @@
         <div class="flexslider">
             <ul class="slides">
                 <li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
-                    <img alt="students" src="img/ux.png">
+                    <a href="#">
+                        <img alt="students" src="img/ux.png">
+                    </a>
                 </li>
                 <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-                    <img alt="surf" src="img/rt_2.jpg">
+                    <a href="#">
+                        <img alt="surf" src="img/rt_2.jpg">
+                    </a>
                 </li>
                 <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-                    <img alt="rocks" src="img/rt_4.jpg">
+                    <a href="#">
+                        <img alt="rocks" src="img/rt_4.jpg">
+                    </a>
                 </li>
             </ul>
             <div class="flex-controls"></div>
@@ -267,7 +273,6 @@
 <script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 <!-- build:js({app,.tmp}) scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
-<script src="vendor/flexslider/jquery.flexslider.js"></script>
 <script src="scripts/ucsd/copyright.js"></script>
 <script src="scripts/ucsd/footer.js"></script>
 <script src="scripts/ucsd/logout.js"></script>
@@ -317,7 +322,11 @@
 <script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
 <script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
-
+<script>
+$(window).load(function() {
+$('.flexslider').flexslider();
+});
+</script>
 <!-- Google Search -->
 <script src="//www.google.com/jsapi"></script>
 <script type="text/javascript">// <![CDATA[
