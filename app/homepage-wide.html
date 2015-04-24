@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <!-- endbuild -->
 
-    <!-- build:css(.tmp) styles/base-min.css -->
-    <link rel="stylesheet" href="styles/base.css">
+    <!-- build:css(.tmp) styles/base-d45.css -->
+    <link rel="stylesheet" href="styles/base-d45.css"/>
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/homepage-wide-min.css -->
@@ -31,23 +31,21 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
-    <link href="/_resources/site-specific.css" media="all" rel="stylesheet" />
     <!-- End site-specific CSS files -->
 
+    <!-- build:js({app,.tmp}) scripts/modernizr.js -->
+    <script src="vendor/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
 
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/4.0.0/styles/ie-support.css" />
-    <![endif]-->
-
-    <!-- Other JS files -->
-    <script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/modernizr.js"></script>
-
-    <!--[if lt IE 9]>
-    <script src="//www.ucsd.edu/common/cwp/4.0.0/scripts/html5shiv.js"></script>
-    <script src="/_resources/cross-domain/respond.js"></script>
-    <link href="//www.ucsd.edu/common/cwp/4.0.0/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-    <link href="/_resources/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-    <script src="/_resources/cross-domain/respond.proxy.js"></script>
+    <!-- build:js({app,.tmp}) scripts/respond.min.js -->
+    <script src="vendor/respond/dest/respond.min.js"></script>
+    <!-- endbuild -->
+    <link href="http://cdn.ucsd.edu/cms/decorator-4/scripts/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <!-- build:js({app,.tmp}) scripts/respond-proxy.js -->
+    <script src="scripts/ucsd/respond-proxy.js"></script>
+    <!-- endbuild -->
     <![endif]-->
 </head>
 <body>

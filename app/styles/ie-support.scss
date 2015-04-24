@@ -14,6 +14,7 @@
 .navdrawer-container {
   display: block !important;
   width: 100% !important;
+  min-height: 40px !important;
   position:relative !important;
 }
 /* Doesn't have padding for ie since no mobile nav */
