@@ -70,5 +70,11 @@
   width: 1280px;
   overflow: hidden;
   height: 400px; }
+  @media screen and (max-width: 1200px) {
+    .flexslider {
+      margin: 0;
+      width: 100%;
+      overflow: hidden;
+      height: auto; } }
 
 /*# sourceMappingURL=homepage-wide.css.map */
