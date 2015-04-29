@@ -4,18 +4,27 @@
 
 .layout-container {
   overflow: visible;
+}
 
-  &.row {
-    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+.main-section-container {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+
+  padding: 0 15px 20px;
+  margin: -18px 0 0;
+
+  z-index: 5;
+
+  -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
+
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+    padding-top: 20px;
   }
 }
 
-/* offset breadcrumbs */
-.breadcrumbs-list {
-  -webkit-box-shadow: 0 0 0 2px #fff;
-  box-shadow: 0 0 0 2px #fff;
-}
 
 .main-section {
   position: relative;
@@ -32,6 +41,10 @@
   padding: 0 0 10px;
   margin-bottom: 10px;
 
+  @media screen and (max-width: 1200px) {
+    margin: 10px 0 0;
+  }
+
   h2 {
     color: #333;
     font-family: Roboto,sans-serif;
@@ -42,6 +55,8 @@
 }
 
 .main-section-content {
+  padding: 29px;
+
   h2 {
     padding-bottom: 5px;
   }
@@ -99,6 +114,16 @@
     width: 100%;
     overflow: hidden;
     height: auto;
+  }
+
+  .flex-controls {
+    position:relative;
+    top: -400px;
+
+    @media screen and (max-width: 1200px) {
+      position: relative;
+      top: 0;
+    }
   }
 }
 
