@@ -76,5 +76,12 @@
       width: 100%;
       overflow: hidden;
       height: auto; } }
+  .flexslider .flex-controls {
+    position: relative;
+    top: -480px; }
+    @media screen and (max-width: 1200px) {
+      .flexslider .flex-controls {
+        position: relative;
+        top: 0; } }
 
 /*# sourceMappingURL=homepage-wide.css.map */

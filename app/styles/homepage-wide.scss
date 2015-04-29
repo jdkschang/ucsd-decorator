@@ -100,5 +100,16 @@
     overflow: hidden;
     height: auto;
   }
+
+  .flex-controls {
+    position:relative;
+    // top: -400px; 80px off (?)
+    top: -480px;
+
+    @media screen and (max-width: 1200px) {
+      position: relative;
+      top: 0;
+    }
+  }
 }
 
