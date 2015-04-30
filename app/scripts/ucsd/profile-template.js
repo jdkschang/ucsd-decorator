@@ -13,7 +13,12 @@
             }
             //Variables
             var options = $.extend(defaults, options);
-            var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
+            var opt = options,
+                jtype = opt.type,
+                jfit = opt.fit,
+                jwidth = opt.width,
+                vtabs = 'vertical',
+                accord = 'accordion';
 
 
             //Update: ttessema@ucsd.edu
@@ -53,7 +58,7 @@
                         $respTabs.addClass('resp-vtabs');
                     }
                     if (jfit == true) {
-                        $respTabs.css({ width: '100%', margin: '0px' });
+                        $respTabs.css({ width: '72%', margin: '0px' });
                     }
                     if (jtype == accord) {
                         $respTabs.addClass('resp-easy-accordion');
@@ -130,14 +135,14 @@ var loadProfile = function() {
             width: 'auto', //auto or any width like 600px
             fit: true   // 100% fit in a container
         });
-        function contactInfoMove() {
-            if ($(window).width() < 782) {
-                $('#profileTab').appendTo('#tdr_2_col_content')
-            }
-            else {
-                $('#profileTab').appendTo('.faculty-bio')
-            }
-        };
-        $(window).bind('load orientationchange resize', contactInfoMove);
+        //function contactInfoMove() {
+        //    if ($(window).width() < 782) {
+        //        $('#profileTab').appendTo('#tdr_2_col_content')
+        //    }
+        //    else {
+        //        $('#profileTab').appendTo('.faculty-bio')
+        //    }
+        //};
+        //$(window).bind('load orientationchange resize', contactInfoMove);
     });
 };

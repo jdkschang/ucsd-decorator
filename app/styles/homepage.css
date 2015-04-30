@@ -6,6 +6,8 @@ h2, h3 {
   border-bottom: 1px solid #0b638b;
   margin-bottom: 12px;
   padding-bottom: 5px; }
+.main-section-content > div {
+  margin-bottom: 1em; }
 @media screen and (max-width: 500px) {
   .main-section-content {
     width: 100%; } }
