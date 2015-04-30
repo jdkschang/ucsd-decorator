@@ -31,8 +31,6 @@
                 }
             };
 
-            //$(this).init();
-
             //Events
             $(this).bind('tabactivate', function(e, currentTab) {
                 if(typeof options.activate === 'function') {

@@ -347,8 +347,9 @@ a {
         text-decoration: none; }
     .main-content-nav > ul li.active {
       background-color: #fff;
-      color: #d56a03;
       padding: 1em 0 1em 1em; }
+      .main-content-nav > ul li.active a {
+        color: #d56a03; }
       .main-content-nav > ul li.active a:hover {
         text-decoration: underline; }
     .main-content-nav > ul li ul {
