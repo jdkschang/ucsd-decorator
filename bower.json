@@ -4,7 +4,6 @@
   "dependencies": {
     "bootstrap-sass-official": "~3.3.4",
     "modernizr": "~2.6.2",
-    "superfish": "1.7.5",
     "jquery": "~1.11.3",
     "flexslider": "*"
   },
