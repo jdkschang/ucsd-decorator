@@ -545,7 +545,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     tests['multiplebgs'] = function() {
-        // Setting multiple _images AND a color on the background shorthand property
+        // Setting multiple images AND a color on the background shorthand property
         //  and then querying the style.background property value for the number of
         //  occurrences of "url(" is a reliable method for detecting ACTUAL support for this!
 
@@ -622,7 +622,7 @@ window.Modernizr = (function( window, document, undefined ) {
          * webkit.org/blog/175/introducing-css-gradients/
          * developer.mozilla.org/en/CSS/-moz-linear-gradient
          * developer.mozilla.org/en/CSS/-moz-radial-gradient
-         * dev.w3.org/csswg/css3-_images/#gradients-
+         * dev.w3.org/csswg/css3-images/#gradients-
          */
 
         var str1 = 'background-image:',

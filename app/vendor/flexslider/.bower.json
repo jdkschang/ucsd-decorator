@@ -1,15 +1,13 @@
 {
   "name": "flexslider",
   "homepage": "https://github.com/woothemes/FlexSlider",
-  "_release": "f0e9b4cf3f",
+  "_release": "6df288146e",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f0e9b4cf3f89ab2a0cd8fb0b7593f81defc02eda"
+    "commit": "6df288146e89142dd770fa8eb0b11b055b98d473"
   },
   "_source": "git://github.com/woothemes/FlexSlider.git",
   "_target": "*",
-  "_originalSource": "flexslider",
-  "_direct": true,
-  "main": "jquery.flexslider.js"
+  "_originalSource": "flexslider"
 }
