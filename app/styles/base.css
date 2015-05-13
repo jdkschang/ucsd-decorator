@@ -2102,7 +2102,7 @@ html[xmlns] .flexslider .slides {
 /* adding 4.0 flexslider css */
 .flexslider .flex-controls {
   height: 37px;
-  z-index: 99px; }
+  z-index: 99; }
 
 .flexslider .flex-control-nav {
   float: right;
