@@ -42,6 +42,13 @@
             this.each(function () {
                 var $respTabs = $(this);
                 var $respTabsList = $respTabs.find('ul.resp-tabs-list');
+                var isMobileView = function() {
+                    var browserWidth = window.innerWidth;
+                    var mobileBreakpoint = 640;
+
+                    return (browserWidth < (mobileBreakpoint+1));
+                };
+
                 $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
                 $respTabs.css({
                     'display': 'block',
@@ -57,6 +64,10 @@
                     }
                     if (jfit == true) {
                         $respTabs.css({ width: '72%', margin: '0px' });
+
+                        if(isMobileView()) {
+                            $respTabs.css({width: '100%'})
+                        }
                     }
                     if (jtype == accord) {
                         $respTabs.addClass('resp-easy-accordion');
