@@ -4,6 +4,8 @@
 /* LAYOUT VALUES */
 /* FONTS */
 /* MIXINS */
+.profile-listing ul {
+  padding: 0; }
 .profile-listing li.profile-listing-card {
   margin: 1em 0;
   background: #ececec;
