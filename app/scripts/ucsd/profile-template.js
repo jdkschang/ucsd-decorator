@@ -1,5 +1,13 @@
 // Easy Responsive Tabs Plugin
 // Author: Samson.Onna <Email : samson3d@gmail.com>
+
+var isMobileView = function() {
+    var browserWidth = window.innerWidth;
+    var mobileBreakpoint = 640;
+
+    return (browserWidth < (mobileBreakpoint+1));
+};
+
 (function ($) {
     $.fn.extend({
         easyResponsiveTabs: function (options) {
@@ -42,12 +50,7 @@
             this.each(function () {
                 var $respTabs = $(this);
                 var $respTabsList = $respTabs.find('ul.resp-tabs-list');
-                var isMobileView = function() {
-                    var browserWidth = window.innerWidth;
-                    var mobileBreakpoint = 640;
 
-                    return (browserWidth < (mobileBreakpoint+1));
-                };
 
                 $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
                 $respTabs.css({
@@ -144,14 +147,16 @@ var loadProfile = function() {
             width: 'auto', //auto or any width like 600px
             fit: true   // 100% fit in a container
         });
-        //function contactInfoMove() {
-        //    if ($(window).width() < 782) {
-        //        $('#profileTab').appendTo('#tdr_2_col_content')
-        //    }
-        //    else {
-        //        $('#profileTab').appendTo('.faculty-bio')
-        //    }
-        //};
-        //$(window).bind('load orientationchange resize', contactInfoMove);
+
+        function responsiveTab() {
+            if(isMobileView()) {
+                $('#profileTab').css({ width: '100%' });
+
+            } else {
+                $('#profileTab').css({ width: '72%' });
+            }
+        }
+
+        $(window).bind('load orientationchange resize', responsiveTab);
     });
 };
