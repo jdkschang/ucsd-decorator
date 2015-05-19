@@ -332,20 +332,20 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         'img/{,*/}*.webp',
                         '{,*/}*.html',
-                        'fonts/{,*/}*.*',
+                        '/fonts/{,*/}*.*',
                         'docs/{,*/}*.css', //for the kitchen sink...
                         'docs/{,*/}*.js' //for the kitchen sink...
                     ]
                 },
-                    {
-                        expand: true,
-                        dot: true,
-                        cwd: '<%= config.app %>/vendor/bootstrap-sass-official/vendor/assets/fonts/bootstrap',
-                        dest: '<%= config.dist %>/fonts',
-                        src: [
-                            '*.*'
-                        ]
-                    }]
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= config.app %>/vendor/bootstrap-sass-official/vendor/assets/fonts/bootstrap',
+                    dest: '<%= config.dist %>/fonts',
+                    src: [
+                        '*.*'
+                    ]
+                }]
             },
             styles: {
                 expand: true,
