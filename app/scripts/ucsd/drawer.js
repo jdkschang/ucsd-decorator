@@ -63,12 +63,14 @@ $(document).ready(function() {
 		/* expand all drawers */
 		function expandAll(drawerWrapper) {
 			drawerWrapper.children(".drawer").children("h2").addClass("expand");
-			drawerWrapper.children(".drawer").children("article").show();
+            drawerWrapper.children(".drawer").children("div").show();
+            drawerWrapper.children(".drawer").children("article").show();
 		}
 
 		/* close all drawers */
 		function collapseAll(drawerWrapper) {
 			drawerWrapper.children(".drawer").children("h2").removeClass("expand");
+            drawerWrapper.children(".drawer").children("div").hide();
 			drawerWrapper.children(".drawer").children("article").hide();
         }
 
