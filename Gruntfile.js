@@ -332,7 +332,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         'img/{,*/}*.webp',
                         '{,*/}*.html',
-                        '/fonts/{,*/}*.*',
+                        'fonts/{,*/}*.*',
                         'docs/{,*/}*.css', //for the kitchen sink...
                         'docs/{,*/}*.js' //for the kitchen sink...
                     ]
