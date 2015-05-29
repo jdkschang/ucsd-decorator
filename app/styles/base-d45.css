@@ -1147,6 +1147,7 @@ span.loading {
   background: url(img/icon_loading_inline.gif) right no-repeat;
   padding-right: 20px; }
 
+/********************* CMS */
 /*
  * jQuery FlexSlider v2.4.0
  * http://www.woothemes.com/flexslider/
@@ -1156,6 +1157,7 @@ span.loading {
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Contributing author: Tyler Smith (@mbmufffin)
+ *
  */
 /* ====================================================================================================================
  * FONT-FACE
@@ -1163,10 +1165,7 @@ span.loading {
 @font-face {
   font-family: 'flexslider-icon';
   src: url("../fonts/flexslider-icon.eot");
-  src: url("../fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/flexslider-icon.woff") format("woff"),
-        url("../fonts/flexslider-icon.ttf") format("truetype"),
-        url("../fonts/flexslider-icon.svg#flexslider-icon") format("svg");
+  src: url("../fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"), url("../fonts/flexslider-icon.woff") format("woff"), url("../fonts/flexslider-icon.ttf") format("truetype"), url("../fonts/flexslider-icon.svg#flexslider-icon") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* ====================================================================================================================
@@ -1478,6 +1477,199 @@ html[xmlns] .flexslider .slides {
   position: static;
   text-indent: -9999px; }
 
+.flexslider {
+  border: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 1em;
+  width: 100%;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+
+.flexslider a {
+  color: #fff;
+  -webkit-tap-highlight-color: transparent; }
+
+.flexslider .slides li {
+  margin: 0; }
+
+.flexslider .flex-control-nav {
+  float: right;
+  right: 32px;
+  bottom: 10px;
+  height: 12px;
+  width: auto;
+  z-index: 5; }
+
+.flexslider .flex-control-nav li {
+  vertical-align: top;
+  margin: 0 0 0 5px; }
+
+.flexslider .flex-control-nav li a {
+  border: 1px solid #016691;
+  cursor: pointer;
+  height: 10px;
+  margin-left: 8px;
+  text-indent: -9999px;
+  width: 20px;
+  background: #bed4e7;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+
+.flexslider .flex-control-nav li a.flex-active {
+  background: #eb8626;
+  border: 1px solid #c15f01;
+  cursor: default; }
+
+.flexslider .flex-pauseplay a {
+  background: url(img/sprite_icon_widget.png);
+  border: 0;
+  display: block;
+  height: 10px;
+  width: 20px;
+  position: static;
+  text-indent: -9999px; }
+
+.flexslider .flex-pauseplay a.flex-pause {
+  background-position: 6px -248px; }
+
+.flexslider .flex-pauseplay a.flex-play {
+  background-position: 8px -232px; }
+
+.flexslider .flex-direction-nav li a {
+  background: #000;
+  background: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000, endColorstr=#4c000000);
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  text-indent: 0;
+  text-align: center;
+  margin: 0;
+  top: 30%;
+  height: 24px;
+  width: 24px;
+  opacity: 0.8; }
+
+.flexslider .flex-direction-nav li a:hover {
+  text-decoration: none; }
+
+.flexslider .flex-direction-nav li a.flex-prev {
+  left: 10px; }
+
+.flexslider .flex-direction-nav li a.flex-next {
+  right: 10px; }
+
+.flexslider .flex-direction-nav a.flex-next:before, .flexslider .flex-direction-nav a:before {
+  content: ""; }
+
+.flexslider .flex-controls {
+  height: 37px;
+  z-index: 99; }
+
+.flexslider .flex-controls .flex-pauseplay {
+  bottom: 10px;
+  right: 5px;
+  position: absolute;
+  z-index: 10; }
+
+.flex-caption {
+  zoom: 1;
+  width: 100%;
+  padding: 2%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 18px; }
+
+.flex-caption a {
+  -webkit-tap-highlight-color: rgba(88, 166, 203, 0.6); }
+
+.flexslider.alt .flex-caption, .flexslider.alt .flex-direction-nav li a {
+  background: #0B638B;
+  background: rgba(11, 99, 139, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA1986b4, endColorstr=#AA1986b4);
+  zoom: 1; }
+
+/**********************************************************************
+ * CSS Styling for the drawer widget.
+ */
+.drawer-wrapper {
+  margin-bottom: 1em; }
+
+.drawer {
+  border-bottom: 1px solid #ccc; }
+
+/* header */
+.drawer h2 {
+  border-top: 1px solid #ccc;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: .2em 0;
+  zoom: 1;
+  font-size: 24px; }
+
+/* default state */
+.drawer h2 a {
+  background: transparent url(img/sprite_icon_widget.png) 0 4px no-repeat;
+  display: block;
+  padding-left: 20px;
+  text-decoration: none; }
+
+/* ie7 hack */
+*:first-child + html .drawer h2 a {
+  display: inline-block; }
+
+/* expanded state */
+.drawer h2.expand {
+  background-color: #0B4A67; }
+
+.drawer h2.expand a {
+  background-position: 0 -96px;
+  color: #fff; }
+
+/* hover state */
+.drawer h2:hover, .drawer h2:active {
+  background-color: #F0FAFF;
+  cursor: pointer; }
+
+.drawer h2.expand:hover, .drawer h2.expand:active {
+  background: #0B4A67; }
+
+/* content background */
+.drawer > div {
+  padding: 1em 2em; }
+
+.drawer > div.cols_wrapper {
+  padding: 1em 0; }
+
+/* toggle links */
+.drawer-toggle {
+  font-size: 90%;
+  padding: .5em 0; }
+
+.drawer-toggle a {
+  color: #666; }
+
+.drawer-toggle a:hover, .drawer-toggle a:active {
+  color: #016691; }
+
+.drawer-toggle a {
+  background: transparent url(img/sprite_icon_widget.png) 0 -217px no-repeat;
+  padding-left: 16px; }
+
+.drawer-toggle a.expand {
+  background-position: 0 -201px; }
+
 @media print {
   /* removes ucsd logo and other background images (glyphicons) */
   html, main, footer *,
@@ -1510,90 +1702,4 @@ html[xmlns] .flexslider .slides {
   .main-content-nav {
     background: none; } }
 
-/**********************************************************************
- * CSS Styling for the drawer widget.
- */
-.drawer-wrapper {
-  margin-bottom: 1em;
-}
-
-.drawer {
-  border-bottom: 1px solid #ccc;
-}
-
-/* header */
-.drawer h2 {
-  border-top: 1px solid #ccc;
-  font-weight: normal;
-  margin-bottom: 0;
-  padding: .2em 0;
-  zoom: 1;
-  font-size: 24px;
-}
-
-/* default state */
-.drawer h2 a {
-  background: transparent url(img/sprite_icon_widget.png) 0 4px no-repeat;
-  display: block;
-  padding-left: 20px;
-  text-decoration: none;
-}
-
-/* ie7 hack */
-*:first-child+html .drawer h2 a {
-  display: inline-block;
-}
-
-/* expanded state */
-.drawer h2.expand {
-  background-color: #0B4A67;
-}
-
-.drawer h2.expand a {
-  background-position: 0 -96px;
-  color: #fff;
-}
-
-/* hover state */
-.drawer h2:hover,.drawer h2:active {
-  background-color: #F0FAFF;
-  cursor: pointer;
-}
-
-.drawer h2.expand:hover,.drawer h2.expand:active {
-  background: #0B4A67;
-}
-
-/* content background */
-.drawer > div {
-  padding: 1em 2em;
-}
-
-.drawer > div.cols_wrapper {
-  padding: 1em 0;
-}
-
-/* toggle links */
-.drawer-toggle {
-  font-size: 90%;
-  padding: .5em 0;
-}
-
-.drawer-toggle a {
-  color: #666;
-}
-
-.drawer-toggle a:hover,.drawer-toggle a:active {
-  color: #016691;
-}
-
-.drawer-toggle a {
-  background: transparent url(img/sprite_icon_widget.png) 0 -217px
-  no-repeat;
-  padding-left: 16px;
-}
-
-.drawer-toggle a.expand {
-  background-position: 0 -201px;
-}
 /*# sourceMappingURL=base-d45.css.map */
