@@ -1,5 +1,5 @@
 // Easy Responsive Tabs Plugin
-// Author: Samson.Onna <Email : samson3d@gmail.com>
+// Author: Samson.Onna <Email : samson3d@gmail.com>, Jonathan Chang
 
 var isMobileView = function() {
     var browserWidth = window.innerWidth;
