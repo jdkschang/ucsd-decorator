@@ -837,41 +837,34 @@ div.styled {
   div.styled h3 {
     font-size: 115%; }
 
-div.styled
+/*---------------------------------------------------------------------
+ * page navigation
+ */
 #page_nav {
   margin: 0 -1em -1em;
   padding: 0; }
-  div.styled
   #page_nav li {
     border-top: 1px solid #DBD7D7;
     color: #06c;
     list-style: none;
     margin: 0;
     padding: 0; }
-    div.styled
-    #page_nav li.active, div.styled
-    #page_nav li a {
+    #page_nav li.active, #page_nav li a {
       color: #016691;
       display: block;
       padding: 1em 0 1em 1em; }
-    div.styled
     #page_nav li.active {
       background-color: #fff;
       color: #D56A03; }
-    div.styled
     #page_nav li.collapsed ul {
       display: none; }
-    div.styled
     #page_nav li a:hover {
       background-color: #fff;
       text-decoration: none; }
-    div.styled
     #page_nav li li {
       font-size: 85%; }
-      div.styled
       #page_nav li li a:hover {
         text-decoration: underline; }
-  div.styled
   #page_nav ul {
     margin: .4em 0 -.4em 1em;
     padding: 0; }
@@ -1767,6 +1760,54 @@ span.loading {
   background: url(img/icon_loading_inline.gif) right no-repeat;
   padding-right: 20px; }
 
+/**********************************************************************
+ * CSS Styling for the page nav aside
+ */
+div.styled {
+  background: #F2F5F7;
+  border: 1px solid #C8CFD3;
+  margin-bottom: 1em;
+  padding: 1em; }
+  div.styled h2, div.styled h3, div.styled h4, div.styled h5, div.styled h6 {
+    color: #738AA3;
+    text-shadow: 0 1px 1px #FFFFFF; }
+  div.styled h2 {
+    font-size: 140%; }
+  div.styled h3 {
+    font-size: 115%; }
+
+#page_nav {
+  margin: 0 -1em -1em;
+  padding: 0; }
+  #page_nav li {
+    border-top: 1px solid #DBD7D7;
+    color: #06c;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #page_nav li.active, #page_nav li a {
+      color: #016691;
+      display: block;
+      padding: 1em 0 1em 1em; }
+    #page_nav li.active {
+      background-color: #fff;
+      color: #D56A03; }
+    #page_nav li.collapsed ul {
+      display: none; }
+    #page_nav li a:hover {
+      background-color: #fff;
+      text-decoration: none; }
+    #page_nav li li {
+      font-size: 85%; }
+      #page_nav li li a:hover {
+        text-decoration: underline; }
+  #page_nav ul {
+    margin: .4em 0 -.4em 1em;
+    padding: 0; }
+
+#page_nav_title {
+  margin-bottom: 0.7em; }
+
 @media print {
   	/**********************************************************************
   	 * Print Styles
@@ -1839,6 +1880,138 @@ span.loading {
  * Contributing author: Tyler Smith (@mbmufffin)
  *
  */
+/*******************************************************************
+FLEXSLIDER
+************************/
+.flexslider {
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 1em;
+  width: 100%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  /* pause and play control */
+  /* direction control */ }
+  .flexslider a {
+    color: #fff;
+    -webkit-tap-highlight-color: transparent; }
+  .flexslider .slides li {
+    margin: 0; }
+  .flexslider .flex-control-nav {
+    float: right;
+    right: 32px;
+    bottom: 10px;
+    height: 12px;
+    width: auto;
+    z-index: 5; }
+    .flexslider .flex-control-nav li {
+      vertical-align: top;
+      margin: 0 0 0 5px;
+      /* shared paging, pause and play control styles */
+      /* paging control */ }
+      .flexslider .flex-control-nav li a {
+        border: 1px solid #016691;
+        cursor: pointer;
+        height: 10px;
+        margin-left: 8px;
+        text-indent: -9999px;
+        width: 20px; }
+      .flexslider .flex-control-nav li a {
+        background: #bed4e7;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -o-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none; }
+      .flexslider .flex-control-nav li a.flex-active {
+        background: #eb8626;
+        border: 1px solid #c15f01;
+        cursor: default; }
+  .flexslider .flex-pauseplay a {
+    background: url(img/sprite_icon_widget.png);
+    border: 0;
+    display: block;
+    height: 10px;
+    width: 20px;
+    position: static;
+    text-indent: -9999px; }
+  .flexslider .flex-pauseplay a.flex-pause {
+    background-position: 6px -248px; }
+  .flexslider .flex-pauseplay a.flex-play {
+    background-position: 8px -232px; }
+  .flexslider .flex-direction-nav li a {
+    background: #000;
+    background: rgba(0, 0, 0, 0.3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000, endColorstr=#4c000000);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    text-indent: 0;
+    text-align: center;
+    margin: 0;
+    top: 30%;
+    height: 24px;
+    width: 24px;
+    opacity: 0.8; }
+  .flexslider .flex-direction-nav li a:hover {
+    text-decoration: none; }
+  .flexslider .flex-direction-nav li a.flex-prev {
+    left: 10px; }
+  .flexslider .flex-direction-nav li a.flex-next {
+    right: 10px; }
+  .flexslider .flex-direction-nav a:before {
+    content: ''; }
+  .flexslider .flex-direction-nav a.flex-next:before {
+    content: ''; }
+  .flexslider .flex-controls {
+    height: 37px;
+    z-index: 99; }
+    .flexslider .flex-controls .flex-pauseplay {
+      bottom: 10px;
+      right: 5px;
+      position: absolute;
+      z-index: 10; }
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {
+  background: none;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+  zoom: 1; }
+
+.flex-caption {
+  width: 100%;
+  padding: 2%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 18px; }
+  .flex-caption a {
+    -webkit-tap-highlight-color: rgba(88, 166, 203, 0.6); }
+
+/* control container */
+/* alternative theme */
+.flexslider.alt .flex-direction-nav li a,
+.flexslider.alt .flex-caption {
+  background: #0B638B;
+  background: rgba(11, 99, 139, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA1986b4,endColorstr=#AA1986b4);
+  zoom: 1; }
+
+/*******************************************************************
+Alerts
+************************/
 /* ====================================================================================================================
  * FONT-FACE
  * ====================================================================================================================*/
@@ -2156,129 +2329,6 @@ html[xmlns] .flexslider .slides {
   width: 20px;
   position: static;
   text-indent: -9999px; }
-
-.flexslider {
-  border: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  margin-bottom: 1em;
-  width: 100%;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none; }
-
-.flexslider a {
-  color: #fff;
-  -webkit-tap-highlight-color: transparent; }
-
-.flexslider .slides li {
-  margin: 0; }
-
-.flexslider .flex-control-nav {
-  float: right;
-  right: 32px;
-  bottom: 10px;
-  height: 12px;
-  width: auto;
-  z-index: 5; }
-
-.flexslider .flex-control-nav li {
-  vertical-align: top;
-  margin: 0 0 0 5px; }
-
-.flexslider .flex-control-nav li a {
-  border: 1px solid #016691;
-  cursor: pointer;
-  height: 10px;
-  margin-left: 8px;
-  text-indent: -9999px;
-  width: 20px;
-  background: #bed4e7;
-  -webkit-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none; }
-
-.flexslider .flex-control-nav li a.flex-active {
-  background: #eb8626;
-  border: 1px solid #c15f01;
-  cursor: default; }
-
-.flexslider .flex-pauseplay a {
-  background: url(img/sprite_icon_widget.png);
-  border: 0;
-  display: block;
-  height: 10px;
-  width: 20px;
-  position: static;
-  text-indent: -9999px; }
-
-.flexslider .flex-pauseplay a.flex-pause {
-  background-position: 6px -248px; }
-
-.flexslider .flex-pauseplay a.flex-play {
-  background-position: 8px -232px; }
-
-.flexslider .flex-direction-nav li a {
-  background: #000;
-  background: rgba(0, 0, 0, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000, endColorstr=#4c000000);
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  text-indent: 0;
-  text-align: center;
-  margin: 0;
-  top: 30%;
-  height: 24px;
-  width: 24px;
-  opacity: 0.8; }
-
-.flexslider .flex-direction-nav li a:hover {
-  text-decoration: none; }
-
-.flexslider .flex-direction-nav li a.flex-prev {
-  left: 10px; }
-
-.flexslider .flex-direction-nav li a.flex-next {
-  right: 10px; }
-
-.flexslider .flex-direction-nav a.flex-next:before, .flexslider .flex-direction-nav a:before {
-  content: ""; }
-
-.flexslider .flex-controls {
-  height: 37px;
-  z-index: 99; }
-
-.flexslider .flex-controls .flex-pauseplay {
-  bottom: 10px;
-  right: 5px;
-  position: absolute;
-  z-index: 10; }
-
-.flex-caption {
-  zoom: 1;
-  width: 100%;
-  padding: 2%;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-  line-height: 18px; }
-
-.flex-caption a {
-  -webkit-tap-highlight-color: rgba(88, 166, 203, 0.6); }
-
-.flexslider.alt .flex-caption, .flexslider.alt .flex-direction-nav li a {
-  background: #0B638B;
-  background: rgba(11, 99, 139, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA1986b4, endColorstr=#AA1986b4);
-  zoom: 1; }
 
 /**********************************************************************
  * CSS Styling for the toggler

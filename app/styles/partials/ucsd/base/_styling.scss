@@ -651,3 +651,76 @@ span.loading {
 	background: url(img/icon_loading_inline.gif) right no-repeat;
 	padding-right: 20px;
 }
+
+/**********************************************************************
+ * CSS Styling for the page nav aside
+ */
+div.styled {
+  background: #F2F5F7;
+  border: 1px solid #C8CFD3;
+  margin-bottom: 1em;
+  padding: 1em;
+
+  h2, h3, h4, h5, h6 {
+	color: #738AA3;
+	text-shadow: 0 1px 1px #FFFFFF;
+  }
+
+  h2 {
+	font-size: 140%;
+  }
+
+  h3 {
+	font-size: 115%;
+  }
+}
+
+#page_nav {
+  margin: 0 -1em -1em;
+  padding: 0;
+
+  li {
+	border-top: 1px solid #DBD7D7;
+	color: #06c;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&.active, a {
+	  color: #016691;
+	  display: block;
+	  padding: 1em 0 1em 1em;
+	}
+
+	&.active {
+	  background-color: #fff;
+	  color: #D56A03;
+	}
+
+	&.collapsed ul {
+	  display: none;
+	}
+
+	a:hover {
+	  background-color: #fff;
+	  text-decoration: none;
+	}
+
+	li {
+	  font-size: 85%;
+
+	  a:hover {
+		text-decoration: underline;
+	  }
+	}
+  }
+
+  ul {
+	margin: .4em 0 -.4em 1em;
+	padding: 0;
+  }
+}
+
+#page_nav_title {
+  margin-bottom: 0.7em;
+}

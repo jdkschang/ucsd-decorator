@@ -4,10 +4,18 @@
 /* LAYOUT VALUES */
 /* FONTS */
 /* MIXINS */
+.imageHolder {
+  display: inline-block;
+  width: 17%;
+  height: 93px;
+  float: left;
+  min-height: 93px;
+  min-width: 110px; }
+
 .profile-listing ul {
   padding: 0; }
 .profile-listing li.profile-listing-card {
-  margin: 1em 0;
+  margin: 0 0 1em;
   background: #ececec;
   border: 1px solid #e9e9e9;
   width: 99.5%;
