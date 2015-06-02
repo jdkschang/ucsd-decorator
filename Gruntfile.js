@@ -160,11 +160,11 @@ module.exports = function (grunt) {
                 generatedImagesDir: '.tmp/img/generated',
                 imagesDir: '<%= config.app %>/img',
                 javascriptsDir: '<%= config.app %>/scripts',
-                fontsDir: '<%= config.app %>/styles/fonts',
+                fontsDir: '<%= config.app %>/fonts',
                 importPath: '<%= config.app %>/vendor',
                 httpImagesPath: '/img',
                 httpGeneratedImagesPath: '/img/generated',
-                httpFontsPath: '/styles/fonts',
+                httpFontsPath: '/fonts',
                 relativeAssets: false,
                 assetCacheBuster: false
             },
@@ -216,7 +216,7 @@ module.exports = function (grunt) {
                         '<%= config.dist %>/scripts/{,*/}*.js',
                         '<%= config.dist %>/styles/{,*/}*.css',
                         '<%= config.dist %>/img/{,*/}*.*',
-                        '<%= config.dist %>/styles/fonts/{,*/}*.*',
+                        '<%= config.dist %>/fonts/{,*/}*.*',
                         '<%= config.dist %>/*.{ico,png}'
                     ]
                 }
@@ -230,7 +230,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: ['<%= config.app %>/index.html']
+            html: ['<%= config.app %>/homepage-wide.html', '<%= config.app %>/homepage.html']
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
@@ -332,7 +332,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         'img/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*',
+                        'fonts/{,*/}*.*',
                         'docs/{,*/}*.css', //for the kitchen sink...
                         'docs/{,*/}*.js' //for the kitchen sink...
                     ]

@@ -170,7 +170,7 @@
                         <div class="flexslider alt noSlideShow">
                             <ul class="slides">
                                 <li class="flex-active-slide">
-                                    <img alt="Student Name 1" src="img/s2.jpg" draggable="false">
+                                    <img alt="Student Name 1" src="img/s1.jpg" draggable="false">
                                     <div class="flex-caption">
                                         <div class="header">
                                             Student Name 1
@@ -180,7 +180,7 @@
                                 </li>
 
                                 <li>
-                                    <img alt="Student Name 2" src="img/s3.jpg" draggable="false">
+                                    <img alt="Student Name 2" src="img/s2.jpg" draggable="false">
                                     <div class="flex-caption">
                                         <div class="header">
                                             Student Name 2
@@ -294,10 +294,12 @@
 <script src="https://www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 <!-- build:js({app,.tmp}) scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
+<script src="scripts/ucsd/drawer.js"></script>
 <script src="scripts/ucsd/copyright.js"></script>
 <script src="scripts/ucsd/footer.js"></script>
 <script src="scripts/ucsd/logout.js"></script>
 <script src="scripts/ucsd/flexslider-init.js"></script>
+<script src="scripts/ucsd/profile-template.js"></script>
 <!-- endbuild -->
 
 <script type="text/javascript">
@@ -305,6 +307,7 @@
         $(document).ready(function () {
             initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
+            initLogout();
         });
     })(jQuery);
 </script>
