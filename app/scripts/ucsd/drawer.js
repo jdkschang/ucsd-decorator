@@ -55,7 +55,7 @@ $(document).ready(function() {
                     setTimeout(function() {
                         window.scrollTo(0, newPosition.top);
                     }, 50);
-                };
+                }
             });
         });
     });
