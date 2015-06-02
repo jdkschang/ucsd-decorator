@@ -3,48 +3,48 @@
  */
 $(document).ready(function() {
 	$('.drawer').each(function() {
-            var drawer = $(this);
+        var drawer = $(this);
 
-            /* create wrapper class */
-            drawer.wrap('<div class="drawer-wrapper"/>');
-            var drawerWrapper = drawer.parent();
+        /* create wrapper class */
+        drawer.wrap('<div class="drawer-wrapper"/>');
+        var drawerWrapper = drawer.parent();
 
-            /* insert links */
-            var link = '<div class="drawer-toggle"><a href="#" class="expand">Expand All</a></div>';
-            drawerWrapper.prepend(link);
-            drawerWrapper.append(link);
+        /* insert links */
+        var link = '<div class="drawer-toggle"><a href="#" class="expand">Expand All</a></div>';
+        drawerWrapper.prepend(link);
+        drawerWrapper.append(link);
 
-            /* build drawer */
-            drawer.children("div").toggle();
+        /* build drawer */
+        drawer.children("div").toggle();
 
-            drawer.children("h2").click(function() {
-                $(this).toggleClass("expand");
-                $(this).next().toggle();
-                if ($(this).hasClass("expand")) {
-                    window.location.hash = $(this).find('a').text().replace(/\s/g,'-').substring(0,31);
-                }
-                return false;
-            });
+        drawer.children("h2").click(function() {
+            $(this).toggleClass("expand");
+            $(this).next().toggle();
+            if ($(this).hasClass("expand")) {
+                window.location.hash = $(this).find('a').text().replace(/\s/g,'-').substring(0,31);
+            }
+            return false;
+        });
 
-            drawerWrapper.find(".drawer-toggle a").click(function() {
-                /* open or close drawers */
-                if ($(this).hasClass("expand")) {
-                    expandAll(drawerWrapper);
-                }
+        drawerWrapper.find(".drawer-toggle a").click(function() {
+            /* open or close drawers */
+            if ($(this).hasClass("expand")) {
+                expandAll(drawerWrapper);
+            }
 
-                else {
-                    collapseAll(drawerWrapper);
-                }
+            else {
+                collapseAll(drawerWrapper);
+            }
 
-                /* reset all toggle links */
-                resetLink(drawerWrapper);
-                if ( window.history && window.history.pushState ) {
-                    window.history.pushState('', '', window.location.pathname)
-                } else {
-                    window.location.href = window.location.href.replace(/#.*$/, '#');
-                }
-                return false;
-            });
+            /* reset all toggle links */
+            resetLink(drawerWrapper);
+            if ( window.history && window.history.pushState ) {
+                window.history.pushState('', '', window.location.pathname)
+            } else {
+                window.location.href = window.location.href.replace(/#.*$/, '#');
+            }
+            return false;
+        });
 
             /* open the drawer if the url points to this drawer */
         $(window).load(function () {
@@ -60,29 +60,29 @@ $(document).ready(function() {
         });
     });
 
-		/* expand all drawers */
-		function expandAll(drawerWrapper) {
-			drawerWrapper.children(".drawer").children("h2").addClass("expand");
-            drawerWrapper.children(".drawer").children("div").show();
-            drawerWrapper.children(".drawer").children("article").show();
-		}
+	/* expand all drawers */
+	function expandAll(drawerWrapper) {
+		drawerWrapper.children(".drawer").children("h2").addClass("expand");
+        drawerWrapper.children(".drawer").children("div").show();
+        drawerWrapper.children(".drawer").children("article").show();
+	}
 
-		/* close all drawers */
-		function collapseAll(drawerWrapper) {
-			drawerWrapper.children(".drawer").children("h2").removeClass("expand");
-            drawerWrapper.children(".drawer").children("div").hide();
-			drawerWrapper.children(".drawer").children("article").hide();
-        }
+	/* close all drawers */
+	function collapseAll(drawerWrapper) {
+		drawerWrapper.children(".drawer").children("h2").removeClass("expand");
+        drawerWrapper.children(".drawer").children("div").hide();
+		drawerWrapper.children(".drawer").children("article").hide();
+    }
 
-		/* reset drawer toggle link */
-		function resetLink(drawerWrapper) {
-			drawerWrapper.find(".drawer-toggle a").each(function() {
-				element = $(this);
-				if (element.hasClass("expand"))
-					element.html("Collapse All");
-				else
-					element.html("Expand All");
-				element.toggleClass("expand");
-			});
-		}
+	/* reset drawer toggle link */
+	function resetLink(drawerWrapper) {
+		drawerWrapper.find(".drawer-toggle a").each(function() {
+			element = $(this);
+			if (element.hasClass("expand"))
+				element.html("Collapse All");
+			else
+				element.html("Expand All");
+			element.toggleClass("expand");
+		});
+	}
 });
