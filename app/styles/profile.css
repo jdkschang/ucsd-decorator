@@ -13,7 +13,9 @@
   min-width: 110px; }
 
 .profile-listing ul {
-  padding: 0; }
+  margin: 0;
+  padding: 0;
+  list-style: none; }
 .profile-listing li.profile-listing-card {
   margin: 0 0 1em;
   background: #ececec;
