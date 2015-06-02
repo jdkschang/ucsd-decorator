@@ -9,13 +9,13 @@ $(document).ready(function() {
         drawer.wrap('<div class="drawer-wrapper"/>');
         var drawerWrapper = drawer.parent();
 
-        /* insert links */
+        /* insert expand all links */
         var link = '<div class="drawer-toggle"><a href="#" class="expand">Expand All</a></div>';
         drawerWrapper.prepend(link);
         drawerWrapper.append(link);
 
         /* build drawer */
-        drawer.children("div").toggle();
+        drawer.children("article").toggle();
 
         drawer.children("h2").click(function() {
             $(this).toggleClass("expand");
@@ -46,16 +46,16 @@ $(document).ready(function() {
             return false;
         });
 
-            /* open the drawer if the url points to this drawer */
+        /* open the drawer if the url points to this drawer */
         $(window).load(function () {
             drawer.children("h2").each(function() {
-                if (window.location.hash == '#'+$(this).text().replace(/\s/g,'-').substring(0,31)){
+                if (window.location.hash == '#' + $(this).find('a').text().replace(/\s/g,'-').substring(0,31)){
                     var newPosition = $(this).offset();
                     $(this).toggleClass('expand').next().toggle();
                     setTimeout(function() {
                         window.scrollTo(0, newPosition.top);
                     }, 50);
-                };
+                }
             });
         });
     });
