@@ -74,9 +74,23 @@ ol.breadcrumbs-list {
   .main-section-content {
     *padding: 0 1em;
   }
+
+  /* homepage */
+  .main-section-module {
+    padding: 0;
+
+    &.col-xs-6 {
+      width: 48%;
+    }
+  }
 }
 
 /* profile template fix */
 .profile-section {
   padding-left: .7em;
+}
+
+/* flexslider */
+.flex-caption {
+  padding: 0;
 }

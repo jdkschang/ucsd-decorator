@@ -62,10 +62,6 @@ a.give-button span {
 }
 
 /* flexslider homepage specific styles */
-
-
-
-
 .flexslider {
   margin-bottom: 0;
 }
@@ -90,4 +86,12 @@ a.give-button span {
 
 .alt p {
   margin-bottom: 0;
+}
+
+/* module styling */
+.news-item {
+  img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
 }

@@ -52,14 +52,23 @@ ol.breadcrumbs-list {
     width: 25%; }
 
 .main-section {
-  *padding: 0; }
+  *padding: 0;
+  /* homepage */ }
   .main-section.pull-left {
     width: 25%; }
   .main-section .main-section-content {
     *padding: 0 1em; }
+  .main-section .main-section-module {
+    padding: 0; }
+    .main-section .main-section-module.col-xs-6 {
+      width: 48%; }
 
 /* profile template fix */
 .profile-section {
-  padding-left: .5em; }
+  padding-left: .7em; }
+
+/* flexslider */
+.flex-caption {
+  padding: 0; }
 
 /*# sourceMappingURL=ie-support.css.map */
