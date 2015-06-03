@@ -1146,8 +1146,6 @@ div.loading {
 span.loading {
   background: url(img/icon_loading_inline.gif) right no-repeat;
   padding-right: 20px; }
-
-<<<<<<< HEAD
 /**********************************************************************
  * CSS Styling for the page nav aside
  */
@@ -1328,8 +1326,6 @@ FLEXSLIDER
 /*******************************************************************
 Alerts
 ************************/
-=======
->>>>>>> 88f4e08b34254e2584dbe0089dddd5e19a477104
 /********************* CMS */
 /*
  * jQuery FlexSlider v2.4.0
@@ -1861,9 +1857,6 @@ html[xmlns] .flexslider .slides {
 
 .drawer-toggle a.expand {
   background-position: 0 -201px; }
-
-<<<<<<< HEAD
-=======
 /********************* VARIABLES & MIXINS */
 /* BREAKPOINTS */
 /* COLORS */
@@ -2090,7 +2083,6 @@ h2.resp-tab-active span.resp-arrow {
 
   .resp-vtabs .resp-tab-content:last-child {
     border-bottom: 1px solid #c1c1c1 !important; } }
->>>>>>> 88f4e08b34254e2584dbe0089dddd5e19a477104
 @media print {
   /* removes ucsd logo and other background images (glyphicons) */
   html, main, footer *,

@@ -443,7 +443,6 @@ module.exports = function (grunt) {
         'copy:dist',
         'modernizr',
         'usemin',
-        /*'htmlmin',*/ //uncomment this to re-enable html minification
         'compress'
     ]);
 
