@@ -25,16 +25,16 @@ html, body {
 
 /* container will have media queries for sizing*/
 .layout-container {
-  max-width: 960px;
+  max-width: 1200px;
   width: 98%;
   margin: auto;
   overflow: hidden; }
   @media only screen and (max-width: 768px) {
     .layout-container {
       width: 94%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (max-width: 1200px) {
     .layout-container {
-      max-width: 1200px; } }
+      max-width: 960px; } }
 
 .layout-navbar .layout-container {
   overflow: visible; }
@@ -1703,7 +1703,8 @@ html[xmlns] .flexslider .slides {
   background: #0B4A67; }
 
 /* content background */
-.drawer > div {
+.drawer > div,
+.drawer > article {
   padding: 1em 2em; }
 
 .drawer > div.cols_wrapper {

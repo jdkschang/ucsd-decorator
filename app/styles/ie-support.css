@@ -5,6 +5,9 @@
   padding: 1em 0;
   height: 50px; }
 
+.layout-header {
+  height: 78px; }
+
 .layout-login {
   display: none; }
 
@@ -39,8 +42,14 @@ ol.breadcrumbs-list {
     *margin-right: 7px; }
 
 /* to deal with added padding*/
+.main-content-container {
+  padding: 0;
+  width: 75%; }
+
 .main-section {
   *padding: 0; }
+  .main-section.pull-left {
+    width: 25%; }
   .main-section .main-section-content {
     *padding: 0 1em; }
 
