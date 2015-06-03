@@ -49,10 +49,20 @@ ol.breadcrumbs-list {
   }
 }
 
-/* to deal with added padding*/
+/* to deal with added padding
+   width hard coding to get around media query styling */
 .main-content-container {
   padding: 0;
   width: 75%;
+
+  .main-section {
+    &.col-sm-9 {
+      width: 75%;
+    }
+    &.col-sm-3 {
+      width: 25%;
+    }
+  }
 }
 .main-section {
   *padding: 0;
@@ -64,4 +74,9 @@ ol.breadcrumbs-list {
   .main-section-content {
     *padding: 0 1em;
   }
+}
+
+/* profile template fix */
+.profile-section {
+  padding-left: .7em;
 }

@@ -215,9 +215,15 @@ main
     line-height: 1.5;
     padding: 0 1em 1em 0;
 
+    /* space for smaller viewports */
+    margin-bottom: 1em;
     @media only screen and (max-width: $tablet) {
       width:100%;
     }
+  }
+
+  .main-section-content {
+    position: relative;
   }
 
   .main-section-supplement {

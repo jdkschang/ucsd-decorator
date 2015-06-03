@@ -41,10 +41,15 @@ ol.breadcrumbs-list {
   ol.breadcrumbs-list li {
     *margin-right: 7px; }
 
-/* to deal with added padding*/
+/* to deal with added padding
+   width hard coding to get around media query styling */
 .main-content-container {
   padding: 0;
   width: 75%; }
+  .main-content-container .main-section.col-sm-9 {
+    width: 75%; }
+  .main-content-container .main-section.col-sm-3 {
+    width: 25%; }
 
 .main-section {
   *padding: 0; }
@@ -52,5 +57,9 @@ ol.breadcrumbs-list {
     width: 25%; }
   .main-section .main-section-content {
     *padding: 0 1em; }
+
+/* profile template fix */
+.profile-section {
+  padding-left: .5em; }
 
 /*# sourceMappingURL=ie-support.css.map */

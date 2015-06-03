@@ -162,10 +162,15 @@ a {
 * **************/
 .main-section {
   line-height: 1.5;
-  padding: 0 1em 1em 0; }
+  padding: 0 1em 1em 0;
+  /* space for smaller viewports */
+  margin-bottom: 1em; }
   @media only screen and (max-width: 640px) {
     .main-section {
       width: 100%; } }
+
+.main-section-content {
+  position: relative; }
 
 .main-section-supplement {
   background-color: #F2F5F7;
@@ -335,6 +340,8 @@ a {
   .main-content-nav > ul {
     /* for borders to line up properly */
     margin: 0 -1em -1em; }
+    .main-content-nav > ul > li.active {
+      color: #d56a03; }
   .main-content-nav > ul li {
     border-top: solid 1px #D8D7D7;
     list-style: none; }
