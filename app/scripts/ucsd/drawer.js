@@ -60,29 +60,29 @@ $(document).ready(function() {
         });
     });
 
-    /* expand all drawers */
-    function expandAll(drawerWrapper) {
-        drawerWrapper.children(".drawer").children("h2").addClass("expand");
+	/* expand all drawers */
+	function expandAll(drawerWrapper) {
+		drawerWrapper.children(".drawer").children("h2").addClass("expand");
         drawerWrapper.children(".drawer").children("div").show();
         drawerWrapper.children(".drawer").children("article").show();
-    }
+	}
 
-    /* close all drawers */
-    function collapseAll(drawerWrapper) {
-        drawerWrapper.children(".drawer").children("h2").removeClass("expand");
+	/* close all drawers */
+	function collapseAll(drawerWrapper) {
+		drawerWrapper.children(".drawer").children("h2").removeClass("expand");
         drawerWrapper.children(".drawer").children("div").hide();
-        drawerWrapper.children(".drawer").children("article").hide();
+		drawerWrapper.children(".drawer").children("article").hide();
     }
 
-    /* reset drawer toggle link */
-    function resetLink(drawerWrapper) {
-        drawerWrapper.find(".drawer-toggle a").each(function() {
-            element = $(this);
-            if (element.hasClass("expand"))
-                element.html("Collapse All");
-            else
-                element.html("Expand All");
-            element.toggleClass("expand");
-        });
-    }
+	/* reset drawer toggle link */
+	function resetLink(drawerWrapper) {
+		drawerWrapper.find(".drawer-toggle a").each(function() {
+			element = $(this);
+			if (element.hasClass("expand"))
+				element.html("Collapse All");
+			else
+				element.html("Expand All");
+			element.toggleClass("expand");
+		});
+	}
 });
