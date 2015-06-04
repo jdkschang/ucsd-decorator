@@ -42,14 +42,21 @@ ol.breadcrumbs-list {
 
   li {
      *margin-right: 7px;
-   }
+  }
 }
 
 /* to deal with added padding*/
+.main-content-container {
+  padding: 0;
+}
 .main-section {
   *padding: 0;
 
   .main-section-content {
     *padding: 0 1em;
   }
+}
+
+.col-sm-9 {
+  width: 75% !important;
 }
