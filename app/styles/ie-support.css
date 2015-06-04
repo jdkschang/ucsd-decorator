@@ -5,6 +5,9 @@
   padding: 1em 0;
   height: 50px; }
 
+.layout-header {
+  height: 78px; }
+
 .layout-login {
   display: none; }
 
@@ -38,16 +41,34 @@ ol.breadcrumbs-list {
   ol.breadcrumbs-list li {
     *margin-right: 7px; }
 
-/* to deal with added padding*/
+/* to deal with added padding
+   width hard coding to get around media query styling */
 .main-content-container {
-  padding: 0; }
+  padding: 0;
+  width: 75%; }
+  .main-content-container .main-section.col-sm-9 {
+    width: 75%; }
+  .main-content-container .main-section.col-sm-3 {
+    width: 25%; }
 
 .main-section {
-  *padding: 0; }
+  *padding: 0;
+  /* homepage */ }
+  .main-section.pull-left {
+    width: 25%; }
   .main-section .main-section-content {
     *padding: 0 1em; }
+  .main-section .main-section-module {
+    padding: 0; }
+    .main-section .main-section-module.col-xs-6 {
+      width: 48%; }
 
-.col-sm-9 {
-  width: 75% !important; }
+/* profile template fix */
+.profile-section {
+  padding-left: .7em; }
+
+/* flexslider */
+.flex-caption {
+  padding: 0; }
 
 /*# sourceMappingURL=ie-support.css.map */
