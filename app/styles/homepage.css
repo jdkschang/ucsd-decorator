@@ -1,15 +1,15 @@
 h2, h3 {
   color: #0b638b; }
 
-.main-section-content h2 {
+.main-section-module h2 {
   font-weight: normal;
   border-bottom: 1px solid #0b638b;
   margin-bottom: 12px;
   padding-bottom: 5px; }
-.main-section-content > .content-module {
+.main-section-module > .content-module {
   margin-bottom: 1em; }
 @media screen and (max-width: 500px) {
-  .main-section-content {
+  .main-section-module {
     width: 100%;
     padding: 0; } }
 

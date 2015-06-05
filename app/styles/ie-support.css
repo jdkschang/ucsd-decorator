@@ -25,6 +25,10 @@
 .layout-header button.btn-nav {
   display: none !important; }
 
+/* ie8 fix to reveal search caret */
+button.caret {
+  border-top-style: solid; }
+
 .navdrawer-container .search {
   float: right !important; }
 
@@ -53,7 +57,9 @@ ol.breadcrumbs-list {
 
 .main-section {
   *padding: 0;
-  /* homepage */ }
+  /* homepage */
+  /* sidebar resize | whitespacing */
+  /* homepage-wide col */ }
   .main-section.pull-left {
     width: 25%; }
   .main-section .main-section-content {
@@ -62,10 +68,19 @@ ol.breadcrumbs-list {
     padding: 0; }
     .main-section .main-section-module.col-xs-6 {
       width: 48%; }
+  .main-section .main-section-header {
+    padding: 0 15px 10px; }
+  .main-section.col-xs-3 {
+    width: 23%; }
+  .main-section.col-sm-7 {
+    width: 51%; }
+  .main-section.col-sm-5.sidebar {
+    width: 45%;
+    padding: 12px 20px; }
 
 /* profile template fix */
 .profile-section {
-  padding-left: .7em; }
+  padding-left: .5em; }
 
 /* flexslider */
 .flex-caption {
