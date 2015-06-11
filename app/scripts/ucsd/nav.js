@@ -59,55 +59,57 @@
             }
         };
 
-        if(subNav.addEventListener) {
-            subNav.addEventListener('click', function (e) {
-                if(isMobileView())
+        /* if there are subNav elements run */
+        if(subNav) {
+            if (subNav.addEventListener) {
+                subNav.addEventListener('click', function (e) {
+                    if (isMobileView())
+                        e.preventDefault();
+
+                    e.stopPropagation();
+                    toggleSubNav();
+                });
+
+                subList.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+
+                subNav.addEventListener('mouseover', function (e) {
                     e.preventDefault();
 
-                e.stopPropagation();
-                toggleSubNav();
-            });
+                    if (!isMobileView()) {
+                        addClass(subNav, subNavHover);
+                        subNavIsOpened = !subNavIsOpened;
+                    }
+                });
 
-            subList.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
+                subNav.addEventListener('mouseout', function (e) {
+                    e.preventDefault();
 
-            subNav.addEventListener('mouseover', function (e) {
-                e.preventDefault();
+                    if (!isMobileView()) {
+                        removeClass(subNav, subNavHover);
+                        subNavIsOpened = !subNavIsOpened;
+                    }
+                });
+            } else { // ie 7/8 fix
+                subNav.attachEvent("onclick", function () {
+                    toggleSubNav();
+                });
 
-                if(!isMobileView()) {
-                    addClass(subNav, subNavHover);
-                    subNavIsOpened = !subNavIsOpened;
-                }
-            });
-
-            subNav.addEventListener('mouseout', function (e) {
-                e.preventDefault();
-
-                if(!isMobileView()) {
-                    removeClass(subNav, subNavHover);
-                    subNavIsOpened = !subNavIsOpened;
-                }
-            });
-        } else { // ie 7/8 fix
-            subNav.attachEvent("onclick", function() {
-                toggleSubNav();
-            });
-
-            subNav.attachEvent("onmouseover", function() {
-                if(!isMobileView()) {
-                    addClass(subNav, subNavHover);
-                    subNavIsOpened = true;
-                }
-            });
-            subNav.attachEvent("onmouseout", function() {
-                if(!isMobileView()) {
-                    removeClass(subNav, subNavHover);
-                    subNavIsOpened = false;
-                }
-            });
+                subNav.attachEvent("onmouseover", function () {
+                    if (!isMobileView()) {
+                        addClass(subNav, subNavHover);
+                        subNavIsOpened = true;
+                    }
+                });
+                subNav.attachEvent("onmouseout", function () {
+                    if (!isMobileView()) {
+                        removeClass(subNav, subNavHover);
+                        subNavIsOpened = false;
+                    }
+                });
+            }
         }
-
     };
 
     var mainSearch = function() {
