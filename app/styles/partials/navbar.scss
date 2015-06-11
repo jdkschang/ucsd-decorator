@@ -193,7 +193,7 @@ button:active {
   }
     .navdrawer-container .subnav-hover ul.navbar-sublist {
       display: block;
-      z-index: 1;
+      z-index: 3;
 
       @media only screen and (max-width: $desktop) {
         /* fix to mobile/tablet devices which do not have hover*/
