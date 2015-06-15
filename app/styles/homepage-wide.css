@@ -41,6 +41,10 @@
     font-size: 30px;
     font-weight: 400;
     margin-top: 30px; }
+    @media screen and (max-width: 500px) {
+      .main-section-header h2 {
+        margin: 0;
+        font-size: 20px; } }
 
 .main-section-content h2 {
   padding-bottom: 5px; }
@@ -79,6 +83,12 @@
   overflow: hidden;
   height: 400px;
   z-index: 1; }
+  @media screen and (max-width: 500px) {
+    .flexslider {
+      margin: 0 0 25px;
+      overflow: visible; }
+      .flexslider .flex-caption {
+        font-size: 14px; } }
   @media screen and (max-width: 1200px) {
     .flexslider {
       margin: 0;
@@ -88,9 +98,18 @@
   .flexslider .flex-controls {
     position: relative;
     top: -400px; }
+    @media screen and (max-width: 500px) {
+      .flexslider .flex-controls {
+        height: 0 !important;
+        position: relative;
+        top: 130px; } }
     @media screen and (max-width: 1200px) {
       .flexslider .flex-controls {
         position: relative;
         top: 0; } }
+
+@media screen and (max-width: 500px) {
+  h2.top {
+    font-size: 20px; } }
 
 /*# sourceMappingURL=homepage-wide.css.map */
