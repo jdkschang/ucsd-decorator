@@ -925,7 +925,8 @@ a.button {
   background-repeat: no-repeat;
   height: 33px;
   margin: 0 0 10px 0;
-  padding: 0 40px; }
+  padding: 0 40px;
+  cursor: pointer; }
 
 .social-list li.facebook {
   background-image: url(img/sprite_social.png);
