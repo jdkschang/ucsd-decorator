@@ -89,10 +89,8 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
  * retina display
  */
 @media screen and (-webkit-min-device-pixel-ratio:2) {
-  .layout-title .title-logo,
-  #tdr_title_search_link,
-  #tdr_title_menu_link {
-    background-image: url(../img/sprite_base-white-2x.png);
+  .layout-title .title-logo {
+    background-image: url(../../../../img/sprite_base-white-2x.png);
     background-size: 500px 120px;
   }
 }
