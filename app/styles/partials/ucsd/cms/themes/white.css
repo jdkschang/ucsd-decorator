@@ -49,22 +49,10 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   border-top: 1px solid #ccc;
 }
   /* depth of selectors to override layout.scss */
-  .navdrawer-container ul.navbar-list > li.active > a {
-    background: #fff;
-    border-bottom: #12215b solid 3px;
-  }
-
   .navdrawer-container ul.navbar-list ul.navbar-sublist {
     border-left: 1px solid #eee;
     border-bottom: 1px solid #808080;
   }
-    .navdrawer-container ul.navbar-list ul.navbar-sublist > li > a {
-      background: #eaf0f4;
-      border-bottom: solid 1px #ccc;
-    }
-    .navdrawer-container ul.navbar-list ul.navbar-sublist > li > a:hover {
-      background: #fff;
-    }
 
 .btn-default, .btn-default:focus, .btn-default:hover {
   color:#FFF;
