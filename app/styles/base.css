@@ -56,7 +56,8 @@ html, body {
 
 .layout-login {
   width: 100%;
-  background: #0B4A67; }
+  background: #0B4A67;
+  overflow: hidden; }
 
 .login-content {
   color: #fff;

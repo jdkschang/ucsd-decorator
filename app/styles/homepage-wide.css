@@ -108,8 +108,4 @@
         position: relative;
         top: 0; } }
 
-@media screen and (max-width: 500px) {
-  h2.top {
-    font-size: 20px; } }
-
 /*# sourceMappingURL=homepage-wide.css.map */
