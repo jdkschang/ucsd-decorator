@@ -57,9 +57,21 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
     border-bottom: 1px solid #808080;
   }
 
+/* search modifications */
+.search-toggle,
+.search-toggle:hover,
+.search-toggle:focus {
+  background: 0 0;
+  border: 1px solid transparent
+}
 .btn-default, .btn-default:focus, .btn-default:hover {
   color:#FFF;
 }
+  .search-toggle.search-is-open {
+  background-color: #DFE2E4;
+  color: #004b6e;
+  }
+
 
 .csstransitions #tdr_nav .tdr_search.show #tdr_search_toggle {
   color: #004b6e !important;
