@@ -12,21 +12,20 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   background: #fff;
 }
 
-#tdr_title_page_title {
+.layout-title .title-header {
   font-family: 'Lato', sans-serif;
 }
+  .layout-title .title-header a {
+    color: #12215b;
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none;
+  }
 
-#tdr_title_page_title a {
-  color: #12215b;
-  transition: none;
-  -moz-transition: none;
-  -webkit-transition: none;
-  -o-transition: none;
-}
-
-#tdr_title_ucsd_title {
-  background: transparent url(../img/sprite_base-white.png) no-repeat;
-}
+  .layout-title .title-logo {
+    background: transparent url(../img/sprite_base-white.png) no-repeat;
+  }
 
 #tdr_nav {
   background: #376791;
