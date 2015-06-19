@@ -68,27 +68,17 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   color:#FFF;
 }
   .search-toggle.search-is-open {
-  background-color: #DFE2E4;
-  color: #004b6e;
+    background-color: #DFE2E4;
+    color: #004b6e;
   }
 
-
-.csstransitions #tdr_nav .tdr_search.show #tdr_search_toggle {
-  color: #004b6e !important;
-}
-
-
 @media only screen and (max-width: 768px) {
-  #tdr_title_ucsd_title {
-    left: 0;
+  .layout-title .title-logo {
     top: 10px;
   }
 }
-
-
 @media only screen and (max-width: 360px) {
-
-  #tdr_title_ucsd_title {
+  .layout-title .title-logo {
     background-position: -239px -14px;
     height: 32px;
     width: 166px;
@@ -99,7 +89,7 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
  * retina display
  */
 @media screen and (-webkit-min-device-pixel-ratio:2) {
-  #tdr_title_ucsd_title,
+  .layout-title .title-logo,
   #tdr_title_search_link,
   #tdr_title_menu_link {
     background-image: url(../img/sprite_base-white-2x.png);
