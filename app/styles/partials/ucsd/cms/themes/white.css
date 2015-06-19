@@ -1,5 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400);
 
+h1 {
+  color: #5b5c5c;
+  font-family: 'Lato', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  color: #707071;
+  font-family: 'Lato', sans-serif;
+}
+
+div.styled {
+  background: #fcfbfd;
+}
+
+div.styled h2 {
+  color: #5b5c5c;
+}
+
 a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   color: #4765ad;
 }
@@ -31,34 +49,27 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   border-top: 1px solid #ccc;
 }
   /* depth of selectors to override layout.scss */
-  .layout-navbar ul.navbar-list > li > a {
+  .navdrawer-container ul.navbar-list > li > a {
     background: rgba(255,255,255,0.8);
     border-right: solid 1px #BDBDBD;
     border-bottom: solid 1px #ccc;
   }
-  .layout-navbar ul.navbar-list > li.active > a {
+  .navdrawer-container ul.navbar-list > li.active > a {
     background: #fff;
     border-bottom: #12215b solid 3px;
   }
 
-  .layout-navbar ul.navbar-list ul.navbar-sublist {
+  .navdrawer-container ul.navbar-list ul.navbar-sublist {
     border-left: 1px solid #eee;
     border-bottom: 1px solid #808080;
   }
-    .layout-navbar ul.navbar-list ul.navbar-sublist > li > a {
+    .navdrawer-container ul.navbar-list ul.navbar-sublist > li > a {
       background: #eaf0f4;
       border-bottom: solid 1px #ccc;
     }
-
-#tdr_nav_list li li a {
-  background: #eaf0f4;
-  border-bottom: solid 1px #ccc;
-}
-
-#tdr_nav_list li ul {
-  border-left: 1px solid #eee;
-  border-bottom: 1px solid #808080;
-}
+    .navdrawer-container ul.navbar-list ul.navbar-sublist > li > a:hover {
+      background: #fff;
+    }
 
 h1 {
   color: #5b5c5c;
