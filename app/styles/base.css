@@ -90,7 +90,8 @@ html, body {
   background-color: #F2F5F7;
   border: 0;
   border-bottom: 1px solid #C8CFD3;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  overflow: hidden; }
 
 .layout-main {
   padding: 1em 0 0;
