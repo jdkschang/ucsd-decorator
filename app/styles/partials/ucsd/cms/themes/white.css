@@ -72,6 +72,11 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
     color: #004b6e;
   }
 
+.layout-title button.btn-nav,
+.layout-title button.btn-nav:active {
+  background-color: #376791;
+}
+
 @media only screen and (max-width: 768px) {
   .layout-title .title-logo {
     top: 10px;
