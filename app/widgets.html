@@ -27,7 +27,6 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
-    <link rel="stylesheet" href="vendor/fullcalendar/styles/fullcalendar.min.css" />
     <!-- End site-specific CSS files -->
 
     <!-- build:js({app,.tmp}) scripts/modernizr.js -->
@@ -63,7 +62,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a href="index.html" class="title-header">FullCalendar</a>
+            <a href="index.html" class="title-header">Decorator 4.5</a>
             <a href="https://www.ucsd.edu" class="title-logo">UC San Diego</a>
         </div>
     </section>
@@ -110,13 +109,18 @@
     <div class="layout-container">
         <ol class="breadcrumb breadcrumbs-list">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="widgets.html">Widgets</a></li>
-            <li class="active">FullCalendar</li>
+            <li class="active">Widgets</li>
         </ol>
 
-        <h1>FullCalendar Testing</h1>
+        <h1>Widget Templates</h1>
 
-        <section id="calendar"></section>
+        <section class="main-section">
+            <ul>
+                <li><a href="fullcalendar.html">FullCalendar</a></li>
+                <li><a href="datatable.html">DataTable</a></li>
+                <li><a href="wizard.html">Wizard</a></li>
+            </ul>
+        </section>
     </div>
 </main>
 
@@ -157,7 +161,6 @@
     $(document).ready(function () {
         initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
         initCopyright();
-        initLogout("https://www.ucsd.edu");
     });
 </script>
 
@@ -195,16 +198,7 @@
 <script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
-<!-- Begin site-specific JS files -->
-<script src="vendor/fullcalendar/scripts/moment.min.js"></script>
-<script src="vendor/fullcalendar/scripts/fullcalendar.min.js"></script>
 
-<script>
-    $(document).ready( function() {
-        $("#calendar").fullCalendar();
-    });
-</script>
-<!-- End site-specific JS files -->
 
 <!-- Google Search -->
 <script src="https://www.google.com/jsapi"></script>
