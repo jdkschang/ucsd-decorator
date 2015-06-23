@@ -43,8 +43,8 @@
     };
 
     var mainSubNav = function() {
-        var subNav          = $('.navbar-subnav')[0];
-        var subList         = $('.navbar-sublist')[0];
+        var subNav          = $('.navbar-subnav');
+        var subList         = $('.navbar-sublist');
         var subNavList      = 'subnav-is-opened';
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
@@ -58,6 +58,7 @@
                 subNavIsOpened = !subNavIsOpened;
             }
         };
+
 
         /* if there are subNav elements run */
         if(subNav) {
