@@ -49,23 +49,13 @@
         var subNavHover     = 'subnav-hover';
         var subNavIsOpened  = false;
 
-        var toggleSubNav = function() {
-            if(!subNavIsOpened) {
-                addClass(subList, subNavList);
-                subNavIsOpened = !subNavIsOpened;
-            } else {
-                removeClass(subList, subNavList);
-                subNavIsOpened = !subNavIsOpened;
-            }
-        };
-
-
         /* if there are subNav elements run */
         if(subNavArray) {
             subNavArray.each( function(index) {
                 var subNav  = subNavArray[index];
                 var subList = subListArray[index];
 
+                /* relocated toggleSubNav function due to variable scoping issues */
                 var toggleSubNav = function() {
                     if(!subNavIsOpened) {
                         addClass(subList, subNavList);
