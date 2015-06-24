@@ -150,7 +150,7 @@
 
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 960;
+        var mobileDesktopBorder = 768;
 
         return (browserWidth < (mobileDesktopBorder+1));
     };
