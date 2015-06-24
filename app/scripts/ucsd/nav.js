@@ -44,15 +44,15 @@
         var subNavArray     = $('.navbar-subnav'),
             subListArray    = $('.navbar-sublist'),
             subNavList      = 'subnav-is-opened',
-            subNavActive    = 'subnav-is-active',
             subNavHover     = 'subnav-hover',
             subNavIsOpened  = false;
+        var preIndex;
 
         /* if there are subNav elements run */
         if(subNavArray) {
             subNavArray.each( function(index) {
-                var subNav  = subNavArray[index];
-                var subList = subListArray[index];
+                var subNav  = subNavArray[index],
+                    subList = subListArray[index];
 
                 /* relocated toggleSubNav function due to variable scoping issues */
                 var toggleSubNav = function() {
@@ -61,25 +61,23 @@
 
                     if(!subNavIsOpened) {
                         addClass(subList, subNavList);
-                        addClass(subList, subNavActive);
                         subNavIsOpened = !subNavIsOpened;
+                        preIndex       = index;
                     } else {
                         removeClass(subList, subNavList);
-                        removeClass(subList, subNavActive);
                         subNavIsOpened = !subNavIsOpened;
                     }
                 };
 
                 var checkToggleSubNav = function() {
-                    var checkSubNav = $('.subnav-is-opened')[0],
-                        checkSubActive = $('subnav-is-active')[0];
+                    var checkSubNav     = $('.subnav-is-opened')[0];
 
-                    if(checkSubNav && !checkSubActive) {
+                    if(checkSubNav) {
                         removeClass(checkSubNav, subNavList);
-                        removeClass(checkSubNav, subNavActive);
-                        subNavIsOpened = false;
+                        if(preIndex != index)
+                            subNavIsOpened = false;
                     }
-                }
+                };
 
                 if (subNav.addEventListener) {
                     subNav.addEventListener('click', function (e) {
