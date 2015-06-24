@@ -10,8 +10,6 @@
         var navListIsOpened     = false;
 
         var toggleMainNav = function() {
-            isMobileView();
-
             if (!navListIsOpened) {
                 addClass(navList, navIsOpenedClass);
 
@@ -43,11 +41,12 @@
     };
 
     var mainSubNav = function() {
-        var subNavArray     = $('.navbar-subnav');
-        var subListArray    = $('.navbar-sublist');
-        var subNavList      = 'subnav-is-opened';
-        var subNavHover     = 'subnav-hover';
-        var subNavIsOpened  = false;
+        var subNavArray     = $('.navbar-subnav'),
+            subListArray    = $('.navbar-sublist'),
+            subNavList      = 'subnav-is-opened',
+            subNavActive    = 'subnav-is-active',
+            subNavHover     = 'subnav-hover',
+            subNavIsOpened  = false;
 
         /* if there are subNav elements run */
         if(subNavArray) {
@@ -57,14 +56,30 @@
 
                 /* relocated toggleSubNav function due to variable scoping issues */
                 var toggleSubNav = function() {
+                    // check if subList opened, reset if antoher is already opened
+                    checkToggleSubNav();
+
                     if(!subNavIsOpened) {
                         addClass(subList, subNavList);
+                        addClass(subList, subNavActive);
                         subNavIsOpened = !subNavIsOpened;
                     } else {
                         removeClass(subList, subNavList);
+                        removeClass(subList, subNavActive);
                         subNavIsOpened = !subNavIsOpened;
                     }
                 };
+
+                var checkToggleSubNav = function() {
+                    var checkSubNav = $('.subnav-is-opened')[0],
+                        checkSubActive = $('subnav-is-active')[0];
+
+                    if(checkSubNav && !checkSubActive) {
+                        removeClass(checkSubNav, subNavList);
+                        removeClass(checkSubNav, subNavActive);
+                        subNavIsOpened = false;
+                    }
+                }
 
                 if (subNav.addEventListener) {
                     subNav.addEventListener('click', function (e) {
