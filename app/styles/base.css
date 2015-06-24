@@ -1737,6 +1737,7 @@ html[xmlns] .flexslider .slides {
 .drawer-toggle a.expand {
   background-position: 0 -201px; }
 
+/********************* VENDOR */
 @media print {
   /* removes ucsd logo and other background images (glyphicons) */
   html, main, footer *,
