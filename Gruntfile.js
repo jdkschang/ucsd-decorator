@@ -235,7 +235,7 @@ module.exports = function (grunt) {
             [
                 '<%= config.app %>/homepage-wide.html',
                 '<%= config.app %>/homepage.html',
-                '<%= config.app %>/widgets/widgets.html'
+                '<%= config.app %>/widgets.html'
             ]
         },
 
