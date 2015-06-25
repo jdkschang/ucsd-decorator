@@ -27,6 +27,9 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
+    <!-- build:css styles/widgets.css -->
+    <link rel="stylesheet" href="../styles/widgets.css"/>
+    <!-- endbuild -->
     <!-- End site-specific CSS files -->
 
     <!-- build:js({app,.tmp}) ../scripts/modernizr.js -->
@@ -211,6 +214,14 @@
 <!-- endbuild -->
 
 <!-- Begin site-specific JS files -->
+<!-- build:js scripts/widgets.js -->
+<script src="maxchar/scripts/maxchar.min.js"></script>
+<script src="wizard/scripts/wizard.min.js"></script>
+<script src="datatable/scripts/dataTables.min.js"></script>
+<script src="fullcalendar/scripts/moment.min.js"></script>
+<script src="fullcalendar/scripts/fullcalendar.min.js"></script>
+<!-- endbuild -->
+
 <script>
     $(document).ready( function() {
         $(".wizard").wizard();
