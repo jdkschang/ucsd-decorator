@@ -230,7 +230,12 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: ['<%= config.app %>/homepage-wide.html', '<%= config.app %>/homepage.html', '<%= config.app %>/widgets/widgets.html']
+            html:
+            [
+                '<%= config.app %>/homepage-wide.html',
+                '<%= config.app %>/homepage.html',
+                '<%= config.app %>/widgets/widgets.html'
+            ]
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
