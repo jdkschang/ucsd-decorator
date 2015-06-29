@@ -21,7 +21,6 @@ $(document).ready( function() {
             element.popover({
                 html: false,
                 placement: 'top',
-                trigger: 'click focus',
                 title: event.title,
                 content: contentEvent
             })
@@ -42,16 +41,4 @@ $(document).ready( function() {
 
         return dateTimeOutput;
     }
-
-    /**
-     * manual triggers popover
-     *
-     * multiple trigger not working
-     */
-    var showPopover = function () {
-            $(this).popover('show');
-        },
-        hidePopover = function () {
-            $(this).popover('hide');
-        };
 });
