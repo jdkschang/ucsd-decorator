@@ -3,17 +3,23 @@ $(document).ready( function() {
     $("#calendar").fullCalendar({
         // options & callbacks
         eventClick: function( calEvent, jsEvent, view ) {
-            console.log("event clicked");
+            //console.log("event id: " + calEvent.id);
+            //console.log("event name: " + calEvent.name);
+            //console.log("event date: " + calEvent.date);
 
-            console.log("event id: " + calEvent.id);
-            console.log("event name: " + calEvent.name);
-            console.log("event date: " + calEvent.date);
+            $(this).popover('show');
 
-            var id_url = "cal-output.html?id=" + calEvent.id;
-            window.location.href = id_url;
-            //console.log(id_url);
+            //var output_url = "cal-output.html?id=";
+            //window.location.href = output_url + calEvent.id;;
         },
-
+        eventRender: function( event, element) {
+            element.popover({
+                html: true,
+                placement: 'top',
+                title: "testing title",
+                content: event.msg
+            })
+        },
         eventSources: [
             // event source
             {
