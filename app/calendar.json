@@ -1,26 +1,31 @@
 [
   {
     "id": "034d2eaaac10b4e45da4df67d3aa2124",
+    "title": "test event 2",
     "name": "test event 2",
     "date": "2015-06-05 17:00:00"
   },
   {
     "id": "034ceddcac10b4e45da4df67640f02a5",
+    "title": "test event 1",
     "name": "test event 1",
     "date": "2015-06-03 05:08:00"
   },
   {
     "id": "034c9e83ac10b4e45da4df671e548e63",
+    "title": "test event 3",
     "name": "test event 3",
     "date": "2015-06-08 17:00:00"
   },
   {
     "id": "0349e124ac10b4e45da4df67048308be",
+    "title": "test event 5",
     "name": "test 5",
     "date": "2015-06-19 19:00:00"
   },
   {
     "id": "033d4cf5ac10b4e45da4df678826129d",
+    "title": "test event 4",
     "name": "test 4",
     "date": "2015-06-09 19:00:00"
   }
