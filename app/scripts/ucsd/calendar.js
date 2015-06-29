@@ -8,15 +8,13 @@ $(document).ready( function() {
             //console.log("event date: " + calEvent.date);
 
             //var output_url = "cal-output.html?id=";
-            //window.location.href = output_url + calEvent.id;;
+            //window.location.href = output_url + calEvent.id;
         },
         eventRender: function( event, element) {
             var eventDate = formatTime(event.date)[0],
                 eventTime = formatTime(event.date)[1],
-                contentEvent = "Date: " + eventDate + "Time: " + eventTime,
-                output_url = "cal-output.html?"
-
-
+                contentEvent = "Date: " + eventDate + " Time: " + eventTime,
+                output_url = "cal-output.html?id=" + event.id;
 
             element.popover({
                 html: false,
