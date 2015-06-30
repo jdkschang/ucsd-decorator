@@ -16,16 +16,15 @@ $(document).ready( function() {
                 output_url = "cal-output.html?id=" + event.id,
                 contentEvent = "Date: " + eventDate +
                             "<br/> Time: " + eventTime +
-                            "<br/> <a href=" + output_url + "> more details</a>";
+                            "<br/>" +
+                            "<br/> <a href=" + output_url + " class=pull-right>more details</a>";
 
             element.popover({
                 html: true,
                 placement: 'top',
-                title: event.title,
+                trigger: 'click focus',
+                title: event.name,
                 content: contentEvent
-                //function() {
-                //    return $("#cal-test").html();
-                //}
             })
         },
         eventSources: [
