@@ -13,15 +13,19 @@ $(document).ready( function() {
         eventRender: function( event, element) {
             var eventDate = formatTime(event.date)[0],
                 eventTime = formatTime(event.date)[1],
+                output_url = "cal-output.html?id=" + event.id,
                 contentEvent = "Date: " + eventDate +
-                            " Time: " + eventTime,
-                output_url = "cal-output.html?id=" + event.id;
+                            "<br/> Time: " + eventTime +
+                            "<br/> <a href=" + output_url + "> more details</a>";
 
             element.popover({
-                html: false,
+                html: true,
                 placement: 'top',
                 title: event.title,
                 content: contentEvent
+                //function() {
+                //    return $("#cal-test").html();
+                //}
             })
         },
         eventSources: [
