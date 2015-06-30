@@ -10,12 +10,24 @@ function formatTime( rawDate ) {
     return dateTimeOutput;
 }
 
+/**
+ * start & end parameters are arrays
+ */
+function rangeOfTime( start, end ) {
+
+}
+
 $(document).ready( function() {
     var jsonID, eventID, eventName,
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
         outputName = $("#title"),
         outputDate = $("#date span"),
         outputTime = $("#time span"),
+        outputLocation = $("#location"),
+        outputDetails = $("#details"),
+        outputContact = $("#contact"),
+        outputWebsite = $("#website"),
+        outputPhone = $("#phone"),
         url     = window.location.href;
 
     var eventStart = [],
@@ -46,6 +58,11 @@ $(document).ready( function() {
                 outputName.append(eventName);
                 outputDate.append(eventStart[0]);
                 outputTime.append(eventStart[1]);
+                outputLocation.append(eventLocation);
+                outputContact.append(eventContact);
+                outputWebsite.append(eventWebsite);
+                outputPhone.append(eventPhone);
+                outputDetails.append(eventDetails);
             }
         });
     });
