@@ -13,7 +13,7 @@ function formatTime( rawDate ) {
 $(document).ready( function() {
     var jsonID, eventID, eventName,
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
-        outputName = $("#name span"),
+        outputName = $("#title"),
         outputDate = $("#date span"),
         outputTime = $("#time span"),
         url     = window.location.href;
@@ -49,5 +49,4 @@ $(document).ready( function() {
             }
         });
     });
-    //});
 });
