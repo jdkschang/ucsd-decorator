@@ -20,7 +20,6 @@ function rangeOfTime( start, end ) {
 
     console.log("end[0]: " + end[0]);
     console.log("end[1]: " + end[1]);
-
 }
 
 $(document).ready( function() {
