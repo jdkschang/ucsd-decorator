@@ -14,21 +14,27 @@ function formatTime( rawDate ) {
  * start & end parameters are arrays
  */
 function rangeOfTime( start, end ) {
+    console.log('in range of time fcn');
+    console.log("start[0]: " + start[0]);
+    console.log("start[1]: " + start[1]);
+
+    console.log("end[0]: " + end[0]);
+    console.log("end[1]: " + end[1]);
 
 }
 
 $(document).ready( function() {
     var jsonID, eventID, eventName,
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
-        outputName = $("#title"),
-        outputDate = $("#date span"),
-        outputTime = $("#time span"),
-        outputLocation = $("#location"),
-        outputDetails = $("#details"),
-        outputContact = $("#contact"),
-        outputWebsite = $("#website"),
-        outputPhone = $("#phone"),
-        url     = window.location.href;
+        outputName      = $("#title"),
+        outputDate      = $("#date span"),
+        outputTime      = $("#time span"),
+        outputLocation  = $("#location"),
+        outputDetails   = $("#details"),
+        outputContact   = $("#contact"),
+        outputWebsite   = $("#website"),
+        outputPhone     = $("#phone"),
+        url             = window.location.href;
 
     var eventStart = [],
         eventEnd = [];
@@ -55,6 +61,8 @@ $(document).ready( function() {
             eventEnd        = formatTime(event.end);
 
             if ( eventID == jsonID ) {
+                rangeOfTime( eventStart, eventEnd );
+
                 outputName.append(eventName);
                 outputDate.append(eventStart[0]);
                 outputTime.append(eventStart[1]);

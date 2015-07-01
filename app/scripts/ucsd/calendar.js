@@ -17,7 +17,7 @@ $(document).ready( function() {
                 contentEvent = "Date: " + eventDate +
                             "<br/> Time: " + eventTime +
                             "<br/>" +
-                            "<br/> <a href=" + output_url + " class=pull-right>more details</a>";
+                            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
 
             element.popover({
                 html: true,
