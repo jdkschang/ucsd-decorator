@@ -1,6 +1,12 @@
 $(document).ready( function() {
     // initialize calendar
     $("#calendar").fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        defaultView: 'agendaWeek',
         // options & callbacks
         eventClick: function( calEvent, jsEvent, view ) {
             //console.log("event id: " + calEvent.id);

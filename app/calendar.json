@@ -24,17 +24,18 @@
   },
   {
     "id": "650976acac1a010c740d33ab1f0e44ff",
+    "title": "Test All Day",
     "name": "Test All Day",
     "start": "2015-07-07 17:00:00",
     "end": "2015-07-07 19:00:00",
-    "allDay": "false",
+    "allDay": "true",
     "details": "<p>Details about all day event</p>",
     "location": "Sandy Eggo",
     "contact": "Contact Name",
     "website": "ucsd.edu",
     "phone": "000-000-000",
     "linkTitle-1": "link title",
-    "link-1": "https://external.com",
+    "link-1": "https://external.com"
   },
   {
     "id": "0349e124ac10b4e45da4df67048308be",
