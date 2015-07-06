@@ -10,7 +10,7 @@
     "website": "Website",
     "phone": "000-000-000",
     "link-1": "Related Link 1",
-    "link-2": "Related Link 2",
+    "link-2": "Related Link 2"
   },
   {
     "id": "034ceddcac10b4e45da4df67640f02a5",
@@ -21,6 +21,6 @@
     "location": "Location",
     "contact": "Contact Name",
     "website": "Website",
-    "phone": "000-000-000",
+    "phone": "000-000-000"
   }
 ]

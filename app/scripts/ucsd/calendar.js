@@ -11,20 +11,26 @@ $(document).ready( function() {
             //window.location.href = output_url + calEvent.id;
         },
         eventRender: function( event, element) {
-            var eventDate = formatTime(event.date)[0],
-                eventTime = formatTime(event.date)[1],
-                output_url = "cal-output.html?id=" + event.id,
-                contentEvent = "Date: " + eventDate +
-                            "<br/> Time: " + eventTime +
-                            "<br/>" +
-                            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+            var eventStart = formatTime(event.start),
+                eventEnd = formatTime(event.end),
+                output_url = "cal-output.html?id=" + event.id;
+
+            //console.log(eventStart);
+            //console.log("event.end: " + event.end);
+            if(!event.end) console.log(eventEnd);
+
+
+                //contentEvent = "Date: " + eventDate +
+                //            "<br/> Time: " + eventTime +
+                //            "<br/>" +
+                //            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
 
             element.popover({
                 html: true,
                 placement: 'top',
                 trigger: 'click',
                 title: event.name,
-                content: contentEvent
+                //content: contentEvent
             })
             .attr("tabIndex", "0")
             .attr("data-trigger", "focus")
@@ -55,6 +61,15 @@ $(document).ready( function() {
         dateTimeOutput.push( moment( rawDate ).format( "h:mm a" ));
 
         return dateTimeOutput;
+    }
+
+    function rangeOfTime( start, end ) {
+        //console.log('in range of time fcn');
+        //console.log("start[0]: " + start[0]);
+        //console.log("start[1]: " + start[1]);
+        //
+        //console.log("end[0]: " + end[0]);
+        //console.log("end[1]: " + end[1]);
     }
 
     //fcAddDataAttr();
