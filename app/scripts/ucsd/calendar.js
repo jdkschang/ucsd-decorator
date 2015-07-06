@@ -22,10 +22,13 @@ $(document).ready( function() {
             element.popover({
                 html: true,
                 placement: 'top',
-                trigger: 'click focus',
+                trigger: 'click',
                 title: event.name,
                 content: contentEvent
             })
+            .attr("tabIndex", "0")
+            .attr("data-trigger", "focus")
+            .attr("data-toggle", "popover");
         },
         eventSources: [
             // event source
@@ -35,6 +38,16 @@ $(document).ready( function() {
         ]
     });
 
+    var fcAddDataAttr = function() {
+        // add data attributes to get focus event trigger to work
+        var fcEvent = $(".fc-event-container .fc-event");
+
+        console.log(fcEvent);
+
+        fcEvent.attr("tabIndex", "0");
+        fcEvent.attr("data-trigger", "focus");
+    };
+
     function formatTime( rawDate ) {
         var dateTimeOutput = [];
 
@@ -43,4 +56,6 @@ $(document).ready( function() {
 
         return dateTimeOutput;
     }
+
+    //fcAddDataAttr();
 });
