@@ -6,16 +6,7 @@ $(document).ready( function() {
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
-        defaultView: 'agendaWeek',
-        // options & callbacks
-        eventClick: function( calEvent, jsEvent, view ) {
-            //console.log("event id: " + calEvent.id);
-            //console.log("event name: " + calEvent.name);
-            //console.log("event date: " + calEvent.date);
-
-            //var output_url = "cal-output.html?id=";
-            //window.location.href = output_url + calEvent.id;
-        },
+        defaultView: 'month',
         eventRender: function( event, element) {
             var eventStart = formatTime(event.start),
                 eventEnd = formatTime(event.end),

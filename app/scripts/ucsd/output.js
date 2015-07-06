@@ -17,11 +17,19 @@ function rangeOfTime( start, end ) {
     var eventRangeOutput, evStart, evEnd,
         yearRegex = /( )20(\d){2}/;
 
-    evStart = start[0].toString().replace( yearRegex, ", " + start[1] );
-    evEnd   = end[0].toString().replace( yearRegex, ", " + end[1] );
-    eventRangeOutput = evStart + " - " + evEnd;
+    evStart             = start[0].toString().replace( yearRegex, ", " + start[1] );
+    evEnd               = end[0].toString().replace( yearRegex, ", " + end[1] );
+    eventRangeOutput    = evStart + " - " + evEnd;
 
     return eventRangeOutput;
+}
+
+function isSameDay( start, end ) {
+    var evStart, evEnd;
+    evStart = start[0].toString();
+    evEnd = end[0].toString();
+
+    return ( evStart === evEnd );
 }
 
 $(document).ready( function() {
@@ -38,7 +46,8 @@ $(document).ready( function() {
         url             = window.location.href;
 
     var eventStart = [],
-        eventEnd = [];
+        eventEnd = [],
+        sameDay = false;
 
     //grabID.on( "click", function() {
     var parseRegex = new RegExp(/(?:(\?id=))\w+/g);
@@ -61,12 +70,16 @@ $(document).ready( function() {
             eventStart      = formatTime(event.start);
             eventEnd        = formatTime(event.end);
 
-            if ( eventID == jsonID ) {
-                rangeOfTime( eventStart, eventEnd );
 
+            if ( eventID == jsonID ) {
                 outputName.append(eventName);
-                outputDate.append(eventStart[0]);
-                outputTime.append(eventStart[1]);
+
+                if(isSameDay(eventStart, eventEnd)) {
+                    outputDate.append(eventStart[0]);
+                    outputTime.append(eventStart[1]);
+                } else {
+                    outputDate.append( rangeOfTime( eventStart, eventEnd ));
+                }
                 outputLocation.append(eventLocation);
                 outputContact.append(eventContact);
                 outputWebsite.append(eventWebsite);
