@@ -14,23 +14,34 @@ $(document).ready( function() {
             var eventStart = formatTime(event.start),
                 eventEnd = formatTime(event.end),
                 output_url = "cal-output.html?id=" + event.id;
+            var contentEvent;
 
             //console.log(eventStart);
             //console.log("event.end: " + event.end);
-            if(!event.end) console.log(eventEnd);
+            // if one day event
+            if(!event.end) {
+                var startDate = eventStart[0],
+                    startTime = eventStart[1];
 
+                contentEvent = "Date: " + startDate +
+                    "<br/> Time: " + startTime +
+                    "<br/>" +
+                    "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+            } else {
+                var eventRange = rangeOfTime(eventStart, eventEnd);
 
-                //contentEvent = "Date: " + eventDate +
-                //            "<br/> Time: " + eventTime +
-                //            "<br/>" +
-                //            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                contentEvent = "Date: " + eventRange +
+                    "<br/>" +
+                    "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+
+            }
 
             element.popover({
                 html: true,
                 placement: 'top',
                 trigger: 'click',
                 title: event.name,
-                //content: contentEvent
+                content: contentEvent
             })
             .attr("tabIndex", "0")
             .attr("data-trigger", "focus")
@@ -57,20 +68,21 @@ $(document).ready( function() {
     function formatTime( rawDate ) {
         var dateTimeOutput = [];
 
-        dateTimeOutput.push( moment( rawDate ).format( "dddd, MMMM Do YYYY" ));
+        dateTimeOutput.push( moment( rawDate ).format( "ddd, MMMM Do YYYY" ));
         dateTimeOutput.push( moment( rawDate ).format( "h:mm a" ));
 
         return dateTimeOutput;
     }
 
     function rangeOfTime( start, end ) {
-        //console.log('in range of time fcn');
-        //console.log("start[0]: " + start[0]);
-        //console.log("start[1]: " + start[1]);
-        //
-        //console.log("end[0]: " + end[0]);
-        //console.log("end[1]: " + end[1]);
-    }
+        var eventRangeOutput, evStart, evEnd,
+            yearRegex = /( )20(\d){2}/;
 
+        evStart = start[0].toString().replace( yearRegex, ", " + start[1] );
+        evEnd   = end[0].toString().replace( yearRegex, ", " + end[1] );
+        eventRangeOutput = evStart + " - " + evEnd;
+
+        return eventRangeOutput;
+    }
     //fcAddDataAttr();
 });

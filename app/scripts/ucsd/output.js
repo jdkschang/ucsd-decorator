@@ -14,12 +14,14 @@ function formatTime( rawDate ) {
  * start & end parameters are arrays
  */
 function rangeOfTime( start, end ) {
-    console.log('in range of time fcn');
-    console.log("start[0]: " + start[0]);
-    console.log("start[1]: " + start[1]);
+    var eventRangeOutput, evStart, evEnd,
+        yearRegex = /( )20(\d){2}/;
 
-    console.log("end[0]: " + end[0]);
-    console.log("end[1]: " + end[1]);
+    evStart = start[0].toString().replace( yearRegex, ", " + start[1] );
+    evEnd   = end[0].toString().replace( yearRegex, ", " + end[1] );
+    eventRangeOutput = evStart + " - " + evEnd;
+
+    return eventRangeOutput;
 }
 
 $(document).ready( function() {
