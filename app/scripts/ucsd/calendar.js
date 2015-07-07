@@ -16,7 +16,7 @@ $(document).ready( function() {
             //console.log(eventStart);
             //console.log("event.end: " + event.end);
             // if one day event
-            if(!event.end) {
+            if() {
                 var startDate = eventStart[0],
                     startTime = eventStart[1];
 
@@ -47,7 +47,7 @@ $(document).ready( function() {
         eventSources: [
             // event source
             {
-                url: "calendar.json"
+                url: "json.json"
             }
         ]
     });
@@ -71,13 +71,24 @@ $(document).ready( function() {
         return dateTimeOutput;
     }
 
+    function isSameDay( start, end ) {
+        var evStart, evEnd;
+        evStart = start[0].toString();
+        evEnd = end[0].toString();
+
+        return ( evStart === evEnd );
+    }
+
     function rangeOfTime( start, end ) {
-        var eventRangeOutput, evStart, evEnd,
+        var evStart, evEnd,
+            eventRangeOutput = [],
             yearRegex = /( )20(\d){2}/;
 
         evStart = start[0].toString().replace( yearRegex, ", " + start[1] );
         evEnd   = end[0].toString().replace( yearRegex, ", " + end[1] );
-        eventRangeOutput = evStart + " - " + evEnd;
+
+        eventRangeOutput.push(evStart + " - " + evEnd);
+        eventRangeOutput.push( isSameDay( start, end ));
 
         return eventRangeOutput;
     }

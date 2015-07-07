@@ -57,7 +57,7 @@ $(document).ready( function() {
     // takes the 2nd value in array for just the id
     jsonID = parseID.toString().split('=')[1];
 
-    $.getJSON( "calendar.json", function( json ) {
+    $.getJSON( "json.json", function( json ) {
         json.forEach(function (event) {
             eventID         = event.id;
             eventName       = event.name;

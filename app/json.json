@@ -4,55 +4,59 @@
     "title": "TEST Event 5",
     "start": "2015-07-16 08:00:00",
     "end": "2015-07-16 10:00:00",
-    "allDay": "false",
+    "allDay": false,
     "details": "<p>event testing 5</p>",
     "location": "Bella Vista",
     "contact": "Joe Pigga",
     "website": "Website",
     "phone": "000-000-000"
-  }, {
-  "id": "65261d82ac1a010c740d33ab2ebff8ec",
-  "title": "TEST Event 4",
-  "start": "2015-06-29 05:00:00",
-  "end": "2015-06-30 16:00:00",
-  "allDay": "false",
-  "details": "<p>Details Basic Test&#160;</p>",
-  "location": "",
-  "contact": "",
-  "website": "",
-  "phone": ""
-}, {
-  "id": "650976acac1a010c740d33ab1f0e44ff",
-  "title": "TEST Event 3",
-  "start": "2015-07-07 17:00:00",
-  "end": "2015-07-07 19:00:00",
-  "allDay": "true",
-  "details": "<p>Details about all day event</p>",
-  "location": "Sandy Eggo",
-  "contact": "Contact Name",
-  "website": "ucsd.edu",
-  "phone": "000-000-000"
-}, {
-  "id": "46796268ac10b4e61aa15e9d516619cc",
-  "title": "TEST Event 2",
-  "start": "2015-07-15 05:00:00",
-  "end": "2015-07-15 16:00:00",
-  "allDay": "false",
-  "details": "<p>Details</p>",
-  "location": "Location",
-  "contact": "Contact Name",
-  "website": "Website",
-  "phone": "000-000-000"
-}, {
-  "id": "034ceddcac10b4e45da4df67640f02a5",
-  "title": "TEST Event 1",
-  "start": "2015-07-29 05:00:00",
-  "end": "2015-07-30 06:00:00",
-  "allDay": "false",
-  "details": "<p>Details</p>",
-  "location": "Location",
-  "contact": "Contact Name",
-  "website": "Website",
-  "phone": "000-000-000"
-}
+  },
+  {
+    "id": "65261d82ac1a010c740d33ab2ebff8ec",
+    "title": "TEST Event 4",
+    "start": "2015-06-29 05:00:00",
+    "end": "2015-06-30 16:00:00",
+    "allDay": false,
+    "details": "<p>Details Basic Test&#160;</p>",
+    "location": "",
+    "contact": "",
+    "website": "",
+    "phone": ""
+  },
+  {
+    "id": "650976acac1a010c740d33ab1f0e44ff",
+    "title": "TEST Event 3",
+    "start": "2015-07-07 17:00:00",
+    "end": "2015-07-07 19:00:00",
+    "allDay": true,
+    "details": "<p>Details about all day event</p>",
+    "location": "Sandy Eggo",
+    "contact": "Contact Name",
+    "website": "ucsd.edu",
+    "phone": "000-000-000"
+  },
+  {
+    "id": "46796268ac10b4e61aa15e9d516619cc",
+    "title": "TEST Event 2",
+    "start": "2015-07-15 05:00:00",
+    "end": "2015-07-15 16:00:00",
+    "allDay": false,
+    "details": "<p>Details</p>",
+    "location": "Location",
+    "contact": "Contact Name",
+    "website": "Website",
+    "phone": "000-000-000"
+  },
+  {
+    "id": "034ceddcac10b4e45da4df67640f02a5",
+    "title": "TEST Event 1",
+    "start": "2015-07-29 05:00:00",
+    "end": "2015-07-30 06:00:00",
+    "allDay": false,
+    "details": "<p>Details</p>",
+    "location": "Location",
+    "contact": "Contact Name",
+    "website": "Website",
+    "phone": "000-000-000"
+  }
 ]
