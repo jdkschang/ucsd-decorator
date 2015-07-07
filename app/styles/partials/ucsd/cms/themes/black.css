@@ -41,7 +41,7 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
 }
 
 .layout-title .title-logo {
-  background: transparent url(../img/sprite_base.png) no-repeat;
+  background: transparent url(../img/sprite_base-black.png) no-repeat;
 }
 
 .layout-navbar {
@@ -49,7 +49,7 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
 }
 
 .layout-navbar ul.navbar-list > li > a {
-  padding: 8px 15px;
+  padding: 8px 15px 9px;
 }
 /* depth of selectors to override layout.css */
 .navdrawer-container ul.navbar-list ul.navbar-sublist {
