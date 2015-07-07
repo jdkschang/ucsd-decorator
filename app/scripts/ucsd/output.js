@@ -61,6 +61,7 @@ $(document).ready( function() {
         json.forEach(function (event) {
             eventID         = event.id;
             eventName       = event.name;
+            eventAllDay     = event.allDay;
             eventDetails    = event.details;
             eventLocation   = event.location;
             eventContact    = event.contact;
@@ -74,9 +75,13 @@ $(document).ready( function() {
             if ( eventID == jsonID ) {
                 outputName.append(eventName);
 
-                if(isSameDay(eventStart, eventEnd)) {
+                if(eventAllDay) {
                     outputDate.append(eventStart[0]);
-                    outputTime.append(eventStart[1]);
+                    outputTime.append("All Day");
+                }
+                else if(isSameDay(eventStart, eventEnd)) {
+                    outputDate.append(eventStart[0]);
+                    outputTime.append(eventStart[1] + " - " + eventEnd[1]);
                 } else {
                     outputDate.append( rangeOfTime( eventStart, eventEnd ));
                 }

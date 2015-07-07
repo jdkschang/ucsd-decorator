@@ -12,12 +12,13 @@ $(document).ready( function() {
             var eventStart = formatTime(event.start),
                 eventEnd = formatTime(event.end),
                 allDayBool = event.allDay,
+                startDate, startTime,
                 output_url = "cal-output.html?id=" + event.id;
             var contentEvent;
 
             // if one day event
             if(allDayBool) {
-                var startDate = eventStart[0];
+                startDate = eventStart[0];
 
                 contentEvent = "Date: " + startDate +
                     "<br/> Time: All day" +
@@ -25,8 +26,8 @@ $(document).ready( function() {
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
             }
             else if( isSameDay( eventStart, eventEnd )) {
-                var startDate = eventStart[0],
-                    startTime = eventStart[1];
+                startDate = eventStart[0];
+                startTime = eventStart[1] + " - " + eventEnd[1];
 
                 contentEvent = "Date: " + startDate +
                     "<br/> Time: " + startTime +

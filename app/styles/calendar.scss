@@ -2,6 +2,10 @@ ul.cal-detail-list {
   list-style: none;
   padding: 0;
 
+  .cal-detail h4 {
+    font-weight: bold;
+  }
+
   .cal-detail span {
     padding-left: 20px;
   }
