@@ -7,16 +7,24 @@ $(document).ready( function() {
             right: 'month,agendaWeek,agendaDay'
         },
         defaultView: 'month',
+
         eventRender: function( event, element) {
             var eventStart = formatTime(event.start),
                 eventEnd = formatTime(event.end),
+                allDayBool = event.allDay,
                 output_url = "cal-output.html?id=" + event.id;
             var contentEvent;
 
-            //console.log(eventStart);
-            //console.log("event.end: " + event.end);
             // if one day event
-            if() {
+            if(allDayBool) {
+                var startDate = eventStart[0];
+
+                contentEvent = "Date: " + startDate +
+                    "<br/> Time: All day" +
+                    "<br/>" +
+                    "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+            }
+            else if( isSameDay( eventStart, eventEnd )) {
                 var startDate = eventStart[0],
                     startTime = eventStart[1];
 
@@ -24,13 +32,13 @@ $(document).ready( function() {
                     "<br/> Time: " + startTime +
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+
             } else {
                 var eventRange = rangeOfTime(eventStart, eventEnd);
 
-                contentEvent = "Date: " + eventRange +
+                contentEvent = "Date: " + eventRange[0] +
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-
             }
 
             element.popover({
@@ -51,16 +59,6 @@ $(document).ready( function() {
             }
         ]
     });
-
-    var fcAddDataAttr = function() {
-        // add data attributes to get focus event trigger to work
-        var fcEvent = $(".fc-event-container .fc-event");
-
-        console.log(fcEvent);
-
-        fcEvent.attr("tabIndex", "0");
-        fcEvent.attr("data-trigger", "focus");
-    };
 
     function formatTime( rawDate ) {
         var dateTimeOutput = [];
@@ -92,5 +90,15 @@ $(document).ready( function() {
 
         return eventRangeOutput;
     }
+
+    var fcAddDataAttr = function() {
+        // add data attributes to get focus event trigger to work
+        var fcEvent = $(".fc-event-container .fc-event");
+
+        console.log(fcEvent);
+
+        fcEvent.attr("tabIndex", "0");
+        fcEvent.attr("data-trigger", "focus");
+    };
     //fcAddDataAttr();
 });
