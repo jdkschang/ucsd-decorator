@@ -46,12 +46,15 @@ $(document).ready( function() {
                 html: true,
                 placement: 'top',
                 trigger: 'click',
-                title: event.name,
+                title: event.title,
                 content: contentEvent
             })
-            .attr("tabIndex", "0")
-            .attr("data-trigger", "focus")
-            .attr("data-toggle", "popover");
+            //.attr("tabIndex", "0")
+            //.attr("data-trigger", "focus")
+            .attr("data-toggle", "popover")
+            //.attr("data-original-title", "");
+            //var closePopover = '<a class="close" data-dismiss="popover">×</a>';
+            //$(".popover-title").append(closePopover);
         },
         eventSources: [
             // event source
@@ -101,5 +104,15 @@ $(document).ready( function() {
         fcEvent.attr("tabIndex", "0");
         fcEvent.attr("data-trigger", "focus");
     };
+
+    $('body').on('click', function (e) {
+        $('[data-toggle="popover"]').each(function () {
+            //the 'is' for buttons that trigger popups
+            //the 'has' for icons within a button that triggers a popup
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
     //fcAddDataAttr();
 });
