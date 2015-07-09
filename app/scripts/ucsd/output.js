@@ -52,7 +52,6 @@ $(document).ready( function() {
     var jsonID, eventID, eventTitle,
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
         outputTitle     = $("#title"),
-        outputWhen      = $("#date span"),
         url             = window.location.href;
 
     var eventStart = [],
@@ -84,22 +83,21 @@ $(document).ready( function() {
                 outputTitle.append(eventTitle);
 
                 if(eventAllDay) {
-                    outputWhen.append(eventStart[0]);
-                    addDetailListItem("Time", "All Day");
+                    addDetailListItem( "When", eventStart[0]);
+                    addDetailListItem( "Time", "All Day");
                 }
-                else if(isSameDay(eventStart, eventEnd)) {
-                    outputWhen.append(eventStart[0]);
-
-                    addDetailListItem("Time", eventStart[1] + " - " + eventEnd[1]);
+                else if(isSameDay( eventStart, eventEnd )) {
+                    addDetailListItem( "When", eventStart[0]);
+                    addDetailListItem( "Time", eventStart[1] + " - " + eventEnd[1]);
                 } else {
-                    outputWhen.append( rangeOfTime( eventStart, eventEnd ));
+                    addDetailListItem( "When", rangeOfTime( eventStart, eventEnd ) );
                 }
 
-                addDetailListItem("Location", eventLocation);
-                addDetailListItem("Contact", eventContact);
-                addDetailListItem("Website", eventWebsite);
-                addDetailListItem("Phone", eventPhone);
-                addDetailListItem("Details", eventDetails);
+                addDetailListItem( "Location", eventLocation );
+                addDetailListItem( "Contact", eventContact );
+                addDetailListItem( "Website", eventWebsite );
+                addDetailListItem( "Phone", eventPhone );
+                addDetailListItem( "Details", eventDetails );
             }
         });
     });
