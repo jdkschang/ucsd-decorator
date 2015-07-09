@@ -49,12 +49,7 @@ $(document).ready( function() {
                 title: event.title,
                 content: contentEvent
             })
-            //.attr("tabIndex", "0")
-            //.attr("data-trigger", "focus")
-            .attr("data-toggle", "popover")
-            //.attr("data-original-title", "");
-            //var closePopover = '<a class="close" data-dismiss="popover">×</a>';
-            //$(".popover-title").append(closePopover);
+            .attr("data-toggle", "popover");
         },
         eventSources: [
             // event source
@@ -96,8 +91,13 @@ $(document).ready( function() {
     }
 
     $('body').on('click', function (e) {
+        $('.popover-title').append(
+            '<span class="close" data-dismiss="popover">x</span>'
+        );
+
         $('[data-toggle="popover"]').each(function () {
             //the 'is' for buttons that trigger popups
+            //the 'has' for icons within a button that triggers a popup
             if (!$(this).is(e.target) && $(this).has(e.target).length === 0) {
                 $(this).popover('hide');
             }
