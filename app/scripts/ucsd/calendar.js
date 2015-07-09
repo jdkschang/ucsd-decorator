@@ -95,16 +95,6 @@ $(document).ready( function() {
         return eventRangeOutput;
     }
 
-    var fcAddDataAttr = function() {
-        // add data attributes to get focus event trigger to work
-        var fcEvent = $(".fc-event-container .fc-event");
-
-        console.log(fcEvent);
-
-        fcEvent.attr("tabIndex", "0");
-        fcEvent.attr("data-trigger", "focus");
-    };
-
     $('body').on('click', function (e) {
         $('[data-toggle="popover"]').each(function () {
             //the 'is' for buttons that trigger popups
@@ -114,5 +104,4 @@ $(document).ready( function() {
             }
         });
     });
-    //fcAddDataAttr();
 });
