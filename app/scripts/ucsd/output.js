@@ -4,7 +4,7 @@
 function formatTime( rawDate ) {
     var dateTimeOutput = [];
 
-    dateTimeOutput.push( moment( rawDate ).format( "dddd, MMMM Do YYYY" ));
+    dateTimeOutput.push( moment( rawDate ).format( "ddd, MMMM Do YYYY" ));
     dateTimeOutput.push( moment( rawDate ).format( "h:mm a" ));
 
     return dateTimeOutput;
@@ -32,22 +32,31 @@ function isSameDay( start, end ) {
     return ( evStart === evEnd );
 }
 
+// adding list items to the detail list
+function addDetailListItem( eventName, eventDetails ) {
+    var eventDetailList = $(".cal-detail-list"),
+        calDetail;
+
+        // no event details
+        if(!eventDetails) return;
+
+        calDetail = "<li class='cal-detail'>" +
+                        "<h4>" + eventName + "</h4>" +
+                        "<span>" + eventDetails + "</span>" +
+                    "</li>";
+
+    eventDetailList.append(calDetail);
+}
+
 $(document).ready( function() {
-    var jsonID, eventID, eventName,
+    var jsonID, eventID, eventTitle,
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
-        outputName      = $("#title"),
-        outputDate      = $("#date span"),
-        outputTime      = $("#time span"),
-        outputLocation  = $("#location"),
-        outputDetails   = $("#details"),
-        outputContact   = $("#contact"),
-        outputWebsite   = $("#website"),
-        outputPhone     = $("#phone"),
+        outputTitle     = $("#title"),
+        outputWhen      = $("#date span"),
         url             = window.location.href;
 
     var eventStart = [],
-        eventEnd = [],
-        sameDay = false;
+        eventEnd = [];
 
     //grabID.on( "click", function() {
     var parseRegex = new RegExp(/(?:(\?id=))\w+/g);
@@ -60,7 +69,7 @@ $(document).ready( function() {
     $.getJSON( "json.json", function( json ) {
         json.forEach(function (event) {
             eventID         = event.id;
-            eventName       = event.name;
+            eventTitle      = event.title;
             eventAllDay     = event.allDay;
             eventDetails    = event.details;
             eventLocation   = event.location;
@@ -71,25 +80,26 @@ $(document).ready( function() {
             eventStart      = formatTime(event.start);
             eventEnd        = formatTime(event.end);
 
-
             if ( eventID == jsonID ) {
-                outputName.append(eventName);
+                outputTitle.append(eventTitle);
 
                 if(eventAllDay) {
-                    outputDate.append(eventStart[0]);
-                    outputTime.append("All Day");
+                    outputWhen.append(eventStart[0]);
+                    addDetailListItem("Time", "All Day");
                 }
                 else if(isSameDay(eventStart, eventEnd)) {
-                    outputDate.append(eventStart[0]);
-                    outputTime.append(eventStart[1] + " - " + eventEnd[1]);
+                    outputWhen.append(eventStart[0]);
+
+                    addDetailListItem("Time", eventStart[1] + " - " + eventEnd[1]);
                 } else {
-                    outputDate.append( rangeOfTime( eventStart, eventEnd ));
+                    outputWhen.append( rangeOfTime( eventStart, eventEnd ));
                 }
-                outputLocation.append(eventLocation);
-                outputContact.append(eventContact);
-                outputWebsite.append(eventWebsite);
-                outputPhone.append(eventPhone);
-                outputDetails.append(eventDetails);
+
+                addDetailListItem("Location", eventLocation);
+                addDetailListItem("Contact", eventContact);
+                addDetailListItem("Website", eventWebsite);
+                addDetailListItem("Phone", eventPhone);
+                addDetailListItem("Details", eventDetails);
             }
         });
     });

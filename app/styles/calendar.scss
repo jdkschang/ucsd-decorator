@@ -1,3 +1,11 @@
+a.fc-event:active,
+a.fc-event:visited,
+a.fc-event:hover,
+a.fc-event:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
 ul.cal-detail-list {
   list-style: none;
   padding: 0;
@@ -8,5 +16,6 @@ ul.cal-detail-list {
 
   .cal-detail span {
     padding-left: 20px;
+    display: inline-block;
   }
 }
