@@ -40,6 +40,13 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   -o-transition: none;
 }
 
+.layout-header button.btn-nav {
+    background-color: #cecece;
+}
+    button.btn-nav span.icon-bar {
+        background-color: #000;
+    }
+
 .layout-title .title-logo {
   background: transparent url(../img/sprite_base-black.png) no-repeat;
 }
