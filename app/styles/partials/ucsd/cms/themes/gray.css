@@ -41,7 +41,7 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
 }
 
 .layout-title .title-logo {
-  background: transparent url(../img/sprite_base.png) no-repeat;
+  background: transparent url(../img/sprite_base-black.png) no-repeat;
 }
 
 .layout-navbar {
