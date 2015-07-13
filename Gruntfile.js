@@ -8,7 +8,6 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
@@ -17,12 +16,29 @@ module.exports = function (grunt) {
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
         // Project settings
         config: {
             // Configurable paths
             app: 'app',
             dist: 'dist'
+        },
+
+        // concat: to add version banners to files
+        concat: {
+            options: {
+              stripBanners: true,
+              banner: '/* <%= pkg.name %> - v<%= pkg.version %> */'
+            },
+            dist: {
+              src: ['<%= config.app %>/styles/base.css', '<%= config.app %>/scripts/{,*/}*.js'],
+              dest: ['<%= config.dist %>/styles/base.css','<%= config.dist %>/scripts/base-min.js']
+            }
+            // extras: {
+            //   src: [],
+            //   dest: '<%= config.dist %>/scripts/base-min.js'
+            // }
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -230,7 +246,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: ['<%= config.app %>/homepage-wide.html']
+            html: ['<%= config.app %>/homepage-wide.html', '<%= config.app %>/homepage.html']
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
@@ -293,32 +309,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
-        // By default, your `index.html`'s <!-- Usemin block --> will take care of
-        // minification. These next options are pre-configured if you do not wish
-        // to use the Usemin blocks.
-        // cssmin: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/styles/_bootstrap.css': [
-        //                 '.tmp/styles/{,*/}*.css',
-        //                 '<%= config.app %>/styles/{,*/}*.css'
-        //             ]
-        //         }
-        //     }
-        // },
-        // uglify: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
-        //             ]
-        //         }
-        //     }
-        // },
-        // concat: {
-        //     dist: {}
-        // },
 
         // Copies remaining files to places other tasks can use
         copy: {
@@ -398,57 +388,22 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
-        }
 
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
+    grunt.registerTask( 'build',
+        [
+            'clean:dist',
+            'useminPrepare',
+            'concurrent:dist',
             'autoprefixer',
-            'connect:livereload',
-            'watch'
-        ]);
-    });
+            'concat',
+            'cssmin',
+            'uglify',
+            'copy:dist',
+            'modernizr',
+            'usemin',
+            'compress'
+        ]
+    );
 
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer'
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
-    grunt.registerTask('build', [
-        'clean:dist',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'cssmin',
-        'uglify',
-        'copy:dist',
-        'modernizr',
-        'usemin',
-        /*'htmlmin',*/ //uncomment this to re-enable html minification
-        'compress'
-    ]);
-
-    grunt.registerTask('default', [
-        'newer:jshint',
-        'build'
-    ]);
+    grunt.registerTask( 'default', [ 'build' ]);
 };
