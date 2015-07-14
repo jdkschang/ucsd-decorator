@@ -52,12 +52,18 @@ $(document).ready( function() {
             .attr("data-toggle", "popover");
         },
         eventSources: [
-            // event source
+            //event source
             {
                 url: "json.json"
+            },
+            {
+                googleCalendarApiKey: "AIzaSyBPdlbHiiluijLwidJP8mZO3gdpyE--zP4",
+                googleCalendarId: "kchangj@gmail.com"
             }
         ]
     });
+
+    console.log('update');
 
     function formatTime( rawDate ) {
         var dateTimeOutput = [];
