@@ -65,6 +65,7 @@ function populateEventOutput( json ) {
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
         outputTitle     = $("#title");
 
+
     var eventStart = [],
         eventEnd = [];
 
