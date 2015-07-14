@@ -1,60 +1,60 @@
 $(document).ready( function() {
     // initialize calendar
     $("#calendar").fullCalendar({
-        //header: {
-        //    left: 'prev,next today',
-        //    center: 'title',
-        //    right: 'month,agendaWeek,agendaDay'
-        //},
-        //defaultView: 'month',
-        //
-        //eventRender: function( event, element) {
-        //    var eventStart = formatTime(event.start),
-        //        eventEnd = formatTime(event.end),
-        //        allDayBool = event.allDay,
-        //        startDate, startTime,
-        //        output_url = "cal-output.html?id=" + event.id;
-        //    var contentEvent;
-        //
-        //    // if one day event
-        //    if(allDayBool) {
-        //        startDate = eventStart[0];
-        //
-        //        contentEvent = "Date: " + startDate +
-        //            "<br/> Time: All day" +
-        //            "<br/>" +
-        //            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-        //    }
-        //    else if( isSameDay( eventStart, eventEnd )) {
-        //        startDate = eventStart[0];
-        //        startTime = eventStart[1] + " - " + eventEnd[1];
-        //
-        //        contentEvent = "Date: " + startDate +
-        //            "<br/> Time: " + startTime +
-        //            "<br/>" +
-        //            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-        //
-        //    } else {
-        //        var eventRange = rangeOfTime(eventStart, eventEnd);
-        //
-        //        contentEvent = "Date: " + eventRange[0] +
-        //            "<br/>" +
-        //            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-        //    }
-        //
-        //    element.popover({
-        //        html: true,
-        //        placement: 'top',
-        //        trigger: 'click',
-        //        title: event.title,
-        //        content: contentEvent
-        //    })
-        //    .attr("data-toggle", "popover");
-        //},
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        defaultView: 'month',
+
+        eventRender: function( event, element) {
+            var eventStart = formatTime(event.start),
+                eventEnd = formatTime(event.end),
+                allDayBool = event.allDay,
+                startDate, startTime,
+                output_url = "cal-output.html?id=" + event.id;
+            var contentEvent;
+
+            // if one day event
+            if(allDayBool) {
+                startDate = eventStart[0];
+
+                contentEvent = "Date: " + startDate +
+                    "<br/> Time: All day" +
+                    "<br/>" +
+                    "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+            }
+            else if( isSameDay( eventStart, eventEnd )) {
+                startDate = eventStart[0];
+                startTime = eventStart[1] + " - " + eventEnd[1];
+
+                contentEvent = "Date: " + startDate +
+                    "<br/> Time: " + startTime +
+                    "<br/>" +
+                    "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+
+            } else {
+                var eventRange = rangeOfTime(eventStart, eventEnd);
+
+                contentEvent = "Date: " + eventRange[0] +
+                    "<br/>" +
+                    "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+            }
+
+            element.popover({
+                html: true,
+                placement: 'top',
+                trigger: 'click',
+                title: event.title,
+                content: contentEvent
+            })
+            .attr("data-toggle", "popover");
+        },
         eventSources: [
             // event source
             {
-                url: "http://cwo-test.ucsd.edu/calendar-application/json.json"
+                url: "json.json"
             }
         ]
     });
@@ -90,17 +90,17 @@ $(document).ready( function() {
         return eventRangeOutput;
     }
 
-    //$('body').on('click', function (e) {
-    //    $('.popover-title').append(
-    //        '<span class="close" data-dismiss="popover">x</span>'
-    //    );
-    //
-    //    $('[data-toggle="popover"]').each(function () {
-    //        //the 'is' for buttons that trigger popups
-    //        //the 'has' for icons within a button that triggers a popup
-    //        if (!$(this).is(e.target) && $(this).has(e.target).length === 0) {
-    //            $(this).popover('hide');
-    //        }
-    //    });
-    //});
+    $('body').on('click', function (e) {
+        $('.popover-title').append(
+            '<span class="close" data-dismiss="popover">x</span>'
+        );
+
+        $('[data-toggle="popover"]').each(function () {
+            //the 'is' for buttons that trigger popups
+            //the 'has' for icons within a button that triggers a popup
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
 });
