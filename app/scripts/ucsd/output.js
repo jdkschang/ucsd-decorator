@@ -60,18 +60,16 @@ function parseURL() {
 }
 
 function populateEventOutput( json ) {
-    alert(json);
     var jsonID, eventID, eventTitle,
         eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
         outputTitle     = $("#title");
-
 
     var eventStart = [],
         eventEnd = [];
 
     jsonID = parseURL();
 
-    $.each( json, function (i, event) {
+    $.each( json, function ( i, event ) {
         eventID         = event.id;
         eventTitle      = event.title;
         eventAllDay     = event.allDay;
@@ -108,8 +106,7 @@ function populateEventOutput( json ) {
 }
 
 $(document).ready( function() {
-    $.getJSON( "json.json", function(json ) {
-        console.log("in get json fcn");
+    $.getJSON( "json.json", function( json ) {
         populateEventOutput( json );
     });
 });
