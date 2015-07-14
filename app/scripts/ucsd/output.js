@@ -48,57 +48,67 @@ function addDetailListItem( eventName, eventDetails ) {
     eventDetailList.append(calDetail);
 }
 
-$(document).ready( function() {
-    var jsonID, eventID, eventTitle,
-        eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
-        outputTitle     = $("#title"),
-        url             = window.location.href;
+function parseURL() {
+    var url = window.location.href;
 
-    var eventStart = [],
-        eventEnd = [];
-
-    //grabID.on( "click", function() {
     var parseRegex = new RegExp(/(?:(\?id=))\w+/g);
     var parseID = url.match(parseRegex);
 
     // takes parsed URL, turns into string and splits
     // takes the 2nd value in array for just the id
-    jsonID = parseID.toString().split('=')[1];
+    return parseID.toString().split('=')[1];
+}
 
-    $.getJSON( "json.json", function(i, json ) {
-        $.each( json, function (event) {
-            eventID         = event.id;
-            eventTitle      = event.title;
-            eventAllDay     = event.allDay;
-            eventDetails    = event.details;
-            eventLocation   = event.location;
-            eventContact    = event.contact;
-            eventWebsite    = event.website;
-            eventPhone      = event.phone;
+function populateEventOutput( json ) {
+    alert(json);
+    var jsonID, eventID, eventTitle,
+        eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
+        outputTitle     = $("#title");
 
-            eventStart      = formatTime(event.start);
-            eventEnd        = formatTime(event.end);
+    var eventStart = [],
+        eventEnd = [];
 
-            if ( eventID == jsonID ) {
-                outputTitle.append(eventTitle);
+    jsonID = parseURL();
 
-                if(eventAllDay) {
-                    addDetailListItem( "When", eventStart[0]);
-                    addDetailListItem( "Time", "All Day");
-                }
-                else if(isSameDay( eventStart, eventEnd )) {
-                    addDetailListItem( "When", eventStart[0]);
-                    addDetailListItem( "Time", eventStart[1] + " - " + eventEnd[1]);
-                } else {
-                    addDetailListItem( "When", rangeOfTime( eventStart, eventEnd ) );
-                }
+    $.each( json, function (i, event) {
+        eventID         = event.id;
+        eventTitle      = event.title;
+        eventAllDay     = event.allDay;
+        eventDetails    = event.details;
+        eventLocation   = event.location;
+        eventContact    = event.contact;
+        eventWebsite    = event.website;
+        eventPhone      = event.phone;
 
-                addDetailListItem( "Location", eventLocation );
-                addDetailListItem( "Contact", eventContact );
-                addDetailListItem( "Website", eventWebsite );
-                addDetailListItem( "Phone", eventPhone );
-                addDetailListItem( "Details", eventDetails );
+        eventStart      = formatTime(event.start);
+        eventEnd        = formatTime(event.end);
+
+        if ( eventID == jsonID ) {
+            outputTitle.append(eventTitle);
+
+            if(eventAllDay) {
+                addDetailListItem( "When", eventStart[0]);
+                addDetailListItem( "Time", "All Day");
             }
-        });
+            else if(isSameDay( eventStart, eventEnd )) {
+                addDetailListItem( "When", eventStart[0]);
+                addDetailListItem( "Time", eventStart[1] + " - " + eventEnd[1]);
+            } else {
+                addDetailListItem( "When", rangeOfTime( eventStart, eventEnd ) );
+            }
+
+            addDetailListItem( "Location", eventLocation );
+            addDetailListItem( "Contact", eventContact );
+            addDetailListItem( "Website", eventWebsite );
+            addDetailListItem( "Phone", eventPhone );
+            addDetailListItem( "Details", eventDetails );
+        }
+    });
+}
+
+$(document).ready( function() {
+    $.getJSON( "json.json", function(json ) {
+        console.log("in get json fcn");
+        populateEventOutput( json );
     });
 });
