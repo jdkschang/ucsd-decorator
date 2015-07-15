@@ -7,6 +7,10 @@ $(document).ready( function() {
             right: 'month,agendaWeek,agendaDay'
         },
         defaultView: 'month',
+        handleWindowResize: 'true',
+        windowResize: function( view ) {
+            console.log('testing window resize');
+        },
 
         eventRender: function( event, element) {
             var eventStart = formatTime(event.start),
@@ -62,6 +66,12 @@ $(document).ready( function() {
             }
         ]
     });
+
+    function calendarMobileView() {
+        if(isMobileView) {
+            $(".fc-toolbar").appendTo(".tdr_content_content");
+        }
+    }
 
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
