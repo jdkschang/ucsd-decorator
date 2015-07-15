@@ -63,7 +63,13 @@ $(document).ready( function() {
         ]
     });
 
-    console.log('update');
+    var isMobileView = function() {
+        var browserWidth = window.innerWidth;
+        var mobileDesktopBorder = 768;
+
+        return (browserWidth < (mobileDesktopBorder+1));
+    };
+
 
     function formatTime( rawDate ) {
         var dateTimeOutput = [];

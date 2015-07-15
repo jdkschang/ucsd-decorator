@@ -21,8 +21,8 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
+    <link rel="stylesheet" href="styles/calendar.css">
     <link rel="stylesheet" href="vendor/fullcalendar/styles/fullcalendar.min.css" />
-    <link rel="stylesheet" href="styles/calendar.css" />
     <!-- End site-specific CSS files -->
 
     <!-- build:css(.tmp) styles/ie-support.css -->
@@ -118,8 +118,7 @@
                 <div id="tdr_crumbs_content">
                     <ol id="tdr_crumbs_list" class="breadcrumb">
                         <li><a href="index.html">HOME</a></li>
-                        <li><a href="calendar.html">Calendar</a></li>
-                        <li class="active">Output</li>
+                        <li class="active">Calendar</li>
                     </ol>
                 </div>
             </div>
@@ -127,10 +126,9 @@
 
         <main role="main" id="tdr_content">
             <div id="tdr_content_content">
-                <h1 id="title"></h1>
+                <h1>Calendar Testing</h1>
 
-                <ul class="cal-detail-list">
-                </ul>
+                <section id="calendar"></section>
             </div>
         </main>
 
@@ -226,7 +224,8 @@
 <!-- endbuild -->
 
 <!-- Begin site-specific JS files -->
-<script src="scripts/ucsd/output.js"></script>
+<script src="scripts/ucsd/calendar.js"></script>
+<script src="scripts/ucsd/gcal.js"></script>
 <!-- End site-specific JS files -->
 
 
