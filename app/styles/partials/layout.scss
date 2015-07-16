@@ -47,12 +47,12 @@ html, body
 
     background-color: #2b92b9;
 //
-    @media only screen and (min-width: $minimum) {
+    @media only screen and (min-width: $minimum) and (max-width: $desktop-small) {
       height: 105px;
 
     }
 
-    @media only screen and (min-width: $desktop-small) {
+    @media only screen and (min-width: 769px) {
       height: 78px;
     }
   }
