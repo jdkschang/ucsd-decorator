@@ -154,9 +154,9 @@ a {
     border-bottom: solid 3px rgba(255, 255, 255, 0.4);
     border-right: solid 1px #C8CFD3;
     border-left: solid 1px rgba(255, 255, 255, 0.6);
-    padding: 9px 15px 8px;
+    padding: 9px 15px;
     text-decoration: none;
-    line-height: 1.4; }
+    line-height: 1.3; }
   .layout-navbar .navbar-list > li.active > a {
     border-bottom: #D56A03 solid 3px; }
 
