@@ -108,6 +108,10 @@ html, body {
     @media only screen and (max-width: 640px) {
       .layout-footer > .layout-container {
         background: none; } }
+  @media only screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+    .layout-footer > .layout-container {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333;
@@ -321,6 +325,10 @@ a {
       position: absolute;
       left: 3%;
       /* width is 94% but for one side is only half of 6% -> 3% */ } }
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .title-logo {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
 
 /* ***********************************************
  * MAIN CONTENT SIDE NAV
