@@ -1,10 +1,11 @@
 .dropbox*
-ie-masterlist.txt
 .idea/
 .sass-cache/
 .tmp/
-ie-masterlist.txt
 
 dist/
 node_modules/
 ucsd-decorator.zip
+
+*.map
+*.txt
