@@ -45,8 +45,8 @@ function addDetailListItem( eventName, eventDetails ) {
     // no event details
     if(!eventDetails)
         return;
+    // if event has category
     else if(eventName === "Category") {
-        //console.log('hello in category section: ' + eventDetails);
         calDetail = "<li class='cal-detail'>" +
             "<h4>" + eventName + "</h4>" +
             "<span class='category " + eventDetails+ "'>" + eventDetails + "</span>" +
