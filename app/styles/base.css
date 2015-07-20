@@ -265,7 +265,7 @@ a {
   display: block; }
 
 .search-content .search-scope {
-  max-width: 30;
+  max-width: 30%;
   font-size: 11px;
   padding: 4px 2px 4px 0;
   float: left;
