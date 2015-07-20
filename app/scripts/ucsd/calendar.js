@@ -1,11 +1,11 @@
 $(document).ready( function() {
     // initialize calendar
     $("#calendar").fullCalendar({
-        //header: {
-        //    left: 'prev,next today',
-        //    center: 'title',
-        //    right: 'month,agendaWeek,agendaDay'
-        //},
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
         footer: {
             left: 'prev,next today',
             center: 'title',
