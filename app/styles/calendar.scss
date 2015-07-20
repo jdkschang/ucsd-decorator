@@ -19,7 +19,26 @@ ul.cal-detail-list {
   }
 
   .cal-detail span {
-    padding-left: 20px;
+    margin-left: 20px;
     display: inline-block;
+  }
+
+  .cal-detail span.category {
+    color: #fff;
+  }
+  .cal-detail span.Alumni {
+    background-color: #5229a3;
+  }
+  .cal-detail span.Students {
+    background-color: #274d9a;
+  }
+  .cal-detail span.Holidays {
+    background-color: #FAD165;
+  }
+  .cal-detail span.Academics {
+    background-color: #0d7813;
+  }
+  .cal-detail span.Events {
+    background-color: #a32929;
   }
 }

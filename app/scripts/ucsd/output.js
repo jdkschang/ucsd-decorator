@@ -37,13 +37,21 @@ function addDetailListItem( eventName, eventDetails ) {
     var eventDetailList = $(".cal-detail-list"),
         calDetail;
 
-        // no event details
-        if(!eventDetails) return;
+    calDetail = "<li class='cal-detail'>" +
+                    "<h4>" + eventName + "</h4>" +
+                    "<span>" + eventDetails + "</span>" +
+                "</li>";
 
+    // no event details
+    if(!eventDetails)
+        return;
+    else if(eventName === "Category") {
+        //console.log('hello in category section: ' + eventDetails);
         calDetail = "<li class='cal-detail'>" +
-                        "<h4>" + eventName + "</h4>" +
-                        "<span>" + eventDetails + "</span>" +
-                    "</li>";
+            "<h4>" + eventName + "</h4>" +
+            "<span class='category " + eventDetails+ "'>" + eventDetails + "</span>" +
+            "</li>";
+    }
 
     eventDetailList.append(calDetail);
 }
@@ -61,7 +69,7 @@ function parseURL() {
 
 function populateEventOutput( json ) {
     var jsonID, eventID, eventTitle,
-        eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
+        eventCategory, eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
         outputTitle     = $("#title");
 
     var eventStart = [],
@@ -73,6 +81,7 @@ function populateEventOutput( json ) {
         eventID         = event.id;
         eventTitle      = event.title;
         eventAllDay     = event.allDay;
+        eventCategory   = event.category;
         eventDetails    = event.details;
         eventLocation   = event.location;
         eventContact    = event.contact;
@@ -96,6 +105,7 @@ function populateEventOutput( json ) {
                 addDetailListItem( "When", rangeOfTime( eventStart, eventEnd ) );
             }
 
+            addDetailListItem( "Category", eventCategory );
             addDetailListItem( "Location", eventLocation );
             addDetailListItem( "Contact", eventContact );
             addDetailListItem( "Website", eventWebsite );
