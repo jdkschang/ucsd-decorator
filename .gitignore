@@ -5,7 +5,7 @@
 
 dist/
 node_modules/
-*.map
 ucsd-decorator.zip
 
+*.map
 *.txt
