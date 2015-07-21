@@ -178,7 +178,17 @@
         element.className = element.className.replace(className, '');
     };
 
+    var testTitleWidth = function() {
+        var test = $(".title-header")[0];
+        var height = (test.offsetHeight + 1) + "px";
+        var width = (test.offsetWidth + 1) + "px";
+
+        console.log("height: " + height);
+        console.log("width: " + width);
+    };
+
     mainNav();
     mainSubNav();
     mainSearch();
+    testTitleWidth();
 })(document);
