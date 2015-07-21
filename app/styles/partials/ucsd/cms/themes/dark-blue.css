@@ -46,7 +46,7 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
 }
 
 .layout-navbar ul.navbar-list > li > a {
-  padding: 8px 15px;
+  padding: 9px 15px 8px;
   color: #004b6e;
 }
 

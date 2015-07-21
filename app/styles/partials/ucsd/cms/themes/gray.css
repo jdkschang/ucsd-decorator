@@ -49,7 +49,7 @@ a:link, a:visited, .widget_content a:link, .widget_content a:visited {
   border-top: 1px solid #ccc;
 }
 .layout-navbar ul.navbar-list > li > a {
-  padding: 8px 15px;
+  padding: 9px 15px 8px;
 }
 /* depth of selectors to override layout.scss */
 .navdrawer-container ul.navbar-list ul.navbar-sublist {
