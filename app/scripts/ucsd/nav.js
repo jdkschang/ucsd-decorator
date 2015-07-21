@@ -10,8 +10,6 @@
         var navListIsOpened     = false;
 
         var toggleMainNav = function() {
-            isMobileView();
-
             if (!navListIsOpened) {
                 addClass(navList, navIsOpenedClass);
 
@@ -43,72 +41,93 @@
     };
 
     var mainSubNav = function() {
-        var subNav          = $('.navbar-subnav')[0];
-        var subList         = $('.navbar-sublist')[0];
-        var subNavList      = 'subnav-is-opened';
-        var subNavHover     = 'subnav-hover';
-        var subNavIsOpened  = false;
-
-        var toggleSubNav = function() {
-            if(!subNavIsOpened) {
-                addClass(subList, subNavList);
-                subNavIsOpened = !subNavIsOpened;
-            } else {
-                removeClass(subList, subNavList);
-                subNavIsOpened = !subNavIsOpened;
-            }
-        };
+        var subNavArray     = $('.navbar-subnav'),
+            subListArray    = $('.navbar-sublist'),
+            subNavList      = 'subnav-is-opened',
+            subNavHover     = 'subnav-hover',
+            subNavIsOpened  = false;
+        var preIndex;
 
         /* if there are subNav elements run */
-        if(subNav) {
-            if (subNav.addEventListener) {
-                subNav.addEventListener('click', function (e) {
-                    if (isMobileView())
+        if(subNavArray) {
+            subNavArray.each( function(index) {
+                var subNav  = subNavArray[index],
+                    subList = subListArray[index];
+
+                /* relocated toggleSubNav function due to variable scoping issues */
+                var toggleSubNav = function() {
+                    // check if subList opened, reset if antoher is already opened
+                    checkToggleSubNav();
+
+                    if(!subNavIsOpened) {
+                        addClass(subList, subNavList);
+                        subNavIsOpened = !subNavIsOpened;
+                        preIndex       = index;
+                    } else {
+                        removeClass(subList, subNavList);
+                        subNavIsOpened = !subNavIsOpened;
+                    }
+                };
+
+                var checkToggleSubNav = function() {
+                    var checkSubNav     = $('.subnav-is-opened')[0];
+
+                    if(checkSubNav) {
+                        removeClass(checkSubNav, subNavList);
+                        if(preIndex != index)
+                            subNavIsOpened = false;
+                    }
+                };
+
+                if (subNav.addEventListener) {
+                    subNav.addEventListener('click', function (e) {
+                        if (isMobileView())
+                            e.preventDefault();
+
+                        e.stopPropagation();
+                        toggleSubNav();
+                    });
+
+                    subList.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                    });
+
+                    subNav.addEventListener('mouseover', function (e) {
                         e.preventDefault();
 
-                    e.stopPropagation();
-                    toggleSubNav();
-                });
+                        if (!isMobileView()) {
+                            addClass(subNav, subNavHover);
+                            subNavIsOpened = !subNavIsOpened;
+                        }
+                    });
 
-                subList.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                });
+                    subNav.addEventListener('mouseout', function (e) {
+                        e.preventDefault();
 
-                subNav.addEventListener('mouseover', function (e) {
-                    e.preventDefault();
+                        if (!isMobileView()) {
+                            removeClass(subNav, subNavHover);
+                            subNavIsOpened = !subNavIsOpened;
+                        }
+                    });
+                } else { // ie 7/8 fix
+                    subNav.attachEvent("onclick", function () {
+                        toggleSubNav();
+                    });
 
-                    if (!isMobileView()) {
-                        addClass(subNav, subNavHover);
-                        subNavIsOpened = !subNavIsOpened;
-                    }
-                });
-
-                subNav.addEventListener('mouseout', function (e) {
-                    e.preventDefault();
-
-                    if (!isMobileView()) {
-                        removeClass(subNav, subNavHover);
-                        subNavIsOpened = !subNavIsOpened;
-                    }
-                });
-            } else { // ie 7/8 fix
-                subNav.attachEvent("onclick", function () {
-                    toggleSubNav();
-                });
-
-                subNav.attachEvent("onmouseover", function () {
-                    if (!isMobileView()) {
-                        addClass(subNav, subNavHover);
-                        subNavIsOpened = true;
-                    }
-                });
-                subNav.attachEvent("onmouseout", function () {
-                    if (!isMobileView()) {
-                        removeClass(subNav, subNavHover);
-                        subNavIsOpened = false;
-                    }
-                });
-            }
+                    subNav.attachEvent("onmouseover", function () {
+                        if (!isMobileView()) {
+                            addClass(subNav, subNavHover);
+                            subNavIsOpened = true;
+                        }
+                    });
+                    subNav.attachEvent("onmouseout", function () {
+                        if (!isMobileView()) {
+                            removeClass(subNav, subNavHover);
+                            subNavIsOpened = false;
+                        }
+                    });
+                }
+            });
         }
     };
 
@@ -144,7 +163,7 @@
 
     var isMobileView = function() {
         var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 960;
+        var mobileDesktopBorder = 768;
 
         return (browserWidth < (mobileDesktopBorder+1));
     };

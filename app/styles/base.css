@@ -44,10 +44,10 @@ html, body {
   display: block;
   width: 100%;
   background-color: #2b92b9; }
-  @media only screen and (min-width: 320px) {
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
     .layout-header {
       height: 105px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     .layout-header {
       height: 78px; } }
 
@@ -108,6 +108,10 @@ html, body {
     @media only screen and (max-width: 640px) {
       .layout-footer > .layout-container {
         background: none; } }
+  @media only screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+    .layout-footer > .layout-container {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333;
@@ -265,7 +269,7 @@ a {
   display: block; }
 
 .search-content .search-scope {
-  max-width: 99px;
+  max-width: 30%;
   font-size: 11px;
   padding: 4px 2px 4px 0;
   float: left;
@@ -321,6 +325,10 @@ a {
       position: absolute;
       left: 3%;
       /* width is 94% but for one side is only half of 6% -> 3% */ } }
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .title-logo {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
 
 /* ***********************************************
  * MAIN CONTENT SIDE NAV
@@ -499,7 +507,7 @@ button:active {
   background-color: #fff;
   border-bottom: 2px solid #BDBDBD; }
   .navdrawer-container.navbar-is-opened .search-content .search-scope {
-    max-width: 99px;
+    max-width: 30%;
     font-size: 11px;
     padding: 4px 2px 4px 0;
     float: left;

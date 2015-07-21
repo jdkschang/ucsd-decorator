@@ -69,7 +69,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
+                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss',
+                    '<%= config.app %>/styles/widgets.css': '<%= config.app %>/styles/widgets.scss'
                 },
                 options: {
                     sourcemap: 'true'
@@ -230,7 +231,12 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: ['<%= config.app %>/homepage-wide.html', '<%= config.app %>/homepage.html']
+            html:
+            [
+                '<%= config.app %>/homepage-wide.html',
+                '<%= config.app %>/homepage.html',
+                '<%= config.app %>/widgets.html'
+            ]
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration

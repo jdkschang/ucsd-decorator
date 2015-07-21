@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="styles/base.css"/>
     <!-- endbuild -->
 
-    <!-- build:css(.tmp) styles/homepage-min.css -->
-    <link rel="stylesheet" href="styles/homepage.css">
-    <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
@@ -30,6 +27,9 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
+    <!-- build:css styles/widgets.css -->
+    <link rel="stylesheet" href="styles/widgets.css"/>
+    <!-- endbuild -->
     <!-- End site-specific CSS files -->
 
     <!-- build:js({app,.tmp}) scripts/modernizr.js -->
@@ -49,13 +49,14 @@
 </head>
 <body>
 <header class="layout-header">
-    <a class="sr-only" href="#main-content">Skip to main content</a>
+    <a class="sr-only" href="#">Skip to main content</a>
     <div id="uc-emergency"></div>
     <section class="layout-login">
         <div class="layout-container">
-</div>
+        </div>
     </section>
 
+    <!-- title section -->
     <section class="layout-title">
         <div class="layout-container">
             <button class="btn-nav">
@@ -65,7 +66,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a href="index.html" class="title-header">Decorator 4.5</a>
+            <a href="index.html" class="title-header">Widgets</a>
             <a href="https://www.ucsd.edu" class="title-logo">UC San Diego</a>
         </div>
     </section>
@@ -75,7 +76,7 @@
     <div class="layout-container">
 
         <div class="search">
-            <button class="search-toggle btn-default">
+            <button class="search-toggle">
                 <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
             </button>
 
@@ -94,11 +95,11 @@
             </div>
         </div>
 
-       <ul class="navbar-list">
+        <ul class="navbar-list">
             <li>
                 <a href="index.html">Home</a>
             </li>
-            <li class="navbar-subnav active">
+            <li class="navbar-subnav">
                 <a href="templates.html">Templates</a>
                 <ul class="navbar-sublist">
                     <li><a href="blank-slate.html">Blank Slate</a></li>
@@ -110,7 +111,7 @@
                     <li><a href="homepage-wide.html">Homepage Wide</a></li>
                 </ul>
             </li>
-            <li class="navbar-subnav">
+            <li class="navbar-subnav active">
                 <a href="widgets.html">Widgets</a>
                 <ul class="navbar-sublist">
                     <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
@@ -123,161 +124,22 @@
     </div>
 </nav>
 
-<main class="layout-main" id="main-content" role="main">
-    <div class="layout-container row">
+<main class="layout-main" role="main">
+    <div class="layout-container">
         <ol class="breadcrumb breadcrumbs-list">
-            <li class="active"><a href="index.html">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li class="active">Widgets</li>
         </ol>
 
-        <section class="col-xs-9 main-section pull-right">
-            <article class="flexslider">
-                <ul class="slides">
-                    <li>
-                        <a href="#">
-                            <img alt="students" src="img/price-center_large.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img alt="surf" src="img/rt_2_large.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img alt="rocks" src="img/rt_3_large.jpg">
-                        </a>
-                    </li>
-                </ul>
-                <div class="flex-controls"></div>
-            </article>
+        <h1>Widget Templates</h1>
 
-            <article class="col-xs-6 main-section-module pull-left">
-                <div class="content-module news">
-                    <h2>News and Events</h2>
-                    <div class="news-item">
-                        <h3>Lorem Ipsum</h3>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                    <div class="news-item">
-                        <h3>Lorem Ipsum</h3>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-xs-6 main-section-module pull-right">
-                <div class="content-module spotlight">
-                    <h2>Student Spotlight</h2>
-
-                    <div class="flex-container">
-                        <div class="flexslider alt noSlideShow">
-                            <ul class="slides">
-                                <li class="flex-active-slide">
-                                    <img alt="Student Name 1" src="img/s1.jpg" draggable="false">
-                                    <div class="flex-caption">
-                                        <div class="header">
-                                            Student Name 1
-                                        </div>
-                                        <p>Teaser Here</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <img alt="Student Name 2" src="img/s2.jpg" draggable="false">
-                                    <div class="flex-caption">
-                                        <div class="header">
-                                            Student Name 2
-                                        </div>
-                                        <p>Teaser Here</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content-module events">
-                    <h2>Events</h2>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </article>
-        </section>
-
-        <section class="col-xs-3 main-section">
-            <article class="site-logo">
-            </article>
-
-            <article class="main-content-nav">
-                <h2>Navigation</h2>
-
-                <ul class="navbar-list">
-                    <li><a href="#">Nav Link 1</a></li>
-                    <li><a href="#">Nav Link 2</a></li>
-                    <li><a href="#">Nav Link 3</a></li>
-                    <!--<li class="collapsed"><a href="#">Nav Link 4</a>-->
-                    <!--<ul>-->
-                    <!--<li><a href="#">Sub 1</a></li>-->
-                    <!--<li><a href="#">Sub 2</a></li>-->
-                    <!--<li><a href="#">Sub 3</a></li>-->
-                    <!--<li><a href="#">Sub 4</a></li>-->
-                    <!--<li><a href="#">Sub 5</a></li>-->
-                    <!--<li><a href="#">Sub 6</a></li>-->
-                    <!--<li><a href="#">Sub 7</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
-                    <li class="active">
-                        All Styles
-                        <ul>
-                            <li><a href="#">Sub 1</a></li>
-                            <li><a href="#">Sub 2</a></li>
-                            <li><a href="#">Sub 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Nav Link</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="social">
-                <ul class="social-list">
-                    <li class="facebook"><a>Facebook</a></li>
-                    <li class="twitter"><a>Twitter</a></li>
-                    <li class="linkedin"><a>LinkedIn</a></li>
-                </ul>
-            </article>
-
-            <article class="giving">
-                <a id="give-button" class="give-button" href="#">
-                    <span>Give now</span>
-                </a>
-            </article>
-
-            <article>
-                <h2>Resources For</h2>
-
-                <ul>
-                    <li><a href="#">Prospective Students</a><br/></li>
-                    <li><a href="#">Current Students</a><br/></li>
-                    <li><a href="#">Faculty & Staff</a><br/></li>
-                    <li><a href="#">Alumni</a><br/></li>
-                </ul>
-            </article>
+        <section class="main-section">
+            <ul>
+                <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
+                <li><a href="widgets/datatable.html">DataTable</a></li>
+                <li><a href="widgets/wizard.html">Wizard</a></li>
+                <li><a href="widgets/maxchar.html">MaxChar</a></li>
+            </ul>
         </section>
     </div>
 </main>
@@ -301,11 +163,11 @@
     </section>
 </footer>
 
-<!-- build:js({app,.tmp}) scripts/jquery.min.js -->
+<!-- build:js scripts/jquery.min.js -->
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <!-- endbuild -->
 <script src="https://www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
+<!-- build:js scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
 <script src="scripts/ucsd/drawer.js"></script>
 <script src="scripts/ucsd/copyright.js"></script>
@@ -316,17 +178,14 @@
 <script src="scripts/ucsd/profile-template.js"></script>
 <!-- endbuild -->
 
-<script type="text/javascript">
-    (function ($) {
-        $(document).ready(function () {
-            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
-            initCopyright();
-            initLogout();
-        });
-    })(jQuery);
+<script>
+    $(document).ready(function () {
+        initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
+        initCopyright();
+    });
 </script>
 
-<script type="text/javascript">
+<script>
     // <![CDATA[
     var _gaq = _gaq || [];
     _gaq.push(["_setAccount", "UA-XXXXXXX-X"]);
@@ -360,9 +219,19 @@
 <script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
+<!-- Begin site-specific JS files -->
+<!-- build:js scripts/widgets.js -->
+<script src="widgets/maxchar/scripts/maxchar.min.js"></script>
+<script src="widgets/wizard/scripts/wizard.min.js"></script>
+<script src="widgets/datatable/scripts/dataTables.min.js"></script>
+<script src="widgets/fullcalendar/scripts/moment.min.js"></script>
+<script src="widgets/fullcalendar/scripts/fullcalendar.min.js"></script>
+<!-- endbuild -->
+<!-- End site-specific JS files -->
+
 <!-- Google Search -->
 <script src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">// <![CDATA[
+<script>// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
     google.search.CustomSearchControl.attachAutoCompletion(

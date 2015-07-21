@@ -86,7 +86,7 @@
   }
 
   .search-content .search-scope {
-    max-width: 99px;
+    max-width: 30%;
     font-size: 11px;
     padding: 4px 2px 4px 0;
     float: left;
@@ -154,6 +154,11 @@
     float: none;
     position: absolute;
     left: 3%; /* width is 94% but for one side is only half of 6% -> 3% */
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:2) {
+    background-image: url(img/sprite_base2x.png);
+    background-size: 500px 120px;
   }
 }
 

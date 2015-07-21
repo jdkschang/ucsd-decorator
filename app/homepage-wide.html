@@ -30,7 +30,6 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
-    <link rel="stylesheet" href="styles/partials/ucsd/cms/themes/white.css">
     <!-- End site-specific CSS files -->
 
     <!-- build:js({app,.tmp}) scripts/modernizr.js -->
@@ -95,10 +94,10 @@
         </div>
 
         <ul class="navbar-list">
-            <li class="active">
+            <li>
                 <a href="index.html">Home</a>
             </li>
-            <li class="navbar-subnav">
+            <li class="navbar-subnav active">
                 <a href="templates.html">Templates</a>
                 <ul class="navbar-sublist">
                     <li><a href="blank-slate.html">Blank Slate</a></li>
@@ -110,7 +109,15 @@
                     <li><a href="homepage-wide.html">Homepage Wide</a></li>
                 </ul>
             </li>
-            <li><a href="docs/index.html">Kitchen Sink</a></li>
+            <li class="navbar-subnav">
+                <a href="widgets.html">Widgets</a>
+                <ul class="navbar-sublist">
+                    <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
+                    <li><a href="widgets/datatable.html">DataTable</a></li>
+                    <li><a href="widgets/wizard.html">Wizard</a></li>
+                    <li><a href="widgets/maxchar.html">MaxChar</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
@@ -269,8 +276,8 @@
 <script src="scripts/ucsd/copyright.js"></script>
 <script src="scripts/ucsd/footer.js"></script>
 <script src="scripts/ucsd/logout.js"></script>
-<script src="scripts/ucsd/flexslider-init.js"></script>
 <script src="scripts/ucsd/social.js"></script>
+<script src="scripts/ucsd/flexslider-init.js"></script>
 <script src="scripts/ucsd/profile-template.js"></script>
 <!-- endbuild -->
 
