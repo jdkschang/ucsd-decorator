@@ -6,11 +6,6 @@ $(document).ready( function() {
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
-        footer: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay'
-        },
         defaultView: 'month',
 
         eventRender: function( event, element) {
