@@ -8,4 +8,8 @@ node_modules/
 ucsd-decorator.zip
 
 *.map
+<<<<<<< HEAD
 *.txt
+=======
+*.txt
+>>>>>>> f8bcf46386c0a99ce44d680ec7c5b7b3f38debef
