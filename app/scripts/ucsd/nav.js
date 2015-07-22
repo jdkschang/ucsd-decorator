@@ -180,7 +180,7 @@
 
     var testTitleWidth = function() {
         var title = $(".title-header")[0],
-            titleWrapper = $(".layout-title .layout-container")[0].offsetWidth,
+            //titleWrapper = $(".layout-title .layout-container")[0].offsetWidth,
             logoWidth = "229";
         var height = (title.offsetHeight + 1) + "px";
         var width = (title.offsetWidth + 1) + "px";
@@ -189,9 +189,14 @@
         //console.log("width: " + width);
 
         $( window ).resize( function() {
-            if()
+            var titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
+            if( titleWrapper === 1200 ) {
+                
+            } else if( titleWrapper === 960 ) {
+                console.log("titleWrapper: 960")
+            }
         });
-        //
+
         //switch( n ) {
         //    case 0:
         //}
