@@ -62,7 +62,9 @@ $(document).ready( function() {
             //},
             {
                 googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
-                googleCalendarId: "cwo.calendar@gmail.com"
+                googleCalendarId: "cwo.calendar@gmail.com",
+                color: "orange",
+                textColor: "#fff"
             }
         ]
     });
@@ -99,6 +101,7 @@ $(document).ready( function() {
     }
 
     $('body').on('click', function (e) {
+        // x button on popup
         $('.popover-title').append(
             '<span class="close" data-dismiss="popover">x</span>'
         );
