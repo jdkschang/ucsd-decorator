@@ -179,12 +179,22 @@
     };
 
     var testTitleWidth = function() {
-        var test = $(".title-header")[0];
-        var height = (test.offsetHeight + 1) + "px";
-        var width = (test.offsetWidth + 1) + "px";
+        var title = $(".title-header")[0],
+            titleWrapper = $(".layout-title .layout-container")[0].offsetWidth,
+            logoWidth = "229";
+        var height = (title.offsetHeight + 1) + "px";
+        var width = (title.offsetWidth + 1) + "px";
 
-        console.log("height: " + height);
-        console.log("width: " + width);
+        //console.log("height: " + height);
+        //console.log("width: " + width);
+
+        $( window ).resize( function() {
+            if()
+        });
+        //
+        //switch( n ) {
+        //    case 0:
+        //}
     };
 
     mainNav();
