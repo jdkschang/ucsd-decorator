@@ -56,20 +56,16 @@ $(document).ready( function() {
             {
                 url: "json.json"
             },
+            //{
+            //    googleCalendarApiKey: "AIzaSyBPdlbHiiluijLwidJP8mZO3gdpyE--zP4",
+            //    googleCalendarId: "kchangj@gmail.com"
+            //},
             {
-                googleCalendarApiKey: "AIzaSyBPdlbHiiluijLwidJP8mZO3gdpyE--zP4",
-                googleCalendarId: "kchangj@gmail.com"
+                googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
+                googleCalendarId: "cwo.calendar@gmail.com"
             }
         ]
     });
-
-    var isMobileView = function() {
-        var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 768;
-
-        return (browserWidth < (mobileDesktopBorder+1));
-    };
-
 
     function formatTime( rawDate ) {
         var dateTimeOutput = [];
