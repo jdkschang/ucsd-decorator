@@ -297,6 +297,10 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap; }
+  .title-header.title-header-short {
+    display: none; }
+  .title-header:hover, .title-header:focus {
+    color: #fff; }
   @media only screen and (max-width: 768px) {
     .title-header {
       margin-top: 2em; } }
@@ -304,8 +308,6 @@ a {
     .title-header {
       font-size: 20px;
       margin-top: 2.5em; } }
-  .title-header:hover, .title-header:focus {
-    color: #fff; }
 
 .title-logo {
   float: right;

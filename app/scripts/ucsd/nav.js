@@ -179,32 +179,44 @@
     };
 
     var testTitleWidth = function() {
-        var title           = $(".title-header")[0],
-            titleWidth      = title.offsetWidth,
-            titleText       = title.text,
+        var title           = $(".title-header"),
+            titleShort      = $(".title-header-short"),
+            titleWidth      = title[0].offsetWidth,
             logoWidth       = 229,
             titleOverflow   = titleWidth + logoWidth;
 
+        // ToDo: function callback only registers twice
         $( window ).resize( function() {
             var titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
-            if( titleWrapper === 1200 ) {
-                if( titleOverflow > 1200 )
-                    console.log("title too long!: " + titleOverflow )
+            if( titleWrapper > 960 ) {
+                if( titleOverflow > titleWrapper ) {
+                    title.toggle(false);
+                    titleShort.toggle(true);
+                } else {
+                    title.toggle(true);
+                    titleShort.toggle(false);
+                }
             } else if( titleWrapper === 960 ) {
+                console.log(titleWrapper);
                 if( titleOverflow > 960 ) {
-                    console.log(titleText);
-                    title = title.replaceWith("<a href=#>acronym</a>");
+                    title.toggle(false);
+                    titleShort.toggle(true);
+                } else {
+                    title.toggle(true);
+                    titleShort.toggle(false);
                 }
             }
         });
-
-        //switch( n ) {
-        //    case 0:
-        //}
     };
+
+    var test = function () {};
+    $(document).onload( function() {
+       testTitleWidth();
+    });
 
     mainNav();
     mainSubNav();
     mainSearch();
     testTitleWidth();
 })(document);
+
