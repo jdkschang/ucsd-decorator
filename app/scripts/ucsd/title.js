@@ -1,5 +1,5 @@
 (function(document) {
-    var title = $("#title"),
+    var title = $(".title-header"),
         titleShort = $(".title-header-short"),
         titleWidth = title[0].offsetWidth,
         logoWidth = 229,
@@ -29,16 +29,14 @@
         // titleWrapper initialized here to dynamically
         titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
 
-        //console.log(titleOverflow);
-        //console.log(titleWrapper);
-
+        // NO hamburger menu & logo on right
         if ( titleWrapper >= 960 ) {
             titleOverflow =  titleWidth + logoWidth + 1;
-
             checkOverflow( titleOverflow, titleWrapper);
-        } else if( titleWrapper > 768 ) {
+        }
+        // hamburger menu & logo on right
+        else if( titleWrapper > 768 ) {
             titleOverflow = titleWidth + logoWidth + menuWidth + 1;
-
             checkOverflow( titleOverflow, titleWrapper);
         }
     };
