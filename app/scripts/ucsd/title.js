@@ -35,12 +35,6 @@ var checkTitleOverflow = function() {
             console.log("titleWrapper: " + titleWrapper + "   titleOverflow: " + titleOverflow);
             showLongTitle();
         }
-        //} else if( titleWrapper === 960 ) {
-        //    if( titleOverflow > 960 ) {
-        //        removeLongTitle();
-        //    } else {
-        //        showLongTitle();
-        //    }
     }
 };
 
