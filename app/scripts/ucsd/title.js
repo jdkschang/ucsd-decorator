@@ -36,7 +36,7 @@
         }
     };
 
-// ToDo: function callback only registers twice
+    // ToDo: function callback only registers twice
     $(window).resize(function () {
         checkTitleOverflow();
     });
@@ -44,4 +44,4 @@
     $(window).ready(function () {
         checkTitleOverflow();
     });
-});
+})(document);
