@@ -42,14 +42,18 @@ $(document).ready( function() {
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
             }
 
-            element.popover({
-                html: true,
-                placement: 'top',
-                trigger: 'click',
-                title: event.title,
-                content: contentEvent
-            })
-            .attr("data-toggle", "popover");
+            // check for google calendar link
+            // no popovers for google calendar
+            if( !element.context.href ) {
+                element.popover({
+                    html: true,
+                    placement: 'top',
+                    trigger: 'click',
+                    title: event.title,
+                    content: contentEvent
+                })
+                .attr("data-toggle", "popover");
+            }
         },
         eventSources: [
             //event source
