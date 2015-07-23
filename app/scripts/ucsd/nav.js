@@ -188,6 +188,8 @@
         // ToDo: function callback only registers twice
         $( window ).resize( function() {
             var titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
+
+            //
             if( titleWrapper > 960 ) {
                 if( titleOverflow > titleWrapper ) {
                     title.toggle(false);
@@ -209,9 +211,47 @@
         });
     };
 
-    var test = function () {};
-    $(document).onload( function() {
-       testTitleWidth();
+    var removeLongTitle = function() {
+        var title           = $(".title-header"),
+            titleShort      = $(".title-header-short");
+
+        title.toggle(false);
+        titleShort.toggle(true);
+    };
+
+    var showLongTitle = function() {
+        var title = $(".title-header"),
+            titleShort = $(".title-header-short");
+
+        title.toggle(true);
+        titleShort.toggle(false);
+    };
+
+    var checkTitleOverflow = function() {
+        var title           = $(".title-header"),
+            titleWidth      = title[0].offsetWidth,
+            logoWidth       = 229,
+            titleOverflow   = titleWidth + logoWidth;
+        var titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
+
+        if( titleWrapper > 960 ) {
+            if( titleOverflow > titleWrapper ) {
+                removeLongTitle();
+            } else {
+                showLongTitle();
+            }
+        } else if( titleWrapper === 960 ) {
+            if( titleOverflow > 960 ) {
+                removeLongTitle();
+            } else {
+                showLongTitle();
+            }
+        }
+    };
+
+    $(document).ready( function() {
+        console.log("ready");
+        checkTitleOverflow();
     });
 
     mainNav();
