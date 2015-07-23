@@ -179,21 +179,22 @@
     };
 
     var testTitleWidth = function() {
-        var title = $(".title-header")[0],
-            //titleWrapper = $(".layout-title .layout-container")[0].offsetWidth,
-            logoWidth = "229";
-        var height = (title.offsetHeight + 1) + "px";
-        var width = (title.offsetWidth + 1) + "px";
-
-        //console.log("height: " + height);
-        //console.log("width: " + width);
+        var title           = $(".title-header")[0],
+            titleWidth      = title.offsetWidth,
+            titleText       = title.text,
+            logoWidth       = 229,
+            titleOverflow   = titleWidth + logoWidth;
 
         $( window ).resize( function() {
             var titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
             if( titleWrapper === 1200 ) {
-                
+                if( titleOverflow > 1200 )
+                    console.log("title too long!: " + titleOverflow )
             } else if( titleWrapper === 960 ) {
-                console.log("titleWrapper: 960")
+                if( titleOverflow > 960 ) {
+                    console.log(titleText);
+                    title = title.replaceWith("<a href=#>acronym</a>");
+                }
             }
         });
 
