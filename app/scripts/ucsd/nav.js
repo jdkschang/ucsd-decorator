@@ -178,39 +178,6 @@
         element.className = element.className.replace(className, '');
     };
 
-    var testTitleWidth = function() {
-        var title           = $(".title-header"),
-            titleShort      = $(".title-header-short"),
-            titleWidth      = title[0].offsetWidth,
-            logoWidth       = 229,
-            titleOverflow   = titleWidth + logoWidth;
-
-        // ToDo: function callback only registers twice
-        $( window ).resize( function() {
-            var titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
-
-            //
-            if( titleWrapper > 960 ) {
-                if( titleOverflow > titleWrapper ) {
-                    title.toggle(false);
-                    titleShort.toggle(true);
-                } else {
-                    title.toggle(true);
-                    titleShort.toggle(false);
-                }
-            } else if( titleWrapper === 960 ) {
-                console.log(titleWrapper);
-                if( titleOverflow > 960 ) {
-                    title.toggle(false);
-                    titleShort.toggle(true);
-                } else {
-                    title.toggle(true);
-                    titleShort.toggle(false);
-                }
-            }
-        });
-    };
-
     var removeLongTitle = function() {
         var title           = $(".title-header"),
             titleShort      = $(".title-header-short");
@@ -249,14 +216,17 @@
         }
     };
 
+    // ToDo: function callback only registers twice
+    $( window ).resize( function() {
+        checkTitleOverflow();
+    });
+
     $(document).ready( function() {
-        console.log("ready");
         checkTitleOverflow();
     });
 
     mainNav();
     mainSubNav();
     mainSearch();
-    testTitleWidth();
 })(document);
 
