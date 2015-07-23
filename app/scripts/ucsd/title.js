@@ -39,6 +39,11 @@
             titleOverflow = titleWidth + logoWidth + menuWidth + 1;
             checkOverflow( titleOverflow, titleWrapper);
         }
+        // hamburger menu & logo on left
+        else if( titleWrapper <= 768 ) {
+            titleOverflow = titleWidth + menuWidth + 1;
+            checkOverflow( titleOverflow, titleWrapper);
+        }
     };
 
     // ToDo: function callback only registers twice
