@@ -5,6 +5,7 @@
  * minimizes number of calls sent to reference images
  */
 
+// sprite_base & sprite_base2x
 .title-logo,
 .layout-footer > .layout-container {
   background: url(img/sprite_base.png) no-repeat transparent;
@@ -13,4 +14,9 @@
     background-image: url(img/sprite_base2x.png);
     background-size: 500px 120px;
   }
+}
+
+// sprite_social
+.social-list li {
+  background: url(img/sprite_social.png) no-repeat transparent;
 }
