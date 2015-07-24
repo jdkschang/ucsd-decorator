@@ -108,17 +108,11 @@ html, body {
     @media only screen and (max-width: 640px) {
       .layout-footer > .layout-container {
         background: none; } }
-<<<<<<< HEAD
-    @media screen and (-webkit-min-device-pixel-ratio: 2) {
-      .layout-footer > .layout-container {
-        background-image: url(img/sprite_base2x.png);
-        background-size: 500px 120px; } }
-=======
+
   @media only screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
     .layout-footer > .layout-container {
       background-image: url(img/sprite_base2x.png);
       background-size: 500px 120px; } }
->>>>>>> 4.5-widgets
 
 h1, h2, h3, h4, h5, h6 {
   color: #333;
@@ -278,10 +272,6 @@ a {
 
 .search-content .search-scope {
   max-width: 30%;
-<<<<<<< HEAD
-  width: 90px;
-=======
->>>>>>> 4.5-widgets
   font-size: 11px;
   padding: 4px 2px 4px 0;
   float: left;
