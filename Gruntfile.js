@@ -156,7 +156,7 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
-                sassDir: '<%= config.app %>/styles/*',
+                sassDir: '<%= config.app %>/styles',
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/img/generated',
                 imagesDir: '<%= config.app %>/img',
