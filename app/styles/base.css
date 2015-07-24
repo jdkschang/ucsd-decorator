@@ -44,10 +44,10 @@ html, body {
   display: block;
   width: 100%;
   background-color: #2b92b9; }
-  @media only screen and (min-width: 320px) {
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
     .layout-header {
       height: 105px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     .layout-header {
       height: 78px; } }
 
@@ -108,10 +108,17 @@ html, body {
     @media only screen and (max-width: 640px) {
       .layout-footer > .layout-container {
         background: none; } }
+<<<<<<< HEAD
     @media screen and (-webkit-min-device-pixel-ratio: 2) {
       .layout-footer > .layout-container {
         background-image: url(img/sprite_base2x.png);
         background-size: 500px 120px; } }
+=======
+  @media only screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+    .layout-footer > .layout-container {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
+>>>>>>> 4.5-widgets
 
 h1, h2, h3, h4, h5, h6 {
   color: #333;
@@ -154,8 +161,9 @@ a {
     border-bottom: solid 3px rgba(255, 255, 255, 0.4);
     border-right: solid 1px #C8CFD3;
     border-left: solid 1px rgba(255, 255, 255, 0.6);
-    padding: 9px 15px 8px;
-    text-decoration: none; }
+    padding: 9px 15px;
+    text-decoration: none;
+    line-height: 1.3; }
   .layout-navbar .navbar-list > li.active > a {
     border-bottom: #D56A03 solid 3px; }
 
@@ -239,7 +247,7 @@ a {
 
 .search-toggle {
   max-height: 38px;
-  background-color: #F2F5F7;
+  background: 0 0;
   border-radius: 0;
   -webkit-border-radius: 0;
   border: 1px solid transparent;
@@ -270,7 +278,10 @@ a {
 
 .search-content .search-scope {
   max-width: 30%;
+<<<<<<< HEAD
   width: 90px;
+=======
+>>>>>>> 4.5-widgets
   font-size: 11px;
   padding: 4px 2px 4px 0;
   float: left;
@@ -297,6 +308,10 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap; }
+  .title-header.title-header-short {
+    display: none; }
+  .title-header:hover, .title-header:focus {
+    color: #fff; }
   @media only screen and (max-width: 768px) {
     .title-header {
       margin-top: 2em; } }
@@ -304,8 +319,6 @@ a {
     .title-header {
       font-size: 20px;
       margin-top: 2.5em; } }
-  .title-header:hover, .title-header:focus {
-    color: #fff; }
 
 .title-logo {
   float: right;
@@ -508,7 +521,7 @@ button:active {
   background-color: #fff;
   border-bottom: 2px solid #BDBDBD; }
   .navdrawer-container.navbar-is-opened .search-content .search-scope {
-    max-width: 99px;
+    max-width: 30%;
     font-size: 11px;
     padding: 4px 2px 4px 0;
     float: left;
