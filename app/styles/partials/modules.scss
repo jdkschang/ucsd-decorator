@@ -47,7 +47,7 @@
 .search-toggle {
   max-height: 38px;
 
-  background-color: #F2F5F7;
+  background: 0 0;
   border-radius: 0;
   -webkit-border-radius: 0;
   border: 1px solid transparent;
@@ -86,7 +86,7 @@
   }
 
   .search-content .search-scope {
-    max-width: 99px;
+    max-width: 30%;
     font-size: 11px;
     padding: 4px 2px 4px 0;
     float: left;
@@ -117,6 +117,14 @@
   text-transform: uppercase;
   white-space: nowrap;
 
+  &.title-header-short {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
 
   @media only screen and (max-width: $desktop-small) {
     margin-top: 2em;
@@ -125,12 +133,6 @@
     font-size: 20px;
     margin-top: 2.5em;
   }
-
-  &:hover,
-  &:focus {
-    color: #fff;
-  }
-
 }
 
 .title-logo {
@@ -154,6 +156,11 @@
     float: none;
     position: absolute;
     left: 3%; /* width is 94% but for one side is only half of 6% -> 3% */
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:2) {
+    background-image: url(img/sprite_base2x.png);
+    background-size: 500px 120px;
   }
 }
 

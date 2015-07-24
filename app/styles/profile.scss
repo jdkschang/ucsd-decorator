@@ -11,7 +11,7 @@
 }
 
 .profile-listing {
-  ul {
+  ul {  
     margin: 0;
     padding: 0;
     list-style: none;
@@ -41,14 +41,11 @@
     display: inline-block;
     padding: 1.5%;
 
+    width: 80%;
+
     h3 {
       font-size: 160%;
       color: #4b4b4b;
-    }
-
-    p {
-      width: 80%;
-      padding: 1.5%;
     }
   }
 

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles/base.css"/>
     <!-- endbuild -->
 
+
     <!-- build:css(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="styles/ie-support.css"/>
@@ -26,19 +27,33 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
+    <!-- build:css styles/widgets.css -->
+    <link rel="stylesheet" href="styles/widgets.css"/>
+    <!-- endbuild -->
     <!-- End site-specific CSS files -->
 
     <!-- build:js({app,.tmp}) scripts/modernizr.js -->
     <script src="vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+    <!-- build:js({app,.tmp}) scripts/respond.min.js -->
+    <script src="vendor/respond/dest/respond.min.js"></script>
+    <!-- endbuild -->
+    <link href="https://cdn.ucsd.edu/cms/decorator-4/scripts/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <!-- build:js({app,.tmp}) scripts/respond-proxy.js -->
+    <script src="scripts/ucsd/respond-proxy.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
 </head>
 <body>
 <header class="layout-header">
     <a class="sr-only" href="#">Skip to main content</a>
     <div id="uc-emergency"></div>
-
     <section class="layout-login">
-        <span class="login-content"></span>
+        <div class="layout-container">
+        </div>
     </section>
 
     <!-- title section -->
@@ -51,7 +66,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a href="index.html" class="title-header">Decorator 4.5</a>
+            <a href="index.html" class="title-header">Widgets</a>
             <a href="https://www.ucsd.edu" class="title-logo">UC San Diego</a>
         </div>
     </section>
@@ -68,7 +83,7 @@
             <div class="search-content">
                 <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
                     <select class="search-scope" name="search-scope">
-                        <option selected="selected" value="cwo">This Site</option>
+                        <option selected="selected" value="cascade-cwp">This Site</option>
                         <option value="default_collection">All UCSD Sites</option>
                         <option value="faculty-staff">Faculty/Staff</option>
                     </select>
@@ -81,7 +96,7 @@
         </div>
 
         <ul class="navbar-list">
-            <li class="active">
+            <li>
                 <a href="index.html">Home</a>
             </li>
             <li class="navbar-subnav">
@@ -92,14 +107,20 @@
                     <li><a href="two-column-b.html">Two Columns B</a></li>
                     <li><a href="three-column.html">Three Columns</a></li>
                     <li><a href="form-a.html">Basic Form</a></li>
-<li><a href="homepage.html">Homepage</a></li>
-<li><a href="homepage-wide.html">Homepage Wide</a></li>
+                    <li><a href="homepage.html">Homepage</a></li>
+                    <li><a href="homepage-wide.html">Homepage Wide</a></li>
                 </ul>
             </li>
-            <li><a href="docs/index.html">Kitchen Sink</a></li>
+            <li class="navbar-subnav active">
+                <a href="widgets.html">Widgets</a>
+                <ul class="navbar-sublist">
+                    <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
+                    <li><a href="widgets/datatable.html">DataTable</a></li>
+                    <li><a href="widgets/wizard.html">Wizard</a></li>
+                    <li><a href="widgets/maxchar.html">MaxChar</a></li>
+                </ul>
+            </li>
         </ul>
-
-
     </div>
 </nav>
 
@@ -107,18 +128,18 @@
     <div class="layout-container">
         <ol class="breadcrumb breadcrumbs-list">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="templates.html">Templates</a></li>
-            <li class="active">Index</li>
+            <li class="active">Widgets</li>
         </ol>
 
-        <h1>Decorator 4.5</h1>
+        <h1>Widget Templates</h1>
 
         <section class="main-section">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <ul>
+                <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
+                <li><a href="widgets/datatable.html">DataTable</a></li>
+                <li><a href="widgets/wizard.html">Wizard</a></li>
+                <li><a href="widgets/maxchar.html">MaxChar</a></li>
+            </ul>
         </section>
     </div>
 </main>
@@ -142,24 +163,29 @@
     </section>
 </footer>
 
-<!-- build:js({app,.tmp}) scripts/jquery.min.js -->
+<!-- build:js scripts/jquery.min.js -->
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <!-- endbuild -->
 <script src="https://www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
-<!-- build:js({app,.tmp}) scripts/nav.js -->
+<!-- build:js scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
+<script src="scripts/ucsd/drawer.js"></script>
+<script src="scripts/ucsd/copyright.js"></script>
+<script src="scripts/ucsd/footer.js"></script>
+<script src="scripts/ucsd/logout.js"></script>
+<script src="scripts/ucsd/social.js"></script>
+<script src="scripts/ucsd/flexslider-init.js"></script>
+<script src="scripts/ucsd/profile-template.js"></script>
 <!-- endbuild -->
 
-<script type="text/javascript">
-    (function ($) {
-        $(document).ready(function () {
-            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
-            initCopyright();
-        });
-    })(jQuery);
+<script>
+    $(document).ready(function () {
+        initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
+        initCopyright();
+    });
 </script>
 
-<script type="text/javascript">
+<script>
     // <![CDATA[
     var _gaq = _gaq || [];
     _gaq.push(["_setAccount", "UA-XXXXXXX-X"]);
@@ -176,18 +202,36 @@
     // ]]>
 </script>
 
-<!-- build:js({app,.tmp}) scripts/vendor.js -->
-<script src="scripts/vendor.js"></script>
+<!-- build:js scripts/vendor.js -->
+<script src="vendor/flexslider/jquery.flexslider.js"></script>
+<script src="vendor/fastclick/lib/fastclick.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
-<script src="scripts/base-min.js"></script>
+<!-- Begin site-specific JS files -->
+<!-- build:js scripts/widgets.js -->
+<script src="widgets/maxchar/scripts/maxchar.min.js"></script>
+<script src="widgets/wizard/scripts/wizard.min.js"></script>
+<script src="widgets/datatable/scripts/dataTables.min.js"></script>
+<script src="widgets/fullcalendar/scripts/moment.min.js"></script>
+<script src="widgets/fullcalendar/scripts/fullcalendar.min.js"></script>
 <!-- endbuild -->
+<!-- End site-specific JS files -->
 
 <!-- Google Search -->
 <script src="https://www.google.com/jsapi"></script>
-
-<script type="text/javascript">// <![CDATA[
+<script>// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
     google.search.CustomSearchControl.attachAutoCompletion(
@@ -196,7 +240,6 @@ google.setOnLoadCallback(function () {
             'cse-site-search');
 });
 // ]]></script>
-
 <script src="https://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 
 </body>

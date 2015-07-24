@@ -46,11 +46,11 @@ module.exports = function (grunt) {
                 files: ['Gruntfile.js']
             },
             compass: {
-                files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+                files: ['<%= config.app %>/styles/**/*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer']
             },
             styles: {
-                files: ['<%= config.app %>/styles/{,*/}*.css'],
+                files: ['<%= config.app %>/styles/**/*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
             livereload: {
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '<%= config.app %>/{,*/}*.html',
-                    '<%= config.app %>/{,*/}*.css',
+                    '<%= config.app %>/**/*.css',
                     '.tmp/styles/{,*/}*.css',
                     '<%= config.app %>/img/{,*/}*'
                 ]
@@ -69,7 +69,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
+                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss',
+                    '<%= config.app %>/styles/widgets.css': '<%= config.app %>/styles/widgets.scss'
                 },
                 options: {
                     sourcemap: 'true'
@@ -155,7 +156,7 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
-                sassDir: '<%= config.app %>/styles',
+                sassDir: '<%= config.app %>/styles/*',
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/img/generated',
                 imagesDir: '<%= config.app %>/img',
@@ -230,7 +231,12 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: ['<%= config.app %>/homepage-wide.html', '<%= config.app %>/homepage.html']
+            html:
+            [
+                '<%= config.app %>/homepage-wide.html',
+                '<%= config.app %>/homepage.html',
+                '<%= config.app %>/widgets.html'
+            ]
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration

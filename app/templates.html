@@ -49,7 +49,8 @@
     <a class="sr-only" href="#main-content">Skip to main content</a>
     <div id="uc-emergency"></div>
     <section class="layout-login">
-        <span class="login-content"></span>
+        <div class="layout-container">
+</div>
     </section>
 
     <section class="layout-title">
@@ -71,14 +72,14 @@
     <div class="layout-container">
 
         <div class="search">
-            <button class="search-toggle">
+            <button class="search-toggle btn-default">
                 <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
             </button>
 
             <div class="search-content">
                 <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
                     <select class="search-scope" name="search-scope">
-                        <option selected="selected" value="cwo">This Site</option>
+                        <option selected="selected" value="cascade-cwp">This Site</option>
                         <option value="default_collection">All UCSD Sites</option>
                         <option value="faculty-staff">Faculty/Staff</option>
                     </select>
@@ -90,8 +91,10 @@
             </div>
         </div>
 
-        <ul class="navbar-list">
-            <li><a href="index.html">Home</a></li>
+       <ul class="navbar-list">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
             <li class="navbar-subnav active">
                 <a href="templates.html">Templates</a>
                 <ul class="navbar-sublist">
@@ -104,7 +107,15 @@
                     <li><a href="homepage-wide.html">Homepage Wide</a></li>
                 </ul>
             </li>
-            <li><a href="docs/index.html">Kitchen Sink</a></li>
+            <li class="navbar-subnav">
+                <a href="widgets.html">Widgets</a>
+                <ul class="navbar-sublist">
+                    <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
+                    <li><a href="widgets/datatable.html">DataTable</a></li>
+                    <li><a href="widgets/wizard.html">Wizard</a></li>
+                    <li><a href="widgets/maxchar.html">MaxChar</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
