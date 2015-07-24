@@ -23,3 +23,15 @@ a[target="_blank"],
 }
 
 // sprite_icon_widget
+.drawer-toggle a, .drawer h2 a,
+.sf_all_collapsed, .sf_one_collapsed,
+.sf_all_expanded, .sf_one_expanded,
+.flex-pauseplay a{
+    background: url(img/sprite_icon_widget.png) no-repeat transparent;
+}
+
+// astrisk
+.field .required, .field_top .required,
+.icon.astrisk {
+    background: url(img/astrisk.png) no-repeat transparent;
+}

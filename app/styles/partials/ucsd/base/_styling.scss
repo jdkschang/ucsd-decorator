@@ -210,10 +210,6 @@ a.button {
 	display: inline-block;
 }
 
-.icon.astrisk {
-	background: transparent url(img/astrisk.png) 0 0 no-repeat;
-}
-
 .icon.newwin {
 	background-position: 0 -50px;
 }
@@ -580,7 +576,7 @@ html>body form .icon.invalid {
 }
 
 .field .required {
-	background: url(img/astrisk.png) right 0 no-repeat;
+	background-position: right 0;
 }
 
 /* top-aligned */
@@ -594,7 +590,7 @@ html>body form .icon.invalid {
 }
 
 .field_top .required {
-	background: url(img/astrisk.png) left 0 no-repeat;
+	background-position: left 0;
 	padding-left: 1em;
 }
 
