@@ -360,80 +360,51 @@ a.button {
 }
 
 .social-list li {
-	background-repeat: no-repeat;
 	height: 33px;
 	margin: 0 0 10px 0;
 	padding: 0 40px;
   	cursor: pointer;
 }
-
 .social-list li.facebook {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 0;
 }
-
 .social-list li.twitter {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -39px;
 }
-
 .social-list li.youtube {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -80px;
 }
-
 .social-list li.linkedin {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -121px;
 }
-
 .social-list li.googleplus {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -160px;
 }
-
 .social-list li.instagram {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -200px;
 }
-
 .social-list li.tumblr {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -240px;
 }
-
 .social-list li.flickr {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -280px;
 }
-
 .social-list li.vine {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -320px;
 }
-
 .social-list li.pinterest {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -360px;
 }
-
 .social-list li.blogger {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -400px;
 }
-
 .social-list li.rss {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -440px;
 }
-
 .social-list li.vimeo {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -480px;
 }
-
 .social-list li.wordpress {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -520px;
 }
 
@@ -608,7 +579,7 @@ html>body form .icon.invalid {
 }
 
 .field_left .required {
-	background: url(img/astrisk.png) left 0 no-repeat;
+	background-position: left 0;
 	padding-left: 1em;
 }
 
