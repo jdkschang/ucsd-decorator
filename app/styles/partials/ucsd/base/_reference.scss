@@ -1,15 +1,23 @@
 /*
  * Consolidating image references
  * to a singular location
+ *
+ * minimizes number of calls sent to reference iamges
  */
 
-
+// sprite_base & sprite_base2x
 #tdr_title_ucsd_title, #tdr_title_menu_link,
 #tdr_footer_content {
-  background: transparent url(img/sprite_base.png) no-repeat;
+    background: url(img/sprite_base.png) no-repeat transparent;
 
-  @media screen and (-webkit-min-device-pixel-ratio:2) {
-    background-image: url(img/sprite_base2x.png);
-    background-size: 500px 120px;
-  }
+    @media screen and (-webkit-min-device-pixel-ratio:2) {
+        background-image: url(img/sprite_base2x.png);
+        background-size: 500px 120px;
+    }
+}
+
+// sprite_icon
+a[target="_blank"],
+.msg h4, .icon {
+    background: url(img/sprite_icon.png) no-repeat transparent;
 }
