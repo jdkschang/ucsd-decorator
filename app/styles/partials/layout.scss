@@ -124,20 +124,10 @@ html, body
     line-height: 1.5;
 
     > .layout-container {
-      background: transparent url(img/sprite_base.png) right -74px no-repeat;
+      background-position: right -74px;
 
       @media only screen and (max-width: $tablet) {
         background: none;
-
-        @media screen and (-webkit-min-device-pixel-ratio:2) {
-          background-image: url(img/sprite_base2x.png);
-          background-size: 500px 120px;
-        }
-      }
-
-      @media screen and (-webkit-min-device-pixel-ratio:2) {
-        background-image: url(img/sprite_base2x.png);
-        background-size: 500px 120px;
       }
     }
   }

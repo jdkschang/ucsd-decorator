@@ -1,0 +1,16 @@
+/*
+ * Consolidating image references
+ * to a singular location
+ *
+ * minimizes number of calls sent to reference images
+ */
+
+.title-logo,
+.layout-footer > .layout-container {
+  background: url(img/sprite_base.png) no-repeat transparent;
+
+  @media screen and (-webkit-min-device-pixel-ratio:2) {
+    background-image: url(img/sprite_base2x.png);
+    background-size: 500px 120px;
+  }
+}
