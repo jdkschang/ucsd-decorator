@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="styles/base.css"/>
     <!-- endbuild -->
 
-    <!-- build:css(.tmp) styles/homepage-min.css -->
-    <link rel="stylesheet" href="styles/homepage.css">
-    <!-- endbuild -->
-
     <!-- build:css(.tmp) styles/ie-support.css -->
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="styles/ie-support.css"/>
@@ -30,6 +26,7 @@
     <!-- endbuild -->
 
     <!-- Begin site-specific CSS files -->
+    <link rel="stylesheet" href="styles/profile.css"/>
     <!-- End site-specific CSS files -->
 
     <!-- build:js({app,.tmp}) scripts/modernizr.js -->
@@ -52,8 +49,7 @@
     <a class="sr-only" href="#main-content">Skip to main content</a>
     <div id="uc-emergency"></div>
     <section class="layout-login">
-        <div class="layout-container">
-</div>
+        <div class="layout-container"></div>
     </section>
 
     <section class="layout-title">
@@ -75,14 +71,14 @@
     <div class="layout-container">
 
         <div class="search">
-            <button class="search-toggle btn-default">
+            <button class="search-toggle">
                 <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
             </button>
 
             <div class="search-content">
                 <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
                     <select class="search-scope" name="search-scope">
-                        <option selected="selected" value="cascade-cwp">This Site</option>
+                        <option selected="selected" value="cwo">This Site</option>
                         <option value="default_collection">All UCSD Sites</option>
                         <option value="faculty-staff">Faculty/Staff</option>
                     </select>
@@ -94,10 +90,8 @@
             </div>
         </div>
 
-       <ul class="navbar-list">
-            <li>
-                <a href="index.html">Home</a>
-            </li>
+        <ul class="navbar-list">
+            <li><a href="index.html">Home</a></li>
             <li class="navbar-subnav active">
                 <a href="templates.html">Templates</a>
                 <ul class="navbar-sublist">
@@ -110,15 +104,7 @@
                     <li><a href="homepage-wide.html">Homepage Wide</a></li>
                 </ul>
             </li>
-            <li class="navbar-subnav">
-                <a href="widgets.html">Widgets</a>
-                <ul class="navbar-sublist">
-                    <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
-                    <li><a href="widgets/datatable.html">DataTable</a></li>
-                    <li><a href="widgets/wizard.html">Wizard</a></li>
-                    <li><a href="widgets/maxchar.html">MaxChar</a></li>
-                </ul>
-            </li>
+            <li><a href="docs/index.html">Kitchen Sink</a></li>
         </ul>
     </div>
 </nav>
@@ -126,159 +112,64 @@
 <main class="layout-main" id="main-content" role="main">
     <div class="layout-container row">
         <ol class="breadcrumb breadcrumbs-list">
-            <li class="active"><a href="index.html">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="templates.html">About</a></li>
+            <li class="active">Profile Listing</li>
         </ol>
 
         <section class="col-xs-9 main-section pull-right">
-            <article class="flexslider">
-                <ul class="slides">
-                    <li>
-                        <a href="#">
-                            <img alt="students" src="img/price-center_large.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img alt="surf" src="img/rt_2_large.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img alt="rocks" src="img/rt_3_large.jpg">
-                        </a>
-                    </li>
-                </ul>
-                <div class="flex-controls"></div>
+            <article class="main-section-content">
+                <h1>Drawer 4.5</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet
+                </p>
             </article>
 
-            <article class="col-xs-6 main-section-module pull-left">
-                <div class="content-module news">
-                    <h2>News and Events</h2>
-                    <div class="news-item">
-                        <h3>Lorem Ipsum</h3>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                    <div class="news-item">
-                        <h3>Lorem Ipsum</h3>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-xs-6 main-section-module pull-right">
-                <div class="content-module spotlight">
-                    <h2>Student Spotlight</h2>
-
-                    <div class="flex-container">
-                        <div class="flexslider alt noSlideShow">
-                            <ul class="slides">
-                                <li class="flex-active-slide">
-                                    <img alt="Student Name 1" src="img/s1.jpg" draggable="false">
-                                    <div class="flex-caption">
-                                        <div class="header">
-                                            Student Name 1
-                                        </div>
-                                        <p>Teaser Here</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <img alt="Student Name 2" src="img/s2.jpg" draggable="false">
-                                    <div class="flex-caption">
-                                        <div class="header">
-                                            Student Name 2
-                                        </div>
-                                        <p>Teaser Here</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content-module events">
-                    <h2>Events</h2>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </article>
+            <!--<div class="drawer-wrapper">-->
+            <div class="drawer">
+                <h2>
+                    <a href="#drawer-1">Drawer 1</a>
+                </h2>
+                <article class="profile-listing">
+                    <ul>
+                        <li class="profile-listing-card">
+                            <a>
+                                <img alt="" src="img/gerry.jpg">
+                            </a>
+                                <span class="profile-listing-data">
+                                    <h3>
+                                        <a href="#" title="Gerry Greggory">Gerry Greggory</a>
+                                    </h3>
+                                    <p>
+                                        Lorem Ipsum
+                                    </p>
+                                </span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <!--</div>-->
         </section>
 
         <section class="col-xs-3 main-section">
-            <article class="site-logo">
-            </article>
-
             <article class="main-content-nav">
-                <h2>Navigation</h2>
+                <h2>About</h2>
 
                 <ul class="navbar-list">
-                    <li><a href="#">Nav Link 1</a></li>
-                    <li><a href="#">Nav Link 2</a></li>
-                    <li><a href="#">Nav Link 3</a></li>
-                    <!--<li class="collapsed"><a href="#">Nav Link 4</a>-->
-                    <!--<ul>-->
-                    <!--<li><a href="#">Sub 1</a></li>-->
-                    <!--<li><a href="#">Sub 2</a></li>-->
-                    <!--<li><a href="#">Sub 3</a></li>-->
-                    <!--<li><a href="#">Sub 4</a></li>-->
-                    <!--<li><a href="#">Sub 5</a></li>-->
-                    <!--<li><a href="#">Sub 6</a></li>-->
-                    <!--<li><a href="#">Sub 7</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
                     <li class="active">
-                        All Styles
+                        <a href="#">Meet The Team</a>
                         <ul>
-                            <li><a href="#">Sub 1</a></li>
-                            <li><a href="#">Sub 2</a></li>
-                            <li><a href="#">Sub 3</a></li>
+                            <li><a href="#">Gerry Greggory</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">Nav Link</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="social">
-                <ul class="social-list">
-                    <li class="facebook"><a>Facebook</a></li>
-                    <li class="twitter"><a>Twitter</a></li>
-                    <li class="linkedin"><a>LinkedIn</a></li>
-                </ul>
-            </article>
-
-            <article class="giving">
-                <a id="give-button" class="give-button" href="#">
-                    <span>Give now</span>
-                </a>
-            </article>
-
-            <article>
-                <h2>Resources For</h2>
-
-                <ul>
-                    <li><a href="#">Prospective Students</a><br/></li>
-                    <li><a href="#">Current Students</a><br/></li>
-                    <li><a href="#">Faculty & Staff</a><br/></li>
-                    <li><a href="#">Alumni</a><br/></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Presentations</a></li>
+                    <li><a href="#">Events</a></li>
                 </ul>
             </article>
         </section>
+
     </div>
 </main>
 
@@ -307,13 +198,11 @@
 <script src="https://www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 <!-- build:js({app,.tmp}) scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
-<script src="scripts/ucsd/title.js"></script>
 <script src="scripts/ucsd/drawer.js"></script>
 <script src="scripts/ucsd/copyright.js"></script>
 <script src="scripts/ucsd/footer.js"></script>
 <script src="scripts/ucsd/logout.js"></script>
 <script src="scripts/ucsd/social.js"></script>
-<script src="scripts/ucsd/flexslider-init.js"></script>
 <script src="scripts/ucsd/profile-template.js"></script>
 <!-- endbuild -->
 
@@ -322,7 +211,6 @@
         $(document).ready(function () {
             initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
-            initLogout();
         });
     })(jQuery);
 </script>
@@ -360,6 +248,8 @@
 <script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
 <script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
+
+
 
 <!-- Google Search -->
 <script src="https://www.google.com/jsapi"></script>
