@@ -5,6 +5,21 @@
 /* FONTS */
 /* MIXINS */
 /********************* BASE */
+/*
+ * Consolidating image references
+ * to a singular location
+ *
+ * minimizes number of calls sent to reference images
+ */
+.title-logo,
+.layout-footer > .layout-container {
+  background: url(img/sprite_base.png) no-repeat transparent; }
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .title-logo,
+    .layout-footer > .layout-container {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
+
 /* ***********************************************
  * Layout
  *
@@ -104,15 +119,10 @@ html, body {
   padding: 1em 0;
   line-height: 1.5; }
   .layout-footer > .layout-container {
-    background: transparent url(img/sprite_base.png) right -74px no-repeat; }
+    background-position: right -74px; }
     @media only screen and (max-width: 640px) {
       .layout-footer > .layout-container {
         background: none; } }
-
-  @media only screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
-    .layout-footer > .layout-container {
-      background-image: url(img/sprite_base2x.png);
-      background-size: 500px 120px; } }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333;
@@ -316,7 +326,6 @@ a {
   height: 45px;
   overflow: hidden;
   text-indent: -999em;
-  background: transparent url(img/sprite_base.png) no-repeat;
   background-position: 0 -3px; }
   @media only screen and (max-width: 360px) {
     .title-logo {
@@ -329,10 +338,6 @@ a {
       position: absolute;
       left: 3%;
       /* width is 94% but for one side is only half of 6% -> 3% */ } }
-  @media screen and (-webkit-min-device-pixel-ratio: 2) {
-    .title-logo {
-      background-image: url(img/sprite_base2x.png);
-      background-size: 500px 120px; } }
 
 /* ***********************************************
  * MAIN CONTENT SIDE NAV
