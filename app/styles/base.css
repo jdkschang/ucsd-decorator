@@ -20,6 +20,25 @@
       background-image: url(img/sprite_base2x.png);
       background-size: 500px 120px; } }
 
+.social-list li {
+  background: url(img/sprite_social.png) no-repeat transparent; }
+
+.msg h4,
+.icon {
+  background: url(img/sprite_icon.png) no-repeat transparent; }
+
+div.loading {
+  background: url(img/icon_loading.gif) no-repeat transparent; }
+
+span.loading {
+  background: url(img/icon_loading_inline.gif) no-repeat transparent; }
+
+.icon.astrisk,
+.field .required,
+.field_top .required,
+.field_left .required {
+  background: url(img/astrisk.png) no-repeat transparent; }
+
 /* ***********************************************
  * Layout
  *
@@ -552,7 +571,6 @@ button:active {
   z-index: 3; }
   @media only screen and (max-width: 960px) {
     .navdrawer-container .subnav-hover ul.navbar-sublist {
-      /* fix to mobile/tablet devices which do not have hover*/
       display: block;
       position: relative;
       border: 0;
@@ -699,7 +717,6 @@ img.right {
   margin-bottom: 1em; }
 
 .msg h4 {
-  background: transparent url(img/sprite_icon.png) 0 0 no-repeat;
   padding-left: 20px;
   text-shadow: none; }
 
@@ -818,15 +835,11 @@ a.button {
 * Icon
 */
 .icon {
-  background: transparent url(img/sprite_icon.png) 0 0 no-repeat;
   padding-left: 1.5em; }
 
 /* ie 7 only hack */
 *:first-child + html .icon {
   display: inline-block; }
-
-.icon.astrisk {
-  background: transparent url(img/astrisk.png) 0 0 no-repeat; }
 
 .icon.newwin {
   background-position: 0 -50px; }
@@ -940,59 +953,52 @@ a.button {
   list-style: none; }
 
 .social-list li {
-  background-repeat: no-repeat;
   height: 33px;
   margin: 0 0 10px 0;
   padding: 0 40px;
   cursor: pointer; }
 
 .social-list li.facebook {
-  background-image: url(img/sprite_social.png);
   background-position: 0 0; }
 
 .social-list li.twitter {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -39px; }
 
 .social-list li.youtube {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -80px; }
 
 .social-list li.linkedin {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -121px; }
 
 .social-list li.googleplus {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -160px; }
 
 .social-list li.instagram {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -200px; }
 
 .social-list li.tumblr {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -240px; }
 
 .social-list li.flickr {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -280px; }
 
 .social-list li.vine {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -320px; }
 
 .social-list li.pinterest {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -360px; }
 
 .social-list li.blogger {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -400px; }
 
 .social-list li.rss {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -440px; }
+
+.social-list li.vimeo {
+  background-position: 0 -480px; }
+
+.social-list li.wordpress {
+  background-position: 0 -520px; }
 
 /**********************************************************************
  * Form Elements
@@ -1108,7 +1114,12 @@ html > body form .icon.invalid {
   margin-left: 11em; }
 
 .field .required {
-  background: url(img/astrisk.png) right 0 no-repeat; }
+  background-position: right 0; }
+
+.field_top .required,
+.field_left .required {
+  background-position: left 0;
+  padding-left: 1em; }
 
 /* top-aligned */
 .field_top .label {
@@ -1116,10 +1127,6 @@ html > body form .icon.invalid {
 
 .field_top .input, .field_top .output, .field_top select.input, .field_top textarea.input {
   margin-left: 1em; }
-
-.field_top .required {
-  background: url(img/astrisk.png) left 0 no-repeat;
-  padding-left: 1em; }
 
 /* left-aligned */
 .field_left .label {
@@ -1130,10 +1137,6 @@ html > body form .icon.invalid {
 
 .field_left .input, .field_left .output, .field_left select.input, .field_left textarea.input {
   margin-left: 11.5em; }
-
-.field_left .required {
-  background: url(img/astrisk.png) left 0 no-repeat;
-  padding-left: 1em; }
 
 /* --------------------------------------------------------------------
  * * - 640px
@@ -1167,10 +1170,10 @@ div.loading {
   clear: both;
   height: 32px;
   text-indent: -9999px;
-  background: url(img/icon_loading.gif) center no-repeat; }
+  background-position: center; }
 
 span.loading {
-  background: url(img/icon_loading_inline.gif) right no-repeat;
+  background-position: right;
   padding-right: 20px; }
 
 /**********************************************************************

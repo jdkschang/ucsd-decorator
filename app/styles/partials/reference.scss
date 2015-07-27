@@ -27,6 +27,12 @@
   background: url(img/sprite_icon.png) no-repeat transparent;
 }
 
+// icon_widget
+.drawer-toggle a, .drawer h2 a,
+.flex-pauseplay a {
+  background: url(img/sprite_icon_widget.png) no-repeat transparent ;
+}
+
 // icon_loading & icon_loading_inline
 div.loading {
   background: url(img/icon_loading.gif) no-repeat transparent;

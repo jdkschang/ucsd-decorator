@@ -21,7 +21,7 @@
 
 /* default state */
 .drawer h2 a {
-	background: transparent url(img/sprite_icon_widget.png) 0 4px no-repeat;
+	background-position: 0 4px;
 	display: block;
 	padding-left: 20px;
 	text-decoration: none;
@@ -77,8 +77,7 @@
 }
 
 .drawer-toggle a {
-	background: transparent url(img/sprite_icon_widget.png) 0 -217px
-		no-repeat;
+	background-position: 0 -217px;
 	padding-left: 16px;
 }
 
