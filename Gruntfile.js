@@ -1,4 +1,3 @@
-// Generated on 2014-04-02 using generator-webapp 0.4.8
 'use strict';
 
 // # Globbing
@@ -11,12 +10,13 @@ module.exports = function (grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
-
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+
+        pkg: grunt.file.readJSON('package.json')
 
         // Project settings
         config: {
