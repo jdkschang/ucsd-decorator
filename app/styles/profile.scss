@@ -90,52 +90,43 @@
 
       li {
         display: inline-block;
-        background-repeat: no-repeat;
+        background: url(img/social-sprite-20.png) no-repeat;
         height: 27px;
         margin: 0 0 1em;
 
         padding-left: 35px;
       }
       li.email {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 1px;
         height: 25px;
       }
       li.fax {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -34px;
         height: 25px;
       }
       li.location {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -88px;
       }
       li.phone {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -171px;
         height: 25px;
       }
       li.facebook {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -234px;
         height: 25px
       }
       li.twitter {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -417px;
         height: 25px
       }
       li.linkedin {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -356px;
         height: 25px
       }
       li.googleplus {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -292px
       }
       li.personal-website {
-        background-image: url(img/social-sprite-20.png);
         background-position: 0 -477px;
         height: 25px
       }
