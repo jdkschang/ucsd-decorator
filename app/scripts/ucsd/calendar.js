@@ -22,6 +22,7 @@ $(document).ready( function() {
 
                 contentEvent = "Date: " + startDate +
                     "<br/> Time: All day" +
+                    categoryInput( event.category ) +
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
             }
@@ -31,6 +32,7 @@ $(document).ready( function() {
 
                 contentEvent = "Date: " + startDate +
                     "<br/> Time: " + startTime +
+                    categoryInput( event.category ) +
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
 
@@ -38,6 +40,7 @@ $(document).ready( function() {
                 var eventRange = rangeOfTime(eventStart, eventEnd);
 
                 contentEvent = "Date: " + eventRange[0] +
+                    categoryInput( event.category ) +
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
             }
@@ -103,6 +106,17 @@ $(document).ready( function() {
 
         return eventRangeOutput;
     }
+
+    var categoryInput = function ( category ) {
+        var categoryOutput = "";
+
+        if( category ) {
+            categoryOutput = "<br/>" +
+                "<span class='category " + category+ "'>" + category + "</span>";
+        }
+
+        return categoryOutput;
+    };
 
     $('body').on('click', function (e) {
         // x button on popup

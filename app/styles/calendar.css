@@ -16,21 +16,28 @@ ul.cal-detail-list {
   ul.cal-detail-list .cal-detail span {
     margin-left: 20px;
     display: inline-block; }
-  ul.cal-detail-list .cal-detail span.category {
+.category {
     color: #fff;
     font-size: 90%;
     font-weight: bold;
+
     padding: 2px 8px;
-    border-radius: 4px; }
-  ul.cal-detail-list .cal-detail span.Alumni {
-    background-color: #5229a3; }
-  ul.cal-detail-list .cal-detail span.Students {
-    background-color: #274d9a; }
-  ul.cal-detail-list .cal-detail span.Holidays {
-    background-color: #FAD165; }
-  ul.cal-detail-list .cal-detail span.Academics {
-    background-color: #0d7813; }
-  ul.cal-detail-list .cal-detail span.Events {
-    background-color: #a32929; }
+    border-radius: 4px;
+}
+.category.Alumni {
+    background-color: #5229a3;
+}
+.category.Students {
+    background-color: #274d9a;
+}
+.category.Holidays {
+    background-color: #FAD165;
+}
+.category.Academics {
+    background-color: #0d7813;
+}
+.category.Events {
+    background-color: #a32929;
+}
 
 /*# sourceMappingURL=calendar.css.map */
