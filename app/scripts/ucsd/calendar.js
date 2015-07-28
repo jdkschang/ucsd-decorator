@@ -58,6 +58,9 @@ $(document).ready( function() {
                 .attr("data-toggle", "popover");
             }
         },
+        eventAfterRender: [
+
+        ],
         eventSources: [
             //event source
             {
