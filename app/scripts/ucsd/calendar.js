@@ -55,7 +55,8 @@ $(document).ready( function() {
                     title: event.title,
                     content: contentEvent
                 })
-                .attr("data-toggle", "popover");
+                .attr("data-toggle", "popover")
+                .attr("data-trigger", "focus");
             }
         },
         eventAfterRender: function( event, element, view ) {
@@ -90,6 +91,18 @@ $(document).ready( function() {
                 googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
                 googleCalendarId: "cwo.calendar@gmail.com",
                 color: "orange",
+                textColor: "#fff"
+            },
+            {
+                googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
+                googleCalendarId: "jdkschang@gmail.com",
+                color: "blue",
+                textColor: "#fff"
+            },
+            {
+                googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
+                googleCalendarId: "0s87ojr6bmgkr58404oc0edg4c@group.calendar.google.com",
+                color: "red",
                 textColor: "#fff"
             }
         ]
