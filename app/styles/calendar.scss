@@ -31,19 +31,21 @@ ul.cal-detail-list {
 
   padding: 2px 8px;
   border-radius: 4px;
-}
-.category.Alumni {
-  background-color: #5229a3;
-}
-.category.Students {
-  background-color: #274d9a;
-}
-.category.Holidays {
-  background-color: #FAD165;
-}
-.category.Academics {
-  background-color: #0d7813;
-}
-.category.Events {
-  background-color: #a32929;
+
+  &.category-alumni {
+    background-color: #5229a3;
+  }
+  &.category-students {
+    background-color: #274d9a;
+  }
+  &.category-holidays {
+    background-color: #FAD165;
+  }
+  &.category-academics {
+    background-color: #0d7813;
+  }
+  &.category-events {
+    background-color: #a32929;
+  }
+
 }

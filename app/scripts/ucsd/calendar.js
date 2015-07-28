@@ -115,7 +115,7 @@ $(document).ready( function() {
 
         if( category ) {
             categoryOutput = "<br/>" +
-                "<span class='category " + category+ "'>" + category + "</span>";
+                "<span class='category category-" + category.toLowerCase() + "'>" + category + "</span>";
         }
 
         return categoryOutput;

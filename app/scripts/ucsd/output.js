@@ -49,7 +49,7 @@ function addDetailListItem( eventName, eventDetails ) {
     else if(eventName === "Category") {
         calDetail = "<li class='cal-detail'>" +
             "<h4>" + eventName + "</h4>" +
-            "<span class='category " + eventDetails+ "'>" + eventDetails + "</span>" +
+            "<span class='category category-" + eventDetails.toLowerCase() + "'>" + eventDetails + "</span>" +
             "</li>";
     }
 
