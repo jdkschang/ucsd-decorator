@@ -58,9 +58,25 @@ $(document).ready( function() {
                 .attr("data-toggle", "popover");
             }
         },
-        eventAfterRender: [
-
-        ],
+        eventAfterRender: function( event, element, view ) {
+            if( event.category ) {
+                if( event.category === "Alumni") {
+                    elemCategoryColor( element, "#5229A3");
+                }
+                else if( event.category === "Holidays") {
+                    elemCategoryColor( element, "#FAD165");
+                }
+                else if( event.category === "Academics") {
+                    elemCategoryColor( element, "#0D7813");
+                }
+                else if( event.category === "Students") {
+                    elemCategoryColor( element, "#274D9A");
+                }
+                else if( event.category === "Events") {
+                    elemCategoryColor( element, "#A32929");
+                }
+            }
+        },
         eventSources: [
             //event source
             {
@@ -78,6 +94,11 @@ $(document).ready( function() {
             }
         ]
     });
+
+    function elemCategoryColor( element, color ) {
+        element.css("background-color", color);
+        element.css("border-color", color);
+    }
 
     function formatTime( rawDate ) {
         var dateTimeOutput = [];
