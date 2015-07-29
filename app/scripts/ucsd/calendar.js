@@ -77,6 +77,8 @@ $(document).ready( function() {
                     elemCategoryColor( element, "#A32929");
                 }
             }
+
+
         },
         eventSources: [
             //event source
@@ -96,29 +98,36 @@ $(document).ready( function() {
         ]
     });
 
-    function elemCategoryColor( element, color ) {
+    var isMobileView = function() {
+        var browserWidth = window.innerWidth;
+        var mobileDesktopBorder = 768;
+
+        return (browserWidth < (mobileDesktopBorder+1));
+    };
+
+    var elemCategoryColor = function( element, color ) {
         element.css("background-color", color);
         element.css("border-color", color);
-    }
+    };
 
-    function formatTime( rawDate ) {
+    var formatTime = function( rawDate ) {
         var dateTimeOutput = [];
 
         dateTimeOutput.push( moment( rawDate ).format( "ddd, MMMM Do YYYY" ));
         dateTimeOutput.push( moment( rawDate ).format( "h:mm a" ));
 
         return dateTimeOutput;
-    }
+    };
 
-    function isSameDay( start, end ) {
+    var isSameDay = function( start, end ) {
         var evStart, evEnd;
         evStart = start[0].toString();
         evEnd = end[0].toString();
 
         return ( evStart === evEnd );
-    }
+    };
 
-    function rangeOfTime( start, end ) {
+    var rangeOfTime = function( start, end ) {
         var evStart, evEnd,
             eventRangeOutput = [],
             yearRegex = /( )20(\d){2}/;
@@ -130,7 +139,7 @@ $(document).ready( function() {
         eventRangeOutput.push( isSameDay( start, end ));
 
         return eventRangeOutput;
-    }
+    };
 
     var categoryInput = function ( category ) {
         var categoryOutput = "";

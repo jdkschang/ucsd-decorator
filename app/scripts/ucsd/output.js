@@ -1,19 +1,19 @@
 // inefficent, have to get and parse json file every time user clicks
 // build locally in array and parse array itself?
 
-function formatTime( rawDate ) {
+var formatTime = function( rawDate ) {
     var dateTimeOutput = [];
 
     dateTimeOutput.push( moment( rawDate ).format( "ddd, MMMM Do YYYY" ));
     dateTimeOutput.push( moment( rawDate ).format( "h:mm a" ));
 
     return dateTimeOutput;
-}
+};
 
 /**
  * start & end parameters are arrays
  */
-function rangeOfTime( start, end ) {
+var rangeOfTime = function( start, end ) {
     var eventRangeOutput, evStart, evEnd,
         yearRegex = /( )20(\d){2}/;
 
@@ -22,18 +22,18 @@ function rangeOfTime( start, end ) {
     eventRangeOutput    = evStart + " - " + evEnd;
 
     return eventRangeOutput;
-}
+};
 
-function isSameDay( start, end ) {
+var isSameDay = function( start, end ) {
     var evStart, evEnd;
     evStart = start[0].toString();
     evEnd = end[0].toString();
 
     return ( evStart === evEnd );
-}
+};
 
 // adding list items to the detail list
-function addDetailListItem( eventName, eventDetails ) {
+var addDetailListItem = function( eventName, eventDetails ) {
     var eventDetailList = $(".cal-detail-list"),
         calDetail;
 
@@ -54,9 +54,9 @@ function addDetailListItem( eventName, eventDetails ) {
     }
 
     eventDetailList.append(calDetail);
-}
+};
 
-function parseURL() {
+var parseURL = function() {
     var url = window.location.href;
 
     var parseRegex = new RegExp(/(?:(\?id=))\w+/g);
@@ -65,9 +65,9 @@ function parseURL() {
     // takes parsed URL, turns into string and splits
     // takes the 2nd value in array for just the id
     return parseID.toString().split('=')[1];
-}
+};
 
-function populateEventOutput( json ) {
+var populateEventOutput = function( json ) {
     var jsonID, eventID, eventTitle,
         eventCategory, eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
         outputTitle     = $("#title");
