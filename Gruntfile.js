@@ -262,17 +262,6 @@ module.exports = function (grunt) {
             }
         },
 
-        //svgmin: {
-        //    dist: {
-        //        files: [{
-        //            expand: true,
-        //            cwd: '<%= config.app %>/img',
-        //            src: '{,*/}*.svg',
-        //            dest: '<%= config.dist %>/img'
-        //        }]
-        //    }
-        //},
-
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
@@ -422,7 +411,6 @@ module.exports = function (grunt) {
         'copy:dist',
         'modernizr',
         'usemin',
-        /*'htmlmin',*/ //uncomment this to re-enable html minification
         'compress'
     ]);
 
