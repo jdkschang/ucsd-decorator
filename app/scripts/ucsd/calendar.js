@@ -78,7 +78,12 @@ $(document).ready( function() {
                 }
             }
 
-
+            if(isMobileView()) {
+                console.log('in event after render');
+                $(".fc-toolbar").appendTo("#calendar")
+            } else {
+                console.log('in else cond after render');
+            }
         },
         eventSources: [
             //event source
