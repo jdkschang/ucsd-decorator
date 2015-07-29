@@ -276,6 +276,9 @@ module.exports = function (grunt) {
         //     }
         // },
         // uglify: {
+        //      options: {
+        //          banner: '/*! <%= pkg.name %> v<%= pkg.version %> */\n'
+        //      },
         //     dist: {
         //         files: {
         //             '<%= config.dist %>/scripts/scripts.js': [
