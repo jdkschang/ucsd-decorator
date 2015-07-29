@@ -92,18 +92,6 @@ $(document).ready( function() {
                 googleCalendarId: "cwo.calendar@gmail.com",
                 color: "orange",
                 textColor: "#fff"
-            },
-            {
-                googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
-                googleCalendarId: "jdkschang@gmail.com",
-                color: "blue",
-                textColor: "#fff"
-            },
-            {
-                googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
-                googleCalendarId: "0s87ojr6bmgkr58404oc0edg4c@group.calendar.google.com",
-                color: "red",
-                textColor: "#fff"
             }
         ]
     });
