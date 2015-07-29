@@ -18,7 +18,6 @@ module.exports = function (grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        // Project settings
         config: {
             // Configurable paths
             app: 'app',
