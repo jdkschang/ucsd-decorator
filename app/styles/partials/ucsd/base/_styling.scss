@@ -620,10 +620,10 @@ div.loading {
 	clear: both;
 	height: 32px;
 	text-indent: -9999px;
-	background: url(img/icon_loading.gif) center no-repeat;
+	background-position: center;
 }
 
 span.loading {
-	background: url(img/icon_loading_inline.gif) right no-repeat;
+	background-position: right;
 	padding-right: 20px;
 }

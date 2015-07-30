@@ -125,6 +125,44 @@
   border-left-color: white; }
 
 /********************* BASE */
+/*
+ * Consolidating image references
+ * to a singular location
+ *
+ * minimizes number of calls sent to reference images
+ */
+#tdr_title_ucsd_title, #tdr_title_menu_link,
+#tdr_footer_content {
+  background: url(img/sprite_base.png) no-repeat transparent; }
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    #tdr_title_ucsd_title, #tdr_title_menu_link,
+    #tdr_footer_content {
+      background-image: url(img/sprite_base2x.png);
+      background-size: 500px 120px; } }
+
+a[target="_blank"],
+.msg h4, .icon {
+  background: url(img/sprite_icon.png) no-repeat transparent; }
+
+.drawer-toggle a, .drawer h2 a,
+.sf_all_collapsed, .sf_one_collapsed,
+.sf_all_expanded, .sf_one_expanded,
+.flex-pauseplay a {
+  background: url(img/sprite_icon_widget.png) no-repeat transparent; }
+
+.social-list li {
+  background: url(img/sprite_social.png) no-repeat transparent; }
+
+.field .required, .field_top .required,
+.icon.astrisk {
+  background: url(img/astrisk.png) no-repeat transparent; }
+
+div.loading {
+  background: url(img/icon_loading.gif) no-repeat transparent; }
+
+span.loading {
+  background: url(img/icon_loading_inline.gif) no-repeat transparent; }
+
 /**********************************************************************
  * CSS Layout and styles for main sections
  *********************************************************************/
@@ -552,15 +590,6 @@ body.collapse-nav #tdr_title_page_title {
       height: 78px; } }
   #tdr_title_content form {
     margin-bottom: 0; }
-
-#tdr_title_ucsd_title, #tdr_title_menu_link,
-#tdr_footer_content {
-  background: transparent url(img/sprite_base.png) no-repeat; }
-  @media screen and (-webkit-min-device-pixel-ratio: 2) {
-    #tdr_title_ucsd_title, #tdr_title_menu_link,
-    #tdr_footer_content {
-      background-image: url(img/sprite_base2x.png);
-      background-size: 500px 120px; } }
 
 #tdr_title_ucsd_title {
   position: absolute;
@@ -1180,11 +1209,9 @@ footer a:hover, footer a:focus, #tdr_footer a:hover, #tdr_footer a:focus {
   font-size: 90%;
   text-align: left;
   padding: 1em 0; }
-@media only screen and (max-width: 639px ) {
-  #tdr_footer_content {
-    background: none;
-  }
-}
+  @media only screen and (max-width: 639px) {
+    #tdr_footer_content {
+      background: none; } }
   @media only screen and (min-width: 640px) {
     #tdr_footer_content {
       background-position: right -74px; } }
@@ -1291,7 +1318,7 @@ a:hover, a:active,
 
 /* external links */
 a[target="_blank"] {
-  background: url(img/sprite_icon.png) no-repeat scroll right -50px transparent;
+  background-position: right -50px;
   padding-right: 20px; }
 
 .nonewwin a[target="_blank"], a[target="_blank"].nonewwin {
@@ -1426,7 +1453,6 @@ img.right {
   margin-bottom: 1em; }
 
 .msg h4 {
-  background: transparent url(img/sprite_icon.png) 0 0 no-repeat;
   padding-left: 20px;
   text-shadow: none; }
 
@@ -1545,15 +1571,11 @@ a.button {
 * Icon
 */
 .icon {
-  background: transparent url(img/sprite_icon.png) 0 0 no-repeat;
   padding-left: 1.5em; }
 
 /* ie 7 only hack */
 *:first-child + html .icon {
   display: inline-block; }
-
-.icon.astrisk {
-  background: transparent url(img/astrisk.png) 0 0 no-repeat; }
 
 .icon.newwin {
   background-position: 0 -50px; }
@@ -1667,66 +1689,51 @@ a.button {
   list-style: none; }
 
 .social-list li {
-  background-repeat: no-repeat;
   height: 33px;
   margin: 0 0 10px 0;
   padding: 0 40px;
   cursor: pointer; }
 
 .social-list li.facebook {
-  background-image: url(img/sprite_social.png);
   background-position: 0 0; }
 
 .social-list li.twitter {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -39px; }
 
 .social-list li.youtube {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -80px; }
 
 .social-list li.linkedin {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -121px; }
 
 .social-list li.googleplus {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -160px; }
 
 .social-list li.instagram {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -200px; }
 
 .social-list li.tumblr {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -240px; }
 
 .social-list li.flickr {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -280px; }
 
 .social-list li.vine {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -320px; }
 
 .social-list li.pinterest {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -360px; }
 
 .social-list li.blogger {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -400px; }
 
 .social-list li.rss {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -440px; }
 
 .social-list li.vimeo {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -480px; }
 
 .social-list li.wordpress {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -520px; }
 
 /**********************************************************************
@@ -1843,7 +1850,7 @@ html > body form .icon.invalid {
   margin-left: 11em; }
 
 .field .required {
-  background: url(img/astrisk.png) right 0 no-repeat; }
+  background-position: right 0; }
 
 /* top-aligned */
 .field_top .label {
@@ -1853,7 +1860,7 @@ html > body form .icon.invalid {
   margin-left: 1em; }
 
 .field_top .required {
-  background: url(img/astrisk.png) left 0 no-repeat;
+  background-position: left 0;
   padding-left: 1em; }
 
 /* left-aligned */
@@ -1867,7 +1874,7 @@ html > body form .icon.invalid {
   margin-left: 11.5em; }
 
 .field_left .required {
-  background: url(img/astrisk.png) left 0 no-repeat;
+  background-position: left 0;
   padding-left: 1em; }
 
 /* --------------------------------------------------------------------
@@ -1902,10 +1909,10 @@ div.loading {
   clear: both;
   height: 32px;
   text-indent: -9999px;
-  background: url(img/icon_loading.gif) center no-repeat; }
+  background-position: center; }
 
 span.loading {
-  background: url(img/icon_loading_inline.gif) right no-repeat;
+  background-position: right;
   padding-right: 20px; }
 
 @media print {
@@ -2239,11 +2246,11 @@ html[xmlns] .slides {
 
 .sf_all_collapsed,
 .sf_one_collapsed {
-  background: transparent url(img/sprite_icon_widget.png) 0 -275px no-repeat; }
+  background-position: 0 -275px; }
 
 .sf_all_expanded,
 .sf_one_expanded {
-  background: transparent url(img/sprite_icon_widget.png) 0 -259px no-repeat; }
+  background-position: 0 -259px; }
 
 dl.itag_simple_faq dt,
 p.sf_all_expanded,
@@ -2270,7 +2277,7 @@ p.sf_all_collapsed {
 
 /* default state */
 .drawer h2 a {
-  background: transparent url(img/sprite_icon_widget.png) 0 4px no-repeat;
+  background-position: 0 4px;
   display: block;
   padding-left: 20px;
   text-decoration: none; }
@@ -2314,7 +2321,7 @@ p.sf_all_collapsed {
   color: #016691; }
 
 .drawer-toggle a {
-  background: transparent url(img/sprite_icon_widget.png) 0 -217px no-repeat;
+  background-position: 0 -217px;
   padding-left: 16px; }
 
 .drawer-toggle a.expand {
@@ -2373,7 +2380,6 @@ FLEXSLIDER
         border: 1px solid #c15f01;
         cursor: default; }
   .flexslider .flex-pauseplay a {
-    background: url(img/sprite_icon_widget.png);
     border: 0;
     display: block;
     height: 10px;
