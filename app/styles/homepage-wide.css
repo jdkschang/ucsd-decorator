@@ -69,6 +69,14 @@
     max-width: 125px;
     max-height: 125px; }
 
+.news-supplement {
+  clear: right;
+  display: block;
+  float: right;
+  padding: 12px 20px 0 0;
+  width: 440px;
+  margin-right: -40px; }
+
 h2.top {
   color: #333;
   font-family: 'Roboto', sans-serif;
