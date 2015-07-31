@@ -100,7 +100,7 @@ a:hover,a:active,
 
 /* external links */
 a[target="_blank"] {
-	background: url(img/sprite_icon.png) no-repeat scroll right -50px transparent;
+    background-position: right -50px;
 	padding-right: 20px;
 }
 

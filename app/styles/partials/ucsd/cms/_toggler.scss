@@ -21,12 +21,12 @@
 
 .sf_all_collapsed,
 .sf_one_collapsed {
-	background: transparent url(img/sprite_icon_widget.png) 0 -275px no-repeat;
+	background-position: 0 -275px;
 }
 
 .sf_all_expanded,
 .sf_one_expanded {
-	background: transparent url(img/sprite_icon_widget.png) 0 -259px no-repeat;
+	background-position: 0 -259px;
 }
 
 dl.itag_simple_faq dt,

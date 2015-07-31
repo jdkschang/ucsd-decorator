@@ -65,7 +65,6 @@ img.right {
 }
 
 .msg h4 {
-	background: transparent url(img/sprite_icon.png) 0 0 no-repeat;
 	padding-left: 20px;
 	text-shadow: none;
 }
@@ -203,17 +202,12 @@ a.button {
  * Icon
  */
 .icon {
-	background: transparent url(img/sprite_icon.png) 0 0 no-repeat;
 	padding-left: 1.5em;
 }
 
 /* ie 7 only hack */
 *:first-child+html .icon {
 	display: inline-block;
-}
-
-.icon.astrisk {
-	background: transparent url(img/astrisk.png) 0 0 no-repeat;
 }
 
 .icon.newwin {
@@ -366,80 +360,51 @@ a.button {
 }
 
 .social-list li {
-	background-repeat: no-repeat;
 	height: 33px;
 	margin: 0 0 10px 0;
 	padding: 0 40px;
   	cursor: pointer;
 }
-
 .social-list li.facebook {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 0;
 }
-
 .social-list li.twitter {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -39px;
 }
-
 .social-list li.youtube {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -80px;
 }
-
 .social-list li.linkedin {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -121px;
 }
-
 .social-list li.googleplus {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -160px;
 }
-
 .social-list li.instagram {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -200px;
 }
-
 .social-list li.tumblr {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -240px;
 }
-
 .social-list li.flickr {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -280px;
 }
-
 .social-list li.vine {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -320px;
 }
-
 .social-list li.pinterest {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -360px;
 }
-
 .social-list li.blogger {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -400px;
 }
-
 .social-list li.rss {
-	background-image: url(img/sprite_social.png);
 	background-position: 0 -440px;
 }
-
 .social-list li.vimeo {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -480px;
 }
-
 .social-list li.wordpress {
-  background-image: url(img/sprite_social.png);
   background-position: 0 -520px;
 }
 
@@ -582,7 +547,7 @@ html>body form .icon.invalid {
 }
 
 .field .required {
-	background: url(img/astrisk.png) right 0 no-repeat;
+	background-position: right 0;
 }
 
 /* top-aligned */
@@ -596,7 +561,7 @@ html>body form .icon.invalid {
 }
 
 .field_top .required {
-	background: url(img/astrisk.png) left 0 no-repeat;
+	background-position: left 0;
 	padding-left: 1em;
 }
 
@@ -614,7 +579,7 @@ html>body form .icon.invalid {
 }
 
 .field_left .required {
-	background: url(img/astrisk.png) left 0 no-repeat;
+	background-position: left 0;
 	padding-left: 1em;
 }
 
@@ -655,10 +620,10 @@ div.loading {
 	clear: both;
 	height: 32px;
 	text-indent: -9999px;
-	background: url(img/icon_loading.gif) center no-repeat;
+	background-position: center;
 }
 
 span.loading {
-	background: url(img/icon_loading_inline.gif) right no-repeat;
+	background-position: right;
 	padding-right: 20px;
 }
