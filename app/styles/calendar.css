@@ -16,28 +16,46 @@ ul.cal-detail-list {
   ul.cal-detail-list .cal-detail span {
     margin-left: 20px;
     display: inline-block; }
+
 .category {
-    color: #fff;
-    font-size: 90%;
-    font-weight: bold;
+  color: #fff;
+  font-size: 90%;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px; }
+  .category.category-alumni {
+    background-color: #5229a3; }
+  .category.category-students {
+    background-color: #274d9a; }
+  .category.category-holidays {
+    background-color: #FAD165; }
+  .category.category-academics {
+    background-color: #0d7813; }
+  .category.category-events {
+    background-color: #a32929; }
 
-    padding: 2px 8px;
-    border-radius: 4px;
-}
+#calendar-categories a {
+  display: block;
+  margin: 10px; }
+  #calendar-categories a span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    float: left; }
+  #calendar-categories a#trigger-green span {
+    background-color: #0d7813; }
+  #calendar-categories a#trigger-blue span {
+    background-color: #274d9a; }
+  #calendar-categories a#trigger-purple span {
+    background-color: #5229a3; }
+  #calendar-categories a#trigger-tan span {
+    background-color: #FAD165; }
+  #calendar-categories a#trigger-red span {
+    background-color: #a32929; }
 
-.category.category-alumni {
-     background-color: #5229a3;
- }
-.category.category-students {
-     background-color: #274d9a;
- }
-.category.category-holidays {
-     background-color: #FAD165;
- }
-.category.category-academics {
-     background-color: #0d7813;
- }
-.category.category-events {
-     background-color: #a32929;
-}
+ul.unstyled {
+  padding-left: 0;
+  list-style: none; }
+
 /*# sourceMappingURL=calendar.css.map */
