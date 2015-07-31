@@ -73,7 +73,6 @@ $(document).ready(function() {
             }
 
             if ($topNav.height() > maxNavHeight ) {
-                console.log('in navMover:: topNav.height > maxNavHeight');
                 $body.addClass('collapse-nav');
             } else {
                 $body.removeClass('collapse-nav');
