@@ -299,10 +299,18 @@ h2.side {
   .flex-controls {
     height: 0 !important;
     position: relative;
-    top: 135px
+    top: 29px // height fix for mobile/ tablet devices
   }
 
-  @media screen and (max-width: 600px) {
+  .main-header {
+    padding: 0
+  }
+  h2.top {
+    font-size: 20px
+  }
+}
+
+@media screen and (max-width: 600px) {
 
   .flexslider {
     margin: 0 0 25px 0;
@@ -316,21 +324,8 @@ h2.side {
   .flex-controls {
     height: 0;
     position: relative;
-    top: 135px
+    //top: 135px
   }
-
-  .flex-controls {
-    /*position: relative;
-    top: 0*/
-  }
-
-  .main-header {
-    padding: 0
-  }
-  h2.top {
-    font-size: 20px
-  }
-}
 
   .main-header {
     padding: 0

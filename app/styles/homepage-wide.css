@@ -247,8 +247,14 @@ h2.side {
   .flex-controls {
     height: 0 !important;
     position: relative;
-    top: 135px; } }
-@media screen and (max-width: 500px) and (max-width: 600px) {
+    top: 29px; }
+
+  .main-header {
+    padding: 0; }
+
+  h2.top {
+    font-size: 20px; } }
+@media screen and (max-width: 600px) {
   .flexslider {
     margin: 0 0 25px 0;
     overflow: visible; }
@@ -258,19 +264,8 @@ h2.side {
 
   .flex-controls {
     height: 0;
-    position: relative;
-    top: 135px; }
+    position: relative; }
 
-  .flex-controls {
-    /*position: relative;
-    top: 0*/ }
-
-  .main-header {
-    padding: 0; }
-
-  h2.top {
-    font-size: 20px; } }
-@media screen and (max-width: 500px) {
   .main-header {
     padding: 0; }
 
