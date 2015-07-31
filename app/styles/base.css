@@ -756,7 +756,7 @@ html.no-csstransforms3d.no-csstransitions body.active #tdr_side_nav {
   opacity: 1;
   display: block; }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   body.collapse-nav .navbar-toggle {
     display: block;
     top: 23px; }
