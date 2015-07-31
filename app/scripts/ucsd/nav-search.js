@@ -55,6 +55,7 @@ $(document).ready(function() {
     function navMover() {
         if ($window.width() >= desktopBreak) {
 
+
             if ($body.hasClass("active")) {
 
                 $body.removeClass("active");
