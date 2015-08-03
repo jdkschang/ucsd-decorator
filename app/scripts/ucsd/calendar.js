@@ -56,7 +56,8 @@ $(document).ready( function() {
                     content: contentEvent
                 })
                 .attr("data-toggle", "popover")
-                .attr("data-trigger", "focus");
+                .attr("aria-haspopup", true);
+
             }
         },
         eventAfterRender: function( event, element, view ) {
@@ -156,6 +157,19 @@ $(document).ready( function() {
 
         return categoryOutput;
     };
+
+    $(document).keydown(function(e) {
+        switch(e.keyCode) {
+            // User pressed "right" arrow
+            case 39:
+                $('#calendar').fullCalendar('next');
+                break;
+            // User pressed "left" arrow
+            case 37:
+                $('#calendar').fullCalendar('prev');
+                break;
+        }
+    })
 
     $('body').on('click', function (e) {
         // x button on popup
