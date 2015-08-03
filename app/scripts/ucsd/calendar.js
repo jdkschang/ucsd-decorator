@@ -8,12 +8,12 @@ $(document).ready( function() {
         },
         defaultView: 'month',
 
-        eventRender: function( event, element) {
-            var eventStart = formatTime(event.start),
-                eventEnd = formatTime(event.end),
-                allDayBool = event.allDay,
-                startDate, startTime,
-                output_url = "cal-output.html?id=" + event.id;
+        eventRender: function( event, element ) {
+            var eventStart  = formatTime( event.start ),
+                eventEnd    = formatTime( event.end ),
+                allDayBool  = event.allDay,
+                output_url  = "cal-output.html?id=" + event.id,
+                startDate, startTime;
             var contentEvent;
 
             // if one day event
@@ -56,6 +56,8 @@ $(document).ready( function() {
                     content: contentEvent
                 })
                 .attr("data-toggle", "popover")
+                .attr("tabindex", "0")              // allows events to be tabbed
+                //.attr("href", output_url )
                 .attr("aria-haspopup", true);
 
             }
@@ -79,12 +81,12 @@ $(document).ready( function() {
                 }
             }
 
-            if(isMobileView()) {
-                console.log('in event after render');
-                $(".fc-toolbar").appendTo("#calendar")
-            } else {
-                console.log('in else cond after render');
-            }
+            //if(isMobileView()) {
+            //    console.log('in event after render');
+            //    $(".fc-toolbar").appendTo("#calendar")
+            //} else {
+            //    console.log('in else cond after render');
+            //}
         },
         eventSources: [
             //event source
@@ -160,6 +162,11 @@ $(document).ready( function() {
 
     $(document).keydown(function(e) {
         switch(e.keyCode) {
+            // User pressed "Enter" key
+            case 13:
+                //this.click();
+                alert("clicked");
+                break;
             // User pressed "right" arrow
             case 39:
                 $('#calendar').fullCalendar('next');
@@ -169,7 +176,7 @@ $(document).ready( function() {
                 $('#calendar').fullCalendar('prev');
                 break;
         }
-    })
+    });
 
     $('body').on('click', function (e) {
         // x button on popup
