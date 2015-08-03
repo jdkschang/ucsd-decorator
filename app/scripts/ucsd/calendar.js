@@ -165,7 +165,8 @@ $(document).ready( function() {
             // User pressed "Enter" key
             case 13:
                 //this.click();
-                alert("clicked");
+                console.log(e.target);
+                e.target.click();
                 break;
             // User pressed "right" arrow
             case 39:
