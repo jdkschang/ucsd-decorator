@@ -164,8 +164,6 @@ $(document).ready( function() {
         switch(e.keyCode) {
             // User pressed "Enter" key
             case 13:
-                //this.click();
-                console.log(e.target);
                 e.target.click();
                 break;
             // User pressed "right" arrow
