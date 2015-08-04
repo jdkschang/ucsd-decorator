@@ -16,19 +16,19 @@
 * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 * ======================================================================== */
-  
- 
- (function($) { 
-  "use strict"; 
+
+
+ (function($) {
+  "use strict";
 
   // GENERAL UTILITY FUNCTIONS
   // ===============================
-  
+
   var uniqueId = function(prefix) {
       return (prefix || 'ui-id') + '-' + Math.floor((Math.random()*1000)+1)
   }
 
-  
+
   var removeMultiValAttributes = function (el, attr, val) {
    var describedby = (el.attr( attr ) || "").split( /\s+/ )
       , index = $.inArray(val, describedby)
@@ -59,7 +59,7 @@
     return ( /input|select|textarea|button|object/.test( nodeName ) ?
     !element.disabled :
     "a" === nodeName ?
-    element.href || isTabIndexNotNaN :isTabIndexNotNaN) && visible( element ); // the element and all of its ancestors must be visible  
+    element.href || isTabIndexNotNaN :isTabIndexNotNaN) && visible( element ); // the element and all of its ancestors must be visible
   }
   var visible = function ( element ) {
     return $.expr.filters.visible( element ) &&
@@ -95,7 +95,7 @@
   // ===============================
 
 	$('.modal-dialog').attr( {'role' : 'document'})
-    var modalhide =   $.fn.modal.Constructor.prototype.hide
+    var modalhide =   $.fn.modal.Constructor.prototype.hide;
     $.fn.modal.Constructor.prototype.hide = function(){
        var modalOpener = this.$element.parent().find('[data-target="#' + this.$element.attr('id') + '"]')
        modalhide.apply(this, arguments)
@@ -108,17 +108,17 @@
       var focEls = this.$element.find(":tabbable")
         , lastEl = focEls[focEls.length-1]
       $(document).on('keydown.bs.modal', $.proxy(function (ev) {
-        if(!this.$element.has(ev.target).length && ev.shiftKey && ev.keyCode === 9) {  
+        if(!this.$element.has(ev.target).length && ev.shiftKey && ev.keyCode === 9) {
           lastEl.focus()
           ev.preventDefault();
         }
       }, this))
 
       modalfocus.apply(this, arguments)
-    }    
+    }
   // DROPDOWN Extension
   // ===============================
-  
+
   var toggle   = '[data-toggle=dropdown]'
       , $par
       , firstItem
@@ -138,7 +138,7 @@
               firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0]
               try{ firstItem.focus()} catch(ex) {}
         }, focusDelay)
-      }, this)) 
+      }, this))
 
     })
 
@@ -162,7 +162,7 @@
       .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , $.fn.dropdown.Constructor.prototype.keydown)
   // Tab Extension
   // ===============================
-  
+
   var $tablist = $('.nav-tabs, .nav-pills')
         , $lis = $tablist.children('li')
         , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]')
@@ -239,7 +239,7 @@
   // Collapse Extension
   // ===============================
 
-     var $colltabs =  $('[data-toggle="collapse"]')      
+     var $colltabs =  $('[data-toggle="collapse"]')
       $colltabs.each(function( index ) {
         var colltab = $(this)
         , collpanel = (colltab.attr('data-target')) ? $(colltab.attr('data-target')) : $(colltab.attr('href'))
@@ -327,10 +327,10 @@
     }
 
     $(document).on('keydown.collapse.data-api','[data-toggle="collapse"]' ,  $.fn.collapse.Constructor.prototype.keydown)
-    
+
   // Carousel Extension
   // ===============================
-  
+
       $('.carousel').each(function (index) {
         var $this = $(this)
           , prev = $this.find('[data-slide="prev"]')
@@ -395,7 +395,7 @@
       if (!/(37|38|39|40)/.test(k)) return
       index = $items.index($items.filter('.active'))
       if (k == 37 || k == 38) {                           //  Up
-        
+
         index--
         if(index < 0) index = $items.length -1
         else  {
@@ -403,21 +403,21 @@
           setTimeout(function () {
             $items[index].focus()
             // $this.prev().focus()
-          }, 150)      
-        }  
+          }, 150)
+        }
 
       }
       if (k == 39 || k == 40) {                          // Down
         index++
         if(index == $items.length) {
           index = 0
-        }  
+        }
         else  {
           $parent.carousel('next')
           setTimeout(function () {
             $items[index].focus()
             // $this.next().focus()
-          }, 150)            
+          }, 150)
         }
 
       }
