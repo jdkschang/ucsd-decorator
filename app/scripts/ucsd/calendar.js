@@ -58,7 +58,8 @@ $(document).ready( function() {
                 .attr("data-toggle", "popover")
                 .attr("tabindex", "0")              // allows events to be tabbed
                 //.attr("href", output_url )
-                .attr("aria-haspopup", true);
+                .attr("aria-haspopup", true)
+                .attr("aria-hidden", true);
 
             }
         },
