@@ -13,7 +13,7 @@ $(document).ready( function() {
                 eventEnd    = formatTime( event.end ),
                 allDayBool  = event.allDay,
                 output_url  = "cal-output.html?id=" + event.id,
-                popoverID   = event.id.toString().substring(0, 5),
+                popoverID   = "popover" + event.id.toString().substring(0, 5),
                 startDate, startTime;
             var contentEvent;
 
@@ -61,7 +61,7 @@ $(document).ready( function() {
                 .attr("tabindex", "0")              // allows events to be tabbed
                 //.attr("href", output_url )
                 .attr("aria-haspopup", true)
-                .attr("aria-describedby", "popover" + popoverID)
+                .attr("aria-describedby", popoverID)
                 .attr("aria-hidden", true);
 
             }
@@ -85,7 +85,7 @@ $(document).ready( function() {
                 }
             }
 
-            $('[data-toggle="popover"]').popover({trigger: 'hover','placement': 'top'});
+            //$('[data-toggle="popover"]').popover({trigger: 'hover','placement': 'top'});
 
             //if(isMobileView()) {
             //    console.log('in event after render');
