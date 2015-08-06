@@ -173,7 +173,7 @@ $(document).ready( function() {
                     .attr("id", popover.prev()[0].getAttribute("aria-describedby"));
             } else if( popoverLength > 1 ) {
                 popover.attr("role", "tooltip")
-                    .attr("id", popover.prev()[0].getAttribute("aria-describedby"));
+                    .attr("id", popover.prev()[1].getAttribute("aria-describedby"));
             }
         }
     };
