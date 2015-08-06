@@ -171,6 +171,22 @@ $(document).ready( function() {
         ////var eventTarget = evt.target.parent('.fc-event-container');
         //console.log( evt.target );
         //console.log( eventTarget);
+
+        var popover = $('.popover'),
+            popoverLength = popover.length;
+        //console.log(popoverLength)
+        if(popoverLength > 0) {
+
+            if(popoverLength === 1) {
+                popover.attr("role", "tooltip")
+                    .attr("id", "testid");
+                console.log('prev attr: [0]');
+                console.log(popover.prev()[0].getAttribute("aria-describedby"));
+            } else if(popoverLength > 1)
+
+            console.log('prev attr: [1]');
+            console.log(popover.prev()[1].getAttribute("aria-describedby"))
+        }
     });
 
     $(document).keydown( function(e) {
