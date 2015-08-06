@@ -13,6 +13,7 @@ $(document).ready( function() {
                 eventEnd    = formatTime( event.end ),
                 allDayBool  = event.allDay,
                 output_url  = "cal-output.html?id=" + event.id,
+                popoverID   = event.id.toString().substring(0, 5),
                 startDate, startTime;
             var contentEvent;
 
@@ -55,10 +56,12 @@ $(document).ready( function() {
                     title: event.title,
                     content: contentEvent
                 })
+                .attr("role", "button")
                 .attr("data-toggle", "popover")
                 .attr("tabindex", "0")              // allows events to be tabbed
                 //.attr("href", output_url )
                 .attr("aria-haspopup", true)
+                .attr("aria-describedby", "popover" + popoverID)
                 .attr("aria-hidden", true);
 
             }
@@ -159,11 +162,18 @@ $(document).ready( function() {
     // aria popover
     // role=tooltip
     // aria-describedby
-    var popoverAria = function() {
+    var popoverAria = function( evt ) {
 
     };
 
-    $(document).keydown(function(e) {
+    $('#calendar').on( 'click', function( evt ) {
+        //console.log('in fc-event-container: click');
+        ////var eventTarget = evt.target.parent('.fc-event-container');
+        //console.log( evt.target );
+        //console.log( eventTarget);
+    });
+
+    $(document).keydown( function(e) {
         switch(e.keyCode) {
             // User pressed "Enter" key
             case 13:
@@ -180,7 +190,9 @@ $(document).ready( function() {
         }
     });
 
-    $('body').on('click', function (e) {
+    $('body').on('click', function ( evt ) {
+        //var eventContainer = $('.fc-event-container');
+        //console.log(eventContainer);
         // x button on popover
         //var closePopover = $('[data-dismiss="popover"]');
         //console.log("closePopover: " + closePopover);
@@ -191,7 +203,7 @@ $(document).ready( function() {
         //if(closePopover[0] === undefined) {
         //    console.log('if ::');
         //    console.log("closePopover[0]: " + closePopover[0]);
-        //    console.log(e.target.textContent);
+        //    console.log(evt.target.textContent);
         //
         //    $('.popover-title').append(
         //        '<span class="close" data-dismiss="popover">x</span>'
@@ -200,7 +212,7 @@ $(document).ready( function() {
         //    console.log('else if ::');
         //    console.log("closePopover[0]: " + closePopover[0]);
         //    console.log("closePopover[1]: " + closePopover[1]);
-        //    console.log(e.target.textContent);
+        //    console.log(evt.target.textContent);
         //
         //    $('.popover-title').append(
         //        '<span class="close" data-dismiss="popover">x</span>'
@@ -215,7 +227,7 @@ $(document).ready( function() {
         $('[data-toggle="popover"]').each(function () {
             //the 'is' for buttons that trigger popups
             //the 'has' for icons within a button that triggers a popup
-            if (!$(this).is(e.target) && $(this).has(e.target).length === 0) {
+            if (!$(this).is(evt.target) && $(this).has(evt.target).length === 0) {
                 $(this).popover('hide');
             }
         });
