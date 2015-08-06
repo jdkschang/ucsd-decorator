@@ -162,31 +162,24 @@ $(document).ready( function() {
     // aria popover
     // role=tooltip
     // aria-describedby
-    var popoverAria = function( evt ) {
-
-    };
-
-    $('#calendar').on( 'click', function( evt ) {
-        //console.log('in fc-event-container: click');
-        ////var eventTarget = evt.target.parent('.fc-event-container');
-        //console.log( evt.target );
-        //console.log( eventTarget);
-
+    var popoverAria = function() {
         var popover = $('.popover'),
             popoverLength = popover.length;
-        //console.log(popoverLength)
-        if(popoverLength > 0) {
 
-            if(popoverLength === 1) {
+        // check if popover event has been clicked
+        if( popoverLength > 0 ) {
+            if( popoverLength === 1 ) {
                 popover.attr("role", "tooltip")
-                    .attr("id", "testid");
-                console.log('prev attr: [0]');
-                console.log(popover.prev()[0].getAttribute("aria-describedby"));
-            } else if(popoverLength > 1)
-
-            console.log('prev attr: [1]');
-            console.log(popover.prev()[1].getAttribute("aria-describedby"))
+                    .attr("id", popover.prev()[0].getAttribute("aria-describedby"));
+            } else if( popoverLength > 1 ) {
+                popover.attr("role", "tooltip")
+                    .attr("id", popover.prev()[0].getAttribute("aria-describedby"));
+            }
         }
+    };
+
+    $('#calendar').on( 'click', function() {
+        popoverAria();
     });
 
     $(document).keydown( function(e) {
@@ -207,33 +200,6 @@ $(document).ready( function() {
     });
 
     $('body').on('click', function ( evt ) {
-        //var eventContainer = $('.fc-event-container');
-        //console.log(eventContainer);
-        // x button on popover
-        //var closePopover = $('[data-dismiss="popover"]');
-        //console.log("closePopover: " + closePopover);
-        ////console.log("closePopover[0]: " + closePopover[0]);
-        ////console.log("closePopover[1]: " + closePopover[1]);
-        //// check to stop multiple "x" in popover-title element
-        ////if(closePopover === 'undefined' && closePopover.length > 0) {
-        //if(closePopover[0] === undefined) {
-        //    console.log('if ::');
-        //    console.log("closePopover[0]: " + closePopover[0]);
-        //    console.log(evt.target.textContent);
-        //
-        //    $('.popover-title').append(
-        //        '<span class="close" data-dismiss="popover">x</span>'
-        //    );
-        //} else if(closePopover[0] !== undefined && closePopover[1] === undefined) {
-        //    console.log('else if ::');
-        //    console.log("closePopover[0]: " + closePopover[0]);
-        //    console.log("closePopover[1]: " + closePopover[1]);
-        //    console.log(evt.target.textContent);
-        //
-        //    $('.popover-title').append(
-        //        '<span class="close" data-dismiss="popover">x</span>'
-        //    );
-        //}
 
         $('.popover-title').append(
             '<span class="close" data-dismiss="popover">x</span>'
