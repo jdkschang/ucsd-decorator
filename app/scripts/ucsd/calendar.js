@@ -178,10 +178,6 @@ $(document).ready( function() {
         }
     };
 
-    $('#calendar').on( 'click', function() {
-        popoverAria();
-    });
-
     $(document).keydown( function(e) {
         switch(e.keyCode) {
             // User pressed "Enter" key
@@ -200,6 +196,8 @@ $(document).ready( function() {
     });
 
     $('body').on('click', function ( evt ) {
+
+        popoverAria();
 
         $('.popover-title').append(
             '<span class="close" data-dismiss="popover">x</span>'
