@@ -156,6 +156,13 @@ $(document).ready( function() {
         return categoryOutput;
     };
 
+    // aria popover
+    // role=tooltip
+    // aria-describedby
+    var popoverAria = function() {
+
+    };
+
     $(document).keydown(function(e) {
         switch(e.keyCode) {
             // User pressed "Enter" key
