@@ -184,21 +184,32 @@ $(document).ready( function() {
         // x button on popover
         var closePopover = $('[data-dismiss="popover"]');
         console.log("closePopover: " + closePopover);
-        console.log("closePopover[0]: " + closePopover[0]);
-        console.log("closePopover[1]: " + closePopover[1]);
+        //console.log("closePopover[0]: " + closePopover[0]);
+        //console.log("closePopover[1]: " + closePopover[1]);
         // check to stop multiple "x" in popover-title element
         //if(closePopover === 'undefined' && closePopover.length > 0) {
         if(closePopover[0] === undefined) {
-            //console.log('popoverTitle');
+            console.log('if ::');
+            console.log("closePopover[0]: " + closePopover[0]);
+            console.log(e.target.textContent);
 
             $('.popover-title').append(
                 '<span class="close" data-dismiss="popover">x</span>'
             );
         } else if(closePopover[0] !== undefined && closePopover[1] === undefined) {
+            console.log('else if ::');
+            console.log("closePopover[0]: " + closePopover[0]);
+            console.log("closePopover[1]: " + closePopover[1]);
+            console.log(e.target.textContent);
+
             $('.popover-title').append(
                 '<span class="close" data-dismiss="popover">x</span>'
             );
         }
+
+        //$('.popover-title').append(
+        //    '<span class="close" data-dismiss="popover">x</span>'
+        //);
 
         // dismissible popover
         $('[data-toggle="popover"]').each(function () {
