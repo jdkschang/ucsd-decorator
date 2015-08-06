@@ -82,6 +82,8 @@ $(document).ready( function() {
                 }
             }
 
+            $('[data-toggle="popover"]').popover({trigger: 'hover','placement': 'top'});
+
             //if(isMobileView()) {
             //    console.log('in event after render');
             //    $(".fc-toolbar").appendTo("#calendar")
@@ -106,13 +108,6 @@ $(document).ready( function() {
             }
         ]
     });
-
-    var isMobileView = function() {
-        var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 768;
-
-        return (browserWidth < (mobileDesktopBorder+1));
-    };
 
     var elemCategoryColor = function( element, color ) {
         element.css("background-color", color);
@@ -179,11 +174,26 @@ $(document).ready( function() {
     });
 
     $('body').on('click', function (e) {
-        // x button on popup
-        $('.popover-title').append(
-            '<span class="close" data-dismiss="popover">x</span>'
-        );
+        // x button on popover
+        var closePopover = $('[data-dismiss="popover"]');
+        console.log("closePopover: " + closePopover);
+        console.log("closePopover[0]: " + closePopover[0]);
+        console.log("closePopover[1]: " + closePopover[1]);
+        // check to stop multiple "x" in popover-title element
+        //if(closePopover === 'undefined' && closePopover.length > 0) {
+        if(closePopover[0] === undefined) {
+            //console.log('popoverTitle');
 
+            $('.popover-title').append(
+                '<span class="close" data-dismiss="popover">x</span>'
+            );
+        } else if(closePopover[0] !== undefined && closePopover[1] === undefined) {
+            $('.popover-title').append(
+                '<span class="close" data-dismiss="popover">x</span>'
+            );
+        }
+
+        // dismissible popover
         $('[data-toggle="popover"]').each(function () {
             //the 'is' for buttons that trigger popups
             //the 'has' for icons within a button that triggers a popup
