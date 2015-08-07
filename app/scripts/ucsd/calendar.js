@@ -8,6 +8,8 @@ $(document).ready( function() {
         },
         defaultView: 'month',
 
+        // parsing json to display event data formatted in popovers
+        // as well as inputting accessibility attributes
         eventRender: function( event, element ) {
             var eventStart  = formatTime( event.start ),
                 eventEnd    = formatTime( event.end ),
@@ -16,6 +18,9 @@ $(document).ready( function() {
                 popoverID   = "popover" + event.id.toString().substring(0, 5),
                 startDate, startTime;
             var contentEvent;
+
+            // pending type of date, different contentEvent formatted
+            // category type also inputted
 
             // if one day event
             if(allDayBool) {
@@ -26,7 +31,7 @@ $(document).ready( function() {
                     categoryInput( event.category ) +
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-            }
+            } // if event only happens within the day
             else if( isSameDay( eventStart, eventEnd )) {
                 startDate = eventStart[0];
                 startTime = eventStart[1] + " - " + eventEnd[1];
@@ -37,7 +42,7 @@ $(document).ready( function() {
                     "<br/>" +
                     "<br/><a href=" + output_url + " class=pull-right>more details</a>";
 
-            } else {
+            } else { // if event covers more than a day
                 var eventRange = rangeOfTime(eventStart, eventEnd);
 
                 contentEvent = "Date: " + eventRange[0] +
@@ -65,8 +70,8 @@ $(document).ready( function() {
                 .attr("aria-hidden", true);
 
             }
-        },
-        eventAfterRender: function( event, element, view ) {
+        }, // if event has a category, color the event with the cateogry's color
+        eventAfterRender: function( event, element ) {
             if( event.category ) {
                 if( event.category === "Alumni") {
                     elemCategoryColor( element, "#5229A3");
@@ -84,7 +89,7 @@ $(document).ready( function() {
                     elemCategoryColor( element, "#A32929");
                 }
             }
-            
+
         },
         eventSources: [
             //event source
@@ -104,11 +109,15 @@ $(document).ready( function() {
         ]
     });
 
+    // event background emulates category's color
     var elemCategoryColor = function( element, color ) {
         element.css("background-color", color);
         element.css("border-color", color);
     };
 
+    // formats raw date format and outputs array
+    // array[0] contains the date name, month, day, and year
+    // array[1] contains the hour, minute and am/pm
     var formatTime = function( rawDate ) {
         var dateTimeOutput = [];
 
@@ -118,6 +127,7 @@ $(document).ready( function() {
         return dateTimeOutput;
     };
 
+    // check if the event only happens in the same day
     var isSameDay = function( start, end ) {
         var evStart, evEnd;
         evStart = start[0].toString();
@@ -126,6 +136,7 @@ $(document).ready( function() {
         return ( evStart === evEnd );
     };
 
+    // finds the event's date and time range
     var rangeOfTime = function( start, end ) {
         var evStart, evEnd,
             eventRangeOutput = [],
@@ -135,11 +146,12 @@ $(document).ready( function() {
         evEnd   = end[0].toString().replace( yearRegex, ", " + end[1] );
 
         eventRangeOutput.push(evStart + " - " + evEnd);
-        eventRangeOutput.push( isSameDay( start, end ));
+        eventRangeOutput.push(isSameDay( start, end ));
 
         return eventRangeOutput;
     };
 
+    // takes category input and outputs parsed html
     var categoryInput = function ( category ) {
         var categoryOutput = "";
 
@@ -154,6 +166,8 @@ $(document).ready( function() {
     // aria popover
     // role=tooltip
     // aria-describedby
+    // adds accessibility attributes to popover
+    // ToDo:: if aria attribute added, don't add again
     var popoverAria = function() {
         var popover = $('.popover'),
             popoverLength = popover.length;
@@ -170,6 +184,9 @@ $(document).ready( function() {
         }
     };
 
+    // provides keyboard functionality to fullcalendar
+    // 'enter' functions as a 'click' on events
+    // 'left' & 'right' arrow goes to prev and next months respectively
     $(document).keydown( function(e) {
         switch(e.keyCode) {
             // User pressed "Enter" key
@@ -189,8 +206,10 @@ $(document).ready( function() {
 
     $('body').on('click', function ( evt ) {
 
+        // add popoverAria attributes
         popoverAria();
 
+        // add close 'x' to popover
         $('.popover-title').append(
             '<span class="close" data-dismiss="popover">x</span>'
         );
