@@ -15,7 +15,7 @@ $(document).ready( function() {
                 eventEnd    = formatTime( event.end ),
                 allDayBool  = event.allDay,
                 output_url  = "cal-output.html?id=" + event.id,
-                //popoverID   = "popover" + event.id.toString().substring(0, 5),
+                popoverID   = "popover" + event.id.toString().substring(0, 5),
                 startDate, startTime;
             var contentEvent;
 
@@ -66,7 +66,7 @@ $(document).ready( function() {
                 .attr("tabindex", "0")              // allows events to be tabbed
                 //.attr("href", output_url )
                 .attr("aria-haspopup", true)
-                .attr("aria-describedby", popoverID)
+                .attr("id", popoverID)
                 .attr("aria-hidden", true);
 
             }
@@ -168,9 +168,14 @@ $(document).ready( function() {
     // aria-describedby
     // adds accessibility attributes to popover
     // ToDo:: if aria attribute added, don't add again
-    var popoverAria = function() {
+    var popoverAria = function( evt ) {
         var popover = $('.popover'),
             popoverLength = popover.length;
+
+        var eventTarget = $(evt.target).closest('a');
+        var eventTargetID = $(evt.target).closest('a')[0].id;
+        console.log(eventTarget);
+        console.log(eventTargetID);
 
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
@@ -205,9 +210,8 @@ $(document).ready( function() {
     });
 
     $('body').on('click', function ( evt ) {
-
         // add popoverAria attributes
-        popoverAria();
+        popoverAria( evt );
 
         // add close 'x' to popover
         $('.popover-title').append(
