@@ -172,19 +172,22 @@ $(document).ready( function() {
         var popover = $('.popover'),
             popoverLength = popover.length;
 
-        var eventTarget = $(evt.target).closest('a');
-        var eventTargetID = $(evt.target).closest('a')[0].id;
-        console.log(eventTarget);
-        console.log(eventTargetID);
+        //var eventTarget = $(evt.target).closest('a');
+        //if(eventTarget) {
+        //    var eventTargetID = $(evt.target).closest('a')[0].id;
+        //}
+        //
+        //console.log(eventTarget);
+        //console.log(eventTargetID);
 
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
             if( popoverLength === 1 ) {
                 popover.attr("role", "tooltip")
-                    .attr("id", popover.prev()[0].getAttribute("aria-describedby"));
+                    .attr("id", $(evt.target).closest('a')[0].id);
             } else if( popoverLength > 1 ) {
                 popover.attr("role", "tooltip")
-                    .attr("id", popover.prev()[1].getAttribute("aria-describedby"));
+                    .attr("id", $(evt.target).closest('a')[0].id);
             }
         }
     };
