@@ -15,7 +15,7 @@ $(document).ready( function() {
                 eventEnd    = formatTime( event.end ),
                 allDayBool  = event.allDay,
                 output_url  = "cal-output.html?id=" + event.id,
-                popoverID   = "popover" + event.id.toString().substring(0, 5),
+                //popoverID   = "popover" + event.id.toString().substring(0, 5),
                 startDate, startTime;
             var contentEvent;
 
