@@ -187,7 +187,7 @@ $(document).ready( function() {
             console.log('popoverTarget closest:  ' + popoverTarget.closest('a'));
             console.log(popoverTarget.closest('a').id);
 
-            if( typeof $(evt.target).closest('a')[0].id === "undefined") {
+            if( typeof $(evt.target).closest('a')[0].id !== "undefined") {
                 console.log('in undefined comparison cond');
                 var popoverID = $(evt.target).closest('a')[0].id;
                 console.log('in popoverlength > 0');
