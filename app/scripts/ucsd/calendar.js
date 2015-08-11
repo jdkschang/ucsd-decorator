@@ -182,7 +182,8 @@ $(document).ready( function() {
 
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
-            if( popoverLength === 1 ) {
+            console.log('in popoverlength > 0');
+            if( popoverLength === 1  ) {
                 popover.attr("role", "tooltip")
                     .attr("id", $(evt.target).closest('a')[0].id);
             } else if( popoverLength > 1 ) {
