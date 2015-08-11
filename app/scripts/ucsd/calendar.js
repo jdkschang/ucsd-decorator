@@ -182,15 +182,19 @@ $(document).ready( function() {
 
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
-            console.log('in popoverlength > 0');
             var popoverID = $(evt.target).closest('a')[0].id;
+            console.log('in popoverlength > 0');
+            console.log(popoverID);
+
             if( popoverLength === 1  ) {
                 popover.attr("role", "tooltip")
                     .attr("id", popoverID);
+                console.log('in popoverlength === 1');
                 console.log(popoverID)
             } else if( popoverLength > 1 ) {
                 popover.attr("role", "tooltip")
                     .attr("id", popoverID);
+                console.log('in popoverlength > 1');
                 console.log(popoverID)
             }
         }
