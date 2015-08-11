@@ -183,12 +183,15 @@ $(document).ready( function() {
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
             console.log('in popoverlength > 0');
+            var popoverID = $(evt.target).closest('a')[0].id;
             if( popoverLength === 1  ) {
                 popover.attr("role", "tooltip")
-                    .attr("id", $(evt.target).closest('a')[0].id);
+                    .attr("id", popoverID);
+                console.log(popoverID)
             } else if( popoverLength > 1 ) {
                 popover.attr("role", "tooltip")
-                    .attr("id", $(evt.target).closest('a')[0].id);
+                    .attr("id", popoverID);
+                console.log(popoverID)
             }
         }
     };
