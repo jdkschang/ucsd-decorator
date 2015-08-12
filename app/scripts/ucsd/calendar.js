@@ -66,7 +66,7 @@ $(document).ready( function() {
                 .attr("tabindex", "0")              // allows events to be tabbed
                 //.attr("href", output_url )
                 .attr("aria-haspopup", true)
-                .attr("id", popoverID)
+                .attr("data-id", popoverID)
                 .attr("aria-hidden", true);
 
             }
@@ -169,8 +169,9 @@ $(document).ready( function() {
     // adds accessibility attributes to popover
     // ToDo:: if aria attribute added, don't add again
     var popoverAria = function( evt ) {
-        var popover = $('.popover'),
-            popoverLength = popover.length;
+        var popover         = $('.popover'),
+            popoverLength   = popover.length,
+            popoverArray    = [];   // array of arrays (tuples)
 
         //var eventTarget = $(evt.target).closest('a');
         //if(eventTarget) {
@@ -184,8 +185,13 @@ $(document).ready( function() {
         if( popoverLength > 0 ) {
             var popoverTarget = $(evt.target);
             if( popoverTarget.closest('a').length > 0 ) {
-                var popoverTargetID = $(evt.target).closest('a')[0].id;
+                console.log($(evt.target).closest('a'));
+                console.log($(evt.target).closest('a')[0]);
+                var popoverTargetID = $(evt.target).closest('a').attr("data-id");
 
+                console.log(popoverTargetID);
+
+                // adding tooltip & id to popovers
                 popover.attr("role", "tooltip")
                     .attr("id", popoverTargetID);
 
