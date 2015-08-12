@@ -194,6 +194,13 @@ $(document).ready( function() {
                 console.log(dataTargetID);
                 console.log(popoverTargetID);
                 // create queue of aria elements
+
+                var removePopoverID;
+                if(popoverArray.length > 0) {
+                    removePopoverID = popoverArray.shift();
+                }
+                var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
+                removePopoverTargetID[0].removeAttr('data-id');
                 popoverArray.push([ popoverTargetID, true ]);
                 console.log(popoverArray);
 
