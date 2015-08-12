@@ -185,11 +185,14 @@ $(document).ready( function() {
             var popoverTarget = $(evt.target);
             console.log(popoverTarget);
             console.log('popoverTarget closest:  ' + popoverTarget.closest('a'));
-            //console.log(popoverTarget.closest('a').id);
+            //var popoverID = $(evt.target).closest('a')[0].id;
+            console.log(popoverTarget.closest('a').length);
+            console.log('after popoverID instantiated');
+            console.log(popoverTarget.closest('a').id);
 
-            if( typeof $(evt.target).closest('a')[0].id !== "undefined") {
+            if( popoverTarget.closest('a').length > 0 ) {
                 console.log('in undefined comparison cond');
-                var popoverID = $(evt.target).closest('a')[0].id;
+                //var popoverID = $(evt.target).closest('a')[0].id;
                 console.log('in popoverlength > 0');
                 console.log(popoverID);
 
