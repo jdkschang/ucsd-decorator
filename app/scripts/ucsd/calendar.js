@@ -192,7 +192,7 @@ $(document).ready( function() {
 
             if( popoverTarget.closest('a').length > 0 ) {
                 console.log('in undefined comparison cond');
-                //var popoverID = $(evt.target).closest('a')[0].id;
+                var popoverID = $(evt.target).closest('a')[0].id;
                 console.log('in popoverlength > 0');
                 console.log(popoverID);
 
