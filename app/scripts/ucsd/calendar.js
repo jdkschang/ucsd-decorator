@@ -168,10 +168,10 @@ $(document).ready( function() {
     // aria-describedby
     // adds accessibility attributes to popover
     // ToDo:: if aria attribute added, don't add again
+    var popoverArray    = [];   // array of arrays (tuples)
     var popoverAria = function( evt ) {
         var popover         = $('.popover'),
-            popoverLength   = popover.length,
-            popoverArray    = [];   // array of arrays (tuples)
+            popoverLength   = popover.length;
 
         //var eventTarget = $(evt.target).closest('a');
         //if(eventTarget) {
@@ -187,11 +187,13 @@ $(document).ready( function() {
             if( popoverTarget.closest('a').length > 0 ) {
                 //console.log($(evt.target).closest('a'));
                 //console.log($(evt.target).closest('a')[0]);
-                var popoverTargetID = $(evt.target).closest('a').attr("data-id");
+                var popoverTargetID = $(evt.target).closest('a').data("id");
                 popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
                 console.log(popoverTargetID);
-
+                // create queue of aria elements
+                popoverArray.push([ popoverTargetID, true ]);
+                console.log(popoverArray);
 
                 // adding tooltip & id to popovers
                 popover.attr("role", "tooltip")
