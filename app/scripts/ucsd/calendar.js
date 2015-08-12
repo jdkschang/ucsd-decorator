@@ -185,11 +185,13 @@ $(document).ready( function() {
         if( popoverLength > 0 ) {
             var popoverTarget = $(evt.target);
             if( popoverTarget.closest('a').length > 0 ) {
-                console.log($(evt.target).closest('a'));
-                console.log($(evt.target).closest('a')[0]);
+                //console.log($(evt.target).closest('a'));
+                //console.log($(evt.target).closest('a')[0]);
                 var popoverTargetID = $(evt.target).closest('a').attr("data-id");
+                popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
                 console.log(popoverTargetID);
+
 
                 // adding tooltip & id to popovers
                 popover.attr("role", "tooltip")
