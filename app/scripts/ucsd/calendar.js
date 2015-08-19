@@ -200,6 +200,7 @@ $(document).ready( function() {
                     removePopoverID = popoverArray.shift();
                 }
                 var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
+                console.log(removePopoverTargetID);
                 removePopoverTargetID[0].removeAttr('data-id');
                 popoverArray.push([ popoverTargetID, true ]);
                 console.log(popoverArray);
