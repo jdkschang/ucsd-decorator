@@ -173,6 +173,9 @@ $(document).ready( function() {
         var popover         = $('.popover'),
             popoverLength   = popover.length;
 
+        console.log('show popover Array: ');
+        console.log(popoverArray);
+
         //var eventTarget = $(evt.target).closest('a');
         //if(eventTarget) {
         //    var eventTargetID = $(evt.target).closest('a')[0].id;
@@ -184,42 +187,44 @@ $(document).ready( function() {
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
             var popoverTarget = $(evt.target);
-            console.log("popoverTarget: ");
-            console.log(popoverTarget);
+            //console.log("popoverTarget: ");
+            //console.log(popoverTarget);
 
             // if
             if( popoverTarget.closest('a').length > 0 ) {
                 //console.log($(evt.target).closest('a'));
                 //console.log($(evt.target).closest('a')[0]);
-                console.log('in popover closest a length > 0: ');
+                //console.log('in popover closest a length > 0: ');
                 var popoverTargetID = $(evt.target).closest('a').data("id");
                 popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
                 var dataTargetID = $( '[data-id=' + popoverTargetID + ']' );
-                console.log('dataTargetID: ');
-                console.log(dataTargetID);
-                console.log('popoverTargetID: ');
-                console.log(popoverTargetID);
+                //console.log('dataTargetID: ');
+                //console.log(dataTargetID);
+                //console.log('popoverTargetID: ');
+                //console.log(popoverTargetID);
                 // create queue of aria elements
 
                 var removePopoverID;
                 if(popoverArray.length > 0) {
-                    console.log('if popoverArray length > 0: remove id');
+                    //console.log('if popoverArray length > 0: remove id');
                     removePopoverID = popoverArray.shift();
+                    var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
+                    removePopoverTargetID.removeAttr('data-id');
                 }
 
                 if (typeof removePopoverID !== "undefined") {
-                    console.log('removePopoverID is not undefined: ');
-                    console.log(removePopoverID);
-                    var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
-                    console.log(removePopoverTargetID);
-                    console.log('remove target data id: ');
-                    removePopoverTargetID.removeAttr('data-id');
+                    //console.log('removePopoverID is not undefined: ');
+                    //console.log(removePopoverID);
+                    //var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
+                    //console.log(removePopoverTargetID);
+                    //console.log('remove target data id: ');
+                    //removePopoverTargetID.removeAttr('data-id');
                 }
 
 
                 popoverArray.push(popoverTargetID);
-                console.log(popoverArray);
+                //console.log(popoverArray);
 
                 // adding tooltip & id to popovers
                 popover.attr("role", "tooltip")
