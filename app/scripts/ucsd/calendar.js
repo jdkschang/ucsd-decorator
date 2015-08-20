@@ -186,6 +186,8 @@ $(document).ready( function() {
             var popoverTarget = $(evt.target);
             console.log("popoverTarget: ");
             console.log(popoverTarget);
+
+            // if
             if( popoverTarget.closest('a').length > 0 ) {
                 //console.log($(evt.target).closest('a'));
                 //console.log($(evt.target).closest('a')[0]);
@@ -205,10 +207,18 @@ $(document).ready( function() {
                     console.log('if popoverArray length > 0: remove id');
                     removePopoverID = popoverArray.shift();
                 }
-                var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
-                console.log(removePopoverTargetID);
-                removePopoverTargetID[0].removeAttr('data-id');
-                popoverArray.push([ popoverTargetID, true ]);
+
+                if (typeof removePopoverID !== "undefined") {
+                    console.log('removePopoverID is not undefined: ');
+                    console.log(removePopoverID);
+                    var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
+                    console.log(removePopoverTargetID);
+                    console.log('remove target data id: ');
+                    removePopoverTargetID.removeAttr('data-id');
+                }
+
+
+                popoverArray.push(popoverTargetID);
                 console.log(popoverArray);
 
                 // adding tooltip & id to popovers
