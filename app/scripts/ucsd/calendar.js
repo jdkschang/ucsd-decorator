@@ -202,6 +202,7 @@ $(document).ready( function() {
 
                 var removePopoverID;
                 if(popoverArray.length > 0) {
+                    console.log('if popoverArray length > 0: remove id');
                     removePopoverID = popoverArray.shift();
                 }
                 var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
