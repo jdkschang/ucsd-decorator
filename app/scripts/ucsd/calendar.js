@@ -184,9 +184,12 @@ $(document).ready( function() {
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
             var popoverTarget = $(evt.target);
+            console.log("popoverTarget: ");
+            console.log(popoverTarget);
             if( popoverTarget.closest('a').length > 0 ) {
                 //console.log($(evt.target).closest('a'));
                 //console.log($(evt.target).closest('a')[0]);
+                console.log('in popover closest a length > 0: ');
                 var popoverTargetID = $(evt.target).closest('a').data("id");
                 popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
