@@ -194,7 +194,9 @@ $(document).ready( function() {
                 popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
                 var dataTargetID = $( '[data-id=' + popoverTargetID + ']' );
+                console.log('dataTargetID: ');
                 console.log(dataTargetID);
+                console.log('popoverTargetID: ');
                 console.log(popoverTargetID);
                 // create queue of aria elements
 
