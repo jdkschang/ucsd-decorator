@@ -90,6 +90,17 @@ $(document).ready( function() {
                 }
             }
 
+            var fcPrev = $('.fc-prev-button'),
+                fcNext = $('.fc-next-button');
+
+            fcNext.attr("aria-label", "fc-next");
+            fcPrev.attr("aria-label", "fc-prev");
+
+            console.log('fcNext: ');
+            console.log(fcNext);
+
+            console.log('fcPrev: ');
+            console.log(fcPrev);
         },
         eventSources: [
             //event source
