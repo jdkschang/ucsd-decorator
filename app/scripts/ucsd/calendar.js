@@ -190,7 +190,7 @@ $(document).ready( function() {
             //console.log("popoverTarget: ");
             //console.log(popoverTarget);
 
-            // if
+            // if in event target
             if( popoverTarget.closest('a').length > 0 ) {
                 //console.log($(evt.target).closest('a'));
                 //console.log($(evt.target).closest('a')[0]);
@@ -198,7 +198,7 @@ $(document).ready( function() {
                 var popoverTargetID = $(evt.target).closest('a').data("id");
                 popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
-                var dataTargetID = $( '[data-id=' + popoverTargetID + ']' );
+                //var dataTargetID = $( '[data-id=' + popoverTargetID + ']' );
                 //console.log('dataTargetID: ');
                 //console.log(dataTargetID);
                 //console.log('popoverTargetID: ');
@@ -210,18 +210,13 @@ $(document).ready( function() {
                     //console.log('if popoverArray length > 0: remove id');
                     removePopoverID = popoverArray.shift();
                     var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
-                    removePopoverTargetID.removeAttr('data-id');
-                }
+                    removePopoverTargetID.removeAttr('aria-describedby');
 
-                if (typeof removePopoverID !== "undefined") {
-                    //console.log('removePopoverID is not undefined: ');
-                    //console.log(removePopoverID);
-                    //var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
-                    //console.log(removePopoverTargetID);
-                    //console.log('remove target data id: ');
-                    //removePopoverTargetID.removeAttr('data-id');
-                }
+                    console.log('evt target : ');
+                    console.log(evt.target);
 
+                    console.log(removePopoverTargetID);
+                }
 
                 popoverArray.push(popoverTargetID);
                 //console.log(popoverArray);
