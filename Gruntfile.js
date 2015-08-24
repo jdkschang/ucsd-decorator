@@ -128,9 +128,7 @@ module.exports = function (grunt) {
         },
 
         eslint: {
-            options: {
-                format
-            }
+            target: ['<%= config.app %>/scripts/ucsd/{,*/}*.js']
         },
 
         // Make sure code styles are up to par and there are no obvious mistakes
@@ -423,7 +421,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
+        'eslint',
         'build'
     ]);
 };
