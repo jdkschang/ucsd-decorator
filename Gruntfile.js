@@ -127,6 +127,12 @@ module.exports = function (grunt) {
             server: '.tmp'
         },
 
+        eslint: {
+            options: {
+                format
+            }
+        },
+
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
             options: {

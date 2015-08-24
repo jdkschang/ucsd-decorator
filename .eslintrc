@@ -1,9 +1,5 @@
 {
-  "rules": {
-    "indent": [2, 2],
-    "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],
-    "no-alert": 1
-  },
+  "extends": "airbnb/base",
   "env": {
     "browser": true
   }
