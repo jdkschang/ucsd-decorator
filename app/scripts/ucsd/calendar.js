@@ -179,58 +179,27 @@ $(document).ready( function() {
         var popover         = $('.popover'),
             popoverLength   = popover.length;
 
-        console.log('show popover Array: ');
-        console.log(popoverArray);
-
-        //var eventTarget = $(evt.target).closest('a');
-        //if(eventTarget) {
-        //    var eventTargetID = $(evt.target).closest('a')[0].id;
-        //}
-        //
-        //console.log(eventTarget);
-        //console.log(eventTargetID);
-
         // check if popover event has been clicked
         if( popoverLength > 0 ) {
             var popoverTarget = $(evt.target);
-            //console.log("popoverTarget: ");
-            //console.log(popoverTarget);
 
             // if in event target
             if( popoverTarget.closest('a').length > 0 ) {
-                //console.log($(evt.target).closest('a'));
-                //console.log($(evt.target).closest('a')[0]);
-                //console.log('in popover closest a length > 0: ');
                 var popoverTargetID = $(evt.target).closest('a').data("id");
                 popoverTarget.closest('a').attr("aria-describedby", popoverTargetID);
 
-                //var dataTargetID = $( '[data-id=' + popoverTargetID + ']' );
-                //console.log('dataTargetID: ');
-                //console.log(dataTargetID);
-                //console.log('popoverTargetID: ');
-                //console.log(popoverTargetID);
-                // create queue of aria elements
-
                 var removePopoverID;
                 if(popoverArray.length > 0) {
-                    //console.log('if popoverArray length > 0: remove id');
                     removePopoverID = popoverArray.shift();
                     var removePopoverTargetID = $( '[data-id=' + removePopoverID + ']' );
                     removePopoverTargetID.removeAttr('aria-describedby');
-
-                    console.log('evt target : ');
-                    console.log(evt.target);
-
-                    console.log(removePopoverTargetID);
                 }
 
                 popoverArray.push(popoverTargetID);
-                //console.log(popoverArray);
 
                 // adding tooltip & id to popovers
                 popover.attr("role", "tooltip")
                     .attr("id", popoverTargetID);
-
             }
         }
     };
