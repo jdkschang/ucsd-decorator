@@ -65,17 +65,17 @@ module.exports = function (grunt) {
             }
         },
 
-        //sass: {
-        //    dist: {
-        //        files: {
-        //            '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-        //            '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
-        //        },
-        //        options: {
-        //            sourcemap: 'true'
-        //        }
-        //    }
-        //},
+        sass: {
+            dist: {
+                files: {
+                    '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
+                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
+                },
+                options: {
+                    sourcemap: 'true'
+                }
+            }
+        },
 
         // The actual grunt server settings
         connect: {
@@ -145,7 +145,7 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
-                sassDir: '<%= config.app %>/styles',
+                sassDir: '<%= config.app %>/styles/**/*',
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/img/generated',
                 imagesDir: '<%= config.app %>/img',
@@ -357,40 +357,6 @@ module.exports = function (grunt) {
                 ]
             }
         }
-    });
-
-    grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
-        }
-
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
-            'autoprefixer',
-            'connect:livereload',
-            'watch'
-        ]);
-    });
-
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer'
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
     });
 
     grunt.registerTask('build', [
