@@ -9,7 +9,9 @@
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt);
+    //require('load-grunt-tasks')(grunt);
+    // Load
+    require('load-grunt-config')(grunt);
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
