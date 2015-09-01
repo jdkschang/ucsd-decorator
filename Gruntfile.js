@@ -18,8 +18,8 @@ module.exports = function (grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        // Configurable paths
         config: {
-            // Configurable paths
             app: 'app',
             dist: 'dist'
         },
@@ -64,17 +64,18 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        sass: {
-            dist: {
-                files: {
-                    '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
-                },
-                options: {
-                    sourcemap: 'true'
-                }
-            }
-        },
+
+        //sass: {
+        //    dist: {
+        //        files: {
+        //            '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
+        //            '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
+        //        },
+        //        options: {
+        //            sourcemap: 'true'
+        //        }
+        //    }
+        //},
 
         // The actual grunt server settings
         connect: {
@@ -130,20 +131,6 @@ module.exports = function (grunt) {
         eslint: {
             target: ['<%= config.app %>/scripts/ucsd/{,*/}*.js']
         },
-
-        // Make sure code styles are up to par and there are no obvious mistakes
-        //jshint: {
-        //    options: {
-        //        jshintrc: '.jshintrc',
-        //        reporter: require('jshint-stylish')
-        //    },
-        //    all: [
-        //        'Gruntfile.js',
-        //        '<%= config.app %>/scripts/{,*/}*.js',
-        //        '!<%= config.app %>/scripts/vendor/*',
-        //        'test/spec/{,*/}*.js'
-        //    ]
-        //},
 
         // Mocha testing framework configuration options
         mocha: {
