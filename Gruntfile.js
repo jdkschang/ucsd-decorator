@@ -347,7 +347,7 @@ module.exports = function (grunt) {
             dist: [
                 'compass',
                 'copy:styles',
-                'imagemin',
+                'imagemin'
                 //'svgmin'
             ]
         },
@@ -381,7 +381,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'eslint',
+        //'eslint',
         'build'
     ]);
 };
