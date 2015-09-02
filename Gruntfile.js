@@ -28,9 +28,16 @@ module.exports = function (grunt) {
 
         // browserify
         browserify: {
+
             main: {
-                src: '<%= config.app %>/scripts/{,*/}*.js',
-                dest: '<%= config.app %>/scripts/bundle.js
+                options: {
+                    bundeOptions: {
+                        debug: true
+                    },
+                    banner: '/*! <%= pkg.name %>' + ' v' + '<%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy") %>*/\n'
+                },
+                src: '<%= config.app %>/scripts/ucsd/*.js',
+                dest: '<%= config.app %>/scripts/bundle.js'
             }
         },
 
@@ -261,35 +268,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
-        // By default, your `index.html`'s <!-- Usemin block --> will take care of
-        // minification. These next options are pre-configured if you do not wish
-        // to use the Usemin blocks.
-        // cssmin: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/styles/_bootstrap.css': [
-        //                 '.tmp/styles/{,*/}*.css',
-        //                 '<%= config.app %>/styles/{,*/}*.css'
-        //             ]
-        //         }
-        //     }
-        // },
-        // uglify: {
-        //      options: {
-        //          banner: '/*! <%= pkg.name %> v<%= pkg.version %> */\n'
-        //      },
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
-        //             ]
-        //         }
-        //     }
-        // },
-        // concat: {
-        //     dist: {}
-        // },
 
         // Copies remaining files to places other tasks can use
         copy: {
