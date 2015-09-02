@@ -413,10 +413,6 @@ module.exports = function (grunt) {
         'postcss',
         'eslint',
         'uglify:dist'
-        //'copy:dist',
-        //'modernizr',
-        //'usemin',
-        //'compress'
     ]);
 
     grunt.registerTask('serve', [
