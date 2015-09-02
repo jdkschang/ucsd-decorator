@@ -4,10 +4,12 @@
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^4.0.10",
+    "browserify": "latest",
     "eslint-config-airbnb": "0.0.8",
     "grunt": "~0.4.x",
     "grunt-autoprefixer": "^0.5.0",
     "grunt-bower-install": "^1.4.0",
+    "grunt-browserify": "latest",
     "grunt-concurrent": "^0.4.3",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-compass": "^0.7.2",
