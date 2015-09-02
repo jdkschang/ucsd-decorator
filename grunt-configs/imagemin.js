@@ -13,8 +13,11 @@ module.exports = function(grunt) {
         },
         files: [{
             expand: true,
-            cwd: 'src/',
-            src: ['images/**/*.{png,jpg,gif,svg}'],
+            cwd: 'app/',
+            src: [
+                'img/*.{png,jpg,gif,svg}',
+                'styles/img/*.{png,jpg,gif,svg}'
+            ],
             dest: 'dist/'
         }]
     });
