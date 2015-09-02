@@ -62,13 +62,13 @@ module.exports = function (grunt) {
         pkg: require('./package.json'),
 
         // Pass shared variables to be used by external config files.
-        gruntScope: gruntScope,
+        gruntScope: gruntScope
 
         // Configurable paths
-        config: {
-            app: 'app',
-            dist: 'dist'
-        },
+        //config: {
+        //    app: 'app',
+        //    dist: 'dist'
+        //},
 
         // browserify
         //browserify: {
@@ -86,309 +86,309 @@ module.exports = function (grunt) {
         //},
 
         // Watches files for changes and runs tasks based on the changed files
-        watch: {
-            bower: {
-                files: ['bower.json'],
-                tasks: ['bowerInstall']
-            },
-            js: {
-                files: ['<%= config.app %>/scripts/{,*/}*.js'],
-                tasks: ['eslint'],
-                options: {
-                    livereload: true
-                }
-            },
-            jstest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['test:watch']
-            },
-            gruntfile: {
-                files: ['Gruntfile.js']
-            },
-            compass: {
-                files: ['<%= config.app %>/styles/**/*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
-            },
-            styles: {
-                files: ['<%= config.app %>/styles/**/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= config.app %>/{,*/}*.html',
-                    '<%= config.app %>/{,*/}*.css',
-                    '.tmp/styles/{,*/}*.css',
-                    '<%= config.app %>/img/{,*/}*'
-                ]
-            }
-        },
-
-        sass: {
-            dist: {
-                files: {
-                    '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
-                },
-                options: {
-                    sourcemap: 'true'
-                }
-            }
-        },
-
-        // The actual grunt server settings
-        connect: {
-            options: {
-                port: 9000,
-                livereload: 35729,
-                // Change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    open: true,
-                    base: [
-                        '.tmp',
-                        '<%= config.app %>'
-                    ]
-                }
-            },
-            test: {
-                options: {
-                    port: 9001,
-                    base: [
-                        '.tmp',
-                        'test',
-                        '<%= config.app %>'
-                    ]
-                }
-            },
-            dist: {
-                options: {
-                    open: true,
-                    base: '<%= config.dist %>',
-                    livereload: false
-                }
-            }
-        },
-
-        // Empties folders to start fresh
-        clean: {
-            dist: {
-                files: [{
-                    dot: true,
-                    src: [
-                        '.tmp',
-                        '<%= config.dist %>/*',
-                        '!<%= config.dist %>/.git*'
-                    ]
-                }]
-            },
-            server: '.tmp'
-        },
-
-        eslint: {
-            target: ['<%= config.app %>/scripts/ucsd/{,*/}*.js']
-        },
-
-        // Mocha testing framework configuration options
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
-            }
-        },
-
-        // Compiles Sass to CSS and generates necessary files if requested
-        compass: {
-            options: {
-                sassDir: '<%= config.app %>/styles/**/*',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/img/generated',
-                imagesDir: '<%= config.app %>/img',
-                javascriptsDir: '<%= config.app %>/scripts',
-                fontsDir: '<%= config.app %>/fonts',
-                importPath: '<%= config.app %>/vendor',
-                httpImagesPath: '/img',
-                httpGeneratedImagesPath: '/img/generated',
-                httpFontsPath: '/fonts',
-                relativeAssets: false,
-                assetCacheBuster: false
-            },
-            dist: {
-                options: {
-                    generatedImagesDir: '<%= config.dist %>/img/generated'
-                }
-            },
-            server: {
-                options: {
-                    debugInfo: true
-                }
-            }
-        },
-
-        // Add vendor prefixed styles
-        autoprefixer: {
-            options: {
-                browsers: ['last 6 versions']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,*/}*.css',
-                    dest: '.tmp/styles/'
-                }]
-            }
-        },
-
-        // Automatically inject Bower components into the HTML file
-        bowerInstall: {
-            app: {
-                src: ['<%= config.app %>/index.html'],
-                ignorePath: '<%= config.app %>/',
-                exclude: ['bootstrap.js', 'jquery.js']
-            },
-            sass: {
-                src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                ignorePath: '<%= config.app %>/vendor/'
-            }
-        },
-
-        // Renames files for browser caching purposes
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
-                        '<%= config.dist %>/styles/{,*/}*.css',
-                        '<%= config.dist %>/img/{,*/}*.*',
-                        '<%= config.dist %>/fonts/{,*/}*.*',
-                        '<%= config.dist %>/*.{ico,png}'
-                    ]
-                }
-            }
-        },
-
-        // Reads HTML for usemin blocks to enable smart builds that automatically
-        // concat, minify and revision files. Creates configurations in memory so
-        // additional tasks can operate on them
-        useminPrepare: {
-            options: {
-                dest: '<%= config.dist %>'
-            },
-            html: [ '<%= config.app %>/homepage-wide.html', '<%= config.app %>/widgets.html' ]
-        },
-
-        // Performs rewrites based on rev and the useminPrepare configuration
-        usemin: {
-            options: {
-                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/img']
-            },
-            html: ['<%= config.dist %>/{,*/}*.html'],
-            css: ['<%= config.dist %>/styles/{,*/}*.css']
-        },
-
-        // The following *-min tasks produce minified files in the dist folder
-        imagemin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/img',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= config.dist %>/img'
-                }]
-            },
-            cssImages: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/styles/img',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= config.dist %>/styles/img'
-                }]
-            }
-        },
-
-        // Copies remaining files to places other tasks can use
-        copy: {
-            dist: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= config.app %>',
-                    dest: '<%= config.dist %>',
-                    src: [
-                        '*.{ico,png,txt}',
-                        'img/{,*/}*.webp',
-                        '{,*/}*.html',
-                        'fonts/{,*/}*.*',
-                        'docs/{,*/}*.css', //for the kitchen sink...
-                        'docs/{,*/}*.js' //for the kitchen sink...
-                    ]
-                },
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= config.app %>/vendor/bootstrap-sass-official/vendor/assets/fonts/bootstrap',
-                    dest: '<%= config.dist %>/fonts',
-                    src: [
-                        '*.*'
-                    ]
-                }]
-            },
-            styles: {
-                expand: true,
-                dot: true,
-                cwd: '<%= config.app %>/styles',
-                dest: '.tmp/styles/',
-                src: '{,*/}*.css'
-            }
-        },
-
-        // Generates a custom Modernizr build that includes only the tests you
-        // reference in your app
-        modernizr: {
-            devFile: '<%= config.app %>/vendor/modernizr/modernizr.js',
-            outputFile: '<%= config.dist %>/scripts/modernizr.js',
-            files: [
-                '<%= config.dist %>/scripts/{,*/}*.js',
-                '<%= config.dist %>/styles/{,*/}*.css',
-                '!<%= config.dist %>/scripts/vendor/*'
-            ],
-            uglify: true
-        },
-
-        // Run some tasks in parallel to speed up build process
-        concurrent: {
-            server: [
-                'compass:server',
-                'copy:styles'
-            ],
-            test: [
-                'copy:styles'
-            ],
-            dist: [
-                'compass',
-                'copy:styles',
-                'imagemin'
-                //'svgmin'
-            ]
-        },
-
-        compress: {
-            main: {
-                options: {
-                    archive: 'ucsd-decorator.zip'
-                },
-                files: [
-                    {cwd:'dist/', src: ['**'], expand: true, dest: 'ucsd-decorator/'}
-                ]
-            }
-        }
+        //watch: {
+        //    bower: {
+        //        files: ['bower.json'],
+        //        tasks: ['bowerInstall']
+        //    },
+        //    js: {
+        //        files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        //        tasks: ['eslint'],
+        //        options: {
+        //            livereload: true
+        //        }
+        //    },
+        //    jstest: {
+        //        files: ['test/spec/{,*/}*.js'],
+        //        tasks: ['test:watch']
+        //    },
+        //    gruntfile: {
+        //        files: ['Gruntfile.js']
+        //    },
+        //    compass: {
+        //        files: ['<%= config.app %>/styles/**/*.{scss,sass}'],
+        //        tasks: ['compass:server', 'autoprefixer']
+        //    },
+        //    styles: {
+        //        files: ['<%= config.app %>/styles/**/*.css'],
+        //        tasks: ['newer:copy:styles', 'autoprefixer']
+        //    },
+        //    livereload: {
+        //        options: {
+        //            livereload: '<%= connect.options.livereload %>'
+        //        },
+        //        files: [
+        //            '<%= config.app %>/{,*/}*.html',
+        //            '<%= config.app %>/{,*/}*.css',
+        //            '.tmp/styles/{,*/}*.css',
+        //            '<%= config.app %>/img/{,*/}*'
+        //        ]
+        //    }
+        //},
+        //
+        //sass: {
+        //    dist: {
+        //        files: {
+        //            '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
+        //            '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
+        //        },
+        //        options: {
+        //            sourcemap: 'true'
+        //        }
+        //    }
+        //},
+        //
+        //// The actual grunt server settings
+        //connect: {
+        //    options: {
+        //        port: 9000,
+        //        livereload: 35729,
+        //        // Change this to '0.0.0.0' to access the server from outside
+        //        hostname: 'localhost'
+        //    },
+        //    livereload: {
+        //        options: {
+        //            open: true,
+        //            base: [
+        //                '.tmp',
+        //                '<%= config.app %>'
+        //            ]
+        //        }
+        //    },
+        //    test: {
+        //        options: {
+        //            port: 9001,
+        //            base: [
+        //                '.tmp',
+        //                'test',
+        //                '<%= config.app %>'
+        //            ]
+        //        }
+        //    },
+        //    dist: {
+        //        options: {
+        //            open: true,
+        //            base: '<%= config.dist %>',
+        //            livereload: false
+        //        }
+        //    }
+        //},
+        //
+        //// Empties folders to start fresh
+        //clean: {
+        //    dist: {
+        //        files: [{
+        //            dot: true,
+        //            src: [
+        //                '.tmp',
+        //                '<%= config.dist %>/*',
+        //                '!<%= config.dist %>/.git*'
+        //            ]
+        //        }]
+        //    },
+        //    server: '.tmp'
+        //},
+        //
+        //eslint: {
+        //    target: ['<%= config.app %>/scripts/ucsd/{,*/}*.js']
+        //},
+        //
+        //// Mocha testing framework configuration options
+        //mocha: {
+        //    all: {
+        //        options: {
+        //            run: true,
+        //            urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
+        //        }
+        //    }
+        //},
+        //
+        //// Compiles Sass to CSS and generates necessary files if requested
+        //compass: {
+        //    options: {
+        //        sassDir: '<%= config.app %>/styles/**/*',
+        //        cssDir: '.tmp/styles',
+        //        generatedImagesDir: '.tmp/img/generated',
+        //        imagesDir: '<%= config.app %>/img',
+        //        javascriptsDir: '<%= config.app %>/scripts',
+        //        fontsDir: '<%= config.app %>/fonts',
+        //        importPath: '<%= config.app %>/vendor',
+        //        httpImagesPath: '/img',
+        //        httpGeneratedImagesPath: '/img/generated',
+        //        httpFontsPath: '/fonts',
+        //        relativeAssets: false,
+        //        assetCacheBuster: false
+        //    },
+        //    dist: {
+        //        options: {
+        //            generatedImagesDir: '<%= config.dist %>/img/generated'
+        //        }
+        //    },
+        //    server: {
+        //        options: {
+        //            debugInfo: true
+        //        }
+        //    }
+        //},
+        //
+        //// Add vendor prefixed styles
+        //autoprefixer: {
+        //    options: {
+        //        browsers: ['last 6 versions']
+        //    },
+        //    dist: {
+        //        files: [{
+        //            expand: true,
+        //            cwd: '.tmp/styles/',
+        //            src: '{,*/}*.css',
+        //            dest: '.tmp/styles/'
+        //        }]
+        //    }
+        //},
+        //
+        //// Automatically inject Bower components into the HTML file
+        //bowerInstall: {
+        //    app: {
+        //        src: ['<%= config.app %>/index.html'],
+        //        ignorePath: '<%= config.app %>/',
+        //        exclude: ['bootstrap.js', 'jquery.js']
+        //    },
+        //    sass: {
+        //        src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+        //        ignorePath: '<%= config.app %>/vendor/'
+        //    }
+        //},
+        //
+        //// Renames files for browser caching purposes
+        //rev: {
+        //    dist: {
+        //        files: {
+        //            src: [
+        //                '<%= config.dist %>/scripts/{,*/}*.js',
+        //                '<%= config.dist %>/styles/{,*/}*.css',
+        //                '<%= config.dist %>/img/{,*/}*.*',
+        //                '<%= config.dist %>/fonts/{,*/}*.*',
+        //                '<%= config.dist %>/*.{ico,png}'
+        //            ]
+        //        }
+        //    }
+        //},
+        //
+        //// Reads HTML for usemin blocks to enable smart builds that automatically
+        //// concat, minify and revision files. Creates configurations in memory so
+        //// additional tasks can operate on them
+        //useminPrepare: {
+        //    options: {
+        //        dest: '<%= config.dist %>'
+        //    },
+        //    html: [ '<%= config.app %>/homepage-wide.html', '<%= config.app %>/widgets.html' ]
+        //},
+        //
+        //// Performs rewrites based on rev and the useminPrepare configuration
+        //usemin: {
+        //    options: {
+        //        assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/img']
+        //    },
+        //    html: ['<%= config.dist %>/{,*/}*.html'],
+        //    css: ['<%= config.dist %>/styles/{,*/}*.css']
+        //},
+        //
+        //// The following *-min tasks produce minified files in the dist folder
+        //imagemin: {
+        //    dist: {
+        //        files: [{
+        //            expand: true,
+        //            cwd: '<%= config.app %>/img',
+        //            src: '{,*/}*.{gif,jpeg,jpg,png}',
+        //            dest: '<%= config.dist %>/img'
+        //        }]
+        //    },
+        //    cssImages: {
+        //        files: [{
+        //            expand: true,
+        //            cwd: '<%= config.app %>/styles/img',
+        //            src: '{,*/}*.{gif,jpeg,jpg,png}',
+        //            dest: '<%= config.dist %>/styles/img'
+        //        }]
+        //    }
+        //},
+        //
+        //// Copies remaining files to places other tasks can use
+        //copy: {
+        //    dist: {
+        //        files: [{
+        //            expand: true,
+        //            dot: true,
+        //            cwd: '<%= config.app %>',
+        //            dest: '<%= config.dist %>',
+        //            src: [
+        //                '*.{ico,png,txt}',
+        //                'img/{,*/}*.webp',
+        //                '{,*/}*.html',
+        //                'fonts/{,*/}*.*',
+        //                'docs/{,*/}*.css', //for the kitchen sink...
+        //                'docs/{,*/}*.js' //for the kitchen sink...
+        //            ]
+        //        },
+        //        {
+        //            expand: true,
+        //            dot: true,
+        //            cwd: '<%= config.app %>/vendor/bootstrap-sass-official/vendor/assets/fonts/bootstrap',
+        //            dest: '<%= config.dist %>/fonts',
+        //            src: [
+        //                '*.*'
+        //            ]
+        //        }]
+        //    },
+        //    styles: {
+        //        expand: true,
+        //        dot: true,
+        //        cwd: '<%= config.app %>/styles',
+        //        dest: '.tmp/styles/',
+        //        src: '{,*/}*.css'
+        //    }
+        //},
+        //
+        //// Generates a custom Modernizr build that includes only the tests you
+        //// reference in your app
+        //modernizr: {
+        //    devFile: '<%= config.app %>/vendor/modernizr/modernizr.js',
+        //    outputFile: '<%= config.dist %>/scripts/modernizr.js',
+        //    files: [
+        //        '<%= config.dist %>/scripts/{,*/}*.js',
+        //        '<%= config.dist %>/styles/{,*/}*.css',
+        //        '!<%= config.dist %>/scripts/vendor/*'
+        //    ],
+        //    uglify: true
+        //},
+        //
+        //// Run some tasks in parallel to speed up build process
+        //concurrent: {
+        //    server: [
+        //        'compass:server',
+        //        'copy:styles'
+        //    ],
+        //    test: [
+        //        'copy:styles'
+        //    ],
+        //    dist: [
+        //        'compass',
+        //        'copy:styles',
+        //        'imagemin'
+        //        //'svgmin'
+        //    ]
+        //},
+        //
+        //compress: {
+        //    main: {
+        //        options: {
+        //            archive: 'ucsd-decorator.zip'
+        //        },
+        //        files: [
+        //            {cwd:'dist/', src: ['**'], expand: true, dest: 'ucsd-decorator/'}
+        //        ]
+        //    }
+        //}
     });
 
     // LOAD TASKS
@@ -397,29 +397,26 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     // TASK CONFIGS
-    // Load per-task configs from seperate files.
+    // Load per-task configs from separate files.
     grunt.loadTasks('grunt-configs/');
+
 
     // ------------------------------------------------------------------------------
     // REGISTER TASKS
     // ------------------------------------------------------------------------------
-
     grunt.registerTask('default', ['build']);
-
-    grunt.registerTask('b-test', ['browserify']);
+    //grunt.registerTask('b-test', ['browserify']);
 
     grunt.registerTask('build', [
         'clean:dist',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'cssmin',
-        'uglify',
-        'copy:dist',
-        'modernizr',
-        'usemin',
-        'compress'
+        //'compass',
+        'postcss',
+        'eslint',
+        'uglify:dist'
+        //'copy:dist',
+        //'modernizr',
+        //'usemin',
+        //'compress'
     ]);
 
     grunt.registerTask('serve', [
