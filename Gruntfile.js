@@ -31,8 +31,9 @@ module.exports = function (grunt) {
         ],
 
         // SASS/CSS FILES
+        srcSassDir: 'app/styles/**/*',
         srcSassFiles: [
-            'app/styles/**/*.scss',
+            'app/styles/**/*.scss'
             'app/vendor/**/*.scss'
         ],
         srcMainSassFile: 'app/styles/base.scss',
@@ -53,7 +54,13 @@ module.exports = function (grunt) {
         srcImageFiles: [
             'app/img/*.{png,jpg,gif,svg}',
             'app/styles/img/*.{png,jpg,gif,svg}'
-        ]
+        ],
+
+        // FONTS
+        srcFontDir: 'app/fonts',
+
+        // VENDOR
+        srcVendorDir: 'app/vendor'
     };
 
     // Define the configuration for all the tasks
