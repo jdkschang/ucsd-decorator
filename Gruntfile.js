@@ -29,13 +29,7 @@ module.exports = function (grunt) {
             pattern: 'grunt-*',
             config: require('./package.json'),
             scope: 'devDependencies'
-        },
-
-        //can post process config object before it gets passed to grunt
-        postProcess: function(config) {},
-
-        //allows to manipulate the config object before it gets merged with the data object
-        preMerge: function(config, data) {}
+        }
     });
 
     // Define the configuration for all the tasks
