@@ -1,0 +1,9 @@
+{
+  "default": [],
+  "lint": "eslint",
+  "build": [
+    "clean:dist",
+    "eslint",
+    "compress"
+  ]
+}
