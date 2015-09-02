@@ -10,10 +10,33 @@ module.exports = function (grunt) {
 
     // Load grunt tasks automatically
     //require('load-grunt-tasks')(grunt);
-    // Load
-    require('load-grunt-config')(grunt);
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
+    // Load
+    require('load-grunt-config')(grunt, {
+        // auto grunt.initConfig
+        init: true,
+
+        // data passed into config.  Can use with <%= test %>
+        data: {
+            test: false
+        },
+
+        // can optionally pass options to load-grunt-tasks.
+        // If you set to false, it will disable auto loading tasks.
+        loadGruntTasks: {
+
+            pattern: 'grunt-*',
+            config: require('./package.json'),
+            scope: 'devDependencies'
+        },
+
+        //can post process config object before it gets passed to grunt
+        postProcess: function(config) {},
+
+        //allows to manipulate the config object before it gets merged with the data object
+        preMerge: function(config, data) {}
+    });
 
     // Define the configuration for all the tasks
     grunt.initConfig({
