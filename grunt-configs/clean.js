@@ -8,8 +8,17 @@
 module.exports = function(grunt) {
     'use strict';
     grunt.config('clean', {
-        clean: [
-            'dist'
-        ]
+        clean: {
+            dist: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        'dist/*'
+                    ]
+                }]
+            },
+            server: '.tmp'
+        }
     });
 };
