@@ -26,6 +26,14 @@ module.exports = function (grunt) {
             dist: 'dist'
         },
 
+        // browserify
+        browserify: {
+            main: {
+                src: '<%= config.app %>/scripts/{,*/}*.js',
+                dest: '<%= config.app %>/scripts/bundle.js
+            }
+        },
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
@@ -360,6 +368,8 @@ module.exports = function (grunt) {
             }
         }
     });
+
+    grunt.registerTask('b-test', ['browserify']);
 
     grunt.registerTask('build', [
         'clean:dist',
