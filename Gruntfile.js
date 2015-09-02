@@ -9,28 +9,9 @@
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
-    //require('load-grunt-tasks')(grunt);
+    require('load-grunt-tasks')(grunt);
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
-    // Load
-    require('load-grunt-config')(grunt, {
-        // auto grunt.initConfig
-        init: true,
-
-        // data passed into config.  Can use with <%= test %>
-        data: {
-            test: false
-        },
-
-        // can optionally pass options to load-grunt-tasks.
-        // If you set to false, it will disable auto loading tasks.
-        loadGruntTasks: {
-
-            pattern: 'grunt-*',
-            config: require('./package.json'),
-            scope: 'devDependencies'
-        }
-    });
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -44,19 +25,19 @@ module.exports = function (grunt) {
         },
 
         // browserify
-        browserify: {
-
-            main: {
-                options: {
-                    bundeOptions: {
-                        debug: true
-                    },
-                    banner: '/*! <%= pkg.name %>' + ' v' + '<%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy") %>*/\n'
-                },
-                src: '<%= config.app %>/scripts/ucsd/*.js',
-                dest: '<%= config.app %>/scripts/bundle.js'
-            }
-        },
+        //browserify: {
+        //
+        //    main: {
+        //        options: {
+        //            bundeOptions: {
+        //                debug: true
+        //            },
+        //            banner: '/*! <%= pkg.name %>' + ' v' + '<%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy") %>*/\n'
+        //        },
+        //        src: '<%= config.app %>/scripts/ucsd/*.js',
+        //        dest: '<%= config.app %>/scripts/bundle.js'
+        //    }
+        //},
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
@@ -364,6 +345,21 @@ module.exports = function (grunt) {
         }
     });
 
+    // LOAD TASKS
+    // Load tasks automatically with 'load-grunt-tasks' plugin.
+    // https://github.com/sindresorhus/load-grunt-tasks
+    require('load-grunt-tasks')(grunt);
+
+    // TASK CONFIGS
+    // Load per-task configs from seperate files.
+    grunt.loadTasks('grunt-configs/');
+
+    // ------------------------------------------------------------------------------
+    // REGISTER TASKS
+    // ------------------------------------------------------------------------------
+
+    grunt.registerTask('default', ['build']);
+
     grunt.registerTask('b-test', ['browserify']);
 
     grunt.registerTask('build', [
@@ -380,8 +376,10 @@ module.exports = function (grunt) {
         'compress'
     ]);
 
-    grunt.registerTask('default', [
-        //'eslint',
-        'build'
+    grunt.registerTask('serve', [
+        'build',
+        'browserSync',
+        'watch'
     ]);
+
 };
