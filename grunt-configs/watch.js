@@ -8,23 +8,14 @@
 module.exports = function(grunt) {
     'use strict';
     grunt.config('watch', {
-        html: {
-            files: [
-                '<%= gruntScope.srcHtmlFiles %>'
-            ],
-            tasks: [
-                'htmlmin',
-                'usebanner'
-            ]
-        },
         sass: {
             files: [
                 '<%= gruntScope.srcSassFiles %>'
             ],
             tasks: [
-                'scsslint',
-                'sass:dist',
-                'autoprefixer'
+                //'scsslint', compass?
+                //'sass:dist',
+                'postcss'
             ]
         },
         js: {

@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 
         // COMMENT BANNER
         // Placed on generated files to warn developers not to edit `dist` files directly.
-        versionBanner: '/*! <%= package.name %>' + ' v' + '<%= package.version %> <%= grunt.template.today("mm-yyyy")',
+        versionBanner: '/*! <%= package.name %>' + ' v' + '<%= package.version %> <%= grunt.template.today("mm-yyyy")*/',
 
         // HTML FILES
         srcHtmlFiles: [
