@@ -30,9 +30,9 @@ module.exports = function (grunt) {
         ],
 
         // SASS/CSS FILES
-        srcSassDir: 'app/styles/**/*',
+        srcSassDir: 'app/styles/',
         srcSassFiles: [
-            'app/styles/**/*.scss'
+            'app/styles/**/*.scss',
             'app/vendor/**/*.scss'
         ],
         srcMainSassFile: 'app/styles/base.scss',
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        //'compass',
+        'compass:dist',
         'postcss',
         'eslint',
         'uglify:dist'

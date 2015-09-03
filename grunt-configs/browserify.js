@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 debug: true
             },
             banner: '/*! <%= pkg.name %>' + ' v' + '<%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy") %>*/\n'
-            watch: true
+            //watch: true
         },
         files: {
             '<%= gruntScope.distMainJsFile %>': '<%= gruntScope.srcMainJsFiles %>',
