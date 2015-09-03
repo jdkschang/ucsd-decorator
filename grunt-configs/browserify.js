@@ -1,5 +1,12 @@
-module.exports = {
-    main: {
+// ================================================================================
+// GRUNT CONFIG: BROWSERIFY
+// bundles js apps
+// https://github.com/jmreidy/grunt-browserify
+// ================================================================================
+
+module.exports = function(grunt) {
+    'use strict';
+    grunt.config('browserify', {
         options: {
             bundeOptions: {
                 debug: true
@@ -11,5 +18,5 @@ module.exports = {
             '<%= gruntScope.distMainJsFile %>': '<%= gruntScope.srcMainJsFiles %>',
             '<%= gruntScope.distVendorJsFile %>': '<%= gruntScope.srcVendorJsFiles %>'
         }
-    }
+    });
 };
