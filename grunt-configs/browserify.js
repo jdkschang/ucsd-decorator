@@ -5,8 +5,11 @@ module.exports = {
                 debug: true
             },
             banner: '/*! <%= pkg.name %>' + ' v' + '<%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy") %>*/\n'
+            watch: true
         },
-        src: '<%= config.app %>/scripts/ucsd/*.js',
-        dest: '<%= config.app %>/scripts/bundle.js'
+        files: {
+            '<%= gruntScope.distMainJsFile %>': '<%= gruntScope.srcMainJsFiles %>',
+            '<%= gruntScope.distVendorJsFile %>': '<%= gruntScope.srcVendorJsFiles %>'
+        }
     }
 };

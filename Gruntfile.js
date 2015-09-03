@@ -40,11 +40,10 @@ module.exports = function (grunt) {
         distMainCssFile: 'dist/styles/base-min.css',
 
         // JS FILES
-        srcJsFiles: [
-            'app/scripts/ucsd/*.js',
-            'app/vendor/**/*.js'
-        ],
+        srcMainJsFiles: 'app/scripts/ucsd/*.js',
+        srcVendorJsFiles: 'app/vendor/**/*.js',
         distMainJsFile: 'dist/scripts/base-min.js',
+        distVendorJsFile: 'dist/scripts/vendor.js',
         gruntConfigJsFiles: [
             'Gruntfile.js',
             'grunt-configs/*.js'
