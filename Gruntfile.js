@@ -36,6 +36,7 @@ module.exports = function (grunt) {
             'app/vendor/**/*.scss'
         ],
         srcMainSassFile: 'app/styles/base.scss',
+        srcMainCssFile: 'app/styles/base.css',
         distMainCssFile: 'dist/styles/base-min.css',
 
         // JS FILES
