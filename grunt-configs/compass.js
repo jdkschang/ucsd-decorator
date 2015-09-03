@@ -1,7 +1,7 @@
 // ================================================================================
 // GRUNT CONFIG: COMPASS
 // Minifies images using imagemin.
-// grunt-contrib-imagemin
+// grunt-contrib-compass
 // https://github.com/gruntjs/grunt-contrib-imagemin
 // ================================================================================
 
