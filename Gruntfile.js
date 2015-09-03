@@ -91,9 +91,13 @@ module.exports = function (grunt) {
         'compass:dist',
         'postcss',
         'eslint',
-        'uglify:dist'
+        'uglify:dist',
+        'compress'
     ]);
 
+    // SERVE
+    // Runs all tasks (default), then starts a server for live reloading.
+    // Run 'grunt serve'
     grunt.registerTask('serve', [
         'build',
         'browserSync',
