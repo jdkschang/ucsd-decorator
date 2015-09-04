@@ -1,4 +1,3 @@
-$(document).ready( function() {
     // initialize calendar
     $("#calendar").fullCalendar({
         header: {
@@ -242,4 +241,3 @@ $(document).ready( function() {
             }
         });
     });
-});
