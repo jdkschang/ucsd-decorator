@@ -1,4 +1,4 @@
-var CMSCALENDAR = CMSCALENDAR || (function() {
+var cmsCalendar = cmsCalendar || (function() {
     var _args = {}; // private
 
     return {
@@ -108,15 +108,15 @@ var CMSCALENDAR = CMSCALENDAR || (function() {
                 eventSources: [
                     //event source
                     {
-                        url: "json.json"
+                        url: _args[0]
                     },
                     //{
                     //    googleCalendarApiKey: "AIzaSyBPdlbHiiluijLwidJP8mZO3gdpyE--zP4",
                     //    googleCalendarId: "kchangj@gmail.com"
                     //},
                     {
-                        googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
-                        googleCalendarId: "cwo.calendar@gmail.com",
+                        googleCalendarApiKey: _args[2],
+                        googleCalendarId: _args[3],
                         color: "orange",
                         textColor: "#fff"
                     }
@@ -252,4 +252,4 @@ var CMSCALENDAR = CMSCALENDAR || (function() {
             });
         }
     };
-});
+}());
