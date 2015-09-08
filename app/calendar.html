@@ -230,20 +230,13 @@
 <script src="scripts/ucsd/cms-calendar.js"></script>
 <script>
     // ToDo: check if args 1-3 break the calendar on IE/Firefox/Safari
-    var isMobileView = function() {
-        var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 768;
-
-        return (browserWidth < (mobileDesktopBorder+1));
-    };
-
     cmsCalendar.init([
             "json.json", // cms specific relative event json file
             true, // if integrating google calendar
             "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo", // google calendar API key
             "cwo.calendar@gmail.com" // google calendar ID
     ]);
-    cmsCalendar.renderCalendar( isMobileView() );
+    cmsCalendar.renderCalendar();
 </script>
 <!-- End site-specific JS files -->
 

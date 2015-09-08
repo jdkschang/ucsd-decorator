@@ -1,22 +1,22 @@
 var cmsCalendar = cmsCalendar || (function() {
     var _args = {}; // private
 
-    //var isMobileView = function() {
-    //    var browserWidth = window.innerWidth;
-    //    var mobileDesktopBorder = 768;
-    //
-    //    return (browserWidth < (mobileDesktopBorder+1));
-    //};
+    var isMobileView = function() {
+        var browserWidth = window.innerWidth,
+            mobileDesktopBorder = 768;
+
+        return (browserWidth < (mobileDesktopBorder+1));
+    };
 
     return {
         init: function (Args) {
             _args = Args;
         },
-        renderCalendar: function ( isMobileView ) {
+        renderCalendar: function () {
             // initialize calendar
 
             if(isMobileView) {
-                console.log('hoho haha');
+                
             } else {
                 $("#calendar").fullCalendar({
                     header: {
@@ -217,8 +217,6 @@ var cmsCalendar = cmsCalendar || (function() {
                     }
                 }
             };
-
-
 
             // provides keyboard functionality to fullcalendar
             // 'enter' functions as a 'click' on events
