@@ -1,128 +1,134 @@
 var cmsCalendar = cmsCalendar || (function() {
     var _args = {}; // private
 
+    //var isMobileView = function() {
+    //    var browserWidth = window.innerWidth;
+    //    var mobileDesktopBorder = 768;
+    //
+    //    return (browserWidth < (mobileDesktopBorder+1));
+    //};
+
     return {
         init: function (Args) {
             _args = Args;
-            // some other initialising
         },
-        renderCalendar: function () {
+        renderCalendar: function ( isMobileView ) {
             // initialize calendar
-            $("#calendar").fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                defaultView: 'month',
 
-                // parsing json to display event data formatted in popovers
-                // as well as inputting accessibility attributes
-                eventRender: function (event, element) {
-                    var eventStart = formatTime(event.start),
-                        eventEnd = formatTime(event.end),
-                        allDayBool = event.allDay,
-                        output_url = "cal-output.html?id=" + event.id,
-                        popoverID = "popover" + event.id.toString().substring(0, 5),
-                        startDate, startTime;
-                    var contentEvent;
-
-                    // pending type of date, different contentEvent formatted
-                    // category type also inputted
-
-                    // if one day event
-                    if (allDayBool) {
-                        startDate = eventStart[0];
-
-                        contentEvent = "Date: " + startDate +
-                            "<br/> Time: All day" +
-                            categoryInput(event.category) +
-                            "<br/>" +
-                            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-                    } // if event only happens within the day
-                    else if (isSameDay(eventStart, eventEnd)) {
-                        startDate = eventStart[0];
-                        startTime = eventStart[1] + " - " + eventEnd[1];
-
-                        contentEvent = "Date: " + startDate +
-                            "<br/> Time: " + startTime +
-                            categoryInput(event.category) +
-                            "<br/>" +
-                            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-
-                    } else { // if event covers more than a day
-                        var eventRange = rangeOfTime(eventStart, eventEnd);
-
-                        contentEvent = "Date: " + eventRange[0] +
-                            categoryInput(event.category) +
-                            "<br/>" +
-                            "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-                    }
-
-                    // check for google calendar link
-                    // no popovers for google calendar
-                    if (!element.context.href) {
-                        element.popover({
-                            html: true,
-                            placement: 'top',
-                            trigger: 'click',
-                            title: event.title,
-                            content: contentEvent
-                        })
-                            .attr("role", "button")
-                            .attr("data-toggle", "popover")
-                            .attr("tabindex", "0")              // allows events to be tabbed
-                            //.attr("href", output_url )
-                            .attr("aria-haspopup", true)
-                            .attr("data-id", popoverID)
-                            .attr("aria-hidden", true);
-
-                    }
-                }, // if event has a category, color the event with the cateogry's color
-                eventAfterRender: function (event, element) {
-                    if (event.category) {
-                        if (event.category === "Alumni") {
-                            elemCategoryColor(element, "#5229A3");
-                        }
-                        else if (event.category === "Holidays") {
-                            elemCategoryColor(element, "#FAD165");
-                        }
-                        else if (event.category === "Academics") {
-                            elemCategoryColor(element, "#0D7813");
-                        }
-                        else if (event.category === "Students") {
-                            elemCategoryColor(element, "#274D9A");
-                        }
-                        else if (event.category === "Events") {
-                            elemCategoryColor(element, "#A32929");
-                        }
-                    }
-
-                    // accessibility to prev & next buttons
-                    var fcPrev = $('.fc-prev-button'),
-                        fcNext = $('.fc-next-button');
-
-                    fcNext.attr("aria-label", "fc-next");
-                    fcPrev.attr("aria-label", "fc-prev");
-                },
-                eventSources: [
-                    //event source
-                    {
-                        url: _args[0]
+            if(isMobileView) {
+                console.log('hoho haha');
+            } else {
+                $("#calendar").fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
                     },
-                    //{
-                    //    googleCalendarApiKey: "AIzaSyBPdlbHiiluijLwidJP8mZO3gdpyE--zP4",
-                    //    googleCalendarId: "kchangj@gmail.com"
-                    //},
-                    {
-                        googleCalendarApiKey: _args[2],
-                        googleCalendarId: _args[3],
-                        color: "orange",
-                        textColor: "#fff"
-                    }
-                ]
-            });
+                    defaultView: 'month',
 
+                    // parsing json to display event data formatted in popovers
+                    // as well as inputting accessibility attributes
+                    eventRender: function (event, element) {
+                        var eventStart = formatTime(event.start),
+                            eventEnd = formatTime(event.end),
+                            allDayBool = event.allDay,
+                            output_url = "cal-output.html?id=" + event.id,
+                            popoverID = "popover" + event.id.toString().substring(0, 5),
+                            startDate, startTime;
+                        var contentEvent;
+
+                        // pending type of date, different contentEvent formatted
+                        // category type also inputted
+
+                        // if one day event
+                        if (allDayBool) {
+                            startDate = eventStart[0];
+
+                            contentEvent = "Date: " + startDate +
+                                "<br/> Time: All day" +
+                                categoryInput(event.category) +
+                                "<br/>" +
+                                "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                        } // if event only happens within the day
+                        else if (isSameDay(eventStart, eventEnd)) {
+                            startDate = eventStart[0];
+                            startTime = eventStart[1] + " - " + eventEnd[1];
+
+                            contentEvent = "Date: " + startDate +
+                                "<br/> Time: " + startTime +
+                                categoryInput(event.category) +
+                                "<br/>" +
+                                "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+
+                        } else { // if event covers more than a day
+                            var eventRange = rangeOfTime(eventStart, eventEnd);
+
+                            contentEvent = "Date: " + eventRange[0] +
+                                categoryInput(event.category) +
+                                "<br/>" +
+                                "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                        }
+
+                        // check for google calendar link
+                        // no popovers for google calendar
+                        if (!element.context.href) {
+                            element.popover({
+                                html: true,
+                                placement: 'top',
+                                trigger: 'click',
+                                title: event.title,
+                                content: contentEvent
+                            })
+                                .attr("role", "button")
+                                .attr("data-toggle", "popover")
+                                .attr("tabindex", "0")              // allows events to be tabbed
+                                //.attr("href", output_url )
+                                .attr("aria-haspopup", true)
+                                .attr("data-id", popoverID)
+                                .attr("aria-hidden", true);
+
+                        }
+                    }, // if event has a category, color the event with the cateogry's color
+                    eventAfterRender: function (event, element) {
+                        if (event.category) {
+                            if (event.category === "Alumni") {
+                                elemCategoryColor(element, "#5229A3");
+                            }
+                            else if (event.category === "Holidays") {
+                                elemCategoryColor(element, "#FAD165");
+                            }
+                            else if (event.category === "Academics") {
+                                elemCategoryColor(element, "#0D7813");
+                            }
+                            else if (event.category === "Students") {
+                                elemCategoryColor(element, "#274D9A");
+                            }
+                            else if (event.category === "Events") {
+                                elemCategoryColor(element, "#A32929");
+                            }
+                        }
+
+                        // accessibility to prev & next buttons
+                        var fcPrev = $('.fc-prev-button'),
+                            fcNext = $('.fc-next-button');
+
+                        fcNext.attr("aria-label", "fc-next");
+                        fcPrev.attr("aria-label", "fc-prev");
+                    },
+                    eventSources: [
+                        //event source
+                        {
+                            url: _args[0]
+                        },
+                        {
+                            googleCalendarApiKey: _args[2],
+                            googleCalendarId: _args[3],
+                            color: "orange",
+                            textColor: "#fff"
+                        }
+                    ]
+                });
+            }
             // event background emulates category's color
             var elemCategoryColor = function (element, color) {
                 element.css("background-color", color);
@@ -211,6 +217,8 @@ var cmsCalendar = cmsCalendar || (function() {
                     }
                 }
             };
+
+
 
             // provides keyboard functionality to fullcalendar
             // 'enter' functions as a 'click' on events
