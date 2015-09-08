@@ -5,6 +5,7 @@ var cmsCalendar = cmsCalendar || (function() {
         var browserWidth = window.innerWidth,
             mobileDesktopBorder = 768;
 
+        console.log('browser width: ', browserWidth);
         return (browserWidth < (mobileDesktopBorder+1));
     };
 
@@ -14,10 +15,8 @@ var cmsCalendar = cmsCalendar || (function() {
         },
         renderCalendar: function () {
             // initialize calendar
-
-            if(isMobileView) {
-                
-            } else {
+            if(!isMobileView()) {
+                // desktop view
                 $("#calendar").fullCalendar({
                     header: {
                         left: 'prev,next today',
@@ -128,6 +127,9 @@ var cmsCalendar = cmsCalendar || (function() {
                         }
                     ]
                 });
+            } else {
+                // mobile view
+                // do mobile stuffs here
             }
             // event background emulates category's color
             var elemCategoryColor = function (element, color) {
