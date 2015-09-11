@@ -5,7 +5,6 @@ var cmsCalendar = cmsCalendar || (function() {
         var browserWidth = window.innerWidth,
             mobileDesktopBorder = 768;
 
-        console.log('browser width: ', browserWidth);
         return (browserWidth < (mobileDesktopBorder+1));
     };
 
@@ -15,6 +14,11 @@ var cmsCalendar = cmsCalendar || (function() {
         },
         renderCalendar: function () {
             // initialize calendar
+            console.log('before jsonCMSFilter');
+            $.getJSON(_args[0], function (json) {
+                jsonCMSFilter(json);
+            });
+
             if(!isMobileView()) {
                 // desktop view
                 $("#calendar").fullCalendar({
@@ -131,8 +135,20 @@ var cmsCalendar = cmsCalendar || (function() {
                 // mobile view
                 // do mobile stuffs here
             }
+
+            function jsonCMSFilter (json) {
+                $.each(json, function (i, event) {
+                    var eventDetails = event.details;
+
+                    console.log('BEFORE eventDetails: ', eventDetails, '\ti: ', i);
+                    if(i === 0)
+                        eventDetails = "hi, i've changed";
+                    console.log('AFTER eventDetails: ', eventDetails, '\ti: ', i);
+                });
+            }
+
             // event background emulates category's color
-            var elemCategoryColor = function (element, color) {
+            function elemCategoryColor (element, color) {
                 element.css("background-color", color);
                 element.css("border-color", color);
             };
@@ -140,7 +156,7 @@ var cmsCalendar = cmsCalendar || (function() {
             // formats raw date format and outputs array
             // array[0] contains the date name, month, day, and year
             // array[1] contains the hour, minute and am/pm
-            var formatTime = function (rawDate) {
+            function formatTime (rawDate) {
                 var dateTimeOutput = [];
 
                 dateTimeOutput.push(moment(rawDate).format("ddd, MMMM Do YYYY"));
@@ -150,7 +166,7 @@ var cmsCalendar = cmsCalendar || (function() {
             };
 
             // check if the event only happens in the same day
-            var isSameDay = function (start, end) {
+            function isSameDay (start, end) {
                 var evStart, evEnd;
                 evStart = start[0].toString();
                 evEnd = end[0].toString();
@@ -159,7 +175,7 @@ var cmsCalendar = cmsCalendar || (function() {
             };
 
             // finds the event's date and time range
-            var rangeOfTime = function (start, end) {
+            function rangeOfTime (start, end) {
                 var evStart, evEnd,
                     eventRangeOutput = [],
                     yearRegex = /( )20(\d){2}/;
@@ -174,7 +190,7 @@ var cmsCalendar = cmsCalendar || (function() {
             };
 
             // takes category input and outputs parsed html
-            var categoryInput = function (category) {
+            function categoryInput (category) {
                 var categoryOutput = "";
 
                 if (category) {
@@ -191,7 +207,7 @@ var cmsCalendar = cmsCalendar || (function() {
             // adds accessibility attributes to popover
             // ToDo:: if aria attribute added, don't add again
             var popoverArray = [];   // array of arrays (tuples)
-            var popoverAria = function (evt) {
+            function popoverAria (evt) {
                 var popover = $('.popover'),
                     popoverLength = popover.length;
 
