@@ -120,8 +120,8 @@ var cmsCalendar = cmsCalendar || (function() {
                             url: _args[0]
                         },
                         {
-                            googleCalendarApiKey: _args[2],
-                            googleCalendarId: _args[3],
+                            googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
+                            googleCalendarId: _args[2],
                             color: "orange",
                             textColor: "#fff"
                         }
