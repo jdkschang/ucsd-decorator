@@ -33,7 +33,7 @@ var cmsCalendar = cmsCalendar || (function() {
 
                         //console.log('i string:: \t\t', i.toString());
                         if(i.toString() === "responseText") {
-                            var regexFilter = /(?:detail)\w+/g,
+                            var regexFilter = /(?:"details": .*>",)/g,
                                 filterResult = data[i].match(regexFilter);
 
                             console.log('\n\nin conditional');
@@ -43,10 +43,10 @@ var cmsCalendar = cmsCalendar || (function() {
 
                             console.log('filterResult: \t', filterResult);
 
-                            //$.each(parsedJSON, function (j, content) {
-                            //    console.log('number:\t', j);
-                            //    console.log('content:\t', content);
-                            //})
+                            $.each(filterResult, function (j, content) {
+                                console.log('number:\t', j);
+                                console.log('content:\t', content);
+                            })
                         }
                     });
                     console.log( "error" );
@@ -54,29 +54,6 @@ var cmsCalendar = cmsCalendar || (function() {
                 .always(function() {
                     console.log( "complete" );
                 });
-
-
-            //$.ajax({
-            //    url: _args[0],
-            //    type: 'GET',
-            //    success: function(data){
-            //        $.each(data, function (i, evt) {
-            //            console.log('i:\t', i);
-            //            console.log('json at i & details:\t', data[i].details);
-            //        })
-            //    },
-            //    error: function(data) {
-            //        $.each(data, function (i, evt) {
-            //            console.log('i:\t', i);
-            //            console.log('json at i & details:\t', data[i]);
-            //
-            //            if(i === "responseText") {
-            //                JSON.parse(data[i]);
-            //            }
-            //
-            //        })
-            //    }
-            //});
 
             //$.getJSON(_args[0], function (myjson) {
             //    //escapeSpecialChars(myjson);
