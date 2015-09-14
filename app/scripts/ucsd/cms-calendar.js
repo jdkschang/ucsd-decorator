@@ -37,23 +37,35 @@ var cmsCalendar = cmsCalendar || (function() {
                                 filterResult = data[i].match(regexFilter),
                                 jsonOutput = data[i].split('\n');
 
-                            console.log('Beginning JSON:\t', data[i]);
-                            console.log('split json output:\t', jsonOutput);
-                            console.log('filterResult: \t', filterResult);
+                            //console.log('Beginning JSON:\t', data[i]);
+                            //console.log('split json output:\t', jsonOutput);
+                            //console.log('filterResult: \t', filterResult);
 
                             $.each(jsonOutput, function(index, content) {
-                                console.log('i:\t', index, 'content: ', content);
+                                //console.log('i:\t', index, 'content: ', content);
 
                                 // if content contains detail section
                                 if(content.search(regexFilter) > -1) {
                                     var contentOutput = content.split(": ");
 
-                                    console.log('contentOutput[0]: ', contentOutput[0]);
-                                    console.log('contentOutput[1]: ', contentOutput[1]);
+                                    //console.log('contentOutput[0]: ', contentOutput[0]);
+                                    //console.log('contentOutput[1]: ', contentOutput[1]);
 
                                     // extracting content without ending double quotes and comma
-                                    var testContent = contentOutput[1].substring(1, contentOutput[1].length - 2);
+                                    var testContent = contentOutput[1].substring(1, contentOutput[1].length - 3);
+                                    var contentLength = contentOutput[1].length;
+                                    var testLength = testContent.length;
+
+                                    console.log('contentLength:\t', contentLength, 'testLength:\t', testLength);
+                                    console.log('contents @', contentLength, '\tcontent @\t', contentOutput[1].charAt(contentLength - 2));
                                     console.log('test Content: ', testContent);
+
+                                    // if content still contains double quotes
+                                    if(testContent.search(/"/g) > -1) {
+                                        // need to replace double quotes with single or escape
+                                        var testContentOutput = testContent.replace(/"/g, '\"');
+                                        console.log('testContentOutput: ', testContentOutput);
+                                    }
                                 }
 
                             });
