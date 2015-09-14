@@ -46,6 +46,12 @@ var cmsCalendar = cmsCalendar || (function() {
                             $.each(filterResult, function (j, content) {
                                 console.log('number:\t', j);
                                 console.log('content:\t', content);
+
+                                var detailContent = content.split(': ');
+                                // detailContent[1] contains detail content to scan
+
+                                console.log('detailContent[0]: ', detailContent[0]);
+                                console.log('detailContent[1]: ', detailContent[1]);
                             })
                         }
                     });
