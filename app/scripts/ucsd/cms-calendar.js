@@ -14,11 +14,48 @@ var cmsCalendar = cmsCalendar || (function() {
         },
         renderCalendar: function () {
             // initialize calendar
-            console.log('before jsonCMSFilter');
-            $.getJSON(_args[0], function (myjson) {
-                //escapeSpecialChars(myjson);
-                jsonCMSFilter(myjson);
-            });
+            //var testjson = _args[0],
+            //    jsonObj = JSON.parse(testjson);
+            //console.log('before jsonCMSFilter: \t', jsonObj);
+
+
+            $.get(_args[0], function (json) {
+                console.log('this is json from get: ', json);
+
+                $.each(json, function (i, event) {
+                    console.log('i:\t', i);
+                    console.log('json at i:\t', json[i]);
+                })
+            })
+                .done(function() {
+                    console.log( "second success" );
+                })
+                .fail(function() {
+                    console.log( "error" );
+                })
+                .always(function() {
+                    console.log( "complete" );
+                });
+
+
+            //$.getJSON(_args[0], function (myjson) {
+            //    //escapeSpecialChars(myjson);
+            //    console.log('success');
+            //
+            //    var jsonString = JSON.stringify(_args[0]);
+            //    console.error('before jsonCMSFilter sadf', jsonString);
+            //
+            //    jsonCMSFilter(myjson);
+            //})
+            //    .done(function() {
+            //        console.log( "second success" );
+            //    })
+            //    .fail(function() {
+            //        console.log( "error" );
+            //    })
+            //    .always(function() {
+            //        console.log( "complete" );
+            //    });
 
             if(!isMobileView()) {
                 // desktop view
@@ -139,18 +176,20 @@ var cmsCalendar = cmsCalendar || (function() {
 
 
             function jsonCMSFilter (myjson) {
-                var myJSONString = JSON.stringify(myjson);
-                var myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
-                    .replace(/\\'/g, "\\'")
-                    .replace(/\\"/g, '\\"')
-                    .replace(/\\&/g, "\\&")
-                    .replace(/\\r/g, "\\r")
-                    .replace(/\\t/g, "\\t")
-                    .replace(/\\b/g, "\\b")
-                    .replace(/\\f/g, "\\f");
+                //var myJSONString = JSON.stringify(myjson);
+                //var myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
+                //    .replace(/\\'/g, "\\'")
+                //    .replace(/\\"/g, '\\"')
+                //    .replace(/\\&/g, "\\&")
+                //    .replace(/\\r/g, "\\r")
+                //    .replace(/\\t/g, "\\t")
+                //    .replace(/\\b/g, "\\b")
+                //    .replace(/\\f/g, "\\f");
+
+                console.error('myjson: ', myjson);
 
 
-                $.each(myEscapedJSONString, function (i, event) {
+                $.each(myjson, function (i, event) {
                     var eventDetails = event.details;
 
                     console.log('BEFORE eventDetails: ', eventDetails, '\ti: ', i);
