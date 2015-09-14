@@ -79,26 +79,8 @@ var cmsCalendar = cmsCalendar || (function() {
 
                             ifJSONFailOutput = jsonOutput.join('\n');
                             console.log('AFTER jsonOUTPUT:\t', jsonOutput);
-
-                            $.each(filterResult, function (j, content) {
-                                //console.log('number:\t', j);
-                                //console.log('content:\t', content);
-
-                                // detailContent[1] contains detail content to scan
-                                var detailContent = content.split(': ');
-                                //console.log('detailContent[1]: ', detailContent[1]);
-
-                                var testContent = detailContent[1].substring(1, detailContent[1].length - 2);
-                                if(testContent.search(/"/g) < 0) {
-                                    //console.log('no double quotes within')
-                                } else {
-                                    // need to replace double quotes with single or escape
-                                    var testContentOutput = testContent.replace(/\\n/g, "\\n")
-                                        .replace(/"/g, '\"')
-                                }
-                                //console.log('testContent: ', testContent);
-                                //console.log('testContentOutput: ', testContentOutput);
-                            })
+                            _args[0] = JSON.parse(jsonOutput);
+                            console.log('AFTER _args[0]:\t', _args[0]);
                         }
                     });
                     console.log( "error" );
@@ -228,7 +210,10 @@ var cmsCalendar = cmsCalendar || (function() {
                     eventSources: [
                         //event source
                         {
-                            url: _args[0]
+                            url: _args[0],
+                            error: function() {
+                                console.log('error fetching ', _args[0]);
+                            }
                         },
                         {
                             googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
