@@ -17,10 +17,10 @@ var cmsCalendar = cmsCalendar || (function() {
             $.get(_args[0], function (json) {
                 console.log('this is json from get: ', json);
 
-                $.each(json, function (i, event) {
-                    console.log('i:\t', i);
-                    console.log('json at i & details:\t', json[i].details);
-                })
+                //$.each(json, function (i, event) {
+                //    console.log('i:\t', i);
+                //    console.log('json at i & details:\t', json[i].details);
+                //})
             })
                 .done(function() {
                     console.log( "second success" );
@@ -29,29 +29,53 @@ var cmsCalendar = cmsCalendar || (function() {
                     $.each(data, function (i, event) {
                         //console.log('i:\t', i);
                         //console.log('json at i & details:\t', data[i]);
-                        console.log('event: ', event);
+                        //console.log('event: ', event);
 
-                        //console.log('i string:: \t\t', i.toString());
+                        // find failed json string
                         if(i.toString() === "responseText") {
                             var regexFilter = /(?:"details": .*>",)/g,
-                                filterResult = data[i].match(regexFilter);
+                                filterResult = data[i].match(regexFilter),
+                                jsonOutput = data[i].split('\n');
 
-                            console.log('\n\nin conditional');
-                            console.log('json at i & details:\t', data[i]);
-                            console.log('type of json details:\t', typeof data[i]);
-                            console.log('extracting json data:\t', data[i][0]);
-
+                            console.log('Beginning JSON:\t', data[i]);
+                            console.log('split json output:\t', jsonOutput);
                             console.log('filterResult: \t', filterResult);
 
+                            $.each(jsonOutput, function(index, content) {
+                                console.log('i:\t', index, 'content: ', content);
+
+                                // if content contains detail section
+                                if(content.search(regexFilter) > -1) {
+                                    var contentOutput = content.split(": ");
+
+                                    console.log('contentOutput[0]: ', contentOutput[0]);
+                                    console.log('contentOutput[1]: ', contentOutput[1]);
+
+                                    // extracting content without ending double quotes and comma
+                                    var testContent = contentOutput[1].substring(1, contentOutput[1].length - 2);
+                                    console.log('test Content: ', testContent);
+                                }
+
+                            });
+
                             $.each(filterResult, function (j, content) {
-                                console.log('number:\t', j);
-                                console.log('content:\t', content);
+                                //console.log('number:\t', j);
+                                //console.log('content:\t', content);
 
-                                var detailContent = content.split(': ');
                                 // detailContent[1] contains detail content to scan
+                                var detailContent = content.split(': ');
+                                //console.log('detailContent[1]: ', detailContent[1]);
 
-                                console.log('detailContent[0]: ', detailContent[0]);
-                                console.log('detailContent[1]: ', detailContent[1]);
+                                var testContent = detailContent[1].substring(1, detailContent[1].length - 2);
+                                if(testContent.search(/"/g) < 0) {
+                                    //console.log('no double quotes within')
+                                } else {
+                                    // need to replace double quotes with single or escape
+                                    var testContentOutput = testContent.replace(/\\n/g, "\\n")
+                                        .replace(/"/g, '\"')
+                                }
+                                //console.log('testContent: ', testContent);
+                                //console.log('testContentOutput: ', testContentOutput);
                             })
                         }
                     });
@@ -200,14 +224,14 @@ var cmsCalendar = cmsCalendar || (function() {
 
             function jsonCMSFilter (myjson) {
                 //var myJSONString = JSON.stringify(myjson);
-                //var myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
-                //    .replace(/\\'/g, "\\'")
-                //    .replace(/\\"/g, '\\"')
-                //    .replace(/\\&/g, "\\&")
-                //    .replace(/\\r/g, "\\r")
-                //    .replace(/\\t/g, "\\t")
-                //    .replace(/\\b/g, "\\b")
-                //    .replace(/\\f/g, "\\f");
+                var myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
+                    .replace(/\\'/g, "\\'")
+                    .replace(/\\"/g, '\\"')
+                    .replace(/\\&/g, "\\&")
+                    .replace(/\\r/g, "\\r")
+                    .replace(/\\t/g, "\\t")
+                    .replace(/\\b/g, "\\b")
+                    .replace(/\\f/g, "\\f");
 
                 console.error('myjson: ', myjson);
 
