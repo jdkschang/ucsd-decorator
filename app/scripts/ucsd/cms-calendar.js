@@ -13,6 +13,9 @@ var cmsCalendar = cmsCalendar || (function() {
             _args = Args;
         },
         renderCalendar: function () {
+            var isJSON = true,
+                ifJSONFailOutput;
+
             // initialize calendar
             $.get(_args[0], function (json) {
                 console.log('this is json from get: ', json);
@@ -26,6 +29,7 @@ var cmsCalendar = cmsCalendar || (function() {
                     console.log( "second success" );
                 })
                 .fail(function( data ) {
+                    isJSON = false;
                     $.each(data, function (i, event) {
                         //console.log('i:\t', i);
                         //console.log('json at i & details:\t', data[i]);
@@ -41,6 +45,8 @@ var cmsCalendar = cmsCalendar || (function() {
                             //console.log('split json output:\t', jsonOutput);
                             //console.log('filterResult: \t', filterResult);
 
+                            console.log('BEFORE jsonOUTPUT:\t', jsonOutput);
+
                             $.each(jsonOutput, function(index, content) {
                                 //console.log('i:\t', index, 'content: ', content);
 
@@ -53,22 +59,26 @@ var cmsCalendar = cmsCalendar || (function() {
 
                                     // extracting content without ending double quotes and comma
                                     var testContent = contentOutput[1].substring(1, contentOutput[1].length - 3);
-                                    var contentLength = contentOutput[1].length;
-                                    var testLength = testContent.length;
-
-                                    console.log('contentLength:\t', contentLength, 'testLength:\t', testLength);
-                                    console.log('contents @', contentLength, '\tcontent @\t', contentOutput[1].charAt(contentLength - 2));
-                                    console.log('test Content: ', testContent);
 
                                     // if content still contains double quotes
                                     if(testContent.search(/"/g) > -1) {
                                         // need to replace double quotes with single or escape
                                         var testContentOutput = testContent.replace(/"/g, '\"');
-                                        console.log('testContentOutput: ', testContentOutput);
                                     }
+
+                                    contentOutput[1] = "\"" + testContentOutput + "\",";
+
+                                    contentOutput = contentOutput.join(": ");
+                                    //console.log('BEFORE content: ', content);
+                                    content = contentOutput;
+                                    //console.log('AFTER content: ', content);
+
                                 }
 
                             });
+
+                            ifJSONFailOutput = jsonOutput.join('\n');
+                            console.log('AFTER jsonOUTPUT:\t', jsonOutput);
 
                             $.each(filterResult, function (j, content) {
                                 //console.log('number:\t', j);
