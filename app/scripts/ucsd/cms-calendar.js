@@ -33,15 +33,20 @@ var cmsCalendar = cmsCalendar || (function() {
 
                         //console.log('i string:: \t\t', i.toString());
                         if(i.toString() === "responseText") {
+                            var regexFilter = /(?:detail)\w+/g,
+                                filterResult = data[i].match(regexFilter);
+
                             console.log('\n\nin conditional');
                             console.log('json at i & details:\t', data[i]);
                             console.log('type of json details:\t', typeof data[i]);
-                            var parsedJSON = JSON.parse(data[i]);
-                            console.error('parsed JSON:\t', parsedJSON);
-                            $.each(parsedJSON, function (j, content) {
-                                console.log('number:\t', j);
-                                console.log('content:\t', content);
-                            })
+                            console.log('extracting json data:\t', data[i][0]);
+
+                            console.log('filterResult: \t', filterResult);
+
+                            //$.each(parsedJSON, function (j, content) {
+                            //    console.log('number:\t', j);
+                            //    console.log('content:\t', content);
+                            //})
                         }
                     });
                     console.log( "error" );
