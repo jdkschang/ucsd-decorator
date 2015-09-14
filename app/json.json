@@ -6,7 +6,7 @@
     "end": "2015-09-10 19:00:00",
     "allDay": false,
     "category": "Holidays",
-    "details": "<p>Details about all day event</p>",
+    "details": "<p>Details about all day event</p><h2>test</h2>",
     "location": "Sandy Eggo",
     "contact": "Contact Name",
     "website": "",

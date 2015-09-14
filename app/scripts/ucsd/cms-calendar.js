@@ -15,8 +15,9 @@ var cmsCalendar = cmsCalendar || (function() {
         renderCalendar: function () {
             // initialize calendar
             console.log('before jsonCMSFilter');
-            $.getJSON(_args[0], function (json) {
-                jsonCMSFilter(json);
+            $.getJSON(_args[0], function (myjson) {
+                //escapeSpecialChars(myjson);
+                jsonCMSFilter(myjson);
             });
 
             if(!isMobileView()) {
@@ -136,13 +137,23 @@ var cmsCalendar = cmsCalendar || (function() {
                 // do mobile stuffs here
             }
 
-            function jsonCMSFilter (json) {
-                $.each(json, function (i, event) {
+
+            function jsonCMSFilter (myjson) {
+                var myJSONString = JSON.stringify(myjson);
+                var myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
+                    .replace(/\\'/g, "\\'")
+                    .replace(/\\"/g, '\\"')
+                    .replace(/\\&/g, "\\&")
+                    .replace(/\\r/g, "\\r")
+                    .replace(/\\t/g, "\\t")
+                    .replace(/\\b/g, "\\b")
+                    .replace(/\\f/g, "\\f");
+
+
+                $.each(myEscapedJSONString, function (i, event) {
                     var eventDetails = event.details;
 
                     console.log('BEFORE eventDetails: ', eventDetails, '\ti: ', i);
-                    if(i === 0)
-                        eventDetails = "hi, i've changed";
                     console.log('AFTER eventDetails: ', eventDetails, '\ti: ', i);
                 });
             }
