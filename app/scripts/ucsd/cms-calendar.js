@@ -14,29 +14,57 @@ var cmsCalendar = cmsCalendar || (function() {
         },
         renderCalendar: function () {
             // initialize calendar
-            //var testjson = _args[0],
-            //    jsonObj = JSON.parse(testjson);
-            //console.log('before jsonCMSFilter: \t', jsonObj);
-
-
             $.get(_args[0], function (json) {
                 console.log('this is json from get: ', json);
 
                 $.each(json, function (i, event) {
                     console.log('i:\t', i);
-                    console.log('json at i:\t', json[i]);
+                    console.log('json at i & details:\t', json[i].details);
                 })
             })
                 .done(function() {
                     console.log( "second success" );
                 })
-                .fail(function() {
+                .fail(function( data ) {
+                    $.each(data, function (i, event) {
+                        console.log('i:\t', i);
+                        console.log('json at i & details:\t', data[i]);
+                        console.log('event: ', event);
+
+                        //console.log('i string:: \t\t', i.toString());
+                        if(i.toString() === "responseText") {
+                            console.log('\n\nin conditional');
+                            //console.log('\n\n\nIN JSON: ', JSON.parse(event));
+                        }
+                    });
                     console.log( "error" );
                 })
                 .always(function() {
                     console.log( "complete" );
                 });
 
+
+            //$.ajax({
+            //    url: _args[0],
+            //    type: 'GET',
+            //    success: function(data){
+            //        $.each(data, function (i, evt) {
+            //            console.log('i:\t', i);
+            //            console.log('json at i & details:\t', data[i].details);
+            //        })
+            //    },
+            //    error: function(data) {
+            //        $.each(data, function (i, evt) {
+            //            console.log('i:\t', i);
+            //            console.log('json at i & details:\t', data[i]);
+            //
+            //            if(i === "responseText") {
+            //                JSON.parse(data[i]);
+            //            }
+            //
+            //        })
+            //    }
+            //});
 
             //$.getJSON(_args[0], function (myjson) {
             //    //escapeSpecialChars(myjson);
