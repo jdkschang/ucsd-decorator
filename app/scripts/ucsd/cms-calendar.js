@@ -14,7 +14,9 @@ var cmsCalendar = cmsCalendar || (function() {
         },
         renderCalendar: function () {
             var isJSON = true,
-                ifJSONFailOutput;
+                ifJSONFailOutput,
+                jsonObjRet = [];
+
 
             // initialize calendar
             // check json valid
@@ -30,226 +32,345 @@ var cmsCalendar = cmsCalendar || (function() {
                     console.log( "second success" );
                 })
                 .fail(function( data ) {
+                    console.log('JSON FAILED');
                     isJSON = false;
-                    $.each(data, function (i, event) {
-                        //console.log('i:\t', i);
-                        //console.log('json at i & details:\t', data[i]);
-                        //console.log('event: ', event);
-
+                    $.each(data, function (i) {
                         // find failed json string
                         if(i.toString() === "responseText") {
-                            var regexFilter = /(?:"details": .*>",)/g,
-                                filterResult = data[i].match(regexFilter),
-                                jsonOutput = data[i].split('\n');
-
-                            //console.log('Beginning JSON:\t', data[i]);
-                            //console.log('split json output:\t', jsonOutput);
-                            //console.log('filterResult: \t', filterResult);
-
-                            console.log('BEFORE jsonOUTPUT:\t', jsonOutput);
+                            var detailRegex = /(?:"details": .*>",)/g,
+                                endObject = /}/g,
+                                jsonOutput = data[i].split('\n'),
+                                jsonObject = {
+                                    id: "",
+                                    title: "",
+                                    start: "",
+                                    end: "",
+                                    allDay: "",
+                                    category: "",
+                                    location: "",
+                                    contact: "",
+                                    website: "",
+                                    phone: ""
+                                };
 
                             $.each(jsonOutput, function(index, content) {
-                                //console.log('i:\t', index, 'content: ', content);
+                                var contentOutput = content.split(": ");
+
+                                // trimming string "" on key
+                                if(contentOutput[1] !== undefined) {
+                                    // extracting word from string ""
+                                    contentOutput[0] = contentOutput[0].trim(" ");
+                                    contentOutput[0] = contentOutput[0].substring(1, contentOutput[0].length - 1);
+                                }
 
                                 // if content contains detail section
-                                if(content.search(regexFilter) > -1) {
-                                    var contentOutput = content.split(": ");
-
-                                    //console.log('contentOutput[0]: ', contentOutput[0]);
-                                    //console.log('contentOutput[1]: ', contentOutput[1]);
-
+                                if(content.search(detailRegex) > -1) {
                                     // extracting content without ending double quotes and comma
                                     var testContent = contentOutput[1].substring(1, contentOutput[1].length - 3);
-
                                     // if content still contains double quotes
                                     if(testContent.search(/"/g) > -1) {
                                         // need to replace double quotes with single or escape
-                                        var testContentOutput = testContent.replace(/"/g, '\"');
+                                        testContent = testContent.replace(/\"/g, '\\"');
                                     }
 
-                                    contentOutput[1] = "\"" + testContentOutput + "\",";
+                                    contentOutput[1] = "\"" + testContent + "\",";
+                                }
 
-                                    contentOutput = contentOutput.join(": ");
-                                    //console.log('BEFORE content: ', content);
+                                if(content.search(endObject) > -1) {
+                                    console.log('contentOutput: ')
+                                }
+
+                                contentOutput = contentOutput.join(": ");
+                                //console.log('BEFORE CHANGE:\t', index, content);
+                                // skipping array brackets
+                                if(!(contentOutput[0] === "[" || contentOutput[0] === "]")) {
                                     content = contentOutput;
-                                    //console.log('AFTER content: ', content);
-
+                                    //console.log(index, content);
+                                    jsonObjRet.push(content);
                                 }
 
                             });
+                            //console.log(jsonObjRet);
+                            jsonObjRet = jsonObjRet.join('\n');
+                            console.log('json FORMATTED: ', jsonObjRet);
+                            console.log('\tjson TYPE:\t', typeof jsonObjRet);
 
-                            ifJSONFailOutput = jsonOutput.join('\n');
-                            console.log('AFTER jsonOUTPUT:\t', jsonOutput);
-                            _args[0] = JSON.parse(jsonOutput);
-                            console.log('AFTER _args[0]:\t', _args[0]);
-                        }
-                    });
+                            //jsonObjRet = JSON.stringify(jsonObjRet);
+                            //console.log('json STRINGIFIED: ', jsonObjRet);
+                            //console.log('\tjson TYPE:\t', typeof jsonObjRet);
+
+                            //jsonObjRet = JSON.parse(ifJSONFailOutput);
+                            //console.log('json PARSED: ', jsonObjRet);
+                            //console.log('\tjson TYPE:\t', typeof jsonObjRet);
+                        } // end of responseText
+                    }); // END of $.each
                     console.log( "error" );
                 })
                 .always(function() {
                     console.log( "complete" );
+                    execCalendar();
                 });
 
-            //$.getJSON(_args[0], function (myjson) {
-            //    //escapeSpecialChars(myjson);
-            //    console.log('success');
-            //
-            //    var jsonString = JSON.stringify(_args[0]);
-            //    console.error('before jsonCMSFilter sadf', jsonString);
-            //
-            //    jsonCMSFilter(myjson);
-            //})
-            //    .done(function() {
-            //        console.log( "second success" );
-            //    })
-            //    .fail(function() {
-            //        console.log( "error" );
-            //    })
-            //    .always(function() {
-            //        console.log( "complete" );
-            //    });
+            function populateJsonObject (arr) {
 
-            if(!isMobileView()) {
-                // desktop view
-                $("#calendar").fullCalendar({
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
-                    defaultView: 'month',
-
-                    // parsing json to display event data formatted in popovers
-                    // as well as inputting accessibility attributes
-                    eventRender: function (event, element) {
-                        var eventStart = formatTime(event.start),
-                            eventEnd = formatTime(event.end),
-                            allDayBool = event.allDay,
-                            output_url = "cal-output.html?id=" + event.id,
-                            popoverID = "popover" + event.id.toString().substring(0, 5),
-                            startDate, startTime;
-                        var contentEvent;
-
-                        // pending type of date, different contentEvent formatted
-                        // category type also inputted
-
-                        // if one day event
-                        if (allDayBool) {
-                            startDate = eventStart[0];
-
-                            contentEvent = "Date: " + startDate +
-                                "<br/> Time: All day" +
-                                categoryInput(event.category) +
-                                "<br/>" +
-                                "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-                        } // if event only happens within the day
-                        else if (isSameDay(eventStart, eventEnd)) {
-                            startDate = eventStart[0];
-                            startTime = eventStart[1] + " - " + eventEnd[1];
-
-                            contentEvent = "Date: " + startDate +
-                                "<br/> Time: " + startTime +
-                                categoryInput(event.category) +
-                                "<br/>" +
-                                "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-
-                        } else { // if event covers more than a day
-                            var eventRange = rangeOfTime(eventStart, eventEnd);
-
-                            contentEvent = "Date: " + eventRange[0] +
-                                categoryInput(event.category) +
-                                "<br/>" +
-                                "<br/><a href=" + output_url + " class=pull-right>more details</a>";
-                        }
-
-                        // check for google calendar link
-                        // no popovers for google calendar
-                        if (!element.context.href) {
-                            element.popover({
-                                html: true,
-                                placement: 'top',
-                                trigger: 'click',
-                                title: event.title,
-                                content: contentEvent
-                            })
-                                .attr("role", "button")
-                                .attr("data-toggle", "popover")
-                                .attr("tabindex", "0")              // allows events to be tabbed
-                                //.attr("href", output_url )
-                                .attr("aria-haspopup", true)
-                                .attr("data-id", popoverID)
-                                .attr("aria-hidden", true);
-
-                        }
-                    }, // if event has a category, color the event with the cateogry's color
-                    eventAfterRender: function (event, element) {
-                        if (event.category) {
-                            if (event.category === "Alumni") {
-                                elemCategoryColor(element, "#5229A3");
-                            }
-                            else if (event.category === "Holidays") {
-                                elemCategoryColor(element, "#FAD165");
-                            }
-                            else if (event.category === "Academics") {
-                                elemCategoryColor(element, "#0D7813");
-                            }
-                            else if (event.category === "Students") {
-                                elemCategoryColor(element, "#274D9A");
-                            }
-                            else if (event.category === "Events") {
-                                elemCategoryColor(element, "#A32929");
-                            }
-                        }
-
-                        // accessibility to prev & next buttons
-                        var fcPrev = $('.fc-prev-button'),
-                            fcNext = $('.fc-next-button');
-
-                        fcNext.attr("aria-label", "fc-next");
-                        fcPrev.attr("aria-label", "fc-prev");
-                    },
-                    eventSources: [
-                        //event source
-                        {
-                            url: _args[0],
-                            error: function() {
-                                console.log('error fetching ', _args[0]);
-                            }
-                        },
-                        {
-                            googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
-                            googleCalendarId: _args[2],
-                            color: "orange",
-                            textColor: "#fff"
-                        }
-                    ]
-                });
-            } else {
-                // mobile view
-                // ToDo: mobile stuffs here
             }
 
+            function execCalendar () {
+                if (!isMobileView()) {
+                    // desktop view
+                    if (isJSON) {
+                        console.log('JSON is TRUE');
+                        $("#calendar").fullCalendar({
+                            header: {
+                                left: 'prev,next today',
+                                center: 'title',
+                                right: 'month,agendaWeek,agendaDay'
+                            },
+                            defaultView: 'month',
 
-            function jsonCMSFilter (myjson) {
-                //var myJSONString = JSON.stringify(myjson);
-                var myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
-                    .replace(/\\'/g, "\\'")
-                    .replace(/\\"/g, '\\"')
-                    .replace(/\\&/g, "\\&")
-                    .replace(/\\r/g, "\\r")
-                    .replace(/\\t/g, "\\t")
-                    .replace(/\\b/g, "\\b")
-                    .replace(/\\f/g, "\\f");
+                            // parsing json to display event data formatted in popovers
+                            // as well as inputting accessibility attributes
+                            eventRender: function (event, element) {
+                                var eventStart = formatTime(event.start),
+                                    eventEnd = formatTime(event.end),
+                                    allDayBool = event.allDay,
+                                    output_url = "cal-output.html?id=" + event.id,
+                                    popoverID = "popover" + event.id.toString().substring(0, 5),
+                                    startDate, startTime;
+                                var contentEvent;
 
-                console.error('myjson: ', myjson);
+                                // pending type of date, different contentEvent formatted
+                                // category type also inputted
 
+                                // if one day event
+                                if (allDayBool) {
+                                    startDate = eventStart[0];
 
-                $.each(myjson, function (i, event) {
-                    var eventDetails = event.details;
+                                    contentEvent = "Date: " + startDate +
+                                        "<br/> Time: All day" +
+                                        categoryInput(event.category) +
+                                        "<br/>" +
+                                        "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                                } // if event only happens within the day
+                                else if (isSameDay(eventStart, eventEnd)) {
+                                    startDate = eventStart[0];
+                                    startTime = eventStart[1] + " - " + eventEnd[1];
 
-                    console.log('BEFORE eventDetails: ', eventDetails, '\ti: ', i);
-                    console.log('AFTER eventDetails: ', eventDetails, '\ti: ', i);
-                });
+                                    contentEvent = "Date: " + startDate +
+                                        "<br/> Time: " + startTime +
+                                        categoryInput(event.category) +
+                                        "<br/>" +
+                                        "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+
+                                } else { // if event covers more than a day
+                                    var eventRange = rangeOfTime(eventStart, eventEnd);
+
+                                    contentEvent = "Date: " + eventRange[0] +
+                                        categoryInput(event.category) +
+                                        "<br/>" +
+                                        "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                                }
+
+                                // check for google calendar link
+                                // no popovers for google calendar
+                                if (!element.context.href) {
+                                    element.popover({
+                                        html: true,
+                                        placement: 'top',
+                                        trigger: 'click',
+                                        title: event.title,
+                                        content: contentEvent
+                                    })
+                                        .attr("role", "button")
+                                        .attr("data-toggle", "popover")
+                                        .attr("tabindex", "0")              // allows events to be tabbed
+                                        //.attr("href", output_url )
+                                        .attr("aria-haspopup", true)
+                                        .attr("data-id", popoverID)
+                                        .attr("aria-hidden", true);
+
+                                }
+                            }, // if event has a category, color the event with the cateogry's color
+                            eventAfterRender: function (event, element) {
+                                if (event.category) {
+                                    if (event.category === "Alumni") {
+                                        elemCategoryColor(element, "#5229A3");
+                                    }
+                                    else if (event.category === "Holidays") {
+                                        elemCategoryColor(element, "#FAD165");
+                                    }
+                                    else if (event.category === "Academics") {
+                                        elemCategoryColor(element, "#0D7813");
+                                    }
+                                    else if (event.category === "Students") {
+                                        elemCategoryColor(element, "#274D9A");
+                                    }
+                                    else if (event.category === "Events") {
+                                        elemCategoryColor(element, "#A32929");
+                                    }
+                                }
+
+                                // accessibility to prev & next buttons
+                                var fcPrev = $('.fc-prev-button'),
+                                    fcNext = $('.fc-next-button');
+
+                                fcNext.attr("aria-label", "fc-next");
+                                fcPrev.attr("aria-label", "fc-prev");
+                            },
+                            eventSources: [
+                                //event source
+                                {
+                                    url: _args[0],
+                                    error: function () {
+                                        console.log('error fetching ', _args[0]);
+                                    }
+                                },
+                                {
+                                    googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
+                                    googleCalendarId: _args[2],
+                                    color: "orange",
+                                    textColor: "#fff"
+                                }
+                            ]
+                        });
+                    } else {
+                        console.log('JSON IS FALSE AND ARGS: ', typeof jsonObjRet);
+                        console.log('JSON IS FALSE AND ARGS: ', jsonObjRet);
+                        $("#calendar").fullCalendar({
+                            header: {
+                                left: 'prev,next today',
+                                center: 'title',
+                                right: 'month,agendaWeek,agendaDay'
+                            },
+                            defaultView: 'month',
+
+                            // parsing json to display event data formatted in popovers
+                            // as well as inputting accessibility attributes
+                            eventRender: function (event, element) {
+                                var eventStart = formatTime(event.start),
+                                    eventEnd = formatTime(event.end),
+                                    allDayBool = event.allDay,
+                                    output_url = "cal-output.html?id=" + event.id,
+                                    popoverID = "popover" + event.id.toString().substring(0, 5),
+                                    startDate, startTime;
+                                var contentEvent;
+
+                                // pending type of date, different contentEvent formatted
+                                // category type also inputted
+
+                                // if one day event
+                                if (allDayBool) {
+                                    startDate = eventStart[0];
+
+                                    contentEvent = "Date: " + startDate +
+                                        "<br/> Time: All day" +
+                                        categoryInput(event.category) +
+                                        "<br/>" +
+                                        "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                                } // if event only happens within the day
+                                else if (isSameDay(eventStart, eventEnd)) {
+                                    startDate = eventStart[0];
+                                    startTime = eventStart[1] + " - " + eventEnd[1];
+
+                                    contentEvent = "Date: " + startDate +
+                                        "<br/> Time: " + startTime +
+                                        categoryInput(event.category) +
+                                        "<br/>" +
+                                        "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+
+                                } else { // if event covers more than a day
+                                    var eventRange = rangeOfTime(eventStart, eventEnd);
+
+                                    contentEvent = "Date: " + eventRange[0] +
+                                        categoryInput(event.category) +
+                                        "<br/>" +
+                                        "<br/><a href=" + output_url + " class=pull-right>more details</a>";
+                                }
+
+                                // check for google calendar link
+                                // no popovers for google calendar
+                                if (!element.context.href) {
+                                    element.popover({
+                                        html: true,
+                                        placement: 'top',
+                                        trigger: 'click',
+                                        title: event.title,
+                                        content: contentEvent
+                                    })
+                                        .attr("role", "button")
+                                        .attr("data-toggle", "popover")
+                                        .attr("tabindex", "0")              // allows events to be tabbed
+                                        //.attr("href", output_url )
+                                        .attr("aria-haspopup", true)
+                                        .attr("data-id", popoverID)
+                                        .attr("aria-hidden", true);
+
+                                }
+                            }, // if event has a category, color the event with the cateogry's color
+                            eventAfterRender: function (event, element) {
+                                if (event.category) {
+                                    if (event.category === "Alumni") {
+                                        elemCategoryColor(element, "#5229A3");
+                                    }
+                                    else if (event.category === "Holidays") {
+                                        elemCategoryColor(element, "#FAD165");
+                                    }
+                                    else if (event.category === "Academics") {
+                                        elemCategoryColor(element, "#0D7813");
+                                    }
+                                    else if (event.category === "Students") {
+                                        elemCategoryColor(element, "#274D9A");
+                                    }
+                                    else if (event.category === "Events") {
+                                        elemCategoryColor(element, "#A32929");
+                                    }
+                                }
+
+                                // accessibility to prev & next buttons
+                                var fcPrev = $('.fc-prev-button'),
+                                    fcNext = $('.fc-next-button');
+
+                                fcNext.attr("aria-label", "fc-next");
+                                fcPrev.attr("aria-label", "fc-prev");
+                            },
+                            eventSources: [
+                                //event source
+                                {
+                                    events:
+                                        //[jsonObjRet],
+                                        [
+                                        {
+                                            id: "8ffa293bac1a010c0ae376c64edaae4a",
+                                            title: "TEST Event 4 | Dynamic Rendering",
+                                            start: "2015-09-10 17:00:00",
+                                            end: "2015-09-10 19:00:00",
+                                            allDay: false,
+                                            category: "Holidays",
+                                            details: "<p>Details about all day event</p><h2>test</h2><img src=\"hello.png\" alt=\"hello image\" >",
+                                            location: "Sandy Eggo",
+                                            contact: "Contact Name",
+                                            website: "",
+                                            linkTitle: "link title",
+                                            link: "https://external.com","phone": ""
+                                        }
+                                    ],
+                                    error: function() {
+                                        console.error('error fetching in EVENT SOURCES ', _args[0]);
+                                    }
+                                },
+                                {
+                                    googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
+                                    googleCalendarId: _args[2],
+                                    color: "orange",
+                                    textColor: "#fff"
+                                }
+                            ]
+                        });
+                    }
+                } else {
+                    // mobile view
+                    // ToDo: mobile stuffs here
+                }
             }
 
             // event background emulates category's color
