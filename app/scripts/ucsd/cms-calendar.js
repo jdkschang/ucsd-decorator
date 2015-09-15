@@ -17,6 +17,7 @@ var cmsCalendar = cmsCalendar || (function() {
                 ifJSONFailOutput;
 
             // initialize calendar
+            // check json valid
             $.get(_args[0], function (json) {
                 console.log('this is json from get: ', json);
 
@@ -225,7 +226,7 @@ var cmsCalendar = cmsCalendar || (function() {
                 });
             } else {
                 // mobile view
-                // do mobile stuffs here
+                // ToDo: mobile stuffs here
             }
 
 
