@@ -53,6 +53,12 @@ var cmsCalendar = cmsCalendar || (function() {
                                     phone: ""
                                 };
 
+                            function populateJsonObject (arr) {
+                                var key = arr[0];
+                                jsonObject.key = arr[1];
+                                console.log('jsonObject:', jsonObject);
+                            }
+
                             $.each(jsonOutput, function(index, content) {
                                 var contentOutput = content.split(": ");
 
@@ -76,8 +82,9 @@ var cmsCalendar = cmsCalendar || (function() {
                                     contentOutput[1] = "\"" + testContent + "\",";
                                 }
 
-                                if(content.search(endObject) > -1) {
-                                    console.log('contentOutput: ')
+                                if(content.search(endObject) < 0) {
+                                    console.log('contentOutput: ', contentOutput);
+                                    populateJsonObject(contentOutput);
                                 }
 
                                 contentOutput = contentOutput.join(": ");
@@ -111,9 +118,7 @@ var cmsCalendar = cmsCalendar || (function() {
                     execCalendar();
                 });
 
-            function populateJsonObject (arr) {
 
-            }
 
             function execCalendar () {
                 if (!isMobileView()) {
@@ -337,23 +342,23 @@ var cmsCalendar = cmsCalendar || (function() {
                                 //event source
                                 {
                                     events:
-                                        //[jsonObjRet],
-                                        [
-                                        {
-                                            id: "8ffa293bac1a010c0ae376c64edaae4a",
-                                            title: "TEST Event 4 | Dynamic Rendering",
-                                            start: "2015-09-10 17:00:00",
-                                            end: "2015-09-10 19:00:00",
-                                            allDay: false,
-                                            category: "Holidays",
-                                            details: "<p>Details about all day event</p><h2>test</h2><img src=\"hello.png\" alt=\"hello image\" >",
-                                            location: "Sandy Eggo",
-                                            contact: "Contact Name",
-                                            website: "",
-                                            linkTitle: "link title",
-                                            link: "https://external.com","phone": ""
-                                        }
-                                    ],
+                                        jsonObjRet,
+                                    //    [
+                                    //    {
+                                    //        id: "8ffa293bac1a010c0ae376c64edaae4a",
+                                    //        title: "TEST Event 4 | Dynamic Rendering",
+                                    //        start: "2015-09-10 17:00:00",
+                                    //        end: "2015-09-10 19:00:00",
+                                    //        allDay: false,
+                                    //        category: "Holidays",
+                                    //        details: "<p>Details about all day event</p><h2>test</h2><img src=\"hello.png\" alt=\"hello image\" >",
+                                    //        location: "Sandy Eggo",
+                                    //        contact: "Contact Name",
+                                    //        website: "",
+                                    //        linkTitle: "link title",
+                                    //        link: "https://external.com","phone": ""
+                                    //    }
+                                    //],
                                     error: function() {
                                         console.error('error fetching in EVENT SOURCES ', _args[0]);
                                     }
