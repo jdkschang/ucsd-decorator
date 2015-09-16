@@ -57,7 +57,7 @@ var cmsCalendar = cmsCalendar || (function() {
                                     // extracting word from string ""
                                     contentOutput[0] = contentOutput[0].trim(" ");
                                     //console.log('contentOutput: ', contentOutput);
-                                    //contentOutput[0] = contentOutput[0].substring(1, contentOutput[0].length - 1);
+                                    contentOutput[0] = contentOutput[0].substring(1, contentOutput[0].length - 1);
                                     //console.log('contentOutput: ', contentOutput);
                                 }
 
@@ -89,11 +89,11 @@ var cmsCalendar = cmsCalendar || (function() {
                             //console.log('json FORMATTED: ', jsonObjectReturn);
                             //console.log('\tjson TYPE:\t', typeof jsonObjectReturn);
 
-                            jsonObjectReturn = JSON.stringify(jsonObjectReturn);
+                            //jsonObjectReturn = JSON.stringify(jsonObjectReturn);
                             //console.log('json STRINGIFIED: ', jsonObjectReturn);
                             //console.log('\tjson TYPE:\t', typeof jsonObjectReturn);
                             //
-                            jsonObjectReturn = JSON.parse(jsonObjectReturn);
+                            //jsonObjectReturn = JSON.parse(jsonObjectReturn);
                             //console.log('json PARSED: ', jsonObjectReturn);
                             //console.log('\tjson TYPE:\t', typeof jsonObjectReturn);
                         } // end of responseText
@@ -331,9 +331,8 @@ var cmsCalendar = cmsCalendar || (function() {
                             },
                             eventSources: [
                                 //event source
-                            //    {
-                            //        events:
-                            //            //jsonObjectReturn,
+                                {
+                                    events: jsonObjectReturn
                             //            [
                             //    {
                             //        id: "8ffa293bac1a010c0ae376c64edaae4a",
@@ -403,7 +402,7 @@ var cmsCalendar = cmsCalendar || (function() {
                             //        error: function() {
                             //            console.error('error fetching in EVENT SOURCES ', _args[0]);
                             //        }
-                            //    },
+                                },
                                 {
                                     googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
                                     googleCalendarId: _args[2],
@@ -411,6 +410,7 @@ var cmsCalendar = cmsCalendar || (function() {
                                     textColor: "#fff"
                                 }
                             ]
+                            //addEventSource: jsonObjectReturn
                         });
                     }
                 } else {
