@@ -598,6 +598,7 @@ h1[id] {
  */
 .bs-example {
   position: relative;
+  height: 100%;
   padding: 45px 15px 15px;
   margin: 0 -15px 15px;
   background-color: #fafafa;
@@ -658,6 +659,10 @@ h1[id] {
   border-top: 0; }
 .bs-example-type h1, .bs-example-type h2, .bs-example-type h3, .bs-example-type h4, .bs-example-type h5, .bs-example-type h6 {
   margin: 0; }
+
+.bs-example .btn-group {
+  *display: inline;
+  zoom: 1; }
 
 /* Contextual background colors */
 .bs-example-bg-classes p {
@@ -1273,8 +1278,6 @@ h1[id] {
 .main-content #docs-header {
   padding-top: 0; }
 .main-content #headers {
-  margin-top: 20px; }
-.main-content #type {
   margin-top: 20px; }
 
 @media screen and (max-width: 960px) {

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "8ffa293bac1a010c0ae376c64edaae4a",
+    "title": "TEST Event 4 | Dynamic Rendering",
+    "start": "2015-09-10 17:00:00",
+    "end": "2015-09-10 19:00:00",
+    "allDay": false,
+    "category": "Holidays",
+    "details": "<p>Details about all day event</p><h2>test</h2><img src="hello.png" alt="hello image" >",
+    "location": "Sandy Eggo",
+    "contact": "Contact Name",
+    "website": "",
+    "phone": ""
+  },
+  {
+    "id": "8ffa282dac1a010c0ae376c6e5f06e3a",
+    "title": "TEST Event 5",
+    "start": "2015-09-16 08:00:00",
+    "end": "2015-09-16 10:00:00",
+    "allDay": false,
+    "category": "Students",
+    "location": "Bella Vista",
+    "contact": "Joe Pigga",
+    "website": "Website",
+    "phone": "000-000-000"
+  },
+  {
+    "id": "8ffa26b2ac1a010c0ae376c67e7a1a7f",
+    "title": "TEST Event 3",
+    "start": "2015-09-07 17:00:00",
+    "end": "2015-09-07 19:00:00",
+    "allDay": true,
+    "category": "Alumni",
+    "details": "<p>Details about all day event</p>",
+    "location": "Sandy Eggo",
+    "contact": "Contact Name",
+    "website": "ucsd.edu",
+    "phone": "000-000-000"
+  },
+  {
+    "id": "8ffa25a8ac1a010c0ae376c6586322ac",
+    "title": "TEST Event 2",
+    "start": "2015-09-15 05:00:00",
+    "end": "2015-09-15 16:00:00",
+    "allDay": false,
+    "category": "Academics",
+    "details": "<p>Details</p>",
+    "location": "Location",
+    "contact": "Contact Name",
+    "website": "Website",
+    "phone": "000-000-000"
+  },
+  {
+    "id": "8ffa24aeac1a010c0ae376c6de0bdb18",
+    "title": "TEST Event 1",
+    "start": "2015-09-29 05:00:00",
+    "end": "2015-09-30 06:00:00",
+    "allDay": false,
+    "category": "Events",
+    "details": "<p>Details</p>",
+    "location": "Location",
+    "contact": "Contact Name",
+    "website": "Website",
+    "phone": "000-000-000"
+  }
+]

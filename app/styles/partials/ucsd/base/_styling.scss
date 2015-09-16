@@ -370,6 +370,7 @@ a.button {
 	height: 33px;
 	margin: 0 0 10px 0;
 	padding: 0 40px;
+  	cursor: pointer;
 }
 
 .social-list li.facebook {
@@ -435,6 +436,11 @@ a.button {
 .social-list li.vimeo {
   background-image: url(img/sprite_social.png);
   background-position: 0 -480px;
+}
+
+.social-list li.wordpress {
+  background-image: url(img/sprite_social.png);
+  background-position: 0 -520px;
 }
 
 /**********************************************************************

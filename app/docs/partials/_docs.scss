@@ -801,6 +801,7 @@ img {
 
 .bs-example {
     position: relative;
+    height: 100%;
     padding: 45px 15px 15px;
     margin: 0 -15px 15px;
     background-color: #fafafa;
@@ -885,6 +886,11 @@ tr:first-child td {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
+}
+
+.bs-example .btn-group {
+    *display: inline;
+    zoom: 1;
 }
 
 /* Contextual background colors */

@@ -72,7 +72,7 @@
                     <div id="tdr_title_page_title">
 
                         <a href="/">
-                            Decorator 4.0.3
+                            Decorator 4.0.4
                         </a>
                     </div>
 
@@ -96,6 +96,7 @@
                                 <li><a href="two-column-b.html">Two Columns B</a></li>
                                 <li><a href="three-column.html">Three Columns</a></li>
                                 <li><a href="form-a.html">Basic Form</a></li>
+                                <li><a href="homepage-wide.html">Homepage Wide</a></li>
                             </ul>
                         </li>
                         <li class=""><a href="docs/index.html">Kitchen Sink</a></li>
@@ -109,7 +110,7 @@
                         <div id="tdr_search_content">
                             <form action="https://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
                                 <select class="search-scope" name="search-scope">
-                                    <option selected="selected" value="cwo">This Site</option>
+                                    <option selected="selected" value="cascade-cwp">This Site</option>
                                     <option value="default_collection">All UCSD Sites</option>
                                     <option value="faculty-staff">Faculty/Staff</option>
                                 </select>
@@ -142,7 +143,7 @@
                 <div class="wrapper">
                     <div class="flexslider">
                         <ul class="slides">
-                            <li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
+                            <li>
                                 <img alt="students" src="img/price-center_large.jpg">
 
                                 <p class="flex-caption">
@@ -150,7 +151,7 @@
                                         water</a>
                                 </p>
                             </li>
-                            <li style="width: 100%; float: left; margin-right: -100%; display: none;">
+                            <li>
                                 <img alt="surf" src="img/rt_2_large.jpg">
 
                                 <p class="flex-caption">
@@ -158,7 +159,7 @@
                                         stronger</a>
                                 </p>
                             </li>
-                            <li style="width: 100%; float: left; margin-right: -100%; display: none;">
+                            <li>
                                 <img alt="rocks" src="img/rt_3_large.jpg">
 
                                 <p class="flex-caption">
@@ -191,12 +192,16 @@
 
                             <p><span>Lorem ipsum dolor sit amet</span></p>
                             <ul>
-                                <li><span style="line-height: 1.2;"><a href="#">consectetur adipisicing</a> elit, sed do eiusmod tempor incididunt ut</span>
+                                <li>
+                                    <span><a href="#">consectetur adipisicing</a> elit, sed do eiusmod tempor incididunt ut</span>
                                 </li>
-                                <li><span style="line-height: 1.2;"><a href="#">Ut enim ad minim veniam</a>, quis nostrud exercitation ullamco laboris</span>
+                                <li>
+                                    <span><a href="#">Ut enim ad minim veniam</a>, quis nostrud exercitation ullamco laboris</span>
                                 </li>
-                                <li><span style="line-height: 1.2;"><a href="#">nisi ut aliquip ex ea</a> commodo consequat.</span><span
-                                        style="line-height: 1.2;">Lorem ipsum dolor sit amet</span></li>
+                                <li>
+                                    <span><a href="#">nisi ut aliquip ex ea</a> commodo consequat.</span>
+                                    <span>Lorem ipsum dolor sit amet</span>
+                                </li>
                             </ul>
 
                             <div class="social">
@@ -214,8 +219,7 @@
                             <h2 class="side"><a href="#"> Bridge to Success: Summer Bridge Program Celebrates 35 Years
                                 of Empowering students </a></h2>
                             <article>
-                                <img class="right" src="img/sample3.jpg"
-                                     style="width: 125px !important; height: 125px !important;">
+                                <img class="right" src="img/sample3.jpg">
 
                                 <p class="p1">UC San Diego’s Summer Bridge program began in 1978 with just 30 students
                                     as a way to empower incoming freshmen to be successful at UC San Diego
@@ -227,8 +231,7 @@
                             <h2 class="side"><a href="#"> Sustainability Comes Alive During
                                 UC San Diego’s Earth Week Celebration April 16-20 </a></h2>
                             <article>
-                                <img class="right" src="img/sample4.jpg"
-                                     style="width: 125px !important; height: 125px !important;">
+                                <img class="right" src="img/sample4.jpg">
 
                                 <p class="p1">Students, staff and faculty will pay homage to Mother Earth during UC San
                                     Diego’s annual Earth Week celebration April 16-20.
@@ -334,6 +337,7 @@
 <!-- endbuild -->
 
 <!-- build:js({app,.tmp}) scripts/base-min.js -->
+<script src="scripts/ucsd/social.js"></script>
 <script src="scripts/ucsd/nav-search.js"></script>
 <script src="scripts/ucsd/copyright.js"></script>
 <script src="scripts/ucsd/footer.js"></script>
