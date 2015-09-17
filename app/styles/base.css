@@ -59,7 +59,9 @@ span.loading {
  * ***************/
 html, body {
   background: #fff;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  color: #333;
+  font: normal normal normal 16px/1.2 proxima-nova, Helvetica, Arial, sans-serif; }
 
 /* container will have media queries for sizing*/
 .layout-container {
@@ -207,21 +209,11 @@ a {
   margin-bottom: 1em; }
   @media only screen and (max-width: 640px) {
     .main-section {
-      width: 100%; } }
+      width: 100%;
+      padding: 0 0 1em; } }
 
 .main-section-content {
   position: relative; }
-
-.main-section-supplement {
-  background-color: #F2F5F7;
-  border: solid 1px #C8CFD3;
-  padding: 1em;
-  margin-bottom: 1em; }
-
-.main-section-supplement h3 {
-  font-size: 115%;
-  color: #738AA3;
-  text-shadow: 0 1px 1px #FFF; }
 
 /* ***********************************************
  * FOOTER
