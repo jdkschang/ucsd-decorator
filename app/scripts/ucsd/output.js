@@ -59,6 +59,10 @@ var cmsEvent = cmsEvent || (function() {
                         "<h4>" + eventName + "</h4>" +
                         "<span class='category category-" + eventDetails.toLowerCase() + "'>" + eventDetails + "</span>" +
                         "</li>";
+                } else if (eventName === "Image") {
+                    calDetail = "<li class='cal-detail'>" +
+                        "<img src=" + eventDetails + " >" +
+                        "</li>";
                 }
 
                 eventDetailList.append(calDetail);
@@ -77,7 +81,7 @@ var cmsEvent = cmsEvent || (function() {
 
             var populateEventOutput = function (json) {
                 var jsonID, eventID, eventTitle,
-                    eventCategory, eventDetails, eventLocation, eventContact, eventWebsite, eventPhone,
+                    eventCategory, eventDetails, eventImage, eventLocation, eventContact, eventWebsite, eventPhone,
                     outputTitle = $("#title");
 
                 var eventStart = [],
@@ -91,6 +95,7 @@ var cmsEvent = cmsEvent || (function() {
                     eventAllDay = event.allDay;
                     eventCategory = event.category;
                     eventDetails = event.details;
+                    eventImage = event.image;
                     eventLocation = event.location;
                     eventContact = event.contact;
                     eventWebsite = event.website;
@@ -119,6 +124,7 @@ var cmsEvent = cmsEvent || (function() {
                         addDetailListItem("Website", eventWebsite);
                         addDetailListItem("Phone", eventPhone);
                         addDetailListItem("Details", eventDetails);
+                        addDetailListItem("Image", eventImage);
                     }
                 });
             }

@@ -18,7 +18,8 @@ ul.cal-detail-list {
     font-weight: bold;
   }
 
-  .cal-detail span {
+  .cal-detail span,
+  .cal-detail img {
     margin-left: 20px;
     display: inline-block;
   }
@@ -87,7 +88,8 @@ ul.unstyled {
   list-style: none;
 }
 
-button:hover.fc-state-hover {
+button:hover.fc-state-hover,
+button:focus.fc-button{
   background: #f5f5f5;
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);
 }
