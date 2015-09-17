@@ -159,6 +159,9 @@ h1 {
   color: #d56a03;
   letter-spacing: .5px; }
 
+.h2, h2 {
+  font-size: 28px; }
+
 hr {
   background-color: #ccc;
   color: #ccc;
