@@ -175,6 +175,7 @@ a {
 * **************/
 .navbar-list {
   list-style: none;
+  font-size: 14px;
   padding: 0;
   margin: 0; }
 
@@ -408,6 +409,9 @@ a {
   -webkit-border-radius: 0;
   border-radius: 0;
   padding: 0.5em; }
+
+.subhead {
+  font-size: 120%; }
 
 .layout-header.open,
 .layout-main.open,
