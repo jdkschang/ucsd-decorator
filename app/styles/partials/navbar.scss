@@ -175,7 +175,7 @@ button:active {
     border-bottom: solid 3px #9FB3BF;
   }
     .navbar-subnav .navbar-sublist li:hover > a {
-      background-color: #fbfbfb;
+      background-color: #EAEAEA;
     }
 
   .navdrawer-container ul.navbar-sublist {
@@ -232,10 +232,6 @@ button:active {
       color: #004b6e;
       padding: 9px 15px 8px;
       text-decoration: none;
-
-      &:hover {
-        background-color: #EAEAEA;
-      }
     }
 .layout-header,
 .layout-main,
