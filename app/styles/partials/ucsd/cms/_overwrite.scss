@@ -130,12 +130,13 @@ FLEXSLIDER
 			z-index: 10;
 		}
 	}
-
-  /* navigation dropdown z-index issue fix */
-  #main-content .flexslider .flex-controls {
-    z-index: 2;
-  }
 }
+
+/* navigation dropdown z-index issue fix */
+#main-content .flexslider .flex-controls {
+  z-index: 2;
+}
+
 /* Caption style */
 /* IE rgba() hack */
 

@@ -232,6 +232,10 @@ button:active {
       color: #004b6e;
       padding: 9px 15px 8px;
       text-decoration: none;
+
+      &:hover {
+        background-color: #EAEAEA;
+      }
     }
 .layout-header,
 .layout-main,
