@@ -76,9 +76,6 @@ html, body {
     .layout-container {
       max-width: 960px; } }
 
-.layout-navbar .layout-container {
-  overflow: visible; }
-
 .layout-header {
   /* to incorporate new navbar button*/
   display: block;
@@ -130,7 +127,10 @@ html, body {
   background-color: #F2F5F7;
   border: 0;
   border-bottom: 1px solid #C8CFD3;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  z-index: 100; }
+  .layout-navbar .layout-container {
+    overflow: visible; }
 
 .layout-main {
   padding: 1em 0 0;
