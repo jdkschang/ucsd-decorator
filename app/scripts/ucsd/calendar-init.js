@@ -13,7 +13,7 @@
             var eventStart  = formatTime( event.start ),
                 eventEnd    = formatTime( event.end ),
                 allDayBool  = event.allDay,
-                output_url  = "cal-output.html?id=" + event.id,
+                output_url  = "event.html?id=" + event.id,
                 popoverID   = "popover" + event.id.toString().substring(0, 5),
                 startDate, startTime;
             var contentEvent;

@@ -55,7 +55,14 @@ var cmsEvent = cmsEvent || (function() {
                     // no event details
                     if (!eventDetails) {
                         return;
-                    } // if event has category
+                    }
+                    // add title dynamically because of ie8 rendering error
+                    else if (eventName === "Title") {
+                        calDetail = "<li class='cal-detail'>" +
+                            "<h1>" + eventDetails + "</h1>" +
+                            "</li>";
+                    }
+                    // if event has category
                     else if (eventName === "Category") {
                         calDetail = "<li class='cal-detail'>" +
                             "<h4>" + eventName + "</h4>" +
@@ -83,8 +90,7 @@ var cmsEvent = cmsEvent || (function() {
 
                 var populateEventOutput = function (json) {
                     var jsonID, eventID, eventTitle, eventAllDay,
-                        eventCategory, eventDetails, eventImage, eventLocation, eventContact, eventWebsite, eventPhone,
-                        outputTitle = $("#title");
+                        eventCategory, eventDetails, eventImage, eventLocation, eventContact, eventWebsite, eventPhone;
 
                     var eventStart = [],
                         eventEnd = [];
@@ -107,7 +113,7 @@ var cmsEvent = cmsEvent || (function() {
                         eventEnd = formatTime(event.end);
 
                         if (eventID == jsonID) {
-                            outputTitle.append(eventTitle);
+                            addDetailListItem("Title", eventTitle);
 
                             if (eventAllDay) {
                                 addDetailListItem("When", eventStart[0]);

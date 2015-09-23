@@ -111,7 +111,7 @@ var cmsCalendar = cmsCalendar || (function() {
                         //event source
                         {
                             // url: _args[0]
-                            url:  "/events/calendar/json/events.json"
+                            url:  "json.json"
                         },
                         {
                             googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
