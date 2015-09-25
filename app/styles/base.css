@@ -376,7 +376,9 @@ a {
     margin: 0 0 .7em; }
   .main-content-nav > ul {
     /* for borders to line up properly */
-    margin: 0 -1em -1em; }
+    margin: 0 -1em -1em;
+    /* override navbar-list 14px for main navbar*/
+    font-size: 1em; }
     .main-content-nav > ul > li.active {
       color: #d56a03; }
   .main-content-nav > ul li {
