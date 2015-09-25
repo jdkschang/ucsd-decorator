@@ -183,6 +183,9 @@
   > ul {
     /* for borders to line up properly */
     margin: 0 -1em -1em;
+    /* override navbar-list 14px for main navbar*/
+    font-size: 1em;
+
     > li.active {
       color: #d56a03;
     }
