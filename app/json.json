@@ -11,8 +11,8 @@
     "location": "Rady Business Building",
     "contact": "Joe Pigga",
     "website": "http://ucsd.edu",
-    "linkTitle-1": "media index",
-    "link-1": "site://CCIS/media/index","phone": "000-000-000"
+    "linkTitle1": "media index",
+    "link1": "site://CCIS/media/index","phone": "000-000-000"
   },
   {
     "id": "8ffa293bac1a010c0ae376c64edaae4a",
@@ -26,8 +26,8 @@
     "location": "Sandy Eggo",
     "contact": "Contact Name",
     "website": "",
-    "linkTitle-1": "link title",
-    "link-1": "https://external.com","phone": ""
+    "linkTitle1": "link title",
+    "link1": "https://external.com","phone": ""
   },
   {
     "id": "8ffa282dac1a010c0ae376c6e5f06e3a",
@@ -41,8 +41,8 @@
     "location": "Bella Vista",
     "contact": "Joe Pigga",
     "website": "http://ucsd.edu",
-    "linkTitle-1": "cwo link",
-    "link-1": "https://cwo.ucsd.edu","phone": "000-000-000"
+    "linkTitle1": "cwo link",
+    "link1": "https://cwo.ucsd.edu","phone": "000-000-000"
   },
   {
     "id": "8ffa26b2ac1a010c0ae376c67e7a1a7f",
@@ -56,8 +56,8 @@
     "location": "Sandy Eggo",
     "contact": "Contact Name",
     "website": "ucsd.edu",
-    "linkTitle-1": "link title asf",
-    "link-1": "https://external.com","phone": "000-000-000"
+    "linkTitle1": "link title asf",
+    "link1": "https://external.com","phone": "000-000-000"
   },
   {
     "id": "8ffa25a8ac1a010c0ae376c6586322ac",
@@ -71,9 +71,9 @@
     "location": "Location",
     "contact": "Contact Name",
     "website": "Website",
-    "linkTitle-1": "Related Link 1",
-    "link-1": "http://google.com","linkTitle-2": "Related Link 2",
-    "link-2": "site://Calendar Application/json","phone": "000-000-000"
+    "linkTitle1": "Related Link 1",
+    "link1": "http://google.com","linkTitle-2": "Related Link 2",
+    "link2": "site://Calendar Application/json","phone": "000-000-000"
   },
   {
     "id": "8ffa24aeac1a010c0ae376c6de0bdb18",

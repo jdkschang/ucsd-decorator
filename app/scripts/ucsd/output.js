@@ -90,7 +90,9 @@ var cmsEvent = cmsEvent || (function() {
 
                 var populateEventOutput = function (json) {
                     var jsonID, eventID, eventTitle, eventAllDay,
-                        eventCategory, eventDetails, eventImage, eventLocation, eventContact, eventWebsite, eventPhone;
+                        eventCategory, eventDetails, eventImage,
+                        eventLocation, eventContact, eventWebsite, eventPhone,
+                        eventLink, eventLinkTitle;
 
                     var eventStart = [],
                         eventEnd = [];
@@ -98,16 +100,21 @@ var cmsEvent = cmsEvent || (function() {
                     jsonID = parseURL();
 
                     $.each(json, function (i, event) {
-                        eventID = event.id;
-                        eventTitle = event.title;
-                        eventAllDay = event.allDay;
-                        eventCategory = event.category;
-                        eventDetails = event.details;
-                        eventImage = event.image;
-                        eventLocation = event.location;
-                        eventContact = event.contact;
-                        eventWebsite = event.website;
-                        eventPhone = event.phone;
+                        eventID         = event.id;
+                        eventTitle      = event.title;
+                        eventAllDay     = event.allDay;
+                        eventCategory   = event.category;
+                        eventDetails    = event.details;
+                        eventImage      = event.image;
+                        eventLocation   = event.location;
+                        eventContact    = event.contact;
+                        eventWebsite    = event.website;
+                        eventPhone      = event.phone;
+                        eventLink       = event.link1;
+                        eventLinkTitle  = event.linkTitle1;
+
+                        console.log('eventLink: ', eventLink);
+                        console.log('eventLinkTitle: ', eventLinkTitle);
 
                         eventStart = formatTime(event.start);
                         eventEnd = formatTime(event.end);
@@ -133,6 +140,7 @@ var cmsEvent = cmsEvent || (function() {
                             addDetailListItem("Phone", eventPhone);
                             addDetailListItem("Details", eventDetails);
                             addDetailListItem("Image", eventImage);
+                            addDetailListItem("Link Title", eventImage);
                         }
                     });
                 }
