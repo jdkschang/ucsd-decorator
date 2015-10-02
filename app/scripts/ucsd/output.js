@@ -42,6 +42,10 @@ var cmsEvent = cmsEvent || (function() {
                     return ( evStart === evEnd );
                 };
 
+                function addExternalLink () {
+
+                }
+
                 // adding list items to the detail list
                 var addDetailListItem = function (eventName, eventDetails) {
                     var eventDetailList = $(".cal-detail-list"),
@@ -140,7 +144,7 @@ var cmsEvent = cmsEvent || (function() {
                             addDetailListItem("Phone", eventPhone);
                             addDetailListItem("Details", eventDetails);
                             addDetailListItem("Image", eventImage);
-                            addDetailListItem("Link Title", eventImage);
+                            addDetailListItem("Link", eventLink);
                         }
                     });
                 }
