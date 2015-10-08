@@ -42,8 +42,20 @@ var cmsEvent = cmsEvent || (function() {
                     return ( evStart === evEnd );
                 };
 
-                function addExternalLink () {
+                function addExternalLink (linkTitle, externalLink) {
+                    var eventDetailList = $(".cal-detail-list"),
+                        calExternalLink;
 
+                    if (!(linkTitle || externalLink)) {
+                        return;
+                    }
+
+                    calExternalLink = "<li class='cal-detail'>" +
+                        "<h4>Link</h4>" +
+                        "<span><a href='" + externalLink +  "'>" + linkTitle + "</a></span>" +
+                        "</li>";
+
+                    eventDetailList.append(calExternalLink);
                 }
 
                 // adding list items to the detail list
@@ -114,11 +126,8 @@ var cmsEvent = cmsEvent || (function() {
                         eventContact    = event.contact;
                         eventWebsite    = event.website;
                         eventPhone      = event.phone;
-                        eventLink       = event.link1;
                         eventLinkTitle  = event.linkTitle1;
-
-                        console.log('eventLink: ', eventLink);
-                        console.log('eventLinkTitle: ', eventLinkTitle);
+                        eventLink       = event.link1;
 
                         eventStart = formatTime(event.start);
                         eventEnd = formatTime(event.end);
@@ -144,7 +153,7 @@ var cmsEvent = cmsEvent || (function() {
                             addDetailListItem("Phone", eventPhone);
                             addDetailListItem("Details", eventDetails);
                             addDetailListItem("Image", eventImage);
-                            addDetailListItem("Link", eventLink);
+                            addExternalLink(eventLinkTitle, eventLink);
                         }
                     });
                 }

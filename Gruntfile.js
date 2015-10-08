@@ -85,7 +85,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss'
+                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss',
+                    '<%= config.app %>/styles/calendar.css': '<%= config.app %>/styles/calendar.scss'
                 },
                 options: {
                     sourcemap: 'true'
