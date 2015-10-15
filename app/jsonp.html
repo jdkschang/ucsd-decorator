@@ -1,0 +1,31 @@
+<html>
+<head><title>JSONP Test</title></head>
+<body>
+<div id="menu"></div>
+JSONP Test?
+<script src="https://cdn.ucsd.edu/cms/decorator-4.5/scripts/jquery.min.js"></script>
+<script>
+    /* Loading JSON objects using JSONP */
+    (function($) {
+        var url = 'http://qa-cwo.ucsd.edu/_files/menu.json';
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            contentType: "application/json",
+            dataType: 'jsonp',
+            jsonpCallback: 'jsonCallback',
+            success: function(json) {
+
+                console.log(json["Decorator.menu"]);
+                $('#menu').html(json["Decorator.menu"]);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log('error', jqXHR, textStatus, errorThrown);
+            }
+        });
+    })(jQuery);
+
+</script>
+?</body>
+</html>
