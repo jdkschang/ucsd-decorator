@@ -27,24 +27,17 @@
 
     function checkTitleOverflow () {
         // titleWrapper initialized here to dynamically
-        titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
+        titleWrapper = $(".layout-title")[0].offsetWidth;
 
         // NO hamburger menu & logo on right
         if ( titleWrapper >= 960 ) {
             titleOverflow =  titleWidth + logoWidth + 1;
-            console.log('titleWidth:\t', titleWidth);
-            console.log('logoWidth:\t', logoWidth);
-            console.log('titleOverflow:\t', titleOverflow);
             checkOverflow( titleOverflow, titleWrapper);
         }
         // hamburger menu & logo on right
         else if( titleWrapper > 768 ) {
+            console.log('hamburger');
             titleOverflow = titleWidth + logoWidth + menuWidth + 1;
-            console.log('menuWidth:\t', menuWidth);
-            console.log('titleWidth:\t', titleWidth);
-            console.log('logoWidth:\t', logoWidth);
-            console.log('titleOverflow:\t', titleOverflow);
-            console.log('titleWrapper:\t', titleWrapper, '\n');
             checkOverflow( titleOverflow, titleWrapper);
         }
         // hamburger menu & logo on left

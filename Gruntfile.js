@@ -70,8 +70,7 @@ module.exports = function (grunt) {
                 files: {
                     '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
                     '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss',
-                    '<%= config.app %>/styles/widgets.css': '<%= config.app %>/styles/widgets.scss',
-                    '<%= config.app %>/styles/profile.css': '<%= config.app %>/styles/profile.scss'
+                    '<%= config.app %>/styles/widgets.css': '<%= config.app %>/styles/widgets.scss'
                 },
                 options: {
                     sourcemap: 'true'
