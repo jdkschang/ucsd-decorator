@@ -1,5 +1,3 @@
-"use strict";
-
 var cmsCalendar = cmsCalendar || (function() {
         var _args = {}; // private
 
