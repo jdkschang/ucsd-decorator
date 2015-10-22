@@ -7,17 +7,17 @@
         titleOverflow,
         titleWrapper;
 
-    var removeLongTitle = function () {
+    function removeLongTitle () {
         title.toggle( false );
         titleShort.toggle( true );
     };
 
-    var showLongTitle = function () {
+    function showLongTitle () {
         title.toggle( true );
         titleShort.toggle( false );
     };
 
-    var checkOverflow = function( titleOverflow, titleWrapper ) {
+    function checkOverflow (titleOverflow, titleWrapper) {
         if ( titleOverflow > titleWrapper ) {
             removeLongTitle();
         } else {
@@ -25,9 +25,9 @@
         }
     };
 
-    var checkTitleOverflow = function () {
+    function checkTitleOverflow () {
         // titleWrapper initialized here to dynamically
-        titleWrapper = $(".layout-title .layout-container")[0].offsetWidth;
+        titleWrapper = $(".layout-title")[0].offsetWidth;
 
         // NO hamburger menu & logo on right
         if ( titleWrapper >= 960 ) {
@@ -36,6 +36,7 @@
         }
         // hamburger menu & logo on right
         else if( titleWrapper > 768 ) {
+            console.log('hamburger');
             titleOverflow = titleWidth + logoWidth + menuWidth + 1;
             checkOverflow( titleOverflow, titleWrapper);
         }

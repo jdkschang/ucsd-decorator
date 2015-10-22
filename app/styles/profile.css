@@ -1,3 +1,9 @@
+/********************* VARIABLES & MIXINS */
+/* BREAKPOINTS */
+/* COLORS */
+/* LAYOUT VALUES */
+/* FONTS */
+/* MIXINS */
 .imageHolder {
   display: inline-block;
   width: 17%;
@@ -26,9 +32,9 @@
 
 .profile-listing-data {
   display: inline-block;
-  width: 80%;
-  padding: 1.5%; }
-.profile-listing-data h3 {
+  padding: 1.5%;
+  width: 80%; }
+  .profile-listing-data h3 {
     font-size: 160%;
     color: #4b4b4b; }
 
@@ -45,62 +51,50 @@
     .profile-section-contact {
       width: 98%; } }
   .profile-section-contact img {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 1em; }
     @media only screen and (max-width: 640px) {
       .profile-section-contact img {
         float: left;
         width: 125px;
         margin-right: 1em; } }
+  .profile-section-contact ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .profile-section-contact ul li {
+      background: url(img/social-sprite-20.png) no-repeat;
+      margin: 0 0 1em;
+      padding-left: 35px; }
+      .profile-section-contact ul li.email {
+        background-position: 0 1px; }
+      .profile-section-contact ul li.fax {
+        background-position: 0 -34px; }
+      .profile-section-contact ul li.location {
+        background-position: 0 -88px; }
+      .profile-section-contact ul li.phone {
+        background-position: 0 -171px; }
+      .profile-section-contact ul li.facebook {
+        background-position: 0 -234px; }
+      .profile-section-contact ul li.twitter {
+        background-position: 0 -417px; }
+      .profile-section-contact ul li.linkedin {
+        background-position: 0 -356px; }
+      .profile-section-contact ul li.googleplus {
+        background-position: 0 -292px; }
+      .profile-section-contact ul li.personal-website {
+        background-position: 0 -477px; }
   .profile-section-contact .profile-contact-list {
     margin-left: 0;
     padding-left: 0;
-    list-style: none;
-    padding-top: 1.5em; }
+    list-style: none; }
+    .profile-section-contact .profile-contact-list li {
+      height: 25px; }
     @media only screen and (max-width: 640px) {
       .profile-section-contact .profile-contact-list {
         display: inline-block;
         padding: 0;
         width: 50%; } }
-    .profile-section-contact .profile-contact-list li {
-      display: inline-block;
-      background-repeat: no-repeat;
-      height: 27px;
-      margin: 0 0 1em;
-      padding-left: 35px; }
-    .profile-section-contact .profile-contact-list li.email {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 1px;
-      height: 25px; }
-    .profile-section-contact .profile-contact-list li.fax {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -34px;
-      height: 25px; }
-    .profile-section-contact .profile-contact-list li.location {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -88px; }
-    .profile-section-contact .profile-contact-list li.phone {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -171px;
-      height: 25px; }
-    .profile-section-contact .profile-contact-list li.facebook {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -234px;
-      height: 25px; }
-    .profile-section-contact .profile-contact-list li.twitter {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -417px;
-      height: 25px; }
-    .profile-section-contact .profile-contact-list li.linkedin {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -356px;
-      height: 25px; }
-    .profile-section-contact .profile-contact-list li.googleplus {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -292px; }
-    .profile-section-contact .profile-contact-list li.personal-website {
-      background-image: url(img/social-sprite-20.png);
-      background-position: 0 -477px;
-      height: 25px; }
 
 ul.resp-tabs-list {
   margin: 0;

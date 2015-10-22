@@ -59,7 +59,9 @@ span.loading {
  * ***************/
 html, body {
   background: #fff;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  color: #333;
+  font: normal normal normal 16px/1.2 proxima-nova, Helvetica, Arial, sans-serif; }
 
 /* container will have media queries for sizing*/
 .layout-container {
@@ -73,9 +75,6 @@ html, body {
   @media only screen and (max-width: 1200px) {
     .layout-container {
       max-width: 960px; } }
-
-.layout-navbar .layout-container {
-  overflow: visible; }
 
 .layout-header {
   /* to incorporate new navbar button*/
@@ -128,7 +127,10 @@ html, body {
   background-color: #F2F5F7;
   border: 0;
   border-bottom: 1px solid #C8CFD3;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  z-index: 100; }
+  .layout-navbar .layout-container {
+    overflow: visible; }
 
 .layout-main {
   padding: 1em 0 0;
@@ -157,6 +159,9 @@ h1 {
   color: #d56a03;
   letter-spacing: .5px; }
 
+.h2, h2 {
+  font-size: 28px; }
+
 hr {
   background-color: #ccc;
   color: #ccc;
@@ -173,6 +178,7 @@ a {
 * **************/
 .navbar-list {
   list-style: none;
+  font-size: 14px;
   padding: 0;
   margin: 0; }
 
@@ -207,21 +213,11 @@ a {
   margin-bottom: 1em; }
   @media only screen and (max-width: 640px) {
     .main-section {
-      width: 100%; } }
+      width: 100%;
+      padding: 0 0 1em; } }
 
 .main-section-content {
   position: relative; }
-
-.main-section-supplement {
-  background-color: #F2F5F7;
-  border: solid 1px #C8CFD3;
-  padding: 1em;
-  margin-bottom: 1em; }
-
-.main-section-supplement h3 {
-  font-size: 115%;
-  color: #738AA3;
-  text-shadow: 0 1px 1px #FFF; }
 
 /* ***********************************************
  * FOOTER
@@ -380,7 +376,9 @@ a {
     margin: 0 0 .7em; }
   .main-content-nav > ul {
     /* for borders to line up properly */
-    margin: 0 -1em -1em; }
+    margin: 0 -1em -1em;
+    /* override navbar-list 14px for main navbar*/
+    font-size: 1em; }
     .main-content-nav > ul > li.active {
       color: #d56a03; }
   .main-content-nav > ul li {
@@ -417,6 +415,9 @@ a {
   border-radius: 0;
   padding: 0.5em; }
 
+.subhead {
+  font-size: 120%; }
+
 .layout-header.open,
 .layout-main.open,
 .layout-footer.open {
@@ -443,6 +444,7 @@ a {
   margin-right: 10px; }
   @media only screen and (max-width: 360px) {
     .layout-header button.btn-nav {
+      font-size: 20px;
       top: 5px; } }
   @media only screen and (max-width: 960px) {
     .layout-header button.btn-nav {
@@ -558,7 +560,7 @@ button:active {
   border-bottom: solid 3px #9FB3BF; }
 
 .navbar-subnav .navbar-sublist li:hover > a {
-  background-color: #fbfbfb; }
+  background-color: #EAEAEA; }
 
 .navdrawer-container ul.navbar-sublist {
   display: none;
@@ -594,8 +596,6 @@ button:active {
 
 .navdrawer-container .navbar-sublist a {
   display: block;
-  width: 100%;
-  height: 100%;
   background: #FFF;
   border-bottom: solid 1px #C8CFD3;
   border-right: solid 1px #C8CFD3;
@@ -648,7 +648,6 @@ button:active {
   .navdrawer-container {
     display: block;
     width: 100%;
-    z-index: 1;
     opacity: 1; }
 
   button.btn-nav {
@@ -1323,6 +1322,10 @@ FLEXSLIDER
       right: 5px;
       position: absolute;
       z-index: 10; }
+
+/* navigation dropdown z-index issue fix */
+#main-content .flexslider .flex-controls {
+  z-index: 2; }
 
 /* Caption style */
 /* IE rgba() hack */
