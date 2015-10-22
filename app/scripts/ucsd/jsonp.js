@@ -2,7 +2,7 @@
  * Created by jkchang on 10/21/2015.
  */
 /* Loading JSON objects using JSONP */
-var jsonpDecorator = jsonpDecorator || (function() {
+var jsonp = jsonp || (function() {
     "use strict";
     var _args = {}; // private
 
