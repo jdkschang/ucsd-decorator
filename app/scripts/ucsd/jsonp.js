@@ -13,15 +13,23 @@ var jsonp = jsonp || (function() {
         },
 
         renderDecorator: function() {
+            console.log('in render decorator');
+
             var nav = $("nav"),
                 navClass = "navdrawer-container layout-navbar",
                 container = "<div class=\"layout-container\"></div>";
 
+            console.log(nav);
+
             nav.addClass(navClass);
             nav.append(container);
+
+            console.log('nav after: ', nav);
         },
 
         renderPage: function () {
+            console.log('in render page');
+
             var url = _args[0];
 
             $.ajax({
