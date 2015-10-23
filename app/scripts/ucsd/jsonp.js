@@ -12,8 +12,18 @@ var jsonp = jsonp || (function() {
             // some other initialising
         },
 
-        renderDecorator: function () {
+        renderDecorator: function() {
+            var nav = $("nav"),
+                navClass = "navdrawer-container layout-navbar",
+                container = "<div class=\"layout-container\"></div>";
+
+            nav.addClass(navClass);
+            nav.append(container);
+        },
+
+        renderPage: function () {
             var url = _args[0];
+
             $.ajax({
                 type: 'GET',
                 url: url,
@@ -23,7 +33,7 @@ var jsonp = jsonp || (function() {
                 jsonpCallback: 'jsonCallback',
                 success: function (json) {
                     console.log(json["Decorator.menu"]);
-                    $('#menu').html(json["Decorator.menu"]);
+                    $("nav div.layout-container").html(json["Decorator.menu"]);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log('error', jqXHR, textStatus, errorThrown);
