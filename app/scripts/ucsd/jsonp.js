@@ -22,7 +22,6 @@ var jsonp = jsonp || (function() {
                 dataType: 'jsonp',
                 jsonpCallback: 'jsonCallback',
                 success: function (json) {
-
                     console.log(json["Decorator.menu"]);
                     $('#menu').html(json["Decorator.menu"]);
                 },
