@@ -1,11 +1,14 @@
 (function(document) {
     var title = $(".title-header"),
         titleShort = $(".title-header-short"),
-        titleWidth = title[0].offsetWidth,
         logoWidth = 229,
         menuWidth = 62,
         titleOverflow,
         titleWrapper;
+
+    if(title[0]) { // title exists
+        var titleWidth = title[0].offsetWidth;
+    }
 
     function removeLongTitle () {
         title.toggle( false );
@@ -27,7 +30,9 @@
 
     function checkTitleOverflow () {
         // titleWrapper initialized here to dynamically
-        titleWrapper = $(".layout-title")[0].offsetWidth;
+        if($(".layout-title")[0]) { // title wrapper exists
+            titleWrapper = $(".layout-title")[0].offsetWidth;
+        }
 
         // NO hamburger menu & logo on right
         if ( titleWrapper >= 960 ) {

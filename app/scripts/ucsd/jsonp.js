@@ -14,13 +14,33 @@ var jsonp = jsonp || (function() {
 
         renderDecorator: function() {
             $(document).ready( function () {
+                decorateNav();
+                //decorateScripts();
+            });
+
+            function decorateNav () {
                 var nav = $("nav"),
                     navClass = "navdrawer-container layout-navbar",
                     container = "<div class=\"layout-container\"></div>";
 
                 nav.addClass(navClass);
                 nav.append(container);
-            });
+            }
+
+            function decorateScripts () {
+                var vendorjs = addScripts("vendor.js"),
+                    basejs   = addScripts("base-min.js"),
+                    footer = $("footer"),
+                    footerClass = "layout-footer",
+                    container = "<div class=\"layout-container\">" + vendorjs + basejs + "</div>";
+
+                footer.addClass(footerClass);
+                footer.append(container);
+            }
+
+            function addScripts (script) {
+                return "<script src=\"https://cdn.ucsd.edu/cms/decorator-4.5/scripts/" + script + "\"></script>";
+            }
         },
 
         renderPage: function () {

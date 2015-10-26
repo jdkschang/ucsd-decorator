@@ -27,16 +27,18 @@
             }
         };
 
-        if(navBtn.addEventListener) { // ie8 conditional
-            navBtn.addEventListener('click', function (e) {
-                e.preventDefault();
+        if(navBtn) { // navBtn exists
+            if (navBtn.addEventListener) { // ie8 conditional
+                navBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-                toggleMainNav();
-            });
-        } else {
-            navBtn.attachEvent("onclick", function() {
-                toggleMainNav();
-            })
+                    toggleMainNav();
+                });
+            } else {
+                navBtn.attachEvent("onclick", function () {
+                    toggleMainNav();
+                })
+            }
         }
     };
 
@@ -149,15 +151,18 @@
             }
         };
 
-        if(searchBtn.addEventListener) {
-            searchBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                toggleSearch();
-            });
-        } else {
-            searchBtn.attachEvent("onclick", function() {
-                toggleSearch();
-            })
+
+        if(searchBtn) { // search button exists
+            if (searchBtn.addEventListener) {
+                searchBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    toggleSearch();
+                });
+            } else {
+                searchBtn.attachEvent("onclick", function () {
+                    toggleSearch();
+                })
+            }
         }
     };
 
