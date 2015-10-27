@@ -1,6 +1,7 @@
 (function () {
-    var jsonp = $('script[data-id="jsonp"]');
-    var menuURL = jsonp[0].getAttribute('data-menu');
+    var jsonp = $('script[data-id="jsonp"]'),
+        site = jsonp[0].getAttribute('data-site'),
+        siteURL = "https://qa-" + site + ".ucsd.edu/_files/menu-4.5.json";
 
     function renderDecorator () {
         $(document).ready( function () {
@@ -36,7 +37,7 @@
     function renderPage () {
         $.ajax({
             type: 'GET',
-            url: menuURL,
+            url: siteURL,
             async: false,
             contentType: "application/json",
             dataType: 'jsonp',
