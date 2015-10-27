@@ -17,8 +17,6 @@ var jsonp = jsonp || (function() {
                 decorateNav();
 
                 console.log('render decorator: document ready');
-
-
                 //decorateScripts();
             });
 
