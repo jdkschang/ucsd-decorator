@@ -4,8 +4,6 @@
             decorateNav();
 
             console.log('render decorator: document ready');
-
-
             //decorateScripts();
         });
 
@@ -35,7 +33,7 @@
     }
 
     function renderPage () {
-        var url = _args[0];
+        var url = "https://qa-cwo.ucsd.edu/_files/menu-4.5.json";
 
         console.log('page rendered');
 
@@ -67,4 +65,7 @@
             }
         });
     }
+
+    renderDecorator();
+    renderPage();
 })();
