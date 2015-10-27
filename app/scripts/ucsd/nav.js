@@ -50,6 +50,8 @@
             subNavIsOpened  = false;
         var preIndex;
 
+        console.log('mainSubNav: ', subNavArray);
+
         /* if there are subNav elements run */
         if(subNavArray) {
             subNavArray.each( function(index) {
