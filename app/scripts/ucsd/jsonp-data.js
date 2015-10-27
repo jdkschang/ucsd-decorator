@@ -5,8 +5,6 @@
     function renderDecorator () {
         $(document).ready( function () {
             decorateNav();
-
-            console.log('render decorator: document ready');
             //decorateScripts();
         });
 
@@ -36,32 +34,24 @@
     }
 
     function renderPage () {
-        var url = menuURL;
-
-        console.log('page rendered');
-
         $.ajax({
             type: 'GET',
-            url: url,
+            url: menuURL,
             async: false,
             contentType: "application/json",
             dataType: 'jsonp',
             jsonpCallback: 'jsonCallback',
             success: function (json) {
-                console.log(json["Decorator.menu"]);
+                //console.log(json["Decorator.menu"]);
                 $("nav div.layout-container").html(json["Decorator.menu"]);
 
-                // async load base script
-                (function() {
-                    var s = document.createElement('script');
-                    s.type = 'text/javascript';
-                    s.async = true;
-                    s.src = 'https://cdn.ucsd.edu/cms/decorator-4.5/scripts/base-min.js';
-                    var x = document.getElementsByTagName('script')[0];
-                    x.parentNode.insertBefore(s, x);
-
-                    console.log('async');
-                })();
+                // async load base script to allow for dropdown
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.ucsd.edu/cms/decorator-4.5/scripts/base-min.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('error', jqXHR, textStatus, errorThrown);
