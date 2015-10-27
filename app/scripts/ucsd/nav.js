@@ -97,6 +97,8 @@
                     subNav.addEventListener('mouseover', function (e) {
                         e.preventDefault();
 
+                        console.log('in mouseover');
+
                         if (!isMobileView()) {
                             addClass(subNav, subNavHover);
                             subNavIsOpened = !subNavIsOpened;
