@@ -26,18 +26,16 @@
 </main>
 <footer>
     <script src="https://cdn.ucsd.edu/cms/decorator-4.5/scripts/vendor.js"></script>
-    <script type="text/javascript">
-
-        (function() {
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = 'https://cdn.ucsd.edu/cms/decorator-4.5/scripts/base-min.js';
-            var x = document.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-
-    </script>
+    <!-- build:js({app,.tmp}) scripts/base-min.js -->
+    <script src="scripts/ucsd/nav.js"></script>
+    <script src="scripts/ucsd/title.js"></script>
+    <script src="scripts/ucsd/drawer.js"></script>
+    <script src="scripts/ucsd/copyright.js"></script>
+    <script src="scripts/ucsd/footer.js"></script>
+    <script src="scripts/ucsd/logout.js"></script>
+    <script src="scripts/ucsd/social.js"></script>
+    <script src="scripts/ucsd/profile-template.js"></script>
+    <!-- endbuild -->
 </footer>
 </body>
 </html>

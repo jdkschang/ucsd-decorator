@@ -17,6 +17,8 @@ var jsonp = jsonp || (function() {
                 decorateNav();
 
                 console.log('render decorator: document ready');
+
+
                 //decorateScripts();
             });
 
@@ -60,6 +62,18 @@ var jsonp = jsonp || (function() {
                 success: function (json) {
                     console.log(json["Decorator.menu"]);
                     $("nav div.layout-container").html(json["Decorator.menu"]);
+
+                    // async load base script
+                    (function() {
+                        var s = document.createElement('script');
+                        s.type = 'text/javascript';
+                        s.async = true;
+                        s.src = 'https://cdn.ucsd.edu/cms/decorator-4.5/scripts/base-min.js';
+                        var x = document.getElementsByTagName('script')[0];
+                        x.parentNode.insertBefore(s, x);
+
+                        console.log('async');
+                    })();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log('error', jqXHR, textStatus, errorThrown);
