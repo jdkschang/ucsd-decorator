@@ -15,9 +15,7 @@ var jsonp = jsonp || (function() {
         renderDecorator: function() {
             $(document).ready( function () {
                 decorateNav();
-                decorateScripts();
-
-                console.log('render decorator');
+                //decorateScripts();
             });
 
             function decorateNav () {
@@ -41,7 +39,7 @@ var jsonp = jsonp || (function() {
             }
 
             function addScripts (script) {
-                return "<script async src=\"https://cdn.ucsd.edu/cms/decorator-4.5/scripts/" + script + "\"></script>";
+                return "<script src=\"https://cdn.ucsd.edu/cms/decorator-4.5/scripts/" + script + "\"></script>";
             }
         },
 
