@@ -15,6 +15,8 @@ var jsonp = jsonp || (function() {
         renderDecorator: function() {
             $(document).ready( function () {
                 decorateNav();
+
+                console.log('render decorator: document ready');
                 //decorateScripts();
             });
 
@@ -45,6 +47,8 @@ var jsonp = jsonp || (function() {
 
         renderPage: function () {
             var url = _args[0];
+
+            console.log('page rendered');
 
             $.ajax({
                 type: 'GET',
