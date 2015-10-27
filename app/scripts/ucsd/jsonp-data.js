@@ -1,4 +1,7 @@
 (function () {
+    var jsonp = $('script[data-id="jsonp"]');
+    var menuURL = jsonp[0].getAttribute('data-menu');
+
     function renderDecorator () {
         $(document).ready( function () {
             decorateNav();
@@ -33,7 +36,7 @@
     }
 
     function renderPage () {
-        var url = "https://qa-cwo.ucsd.edu/_files/menu-4.5.json";
+        var url = menuURL;
 
         console.log('page rendered');
 
