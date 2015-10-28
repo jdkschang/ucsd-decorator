@@ -13,7 +13,7 @@
             jsonpCallback: 'jsonCallback',
             success: function (json) {
                 //console.log(json["Decorator.menu"]);
-                $("nav div.layout-container").html(json["Decorator.menu"]);
+                $("nav div.layout-container").append(json["Decorator.menu"]);
 
                 // async load base script to allow for dropdown
                 var s = document.createElement('script');
