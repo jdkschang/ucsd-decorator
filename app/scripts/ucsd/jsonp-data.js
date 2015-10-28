@@ -4,7 +4,7 @@
         elem = jsonp[0].getAttribute('data-elem'),
         siteURL = "https://qa-" + site + ".ucsd.edu/_files/menu-4.5.json";
 
-    //ToDo: JSON.parse(elem) needs to be parsed through a function and specify which components the user specified
+    // ToDo: JSON.parse(elem) needs to be parsed through a function 
 
     function renderDecorator () {
         $.ajax({
