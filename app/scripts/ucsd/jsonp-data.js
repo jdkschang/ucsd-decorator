@@ -1,9 +1,12 @@
 (function () {
     var jsonp = $('script[data-id="jsonp"]'),
         site = jsonp[0].getAttribute('data-site'),
+        elem = jsonp[0].getAttribute('data-elem'),
         siteURL = "https://qa-" + site + ".ucsd.edu/_files/menu-4.5.json";
 
-     function renderDecorator () {
+    //ToDo: JSON.parse(elem) needs to be parsed through a function and specify which components the user specified
+
+    function renderDecorator () {
         $.ajax({
             type: 'GET',
             url: siteURL,
@@ -13,7 +16,7 @@
             jsonpCallback: 'jsonCallback',
             success: function (json) {
                 //console.log(json["Decorator.menu"]);
-                $("nav div.layout-container").append(json["Decorator.menu"]);
+                $("nav div.layout-container").append(json["Decorator." + JSON.parse(elem)[0]]);
 
                 // async load base script to allow for dropdown
                 var s = document.createElement('script');
