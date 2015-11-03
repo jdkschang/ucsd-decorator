@@ -9,20 +9,29 @@
 
     /* function: parseElem
      *
+     * Input: element list and element component query
+     *
      * Description: takes in user input list of elements: header, footer, and menu
      * returns list of booleans
      *
-     * return type: [bool]
+     * return type: bool
      * */
-    function parseElem (elemList) {
+    function parseElem (elemList, elementComponent) {
         var outList = [],
             elemResult;
 
-        elemResult = elem.replace(/\s/g, "").split(",");
+        elemResult = elemList.replace(/\s/g, "").split(",");
+        console.log('element list:', elemResult);
 
+        for(var i = 0; i < elemResult.length; i++) {
+            if(elementComponent === elemResult[i]) {
+                return true;
+            }
 
+            console.log('checking return')
+        }
 
-        return outList;
+        return false;
     }
 
 
@@ -39,7 +48,9 @@
             jsonpCallback: 'jsonCallback',
             success: function (json) {
                 //console.log(json["Decorator.menu"]);
-                $("nav div.layout-container").append(json["decorator." + elemResult[0]]);
+                if(parseElem(elem, "menu")) {
+                    $("nav div.layout-container").append(json["decorator.menu"]);
+                }
 
                 // async load base script to allow for dropdown
                 var s = document.createElement('script');
@@ -54,6 +65,7 @@
             }
         });
     }
+
 
     renderDecorator();
 })();
