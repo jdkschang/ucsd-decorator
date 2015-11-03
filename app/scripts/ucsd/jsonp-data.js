@@ -2,10 +2,13 @@
     var jsonp = $('script[data-decorator-site]'),
         site = jsonp[0].getAttribute('data-decorator-site'),
         elem = jsonp[0].getAttribute('data-elem'),
-        siteURL = "https://qa-" + site + ".ucsd.edu/_decorator-html/json.json";
+        siteURL = "https://qa-" + site + ".ucsd.edu/_decorator-html/json.json",
+        elemResult;
         //siteURL = "menu.json";
 
-        console.log('elem: ', elem);
+    console.log('elem: ', elem);
+    elemResult = elem.replace(/\s/g, "").split(",");
+    console.log('elemResult: ', elemResult);
 
 
     // ToDo: JSON.parse(elem) needs to be parsed through a function
