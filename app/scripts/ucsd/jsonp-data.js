@@ -4,11 +4,27 @@
         elem = jsonp[0].getAttribute('data-elem'),
         siteURL = "https://qa-" + site + ".ucsd.edu/_decorator-html/json.json",
         elemResult;
-        //siteURL = "menu.json";
 
-    console.log('elem: ', elem);
-    elemResult = elem.replace(/\s/g, "").split(",");
-    console.log('elemResult: ', elemResult);
+
+
+    /* function: parseElem
+     *
+     * Description: takes in user input list of elements: header, footer, and menu
+     * returns list of booleans
+     *
+     * return type: [bool]
+     * */
+    function parseElem (elemList) {
+        var outList = [],
+            elemResult;
+
+        elemResult = elem.replace(/\s/g, "").split(",");
+
+
+
+        return outList;
+    }
+
 
 
     // ToDo: JSON.parse(elem) needs to be parsed through a function
@@ -23,7 +39,7 @@
             jsonpCallback: 'jsonCallback',
             success: function (json) {
                 //console.log(json["Decorator.menu"]);
-                $("nav div.layout-container").append(json["decorator." + JSON.parse(elem)[0]]);
+                $("nav div.layout-container").append(json["decorator." + elemResult[0]]);
 
                 // async load base script to allow for dropdown
                 var s = document.createElement('script');
