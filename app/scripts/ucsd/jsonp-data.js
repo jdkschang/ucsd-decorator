@@ -21,14 +21,11 @@
             elemResult;
 
         elemResult = elemList.replace(/\s/g, "").split(",");
-        console.log('element list:', elemResult);
 
         for(var i = 0; i < elemResult.length; i++) {
             if(elementComponent === elemResult[i]) {
                 return true;
             }
-
-            console.log('checking return')
         }
 
         return false;
