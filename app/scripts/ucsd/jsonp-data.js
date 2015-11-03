@@ -2,8 +2,7 @@
     var jsonp = $('script[data-decorator-site]'),
         site = jsonp[0].getAttribute('data-decorator-site'),
         elem = jsonp[0].getAttribute('data-elem'),
-        siteURL = "https://qa-" + site + ".ucsd.edu/_decorator-html/json.json",
-        elemResult;
+        siteURL = "https://qa-" + site + ".ucsd.edu/_decorator-html/json.json";
 
 
 
@@ -17,10 +16,7 @@
      * return type: bool
      * */
     function parseElem (elemList, elementComponent) {
-        var outList = [],
-            elemResult;
-
-        elemResult = elemList.replace(/\s/g, "").split(",");
+        var elemResult = elemList.replace(/\s/g, "").split(",");
 
         for(var i = 0; i < elemResult.length; i++) {
             if(elementComponent === elemResult[i]) {
