@@ -113,7 +113,7 @@ var cmsCalendar = cmsCalendar || (function() {
                         },
                         {
                             googleCalendarApiKey: "AIzaSyDnWE6xGE0GPXVjY2HMNFUlSkBNeKzBtIo",
-                            googleCalendarId: _args[2],
+                            googleCalendarId: _args[1],
                             color: "orange",
                             textColor: "#fff"
                         }
