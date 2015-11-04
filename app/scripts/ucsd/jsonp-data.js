@@ -40,7 +40,7 @@
             dataType: 'jsonp',
             jsonpCallback: 'jsonCallback',
             success: function (json) {
-                //console.log(json["Decorator.menu"]);
+                // append menu styles
                 if(parseElem(elem, "menu")) {
                     $("nav div.layout-container").append(json["decorator.menu"]);
                 }
