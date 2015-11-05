@@ -36,7 +36,6 @@
         }
         // hamburger menu & logo on right
         else if( titleWrapper > 768 ) {
-            console.log('hamburger');
             titleOverflow = titleWidth + logoWidth + menuWidth + 1;
             checkOverflow( titleOverflow, titleWrapper);
         }
