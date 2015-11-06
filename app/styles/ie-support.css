@@ -1,4 +1,4 @@
-/* start of decorator 4.5 support for  IE7 and IE8 specifics */
+/* start of Decorator 4.5.1 support for  IE7 and IE8 specifics */
 /* '*+' ie7 specific selector */
 * + section.layout-title {
   box-sizing: border-box;

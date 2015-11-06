@@ -1,5 +1,5 @@
 (function(document) {
-    var mainNav = function() {
+    function mainNav() {
         var navBtn              = $('.btn-nav')[0];
         var navList             = $('.navdrawer-container')[0];
         var layoutHeader        = $('.layout-header')[0];         // for menu button transition
@@ -9,7 +9,7 @@
         var menuOpen            = 'open';
         var navListIsOpened     = false;
 
-        var toggleMainNav = function() {
+        function toggleMainMenu() {
             if (!navListIsOpened) {
                 addClass(navList, navIsOpenedClass);
 
@@ -25,22 +25,22 @@
                 removeClass(layoutFooter, menuOpen);
                 navListIsOpened = false;
             }
-        };
+        }
 
         if(navBtn.addEventListener) { // ie8 conditional
             navBtn.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                toggleMainNav();
+                toggleMainMenu();
             });
         } else {
             navBtn.attachEvent("onclick", function() {
-                toggleMainNav();
+                toggleMainMenu();
             })
         }
-    };
+    }
 
-    var mainSubNav = function() {
+    function mainSubNav() {
         var subNavArray     = $('.navbar-subnav'),
             subListArray    = $('.navbar-sublist'),
             subNavList      = 'subnav-is-opened',
@@ -55,7 +55,7 @@
                     subList = subListArray[index];
 
                 /* relocated toggleSubNav function due to variable scoping issues */
-                var toggleSubNav = function() {
+                function toggleSubNav() {
                     // check if subList opened, reset if antoher is already opened
                     checkToggleSubNav();
 
@@ -67,9 +67,9 @@
                         removeClass(subList, subNavList);
                         subNavIsOpened = !subNavIsOpened;
                     }
-                };
+                }
 
-                var checkToggleSubNav = function() {
+                function checkToggleSubNav() {
                     var checkSubNav     = $('.subnav-is-opened')[0];
 
                     if(checkSubNav) {
@@ -77,7 +77,7 @@
                         if(preIndex != index)
                             subNavIsOpened = false;
                     }
-                };
+                }
 
                 if (subNav.addEventListener) {
                     subNav.addEventListener('click', function (e) {
@@ -129,15 +129,15 @@
                 }
             });
         }
-    };
+    }
 
-    var mainSearch = function() {
+    function mainSearch() {
         var searchBtn       = $('.search-toggle')[0];
         var searchContent   = $('.search-content')[0];
         var searchOpen      = 'search-is-open';
         var isSearchOpen    = false;
 
-        var toggleSearch = function() {
+        function toggleSearch() {
             if(!isSearchOpen) {
                 addClass(searchContent, searchOpen);
                 addClass(searchBtn, searchOpen);
@@ -147,7 +147,7 @@
                 removeClass(searchBtn, searchOpen);
                 isSearchOpen = false;
             }
-        };
+        }
 
         if(searchBtn.addEventListener) {
             searchBtn.addEventListener('click', function (e) {
@@ -159,27 +159,28 @@
                 toggleSearch();
             })
         }
-    };
+    }
 
-    var isMobileView = function() {
-        var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 768;
+    function isMobileView() {
+        var browserWidth = window.innerWidth,
+            mobileDesktopBorder = 768;
 
         return (browserWidth < (mobileDesktopBorder+1));
-    };
+    }
 
-    var addClass = function (element, className) {
+    function addClass(element, className) {
         if (!element) { return; }
         element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
-    };
+    }
 
-    var removeClass = function(element, className) {
+    function removeClass(element, className) {
         if (!element) { return; }
         element.className = element.className.replace(className, '');
-    };
+    }
 
     mainNav();
     mainSubNav();
     mainSearch();
+
 })(document);
 

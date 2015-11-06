@@ -610,7 +610,7 @@ button:active {
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out; }
 
-.navdrawer-container.navbar-is-opened {
+nav.navdrawer-container.navbar-is-opened {
   position: fixed;
   top: 0;
   height: 100%;
@@ -666,6 +666,29 @@ button:active {
     border-bottom: 1px solid #ccc;
     -webkit-box-shadow: none;
     box-shadow: none; } }
+.collapse-navbar .navdrawer-container {
+  position: fixed;
+  width: 42%;
+  z-index: -1;
+  opacity: 0; }
+  .collapse-navbar .navdrawer-container .subnav-hover ul.navbar-sublist {
+    display: block;
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    .collapse-navbar .navdrawer-container .subnav-hover ul.navbar-sublist a {
+      border: 0;
+      padding-left: 3em; }
+
+.collapse-navbar .btn-nav {
+  display: block; }
+
+.collapse-navbar .search-content {
+  position: relative;
+  width: 100%; }
+
 /**********************************************************************
  * Basic CSS styling
  */
