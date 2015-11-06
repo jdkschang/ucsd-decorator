@@ -19,6 +19,13 @@
         titleShort.toggle( false );
     }
 
+    function isMenuView() {
+        var browserWidth = window.innerWidth,
+            menuDesktopBorder = 960;
+
+        return (browserWidth < (menuDesktopBorder+1));
+    }
+
     function checkOverflow (titleOverflow, titleWrapper) {
         if ( titleOverflow > titleWrapper ) {
             removeLongTitle();
@@ -48,19 +55,31 @@
         }
     }
 
-    function checkNavOverflow () {
-        var navHeight = $('.navdrawer-container')[0].scrollHeight;
-        if(navHeight > navOverflow ) {
+    function checkNavOverflow() {
+        var body = $('body'),
+            navHeight = $('.navdrawer-container')[0].scrollHeight,
+            navbarCollapse = 'collapse-navbar',
+            navMaxHeight = 39;
 
+        // view will not have menu
+        if(!isMenuView()) {
+            if (navHeight > navMaxHeight) {
+                body.addClass(navbarCollapse);
+            } else {
+                body.removeClass(navbarCollapse);
+            }
         }
     }
+
 
     // ToDo: function callback only registers twice
     $(window).resize( function () {
         checkTitleOverflow();
+        checkNavOverflow();
     });
 
     $(window).ready( function () {
         checkTitleOverflow();
+        checkNavOverflow();
     });
 })(document);

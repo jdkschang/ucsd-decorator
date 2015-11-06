@@ -241,7 +241,7 @@ button:active {
   transition: transform .3s ease-in-out;
 }
 
-.navdrawer-container.navbar-is-opened {
+nav.navdrawer-container.navbar-is-opened {
   position: fixed;
 
   top: 0;
@@ -333,9 +333,32 @@ button:active {
     }
 }
 
-.collapse-navbar {
+.collapse-navbar .navdrawer-container {
   position: fixed;
   width: 42%;
   z-index: -1;
   opacity: 0;
+
+  .subnav-hover ul.navbar-sublist {
+    display: block;
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    a {
+      border: 0;
+      padding-left: 3em;
+    }
+  }
+}
+
+.collapse-navbar .btn-nav {
+  display: block;
+}
+
+.collapse-navbar .search-content {
+  position: relative;
+  width: 100%;
 }

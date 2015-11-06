@@ -168,13 +168,6 @@
         return (browserWidth < (mobileDesktopBorder+1));
     }
 
-    function isMenuView() {
-        var browserWidth = window.innerWidth,
-            menuDesktopBorder = 960;
-
-        return (browserWidth < (menuDesktopBorder+1));
-    }
-
     function addClass(element, className) {
         if (!element) { return; }
         element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
@@ -189,51 +182,5 @@
     mainSubNav();
     mainSearch();
 
-    function toggleMainNavbar() {
-        var navbar = $('.navdrawer-container')[0],
-            navHeight = navbar.scrollHeight,
-            navbarCollapse = 'collapse-navbar',
-            navMaxHeight = 39;
-
-        //console.log('nav height: ', navHeight);
-        // view will not have menu
-        if(!isMenuView()) {
-            console.log('hello is menu view');
-            if (navHeight > navMaxHeight) {
-                addClass(navbar, navbarCollapse);
-                //isNavbarCollapsed = true;
-                console.log('added class navbarCollapse: ', navbarCollapse)
-            } else {
-                removeClass(navbar, navbarCollapse);
-                //isNavbarCollapsed = false;
-                console.log('REMOVED class navbarCollapse: ')
-            }
-        } else {
-            console.log('HOHOHO');
-        }
-    }
-
-    function checkNavOverflow () {
-        var navbar = $('.navdrawer-container')[0],
-            navHeight = navbar.scrollHeight,
-            navbarCollapse = 'collapse-navbar',
-            navMaxHeight = 39;
-
-        //console.log('nav height: ', navHeight);
-        if (navHeight > navMaxHeight) {
-            addClass(navbar, navbarCollapse);
-            //isNavbarCollapsed = true;
-            console.log('added class navbarCollapse: ', navbarCollapse)
-        } else {
-            removeClass(navbar, navbarCollapse);
-            //isNavbarCollapsed = false;
-            console.log('REMOVED class navbarCollapse: ')
-        }
-    }
-
-    // ToDo: function callback only registers twice
-    $(window).resize( function () {
-        toggleMainNavbar();
-    });
 })(document);
 
