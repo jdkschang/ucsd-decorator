@@ -4,8 +4,6 @@
         titleWidth = title[0].offsetWidth,
         logoWidth = 229,
         menuWidth = 62,
-        navHeight = 40,
-        navOverflow,
         titleOverflow,
         titleWrapper;
 
@@ -55,6 +53,7 @@
         }
     }
 
+    // ToDo: Need to check for when Nav doesn't overflow (change from portrait to landscape usecase)
     function checkNavOverflow() {
         var body = $('body'),
             navHeight = $('.navdrawer-container')[0].scrollHeight,
