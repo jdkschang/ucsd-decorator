@@ -1,5 +1,5 @@
 (function(document) {
-    var mainNav = function() {
+    function mainNav() {
         var navBtn              = $('.btn-nav')[0];
         var navList             = $('.navdrawer-container')[0];
         var layoutHeader        = $('.layout-header')[0];         // for menu button transition
@@ -9,7 +9,7 @@
         var menuOpen            = 'open';
         var navListIsOpened     = false;
 
-        function toggleMainNav() {
+        function toggleMainMenu() {
             if (!navListIsOpened) {
                 addClass(navList, navIsOpenedClass);
 
@@ -31,14 +31,14 @@
             navBtn.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                toggleMainNav();
+                toggleMainMenu();
             });
         } else {
             navBtn.attachEvent("onclick", function() {
-                toggleMainNav();
+                toggleMainMenu();
             })
         }
-    };
+    }
 
     function mainSubNav() {
         var subNavArray     = $('.navbar-subnav'),
@@ -129,7 +129,7 @@
                 }
             });
         }
-    };
+    }
 
     function mainSearch() {
         var searchBtn       = $('.search-toggle')[0];
@@ -137,7 +137,7 @@
         var searchOpen      = 'search-is-open';
         var isSearchOpen    = false;
 
-        var toggleSearch = function() {
+        function toggleSearch() {
             if(!isSearchOpen) {
                 addClass(searchContent, searchOpen);
                 addClass(searchBtn, searchOpen);
@@ -147,7 +147,7 @@
                 removeClass(searchBtn, searchOpen);
                 isSearchOpen = false;
             }
-        };
+        }
 
         if(searchBtn.addEventListener) {
             searchBtn.addEventListener('click', function (e) {
@@ -181,5 +181,32 @@
     mainNav();
     mainSubNav();
     mainSearch();
+
+    function toggleMainNavbar() {
+
+    }
+
+    function checkNavOverflow () {
+        var navbar = $('.navdrawer-container')[0],
+            navHeight = navbar.scrollHeight,
+            navbarCollapse = 'collapse-navbar',
+            navMaxHeight = 39;
+
+        //console.log('nav height: ', navHeight);
+        if (navHeight > navMaxHeight) {
+            addClass(navbar, navbarCollapse);
+            //isNavbarCollapsed = true;
+            console.log('added class navbarCollapse: ', navbarCollapse)
+        } else {
+            removeClass(navbar, navbarCollapse);
+            //isNavbarCollapsed = false;
+            console.log('REMOVED class navbarCollapse: ')
+        }
+    }
+
+    // ToDo: function callback only registers twice
+    $(window).resize( function () {
+        checkNavOverflow();
+    });
 })(document);
 

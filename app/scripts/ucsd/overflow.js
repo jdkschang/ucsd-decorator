@@ -4,18 +4,20 @@
         titleWidth = title[0].offsetWidth,
         logoWidth = 229,
         menuWidth = 62,
+        navHeight = 40,
+        navOverflow,
         titleOverflow,
         titleWrapper;
 
     function removeLongTitle () {
         title.toggle( false );
         titleShort.toggle( true );
-    };
+    }
 
     function showLongTitle () {
         title.toggle( true );
         titleShort.toggle( false );
-    };
+    }
 
     function checkOverflow (titleOverflow, titleWrapper) {
         if ( titleOverflow > titleWrapper ) {
@@ -23,7 +25,7 @@
         } else {
             showLongTitle();
         }
-    };
+    }
 
     function checkTitleOverflow () {
         // titleWrapper initialized here to dynamically
@@ -44,7 +46,14 @@
             titleOverflow = titleWidth + menuWidth + 1;
             checkOverflow( titleOverflow, titleWrapper);
         }
-    };
+    }
+
+    function checkNavOverflow () {
+        var navHeight = $('.navdrawer-container')[0].scrollHeight;
+        if(navHeight > navOverflow ) {
+
+        }
+    }
 
     // ToDo: function callback only registers twice
     $(window).resize( function () {

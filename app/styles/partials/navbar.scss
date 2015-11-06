@@ -332,3 +332,10 @@ button:active {
       box-shadow: none;
     }
 }
+
+.collapse-navbar {
+  position: fixed;
+  width: 42%;
+  z-index: -1;
+  opacity: 0;
+}

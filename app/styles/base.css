@@ -666,6 +666,12 @@ button:active {
     border-bottom: 1px solid #ccc;
     -webkit-box-shadow: none;
     box-shadow: none; } }
+.collapse-navbar {
+  position: fixed;
+  width: 42%;
+  z-index: -1;
+  opacity: 0; }
+
 /**********************************************************************
  * Basic CSS styling
  */
