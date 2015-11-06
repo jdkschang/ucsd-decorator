@@ -27,10 +27,6 @@
         return false;
     }
 
-
-
-    // ToDo: JSON.parse(elem) needs to be parsed through a function
-
     function renderDecorator () {
         $.ajax({
             type: 'GET',
