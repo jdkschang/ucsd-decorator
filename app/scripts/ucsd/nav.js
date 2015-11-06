@@ -162,10 +162,17 @@
     }
 
     function isMobileView() {
-        var browserWidth = window.innerWidth;
-        var mobileDesktopBorder = 768;
+        var browserWidth = window.innerWidth,
+            mobileDesktopBorder = 768;
 
         return (browserWidth < (mobileDesktopBorder+1));
+    }
+
+    function isMenuView() {
+        var browserWidth = window.innerWidth,
+            menuDesktopBorder = 960;
+
+        return (browserWidth < (menuDesktopBorder+1));
     }
 
     function addClass(element, className) {
@@ -183,7 +190,27 @@
     mainSearch();
 
     function toggleMainNavbar() {
+        var navbar = $('.navdrawer-container')[0],
+            navHeight = navbar.scrollHeight,
+            navbarCollapse = 'collapse-navbar',
+            navMaxHeight = 39;
 
+        //console.log('nav height: ', navHeight);
+        // view will not have menu
+        if(!isMenuView()) {
+            console.log('hello is menu view');
+            if (navHeight > navMaxHeight) {
+                addClass(navbar, navbarCollapse);
+                //isNavbarCollapsed = true;
+                console.log('added class navbarCollapse: ', navbarCollapse)
+            } else {
+                removeClass(navbar, navbarCollapse);
+                //isNavbarCollapsed = false;
+                console.log('REMOVED class navbarCollapse: ')
+            }
+        } else {
+            console.log('HOHOHO');
+        }
     }
 
     function checkNavOverflow () {
@@ -206,7 +233,7 @@
 
     // ToDo: function callback only registers twice
     $(window).resize( function () {
-        checkNavOverflow();
+        toggleMainNavbar();
     });
 })(document);
 
