@@ -11,6 +11,9 @@
 }
 
 .profile-listing {
+  display: flex;
+  transition: 1s all;
+
   ul {  
     margin: 0;
     padding: 0;

@@ -8,12 +8,9 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-
-    // Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt);
-
-    // Time how long tasks take. Can help when optimizing build times
-    require('time-grunt')(grunt);
+    var autoprefixer = require('autoprefixer-core');
+    require('load-grunt-tasks')(grunt); // Load grunt tasks automatically
+    require('time-grunt')(grunt); // Time how long tasks take. Can help when optimizing build times
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -23,6 +20,21 @@ module.exports = function (grunt) {
             // Configurable paths
             app: 'app',
             dist: 'dist'
+        },
+
+        postcss: {
+            options: {
+                processors: [
+                    autoprefixer({
+                        browers: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+                    }).postcss
+                ]
+            },
+            dist: {
+                files: {
+                    'dist/': 'css/*.css'
+                }
+            }
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -193,19 +205,6 @@ module.exports = function (grunt) {
                     src: '{,*/}*.css',
                     dest: '.tmp/styles/'
                 }]
-            }
-        },
-
-        // Automatically inject Bower components into the HTML file
-        bowerInstall: {
-            app: {
-                src: ['<%= config.app %>/index.html'],
-                ignorePath: '<%= config.app %>/',
-                exclude: ['bootstrap.js', 'jquery.js']
-            },
-            sass: {
-                src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                ignorePath: '<%= config.app %>/vendor/'
             }
         },
 
@@ -418,11 +417,6 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
     grunt.registerTask('test', function (target) {
         if (target !== 'watch') {
             grunt.task.run([
@@ -452,8 +446,10 @@ module.exports = function (grunt) {
         'compress'
     ]);
 
-    grunt.registerTask('default', [
-        'newer:jshint',
-        'build'
-    ]);
+    grunt.registerTask('default', ['postcss']);
+
+    //grunt.registerTask('default', [
+    //    'newer:jshint',
+    //    'build'
+    //]);
 };
