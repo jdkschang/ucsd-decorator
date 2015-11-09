@@ -53,6 +53,10 @@ module.exports = function (grunt) {
                 files: ['bower.json'],
                 tasks: ['bowerInstall']
             },
+            //sass: {
+            //    files: 'app/styles/**/*.scss',
+            //    tasks: ['sass']
+            //},
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
                 tasks: ['jshint'],
@@ -90,12 +94,8 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= config.app %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.app %>/styles/homepage-wide.css': '<%= config.app %>/styles/homepage-wide.scss',
-                    '<%= config.app %>/styles/widgets.css': '<%= config.app %>/styles/widgets.scss'
-                },
-                options: {
-                    sourcemap: 'true'
+                    '<%= config.dist %>/styles/base.css': '<%= config.app %>/styles/base.scss',
+                    '<%= config.dist %>/styles/bootstrap.css': '<%= config.app %>/styles/bootstrap.scss'
                 }
             }
         },
