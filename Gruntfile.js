@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             options: {
                 watchTask: true,
                 server: {
-                    baseDir: "./"
+                    baseDir: "app/"
                 }
             }
         },
@@ -68,73 +68,26 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             },
-            jstest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['test:watch']
-            },
+            //jstest: {
+            //    files: ['test/spec/{,*/}*.js'],
+            //    tasks: ['test:watch']
+            //},
             gruntfile: {
                 files: ['Gruntfile.js']
-            },
-            compass: {
-                files: ['<%= config.app %>/styles/**/*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
-            },
+            }
+            //compass: {
+            //    files: ['<%= config.app %>/styles/**/*.{scss,sass}'],
+            //    tasks: ['compass:server', 'autoprefixer']
+            //},
             //styles: {
             //    files: ['<%= config.app %>/styles/**/*.css'],
             //    tasks: ['newer:copy:styles', 'autoprefixer']
             //},
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= config.app %>/{,*/}*.html',
-                    '<%= config.app %>/**/*.css',
-                    '.tmp/styles/{,*/}*.css',
-                    '<%= config.app %>/img/{,*/}*'
-                ]
-            }
         },
         sass: {
             dist: {
                 files: {
                     '<%= config.dist %>/styles/base.css': '<%= config.app %>/styles/base.scss'
-                }
-            }
-        },
-
-        // The actual grunt server settings
-        connect: {
-            options: {
-                port: 9000,
-                livereload: 35729,
-                // Change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    open: true,
-                    base: [
-                        '.tmp',
-                        '<%= config.app %>'
-                    ]
-                }
-            },
-            test: {
-                options: {
-                    port: 9001,
-                    base: [
-                        '.tmp',
-                        'test',
-                        '<%= config.app %>'
-                    ]
-                }
-            },
-            dist: {
-                options: {
-                    open: true,
-                    base: '<%= config.dist %>',
-                    livereload: false
                 }
             }
         },
@@ -166,16 +119,6 @@ module.exports = function (grunt) {
                 '!<%= config.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
-        },
-
-        // Mocha testing framework configuration options
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
-            }
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
