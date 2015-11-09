@@ -38,9 +38,13 @@ module.exports = function (grunt) {
 
         browserSync: {
             bsFiles: {
-                src: 'app/styles/**/*.css'
+                src: [
+                    'app/styles/**/*.scss',
+                    '*.html'
+                ]
             },
             options: {
+                watchTask: true,
                 server: {
                     baseDir: "./"
                 }
@@ -53,10 +57,10 @@ module.exports = function (grunt) {
                 files: ['bower.json'],
                 tasks: ['bowerInstall']
             },
-            //sass: {
-            //    files: 'app/styles/**/*.scss',
-            //    tasks: ['sass']
-            //},
+            sass: {
+                files: 'app/styles/**/*.scss',
+                tasks: ['sass']
+            },
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
                 tasks: ['jshint'],
@@ -75,10 +79,10 @@ module.exports = function (grunt) {
                 files: ['<%= config.app %>/styles/**/*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer']
             },
-            styles: {
-                files: ['<%= config.app %>/styles/**/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
-            },
+            //styles: {
+            //    files: ['<%= config.app %>/styles/**/*.css'],
+            //    tasks: ['newer:copy:styles', 'autoprefixer']
+            //},
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
@@ -94,8 +98,7 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= config.dist %>/styles/base.css': '<%= config.app %>/styles/base.scss',
-                    '<%= config.dist %>/styles/bootstrap.css': '<%= config.app %>/styles/bootstrap.scss'
+                    '<%= config.dist %>/styles/base.css': '<%= config.app %>/styles/base.scss'
                 }
             }
         },
@@ -441,7 +444,11 @@ module.exports = function (grunt) {
         'compress'
     ]);
 
-    grunt.registerTask('default', ['postcss:dist']);
+    grunt.registerTask('default', [
+        'browserSync',
+        'watch',
+        'postcss:dist'
+    ]);
 
     //grunt.registerTask('default', [
     //    'newer:jshint',
