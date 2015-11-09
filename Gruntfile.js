@@ -8,7 +8,6 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-    var autoprefixer = require('autoprefixer-core');
     require('load-grunt-tasks')(grunt); // Load grunt tasks automatically
     require('time-grunt')(grunt); // Time how long tasks take. Can help when optimizing build times
 
@@ -22,17 +21,28 @@ module.exports = function (grunt) {
             dist: 'dist'
         },
 
+        // postcss plugin for autoprefixer
         postcss: {
             options: {
+                map: true,
                 processors: [
-                    autoprefixer({
-                        browers: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
-                    }).postcss
+                    require('autoprefixer')({
+                        browers: ['not ie <= 6', 'last 6 versions']
+                    })
                 ]
             },
             dist: {
-                files: {
-                    'dist/': 'css/*.css'
+                src: 'dist/styles/*.scss'
+            }
+        },
+
+        browserSync: {
+            bsFiles: {
+                src: 'app/styles/**/*.css'
+            },
+            options: {
+                server: {
+                    baseDir: "./"
                 }
             }
         },
@@ -190,21 +200,6 @@ module.exports = function (grunt) {
                 options: {
                     debugInfo: true
                 }
-            }
-        },
-
-        // Add vendor prefixed styles
-        autoprefixer: {
-            options: {
-                browsers: ['last 6 versions']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,*/}*.css',
-                    dest: '.tmp/styles/'
-                }]
             }
         },
 
@@ -436,7 +431,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
-        'autoprefixer',
+        'postcss:dist',
         'concat',
         'cssmin',
         'uglify',
@@ -446,7 +441,7 @@ module.exports = function (grunt) {
         'compress'
     ]);
 
-    grunt.registerTask('default', ['postcss']);
+    grunt.registerTask('default', ['postcss:dist']);
 
     //grunt.registerTask('default', [
     //    'newer:jshint',

@@ -5,6 +5,14 @@
   float: left;
   min-height: 93px;
   min-width: 110px; }
+.profile-listing {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: 1s all;
+    transition: 1s all;
+}
 
 .profile-listing ul {
   margin: 0;
